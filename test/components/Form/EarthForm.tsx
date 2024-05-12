@@ -24,27 +24,36 @@ const EarthForm = () => {
 
   return (
     <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-      <View className="flex-1 justify-center items-center py-20 px-4 bg-green-50">
-        <View className="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
-          <Text className="text-2xl font-bold text-center text-gray-800 mb-6">
-            Earth Form
-          </Text>
+      <View className="flex-1 justify-center items-center py-20 px-4 bg-gradient-to-br from-green-50 to-emerald-100">
+        <View className="w-full max-w-md bg-white p-8 rounded-2xl shadow-2xl border border-green-200">
+          <View className="items-center mb-6">
+            <View className="w-16 h-16 bg-green-500 rounded-full items-center justify-center mb-4">
+              <Text className="text-white text-2xl font-bold">🌍</Text>
+            </View>
+            <Text className="text-2xl font-bold text-center text-gray-800">
+              Earth Form
+            </Text>
+            <Text className="text-sm text-gray-600 text-center mt-2">
+              Connect with nature through our form
+            </Text>
+          </View>
 
           <View className="space-y-4">
             <View>
-              <Text className="text-sm font-medium text-gray-700 mb-2">
+              <Text className="text-sm font-medium text-green-700 mb-2">
                 Full Name
               </Text>
               <TextInput
                 placeholder="Enter your full name"
                 value={formData.name}
                 onChangeText={(value) => handleInputChange('name', value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                className="w-full px-4 py-3 border border-green-300 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-200"
+                style={{ backgroundColor: '#f0fdf4' }}
               />
             </View>
 
             <View>
-              <Text className="text-sm font-medium text-gray-700 mb-2">
+              <Text className="text-sm font-medium text-green-700 mb-2">
                 Email Address
               </Text>
               <TextInput
@@ -52,12 +61,13 @@ const EarthForm = () => {
                 value={formData.email}
                 onChangeText={(value) => handleInputChange('email', value)}
                 keyboardType="email-address"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                className="w-full px-4 py-3 border border-green-300 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-200"
+                style={{ backgroundColor: '#f0fdf4' }}
               />
             </View>
 
             <View>
-              <Text className="text-sm font-medium text-gray-700 mb-2">
+              <Text className="text-sm font-medium text-green-700 mb-2">
                 Password
               </Text>
               <TextInput
@@ -65,12 +75,13 @@ const EarthForm = () => {
                 value={formData.password}
                 onChangeText={(value) => handleInputChange('password', value)}
                 secureTextEntry
-                className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                className="w-full px-4 py-3 border border-green-300 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-200"
+                style={{ backgroundColor: '#f0fdf4' }}
               />
             </View>
 
             <View>
-              <Text className="text-sm font-medium text-gray-700 mb-2">
+              <Text className="text-sm font-medium text-green-700 mb-2">
                 Confirm Password
               </Text>
               <TextInput
@@ -78,7 +89,8 @@ const EarthForm = () => {
                 value={formData.confirmPassword}
                 onChangeText={(value) => handleInputChange('confirmPassword', value)}
                 secureTextEntry
-                className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                className="w-full px-4 py-3 border border-green-300 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-200"
+                style={{ backgroundColor: '#f0fdf4' }}
               />
             </View>
           </View>
