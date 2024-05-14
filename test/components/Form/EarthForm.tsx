@@ -15,11 +15,23 @@ const EarthForm = () => {
     confirmPassword: '',
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({
       ...prev,
       [field]: value,
     }));
+  };
+
+  const handleSubmit = async () => {
+    setIsSubmitting(true);
+    
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    console.log('Form submitted:', formData);
+    setIsSubmitting(false);
   };
 
   return (
@@ -93,6 +105,20 @@ const EarthForm = () => {
                 style={{ backgroundColor: '#f0fdf4' }}
               />
             </View>
+
+            <TouchableOpacity
+              onPress={handleSubmit}
+              disabled={isSubmitting}
+              className={`w-full py-4 rounded-lg mt-6 ${
+                isSubmitting 
+                  ? 'bg-gray-400' 
+                  : 'bg-green-600 active:bg-green-700'
+              }`}
+            >
+              <Text className="text-white text-center font-semibold text-lg">
+                {isSubmitting ? 'Submitting...' : 'Submit Form'}
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
