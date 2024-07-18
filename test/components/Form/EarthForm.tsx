@@ -16,22 +16,81 @@ const EarthForm = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState<{[key: string]: string}>({});
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({
       ...prev,
       [field]: value,
     }));
+    
+    // Clear error when user starts typing
+    if (errors[field]) {
+      setErrors(prev => ({
+        ...prev,
+        [field]: '',
+      }));
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors: {[key: string]: string} = {};
+    
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required';
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Email is invalid';
+    }
+    
+    if (!formData.password) {
+      newErrors.password = 'Password is required';
+    } else if (formData.password.length < 6) {
+      newErrors.password = 'Password must be at least 6 characters';
+    }
+    
+    if (formData.password !== formData.confirmPassword) {
+      newErrors.confirmPassword = 'Passwords do not match';
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async () => {
+    if (!validateForm()) {
+      return;
+    }
+    
     setIsSubmitting(true);
+    setShowSuccess(false);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    console.log('Form submitted:', formData);
-    setIsSubmitting(false);
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      console.log('Form submitted:', formData);
+      setShowSuccess(true);
+      
+      // Reset form after success
+      setTimeout(() => {
+        setFormData({
+          name: '',
+          email: '',
+          password: '',
+          confirmPassword: '',
+        });
+        setShowSuccess(false);
+      }, 3000);
+    } catch (error) {
+      console.error('Submission error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -59,9 +118,15 @@ const EarthForm = () => {
                 placeholder="Enter your full name"
                 value={formData.name}
                 onChangeText={(value) => handleInputChange('name', value)}
-                className="w-full px-4 py-3 border border-green-300 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-200"
-                style={{ backgroundColor: '#f0fdf4' }}
+                className={`w-full px-4 py-3 border rounded-lg ${
+                  errors.name 
+                    ? 'border-red-500 bg-red-50' 
+                    : 'border-green-300 bg-green-50'
+                }`}
               />
+              {errors.name && (
+                <Text className="text-red-500 text-xs mt-1">{errors.name}</Text>
+              )}
             </View>
 
             <View>
@@ -73,9 +138,15 @@ const EarthForm = () => {
                 value={formData.email}
                 onChangeText={(value) => handleInputChange('email', value)}
                 keyboardType="email-address"
-                className="w-full px-4 py-3 border border-green-300 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-200"
-                style={{ backgroundColor: '#f0fdf4' }}
+                className={`w-full px-4 py-3 border rounded-lg ${
+                  errors.email 
+                    ? 'border-red-500 bg-red-50' 
+                    : 'border-green-300 bg-green-50'
+                }`}
               />
+              {errors.email && (
+                <Text className="text-red-500 text-xs mt-1">{errors.email}</Text>
+              )}
             </View>
 
             <View>
@@ -87,9 +158,15 @@ const EarthForm = () => {
                 value={formData.password}
                 onChangeText={(value) => handleInputChange('password', value)}
                 secureTextEntry
-                className="w-full px-4 py-3 border border-green-300 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-200"
-                style={{ backgroundColor: '#f0fdf4' }}
+                className={`w-full px-4 py-3 border rounded-lg ${
+                  errors.password 
+                    ? 'border-red-500 bg-red-50' 
+                    : 'border-green-300 bg-green-50'
+                }`}
               />
+              {errors.password && (
+                <Text className="text-red-500 text-xs mt-1">{errors.password}</Text>
+              )}
             </View>
 
             <View>
@@ -101,10 +178,24 @@ const EarthForm = () => {
                 value={formData.confirmPassword}
                 onChangeText={(value) => handleInputChange('confirmPassword', value)}
                 secureTextEntry
-                className="w-full px-4 py-3 border border-green-300 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-200"
-                style={{ backgroundColor: '#f0fdf4' }}
+                className={`w-full px-4 py-3 border rounded-lg ${
+                  errors.confirmPassword 
+                    ? 'border-red-500 bg-red-50' 
+                    : 'border-green-300 bg-green-50'
+                }`}
               />
+              {errors.confirmPassword && (
+                <Text className="text-red-500 text-xs mt-1">{errors.confirmPassword}</Text>
+              )}
             </View>
+
+            {showSuccess && (
+              <View className="bg-green-100 border border-green-400 rounded-lg p-4 mb-4">
+                <Text className="text-green-700 text-center font-medium">
+                  ✅ Form submitted successfully! Thank you for connecting with nature.
+                </Text>
+              </View>
+            )}
 
             <TouchableOpacity
               onPress={handleSubmit}
