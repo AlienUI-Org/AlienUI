@@ -2,7 +2,7 @@ import React from "react";
 
 function NewsLetter() {
   return (
-    <section className="py-20 text-black bg-brown-100 mb-16">
+    <section className="py-20 text-black bg-brown-100">
       <div className="max-w-4xl mx-auto px-6 text-center">
         {/* Heading */}
         <h1 className="text-3xl font-bold text-brown-800 sm:text-4xl text-center mb-2">
@@ -23,7 +23,7 @@ function NewsLetter() {
           />
           <button
             type="submit"
-            className="px-6 py-3 bg-brown-600 hover:bg-brown-800 text-white rounded-md font-semibold shadow-md focus:outline-none focus:ring-2"
+            className="px-6 py-3 bg-brown-600 hover:bg-brown-800 text-white rounded-md shadow-md focus:outline-none focus:ring-2"
           >
             Subscribe
           </button>

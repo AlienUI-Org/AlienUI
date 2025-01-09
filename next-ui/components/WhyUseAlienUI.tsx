@@ -17,7 +17,7 @@ function WhyUseAlienUI() {
         </p>
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="flex flex-col items-center bg-brown-100 rounded-md p-6 shadow-lg hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-ou">
+          <div className="flex flex-col items-center bg-brown-100 rounded-md p-6 shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-ou">
             <MdInstallDesktop className="w-14 h-14 pb-4" />
             <h3 className="text-lg font-bold text-brown-800">
               No npm Installation
@@ -28,7 +28,7 @@ function WhyUseAlienUI() {
             </p>
           </div>
 
-          <div className="flex flex-col items-center bg-brown-100 rounded-md p-6 shadow-lg hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-ou">
+          <div className="flex flex-col items-center bg-brown-100 rounded-md p-6 shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-ou">
             <FcDataConfiguration className="w-14 h-14 pb-4" />
             <h3 className="text-lg font-bold text-brown-800">
               No Configuration
@@ -39,7 +39,7 @@ function WhyUseAlienUI() {
             </p>
           </div>
 
-          <div className="flex flex-col items-center bg-brown-100 rounded-md p-6 shadow-lg hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-ou">
+          <div className="flex flex-col items-center bg-brown-100 rounded-md p-6 shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-ou">
             <BiCustomize className="w-14 h-14 pb-4" />
             <h3 className="text-lg font-bold text-brown-800">
               Easy Customization
@@ -50,7 +50,7 @@ function WhyUseAlienUI() {
             </p>
           </div>
 
-          <div className="flex flex-col items-center bg-brown-100 rounded-md p-6 shadow-lg hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-ou">
+          <div className="flex flex-col items-center bg-brown-100 rounded-md p-6 shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-ou">
             <MdJoinInner className="w-14 h-14 pb-4" />
             <h3 className="text-lg font-bold text-brown-800">
               Open-Source Contributions
