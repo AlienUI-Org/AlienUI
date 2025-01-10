@@ -1,13 +1,11 @@
-// data.ts
 "use client";
-//import { AlienUIIcons } from "./icons";
-import { GiAlienBug, GiAlienEgg } from "react-icons/gi";
+import { AlienUIIcons } from "./icons";
 
 export const components = {
   button: {
     id: 1,
     name: "Button",
-    icon: GiAlienBug,
+    icon: AlienUIIcons.AlienReddit,
     description:
       "A customizable button component with multiple variants to suit different use cases.",
     variants: [
@@ -92,7 +90,7 @@ export default SecondaryButton;`,
   input: {
     id: 2,
     name: "Input",
-    icon: GiAlienEgg,
+    icon: AlienUIIcons.AlienBug,
     description: "A customizable input component for capturing user data.",
     variants: [
       {

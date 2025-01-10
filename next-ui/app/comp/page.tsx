@@ -1,3 +1,4 @@
+"use client";
 import Suggestion from "@/components/Suggestion";
 import React from "react";
 import CompCard from "@/components/CompCard";
@@ -40,9 +41,9 @@ function page() {
         </div>
       </div>
       <div className="flex flex-wrap gap-6 mb-16 mx-4">
-        {Object.values(components).map((comp) => (
-          <CompCard key={comp.id} name={comp.name} />
-        ))}
+        {Object.values(components).map((comp) => {
+          return <CompCard key={comp.id} name={comp.name} icon={comp.icon} />;
+        })}
       </div>
       <Suggestion />
     </section>
