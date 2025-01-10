@@ -1,19 +1,9 @@
 import Suggestion from "@/components/Suggestion";
 import React from "react";
 import CompCard from "@/components/CompCard";
-import { FaRedditAlien } from "react-icons/fa";
-import { GiAlienBug } from "react-icons/gi";
-import { GiAlienEgg } from "react-icons/gi";
-import { GiAlienFire } from "react-icons/gi";
+import { components } from "@/utils/data";
 
 function page() {
-  const components = [
-    { name: "Button", icon: <FaRedditAlien /> },
-    { name: "Toast", icon: <GiAlienFire /> },
-    { name: "Input", icon: <GiAlienBug /> },
-    { name: "Alert", icon: <GiAlienEgg /> },
-  ];
-
   return (
     <section className="max-w-7xl mx-auto my-10">
       <div className="mb-16">
@@ -50,9 +40,8 @@ function page() {
         </div>
       </div>
       <div className="flex flex-wrap gap-6 mb-16 mx-4">
-        {" "}
-        {components.map((comp, index) => (
-          <CompCard key={index} name={comp.name} icon={comp.icon} />
+        {Object.values(components).map((comp) => (
+          <CompCard key={comp.id} name={comp.name} />
         ))}
       </div>
       <Suggestion />
