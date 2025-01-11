@@ -1,7 +1,28 @@
 "use client";
 import { AlienUIIcons } from "./icons";
+import { Button } from "./comp";
 
-export const components = {
+type Variant = {
+  name: string;
+  description: string;
+  code: string;
+  code2: string;
+  render: React.ReactNode;
+};
+
+type Component = {
+  id: number;
+  name: string;
+  icon: React.ReactNode;
+  description: string;
+  variants: Variant[];
+};
+
+type Components = {
+  [key: string]: Component;
+};
+
+export const components: Components = {
   button: {
     id: 1,
     name: "Button",
@@ -10,80 +31,102 @@ export const components = {
       "A customizable button component with multiple variants to suit different use cases.",
     variants: [
       {
-        name: "Primary Button",
+        name: "Galaxy Button",
         description:
           "A button with a solid background, used for primary actions.",
         code: `import React from 'react';
-import { TouchableOpacity, Text } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
-const PrimaryButton = () => {
+const Button = () => {
     return (
-        <TouchableOpacity
-            style={{
-                backgroundColor: '#007BFF',
-                paddingVertical: 10,
-                paddingHorizontal: 20,
-                borderRadius: 5,
-                alignItems: 'center',
-                width: 200,
-            }}
-        >
-            <Text style={{ color: '#FFFFFF', fontSize: 16 }}>Primary Button</Text>
+        <TouchableOpacity style={styles.button}>
+            <Text style={styles.text}>Galaxy Button</Text>
         </TouchableOpacity>
     );
 };
 
-export default PrimaryButton;`,
+const styles = StyleSheet.create({
+    button: {
+        backgroundColor: '#007BFF',
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        borderRadius: 5,
+        alignItems: 'center',
+        width: 200,
+    },
+    text: {
+        color: '#FFFFFF',
+        fontSize: 16,
+    }
+});
+
+export default Button;
+`,
         code2: `import React from 'react';
 import { TouchableOpacity, Text } from 'react-native';
 
-const PrimaryButton = () => {
+const Button = () => {
     return (
         <TouchableOpacity className="bg-blue-500 py-2 px-4 rounded-md flex items-center justify-center w-[200px]">
-            <Text className="text-white text-base">Primary Button</Text>
+            <Text className="text-white text-base">Galaxy Button</Text>
         </TouchableOpacity>
     );
 };
 
-export default PrimaryButton;`,
+export default Button;`,
+        render: <Button.GalaxyButton />,
       },
       {
-        name: "Secondary Button",
-        description:
-          "A button with a subtle background, used for secondary actions.",
+        name: "Earth Button",
+        description: "A button with an icon, used for secondary actions.",
         code: `import React from 'react';
-import { TouchableOpacity, Text } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
-const SecondaryButton = () => {
+const Button = () => {
     return (
-        <TouchableOpacity
-            style={{
-                backgroundColor: '#28a745',
-                paddingVertical: 10,
-                paddingHorizontal: 20,
-                borderRadius: 5,
-                alignItems: 'center',
-                width: 200,
-            }}
-        >
-            <Text style={{ color: '#FFFFFF', fontSize: 16 }}>Secondary Button</Text>
+        <TouchableOpacity style={styles.button}>
+            <Text style={styles.text}>Earth Button</Text>
+            <MaterialCommunityIcons name="alien-outline" size={24} color="white" />
         </TouchableOpacity>
     );
 };
 
-export default SecondaryButton;`,
+const styles = StyleSheet.create({
+    button: {
+        backgroundColor: '#28a745'
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        borderRadius: 5,
+        alignItems: 'center',
+        width: 200,
+        flex: flex-row,
+        justify: space-between
+    },
+    text: {
+        color: '#FFFFFF',
+        fontSize: 16,
+    }
+});
+
+export default Button;
+`,
         code2: `import React from 'react';
 import { TouchableOpacity, Text } from 'react-native';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
-const SecondaryButton = () => {
+
+const Button = () => {
     return (
-        <TouchableOpacity className="bg-green-500 py-2 px-4 rounded-md flex items-center justify-center w-[200px]">
-            <Text className="text-white text-base">Secondary Button</Text>
+        <TouchableOpacity className="bg-transparent border py-2 px-4 rounded-md flex items-center justify-center w-[200px]">
+            <Text className="text-white text-base">Earth Button</Text>
+            <MaterialCommunityIcons name="alien-outline" size={24} color="white" />
         </TouchableOpacity>
     );
 };
 
-export default SecondaryButton;`,
+export default Button;`,
+        render: <Button.EarthButton />,
       },
     ],
   },
@@ -138,6 +181,12 @@ const BasicInput = () => {
 };
 
 export default BasicInput;`,
+        render: (
+          <input
+            className="border border-gray-300 rounded-md p-2"
+            placeholder="Enter text"
+          />
+        ),
       },
       {
         name: "Outlined Input",
@@ -184,6 +233,12 @@ const OutlinedInput = () => {
 };
 
 export default OutlinedInput;`,
+        render: (
+          <input
+            className="border-2 border-blue-500 rounded-md p-2"
+            placeholder="Enter text"
+          />
+        ),
       },
     ],
   },
