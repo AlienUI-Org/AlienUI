@@ -47,7 +47,7 @@ const Button = () => {
 
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: '#007BFF',
+        backgroundColor: '#000000',
         paddingVertical: 10,
         paddingHorizontal: 20,
         borderRadius: 5,
@@ -67,7 +67,7 @@ import { TouchableOpacity, Text } from 'react-native';
 
 const Button = () => {
     return (
-        <TouchableOpacity className="bg-blue-500 py-2 px-4 rounded-md flex items-center justify-center w-[200px]">
+        <TouchableOpacity className="bg-black py-2 px-4 rounded-md flex items-center justify-center w-[200px]">
             <Text className="text-white text-base">Galaxy Button</Text>
         </TouchableOpacity>
     );
@@ -94,18 +94,18 @@ const Button = () => {
 
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: '#28a745'
+        backgroundColor: '#000000'
         paddingVertical: 10,
         paddingHorizontal: 20,
         borderRadius: 5,
         alignItems: 'center',
         width: 200,
         flex: flex-row,
-        justify: space-between
     },
     text: {
         color: '#FFFFFF',
         fontSize: 16,
+        marginRight: 1,
     }
 });
 
@@ -118,9 +118,9 @@ import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 const Button = () => {
     return (
-        <TouchableOpacity className="bg-transparent border py-2 px-4 rounded-md flex items-center justify-center w-[200px]">
+        <TouchableOpacity className="bg-black border py-2 px-4 rounded-md flex items-center justify-center w-[200px]">
             <Text className="text-white text-base">Earth Button</Text>
-            <MaterialCommunityIcons name="alien-outline" size={24} color="white" />
+            <MaterialCommunityIcons className="ml-1" name="alien-outline" size={24} color="white" />
         </TouchableOpacity>
     );
 };

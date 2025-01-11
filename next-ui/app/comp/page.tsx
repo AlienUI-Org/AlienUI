@@ -33,8 +33,7 @@ function page() {
               .
             </li>
             <li>
-              If you’re using the{" "}
-              <strong>StyleSheet API or Inline-Styling</strong>, no additional
+              If you’re using the <strong>StyleSheet API</strong>, no additional
               setup is needed.
             </li>
           </ul>
