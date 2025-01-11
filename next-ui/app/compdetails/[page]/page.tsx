@@ -44,8 +44,8 @@ function Page() {
           </div>
           <div className="my-6">
             <div className="flex lg:flex-row flex-col justify-between items-center gap-4">
-              <div className="lg:w-1/2 w-full relative rounded-lg overflow-auto bg-gray-700 p-4">
-                <div className="relative rounded-lg">
+              <div className="lg:w-1/2 w-full relative rounded-md overflow-auto bg-brown-600 p-4">
+                <div className="relative rounded-md">
                   <SyntaxHighlighter
                     language="jsx"
                     style={duotoneDark}
@@ -59,8 +59,8 @@ function Page() {
                   />
                 </div>
               </div>
-              <div className="lg:w-1/2 w-full rounded-lg overflow-auto bg-gray-700 p-4">
-                <div className="relative rounded-lg">
+              <div className="lg:w-1/2 w-full rounded-md overflow-auto bg-brown-600 p-4">
+                <div className="relative rounded-md">
                   <SyntaxHighlighter
                     language="jsx"
                     style={duotoneDark}
@@ -80,7 +80,7 @@ function Page() {
             <h1 className="text-xl font-semibold text-brown-800 sm:text-2xl">
               Preview
             </h1>
-            <div className="lg:w-1/2 w-full py-10 px-6 flex flex-col items-center justify-center rounded-lg h-auto bg-brown-100 mt-2">
+            <div className="lg:w-1/2 w-full py-10 px-6 flex flex-col items-center justify-center rounded-md h-auto shadow-md border border-brown-600 mt-2">
               {variant.render}{" "}
             </div>
           </div>
