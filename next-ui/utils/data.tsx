@@ -1,6 +1,6 @@
 "use client";
 import { AlienUIIcons } from "./icons";
-import { Button } from "./comp";
+import { Comp } from "./comp";
 
 type Variant = {
   name: string;
@@ -74,7 +74,7 @@ const Button = () => {
 };
 
 export default Button;`,
-        render: <Button.GalaxyButton />,
+        render: <Comp.GalaxyButton />,
       },
       {
         name: "Earth Button",
@@ -126,7 +126,7 @@ const Button = () => {
 };
 
 export default Button;`,
-        render: <Button.EarthButton />,
+        render: <Comp.EarthButton />,
       },
     ],
   },
@@ -137,12 +137,12 @@ export default Button;`,
     description: "A customizable input component for capturing user data.",
     variants: [
       {
-        name: "Basic Input",
+        name: "Nebulon Input",
         description: "A simple input box for text entry.",
         code: `import React from 'react';
 import { TextInput, View, StyleSheet } from 'react-native';
 
-const BasicInput = () => {
+const Input = () => {
     return (
         <View style={styles.container}>
             <TextInput
@@ -165,11 +165,11 @@ const styles = StyleSheet.create({
     },
 });
 
-export default BasicInput;`,
+export default Input;`,
         code2: `import React from 'react';
 import { TextInput, View } from 'react-native';
 
-const BasicInput = () => {
+const Input = () => {
     return (
         <View className="p-4">
             <TextInput
@@ -180,13 +180,8 @@ const BasicInput = () => {
     );
 };
 
-export default BasicInput;`,
-        render: (
-          <input
-            className="border border-gray-300 rounded-md p-2"
-            placeholder="Enter text"
-          />
-        ),
+export default Input;`,
+        render: <Comp.NebulonInput />,
       },
       {
         name: "Outlined Input",
@@ -194,7 +189,7 @@ export default BasicInput;`,
         code: `import React from 'react';
 import { TextInput, View, StyleSheet } from 'react-native';
 
-const OutlinedInput = () => {
+const Input = () => {
     return (
         <View style={styles.container}>
             <TextInput
@@ -217,11 +212,11 @@ const styles = StyleSheet.create({
     },
 });
 
-export default OutlinedInput;`,
+export default Input;`,
         code2: `import React from 'react';
 import { TextInput, View } from 'react-native';
 
-const OutlinedInput = () => {
+const Input = () => {
     return (
         <View className="p-4">
             <TextInput
@@ -232,7 +227,7 @@ const OutlinedInput = () => {
     );
 };
 
-export default OutlinedInput;`,
+export default Input;`,
         render: (
           <input
             className="border-2 border-blue-500 rounded-md p-2"
