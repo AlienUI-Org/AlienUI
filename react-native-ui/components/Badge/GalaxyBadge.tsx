@@ -4,7 +4,7 @@ import React from "react";
 const GalaxyBadge = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Galaxy Badge</Text>
+      <Text style={styles.text}>Badge</Text>
     </View>
   );
 };
@@ -23,6 +23,6 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "#FFFFFF",
-    fontSize: 10,
+    fontSize: 12,
   },
 });

@@ -23,8 +23,61 @@ type Components = {
 };
 
 export const components: Components = {
-  button: {
+  badge: {
     id: 1,
+    name: "Badge",
+    icon: AlienUIIcons.AlienFire,
+    description: "A customizable badge component with multiple variants",
+    variants: [
+      {
+        name: "Galaxy Badge",
+        description: "An alien badge for galactic identification",
+        code: `import React from "react" ;
+import { StyleSheet, Text, View } from "react-native";
+
+const Badge = () => {
+  return (
+      <View style={styles.container}>
+          <Text style={styles.text}>Badge</Text>
+      </View>
+  );
+};
+
+export default Badge;
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#000000",
+    paddingVertical: 5,
+    paddingHorizontal: 5,
+    borderRadius: 20,
+    alignItems: "center",
+    width: 80,
+  },
+  text: {
+    color: "#FFFFFF",
+    fontSize: 12,
+  },
+});`,
+        code2: `import React from 'react';
+import { View, Text } from 'react-native'
+
+const Badge = () => {
+    return (
+        <View className="bg-black px-2 py-1 rounded-full flex items-center justify-center w-[80px]">
+            <Text className="text-white text-xs">Badge</Text>
+        </View>
+    )
+}
+    
+export default Badge;
+`,
+        render: <Comp.GalaxyBadge />,
+      },
+    ],
+  },
+  button: {
+    id: 2,
     name: "Button",
     icon: AlienUIIcons.AlienReddit,
     description:
@@ -132,7 +185,7 @@ export default Button;`,
     ],
   },
   input: {
-    id: 2,
+    id: 3,
     name: "Input",
     icon: AlienUIIcons.AlienBug,
     description: "A customizable input component for capturing user data.",
