@@ -15,16 +15,16 @@ function Inspiration() {
         </p>
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="flex flex-col items-center bg-brown-600 rounded-md p-6 shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-ou">
+          <div className="flex flex-col items-center border border-black bg-white rounded-md p-6 hover:shadow-md hover:scale-105 transition-transform duration-300 ease-in-ou">
             <Image src="/images/native.png" alt="" width={300} height={300} />
           </div>
 
-          <div className="flex flex-col items-center border border-brown-600 rounded-md p-6 shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-ou">
+          <div className="flex flex-col items-center border border-black rounded-md p-6 hover:shadow-md hover:scale-105 transition-transform duration-300 ease-in-ou">
             {" "}
             <Image src="/images/hyperui.webp" alt="" width={300} height={300} />
           </div>
 
-          <div className="flex flex-col items-center bg-brown-600 rounded-md p-6 shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-ou">
+          <div className="flex flex-col items-center bg-black rounded-md p-6 hover:shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
             <Image src="/images/shadcnui.png" alt="" width={300} height={300} />
           </div>
         </div>
