@@ -23,8 +23,94 @@ type Components = {
 };
 
 export const components: Components = {
-  badge: {
+  alert: {
     id: 1,
+    name: "Alert",
+    icon: AlienUIIcons.AlienBug,
+    description: "An alert component with multiple types",
+    variants: [
+      {
+        name: "Galaxy Alert",
+        description: "An alien alert for galactic notifications",
+        code: `import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+import { Feather } from "@expo/vector-icons";
+
+const Alert = () => {
+  return (
+    <View style={styles.alertContainer}>
+      <View style={styles.contentContainer}>
+        <Feather name="check-circle" size={24} color="#16a34a" />
+        <View style={styles.textContainer}>
+          <Text style={styles.alertTitle}>Zeltron Whisper</Text>
+          <Text style={styles.alertMessage}>Everything is on track </Text>
+        </View>
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  alertContainer: {
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: "#e5e7eb",
+    backgroundColor: "#ffffff",
+    padding: 16,
+  },
+  contentContainer: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: 16,
+  },
+  textContainer: {
+    flex: 1,
+  },
+  alertTitle: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#111827",
+  },
+  alertMessage: {
+    marginTop: 4,
+    fontSize: 14,
+    color: "#374151",
+  },
+  dismissButton: {
+    alignSelf: "center",
+  },
+});
+
+export default Alert;
+`,
+        code2: `import React from "react";
+import { View, Text, TouchableOpacity } from "react-native";
+import { Feather } from "@expo/vector-icons";
+
+const Alert = () => {
+  return (
+    <View className="rounded-xl border border-gray-100 bg-white p-4">
+      <View className="flex flex-row items-start gap-4">
+        <Feather name="check-circle" size={24} color="#16a34a" />
+        <View className="flex-1">
+          <Text className="text-lg font-medium text-gray-900">Zeltron Whisper</Text>
+          <Text className="mt-1 text-sm text-gray-700">
+            Everything is on track.
+          </Text>
+        </View>
+      </View>
+    </View>
+  );
+};
+
+export default Alert;
+`,
+        render: <Comp.GalaxyAlert />,
+      },
+    ],
+  },
+  badge: {
+    id: 2,
     name: "Badge",
     icon: AlienUIIcons.AlienFire,
     description: "A customizable badge component with multiple variants",
@@ -77,7 +163,7 @@ export default Badge;
     ],
   },
   button: {
-    id: 2,
+    id: 3,
     name: "Button",
     icon: AlienUIIcons.AlienReddit,
     description:
@@ -185,9 +271,9 @@ export default Button;`,
     ],
   },
   input: {
-    id: 3,
+    id: 4,
     name: "Input",
-    icon: AlienUIIcons.AlienBug,
+    icon: AlienUIIcons.AlienEgg,
     description: "A customizable input component for capturing user data.",
     variants: [
       {

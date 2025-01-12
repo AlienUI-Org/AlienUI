@@ -4,6 +4,7 @@ import EarthButton from "./components/Button/EarthButton";
 import Input from "./components/Input/NebulonInput";
 import EarthInput from "./components/Input/EarthInput";
 import GalaxyBadge from "./components/Badge/GalaxyBadge";
+import Alert from "./components/Alert/GalaxyAlert";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
       <Input />
       <EarthInput />
       <GalaxyBadge />
+      <Alert />
     </View>
   );
 }
