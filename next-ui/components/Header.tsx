@@ -21,13 +21,12 @@ function Header() {
 
           {/* GitHub Icon */}
           <div className="flex items-center gap-4">
-            <Link href="">
+            <Link href="https://linkedin.com/company/alien-ui">
               <FaLinkedin size={24} />
             </Link>
             <Link href="">
               <FaXTwitter size={24} />
             </Link>
-
             <Link href="https://github.com/khaymanii/jsfusion">
               <FaGithub size={24} />
             </Link>

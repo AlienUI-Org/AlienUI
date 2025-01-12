@@ -87,7 +87,7 @@ const Button = () => {
     return (
         <TouchableOpacity style={styles.button}>
             <Text style={styles.text}>Earth Button</Text>
-            <MaterialCommunityIcons name="alien-outline" size={24} color="white" />
+            <MaterialCommunityIcons name="alien-outline" size={20} color="white" />
         </TouchableOpacity>
     );
 };
@@ -100,12 +100,13 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         alignItems: 'center',
         width: 200,
-        flex: flex-row,
+        flexDirection: "row",
+        justifyContent: "center,
     },
     text: {
         color: '#FFFFFF',
         fontSize: 16,
-        marginRight: 1,
+        marginRight: 2,
     }
 });
 
@@ -118,9 +119,9 @@ import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 const Button = () => {
     return (
-        <TouchableOpacity className="bg-black border py-2 px-4 rounded-md flex items-center justify-center w-[200px]">
-            <Text className="text-white text-base">Earth Button</Text>
-            <MaterialCommunityIcons className="ml-1" name="alien-outline" size={24} color="white" />
+        <TouchableOpacity className="bg-black border py-2 px-4 rounded-md flex flex-row items-center justify-center w-[200px]">
+            <Text className="text-white text-base mr-1">Earth Button</Text>
+            <MaterialCommunityIcons name="alien-outline" size={20} color="white" />
         </TouchableOpacity>
     );
 };
@@ -147,7 +148,7 @@ const Input = () => {
         <View style={styles.container}>
             <TextInput
                 style={styles.input}
-                placeholder="Enter text"
+                placeholder="Nebulon Input"
             />
         </View>
     );
@@ -155,11 +156,11 @@ const Input = () => {
 
 const styles = StyleSheet.create({
     container: {
-        padding: 10,
+        width: 250,
     },
     input: {
         borderWidth: 1,
-        borderColor: '#ccc',
+        borderColor: '#000000',
         borderRadius: 5,
         padding: 10,
     },
@@ -171,10 +172,10 @@ import { TextInput, View } from 'react-native';
 
 const Input = () => {
     return (
-        <View className="p-4">
+        <View>
             <TextInput
-                className="border border-gray-300 rounded-md p-2"
-                placeholder="Enter text"
+                className="border-1 border-black rounded-md p-2"
+                placeholder="Nebulon Input"
             />
         </View>
     );
@@ -184,8 +185,8 @@ export default Input;`,
         render: <Comp.NebulonInput />,
       },
       {
-        name: "Outlined Input",
-        description: "An input box with an outlined border.",
+        name: "Earth Input",
+        description: "An input box with a bottom border.",
         code: `import React from 'react';
 import { TextInput, View, StyleSheet } from 'react-native';
 
@@ -194,7 +195,7 @@ const Input = () => {
         <View style={styles.container}>
             <TextInput
                 style={styles.input}
-                placeholder="Outlined Input"
+                placeholder="Earth Input"
             />
         </View>
     );
@@ -202,12 +203,11 @@ const Input = () => {
 
 const styles = StyleSheet.create({
     container: {
-        padding: 10,
+        width: 250,
     },
     input: {
-        borderWidth: 2,
-        borderColor: '#007BFF',
-        borderRadius: 5,
+        borderBottomWidth: 1,
+        borderColor: '#000000',
         padding: 10,
     },
 });
@@ -218,22 +218,17 @@ import { TextInput, View } from 'react-native';
 
 const Input = () => {
     return (
-        <View className="p-4">
+        <View>
             <TextInput
-                className="border-2 border-blue-500 rounded-md p-2"
-                placeholder="Outlined Input"
+                className="border-1 border-b border-b-black p-2"
+                placeholder="Earth Input"
             />
         </View>
     );
 };
 
 export default Input;`,
-        render: (
-          <input
-            className="border-2 border-blue-500 rounded-md p-2"
-            placeholder="Enter text"
-          />
-        ),
+        render: <Comp.EarthInput />,
       },
     ],
   },
