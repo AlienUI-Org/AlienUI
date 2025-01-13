@@ -89,7 +89,7 @@ import { Feather } from "@expo/vector-icons";
 
 const Alert = () => {
   return (
-    <View className="rounded-xl border border-gray-100 bg-white p-4">
+    <View className="rounded-xl border border-gray-300 bg-white p-4">
       <View className="flex flex-row items-start gap-4">
         <Feather name="check-circle" size={24} color="#16a34a" />
         <View className="flex-1">
@@ -106,6 +106,65 @@ const Alert = () => {
 export default Alert;
 `,
         render: <Comp.GalaxyAlert />,
+      },
+      {
+        name: "Krythar Wail Alert",
+        description:
+          "An alien alert for urgent and critical issues in the galaxy",
+        code: `import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+
+const Alert = () => {
+  return (
+    <View style={styles.alertContainer}>
+      <Text style={styles.alertTitle}>Krythar Wail</Text>
+      <Text style={styles.alertMessage}>
+        Something is wrong. There is a critical error.
+      </Text>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  alertContainer: {
+    borderRadius: 8,
+    borderLeftWidth: 4,
+    borderLeftColor: "#ef4444",
+    backgroundColor: "#fef2f2",
+    padding: 16,
+  },
+  alertTitle: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#991b1b",
+    marginBottom: 8,
+  },
+  alertMessage: {
+    fontSize: 14,
+    color: "#b91c1c",
+    lineHeight: 15,
+  },
+});
+
+export default Alert;
+`,
+        code2: `import React from "react";
+import { View, Text } from "react-native";
+
+const Alert = () => {
+  return (
+    <View className="rounded-xl border-l-4 border-red-500 bg-red-50 p-4">
+      <Text className="text-lg font-bold text-red-800">Krythar Wail</Text>
+      <Text className="mt-1 text-sm text-red-700">
+        Something is wrong. There is a critical error.
+      </Text>
+    </View>
+  );
+};
+
+export default Alert;
+`,
+        render: <Comp.KrytharWailAlert />,
       },
     ],
   },

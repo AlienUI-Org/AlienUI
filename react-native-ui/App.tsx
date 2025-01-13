@@ -5,6 +5,7 @@ import Input from "./components/Input/NebulonInput";
 import EarthInput from "./components/Input/EarthInput";
 import GalaxyBadge from "./components/Badge/GalaxyBadge";
 import Alert from "./components/Alert/GalaxyAlert";
+import KrytharWailAlert from "./components/Alert/KrytharWailAlert";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
       <EarthInput />
       <GalaxyBadge />
       <Alert />
+      <KrytharWailAlert />
     </View>
   );
 }

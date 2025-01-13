@@ -3,7 +3,7 @@ import { FaCheckCircle } from "react-icons/fa";
 
 function GalaxyAlert() {
   return (
-    <div className="rounded-xl border border-gray-100 bg-white p-4 w-[250px]">
+    <div className="rounded-xl border border-gray-300 bg-white p-4 w-[250px]">
       <div className="flex items-start gap-2">
         <FaCheckCircle className="text-green-600 w-5 h-5" />
         <div className="flex-1">

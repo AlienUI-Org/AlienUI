@@ -4,6 +4,7 @@ import NebulonInput from "@/components/comp/Input/NebulonInput";
 import EarthInput from "@/components/comp/Input/EarthInput";
 import GalaxyBadge from "@/components/comp/Badge/GalaxyBadge";
 import GalaxyAlert from "@/components/comp/Alert/GalaxyAlert";
+import KrytharWailAlert from "@/components/comp/Alert/KrytharWailAlert";
 
 export const Comp = {
   EarthButton,
@@ -12,4 +13,5 @@ export const Comp = {
   EarthInput,
   GalaxyBadge,
   GalaxyAlert,
+  KrytharWailAlert,
 };
