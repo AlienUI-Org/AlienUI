@@ -31,7 +31,7 @@ export const components: Components = {
     variants: [
       {
         name: "Galaxy Alert",
-        description: "An alien alert for galactic notifications",
+        description: "An galactic alert for notifications",
         code: `import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Feather } from "@expo/vector-icons";
@@ -110,7 +110,7 @@ export default Alert;
       {
         name: "Krythar Wail Alert",
         description:
-          "An alien alert for urgent and critical issues in the galaxy",
+          "An galactic alert for urgent and critical issues in the galaxy",
         code: `import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
@@ -168,8 +168,70 @@ export default Alert;
       },
     ],
   },
-  badge: {
+  avatar: {
     id: 2,
+    name: "Avatar",
+    icon: AlienUIIcons.AlienSkull,
+    description: "A celestial avatar for profile representation",
+    variants: [
+      {
+        name: "Galaxy Avatar",
+        description: "An avatar for identification",
+        code: `import React from "react";
+import { View, Image, StyleSheet } from "react-native";
+
+const Avatar = () => {
+  return (
+    <View style={styles.avatarContainer}>
+      <Image
+        source={require("../../assets/images/alien1.avif")}
+        style={styles.avatarImage}
+      />
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  avatarContainer: {
+    width: 60,
+    height: 60,
+    borderRadius: 40,
+    justifyContent: "center",
+    alignItems: "center",
+    overflow: "hidden",
+  },
+  avatarImage: {
+    width: "100%",
+    height: "100%",
+    borderRadius: 40,
+  },
+});
+
+export default Avatar;
+
+`,
+        code2: `import React from "react";
+import { View, Image } from "react-native";
+
+const Avatar = () => {
+  return (
+    <View className="w-16 h-16 rounded-full bg-gray-200 flex justify-center items-center overflow-hidden">
+      <Image
+        source={require("../../assets/images/alien1.avif")}
+        className="w-full h-full object-cover"
+      />
+    </View>
+  );
+};
+
+export default Avatar;
+`,
+        render: <Comp.GalaxyAvatar />,
+      },
+    ],
+  },
+  badge: {
+    id: 3,
     name: "Badge",
     icon: AlienUIIcons.AlienFire,
     description: "A customizable badge component with multiple variants",
@@ -222,7 +284,7 @@ export default Badge;
     ],
   },
   button: {
-    id: 3,
+    id: 4,
     name: "Button",
     icon: AlienUIIcons.AlienReddit,
     description:
@@ -330,7 +392,7 @@ export default Button;`,
     ],
   },
   input: {
-    id: 4,
+    id: 5,
     name: "Input",
     icon: AlienUIIcons.AlienEgg,
     description: "A customizable input component for capturing user data.",
