@@ -27,7 +27,7 @@ function Header() {
             <Link href="">
               <FaXTwitter size={24} />
             </Link>
-            <Link href="https://github.com/khaymanii/jsfusion">
+            <Link href="https://github.com/khaymanii/alienui">
               <FaGithub size={24} />
             </Link>
             {/*/<span className="font-medium text-md">3 ⭐</span> */}
