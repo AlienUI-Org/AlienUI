@@ -398,7 +398,7 @@ export default Button;`,
     name: "Checkbox",
     icon: AlienUIIcons.AlienStare,
     description:
-      "A customizable checkbox component with multiple variants to suit different use cases.",
+      "A customizable checkbox component with variants.",
     variants: [
       {
         name: "Galaxy Checkbox",

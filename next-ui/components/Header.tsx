@@ -24,10 +24,10 @@ function Header() {
             <Link href="https://linkedin.com/company/alien-ui">
               <FaLinkedin size={24} />
             </Link>
-            <Link href="">
+            <Link href="https://x.com/alienui">
               <FaXTwitter size={24} />
             </Link>
-            <Link href="https://github.com/khaymanii/jsfusion">
+            <Link href="https://github.com/khaymanii/alienui">
               <FaGithub size={24} />
             </Link>
             {/*/<span className="font-medium text-md">3 ⭐</span> */}
