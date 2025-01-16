@@ -9,6 +9,7 @@ import GalaxyAvatar from "@/components/comp/Avatar/GalaxyAvatar";
 import GalaxyCheckbox from "@/components/comp/Checkbox/GalaxyCheckbox";
 import GalaxyBreadcrumb from "@/components/comp/BreadCrumbs/GalaxyBreadcrumb";
 import EarthBreadcrumb from "@/components/comp/BreadCrumbs/EarthBreadcrumb";
+import GalaxyAccordion from "@/components/comp/Accordion/GalaxyAccordion";
 
 export const Comp = {
   EarthButton,
@@ -22,4 +23,5 @@ export const Comp = {
   GalaxyCheckbox,
   GalaxyBreadcrumb,
   EarthBreadcrumb,
+  GalaxyAccordion,
 };

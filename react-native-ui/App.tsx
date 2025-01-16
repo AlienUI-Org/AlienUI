@@ -1,4 +1,4 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, ScrollView } from "react-native";
 import GalaxyButton from "./components/Button/GalaxyButton";
 import EarthButton from "./components/Button/EarthButton";
 import Input from "./components/Input/NebulonInput";
@@ -10,10 +10,11 @@ import GalaxyAvatar from "./components/Avatar/GalaxyAvatar";
 import GalaxyCheckbox from "./components/Checkbox/GalaxyCheckbox";
 import GalaxyBreadcrumb from "./components/BreadCrumbs/GalaxyBreadcrumb";
 import EarthBreadcrumb from "./components/BreadCrumbs/EarthBreadcrumb";
+import GalaxyAccordion from "./components/Accordion/GalaxyAccordion";
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <GalaxyButton />
       <EarthButton />
       <Input />
@@ -25,7 +26,8 @@ export default function App() {
       <GalaxyCheckbox />
       <GalaxyBreadcrumb />
       <EarthBreadcrumb />
-    </View>
+      <GalaxyAccordion />
+    </ScrollView>
   );
 }
 
