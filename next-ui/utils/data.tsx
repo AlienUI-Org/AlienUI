@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
     borderColor: "#e5e7eb",
     backgroundColor: "#ffffff",
     padding: 16,
+    width: 250,
   },
   contentContainer: {
     flexDirection: "row",
@@ -89,7 +90,7 @@ import { Feather } from "@expo/vector-icons";
 
 const Alert = () => {
   return (
-    <View className="rounded-xl border border-gray-300 bg-white p-4">
+    <View className="rounded-xl border border-gray-300 bg-white p-4 w-[250px]">
       <View className="flex flex-row items-start gap-4">
         <Feather name="check-circle" size={24} color="#16a34a" />
         <View className="flex-1">
@@ -132,6 +133,7 @@ const styles = StyleSheet.create({
     borderLeftColor: "#ef4444",
     backgroundColor: "#fef2f2",
     padding: 16,
+    width: 250,
   },
   alertTitle: {
     fontSize: 16,
@@ -153,7 +155,7 @@ import { View, Text } from "react-native";
 
 const Alert = () => {
   return (
-    <View className="rounded-xl border-l-4 border-red-500 bg-red-50 p-4">
+    <View className="rounded-xl border-l-4 border-red-500 bg-red-50 p-4 w-[250px]">
       <Text className="text-lg font-bold text-red-800">Krythar Wail</Text>
       <Text className="mt-1 text-sm text-red-700">
         Something is wrong. There is a critical error.
@@ -391,8 +393,114 @@ export default Button;`,
       },
     ],
   },
-  input: {
+  checkbox: {
     id: 5,
+    name: "Checkbox",
+    icon: AlienUIIcons.AlienStare,
+    description:
+      "A customizable checkbox component with multiple variants to suit different use cases.",
+    variants: [
+      {
+        name: "Galaxy Checkbox",
+        description: "An intergalactic checkbox for cosmic forms.",
+        code: `import React from "react";
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+
+const CheckBox = () => {
+  return (
+    <View style={styles.fieldset}>
+      <Text style={styles.legend}>Checkboxes</Text>
+      <View style={styles.optionsContainer}>
+        <TouchableOpacity style={styles.option} activeOpacity={0.7}>
+          <View style={styles.checkbox}></View>
+          <Text style={styles.label}>John Clapton</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.option} activeOpacity={0.7}>
+          <View style={styles.checkbox}></View>
+          <Text style={styles.label}>Peter Mayer</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.option} activeOpacity={0.7}>
+          <View style={styles.checkbox}></View>
+          <Text style={styles.label}>Eric King</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  fieldset: {
+    margin: 16,
+  },
+  legend: {
+    position: "absolute",
+    left: -9999,
+    top: -9999,
+    color: "transparent",
+  },
+  optionsContainer: {
+    gap: 8,
+  },
+  option: {
+    flexDirection: "row",
+    alignItems: "center",
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    borderRadius: 4,
+    backgroundColor: "#fff",
+  },
+  checkbox: {
+    width: 20,
+    height: 20,
+    marginRight: 12,
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: "#D1D5DB",
+    backgroundColor: "#fff",
+  },
+  label: {
+    fontSize: 16,
+    fontWeight: "500",
+    color: "#1F2937",
+  },
+});
+
+export default CheckBox;
+;
+`,
+        code2: `import React from "react";
+import { View, Text, Pressable } from "react-native";
+
+const CheckBox = () => {
+  return (
+    <View className="p-4">
+      <Text className="sr-only">Checkboxes</Text>
+      <View className="space-y-2">
+        <Pressable className="flex flex-row items-center gap-4 p-2 rounded bg-white">
+          <View className="w-5 h-5 border border-gray-300 rounded bg-white"></View>
+          <Text className="text-base font-medium text-gray-900">John Clapton</Text>
+        </Pressable>
+        <Pressable className="flex flex-row items-center gap-4 p-2 rounded bg-white">
+          <View className="w-5 h-5 border border-gray-300 rounded bg-white"></View>
+          <Text className="text-base font-medium text-gray-900">Peter Mayer</Text>
+        </Pressable>
+        <Pressable className="flex flex-row items-center gap-4 p-2 rounded bg-white">
+          <View className="w-5 h-5 border border-gray-300 rounded bg-white"></View>
+          <Text className="text-base font-medium text-gray-900">Eric King</Text>
+        </Pressable>
+      </View>
+    </View>
+  );
+};
+
+export default CheckBox;
+`,
+        render: <Comp.GalaxyCheckbox />,
+      },
+    ],
+  },
+  input: {
+    id: 6,
     name: "Input",
     icon: AlienUIIcons.AlienEgg,
     description: "A customizable input component for capturing user data.",

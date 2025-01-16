@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fef2f2",
     padding: 16,
     marginTop: 10,
+    width: 250,
   },
   alertTitle: {
     fontSize: 16,

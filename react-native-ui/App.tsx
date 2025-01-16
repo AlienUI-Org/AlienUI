@@ -7,6 +7,7 @@ import GalaxyBadge from "./components/Badge/GalaxyBadge";
 import Alert from "./components/Alert/GalaxyAlert";
 import KrytharWailAlert from "./components/Alert/KrytharWailAlert";
 import GalaxyAvatar from "./components/Avatar/GalaxyAvatar";
+import GalaxyCheckbox from "./components/Checkbox/GalaxyCheckbox";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
       <Alert />
       <KrytharWailAlert />
       <GalaxyAvatar />
+      <GalaxyCheckbox />
     </View>
   );
 }
@@ -27,6 +29,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    margin: 15,
   },
 });

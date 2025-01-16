@@ -2,7 +2,7 @@
 import React from "react";
 import { useParams } from "next/navigation";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { duotoneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { duotoneSpace } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { BsClipboard2Heart } from "react-icons/bs";
 import { components } from "@/utils/data";
 
@@ -13,7 +13,7 @@ const copyToClipboard = (text: string) => {
 
 function Page() {
   const params = useParams();
-  const id = params.page; // Extracting the dynamic parameter from the URL
+  const id = params.page;
 
   const component = Object.values(components).find((comp) => comp.name === id);
 
@@ -48,8 +48,8 @@ function Page() {
                 <div className="relative rounded-md">
                   <SyntaxHighlighter
                     language="jsx"
-                    style={duotoneDark}
-                    className="rounded-lg h-[400px]"
+                    style={duotoneSpace}
+                    className="rounded-lg h-[400px] scroll-none"
                   >
                     {variant.code}
                   </SyntaxHighlighter>
@@ -63,7 +63,7 @@ function Page() {
                 <div className="relative rounded-md">
                   <SyntaxHighlighter
                     language="jsx"
-                    style={duotoneDark}
+                    style={duotoneSpace}
                     className="rounded-lg h-[400px]"
                   >
                     {variant.code2}

@@ -6,6 +6,7 @@ import GalaxyBadge from "@/components/comp/Badge/GalaxyBadge";
 import GalaxyAlert from "@/components/comp/Alert/GalaxyAlert";
 import KrytharWailAlert from "@/components/comp/Alert/KrytharWailAlert";
 import GalaxyAvatar from "@/components/comp/Avatar/GalaxyAvatar";
+import GalaxyCheckbox from "@/components/comp/Checkbox/GalaxyCheckbox";
 
 export const Comp = {
   EarthButton,
@@ -16,4 +17,5 @@ export const Comp = {
   GalaxyAlert,
   KrytharWailAlert,
   GalaxyAvatar,
+  GalaxyCheckbox,
 };
