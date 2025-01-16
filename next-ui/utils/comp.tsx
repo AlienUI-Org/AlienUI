@@ -7,6 +7,8 @@ import GalaxyAlert from "@/components/comp/Alert/GalaxyAlert";
 import KrytharWailAlert from "@/components/comp/Alert/KrytharWailAlert";
 import GalaxyAvatar from "@/components/comp/Avatar/GalaxyAvatar";
 import GalaxyCheckbox from "@/components/comp/Checkbox/GalaxyCheckbox";
+import GalaxyBreadcrumb from "@/components/comp/BreadCrumbs/GalaxyBreadcrumb";
+import EarthBreadcrumb from "@/components/comp/BreadCrumbs/EarthBreadcrumb";
 
 export const Comp = {
   EarthButton,
@@ -18,4 +20,6 @@ export const Comp = {
   KrytharWailAlert,
   GalaxyAvatar,
   GalaxyCheckbox,
+  GalaxyBreadcrumb,
+  EarthBreadcrumb,
 };

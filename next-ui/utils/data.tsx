@@ -285,8 +285,194 @@ export default Badge;
       },
     ],
   },
-  button: {
+  breadcrumb: {
     id: 4,
+    name: "Breadcrumb",
+    icon: AlienUIIcons.AlienWiAlien,
+    description:
+      "A customizable breadcrumb component with different variants for navigation.",
+    variants: [
+      {
+        name: "Galaxy Breadcrumb",
+        description: "A breadcrumb for navigation in the galaxy.",
+        code: `import React from "react";
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+
+const Breadcrumb = () => {
+  return (
+    <View style={styles.container} accessibilityLabel="Breadcrumb">
+      <TouchableOpacity>
+        <Text style={styles.linkText}>Home</Text>
+      </TouchableOpacity>
+      <Ionicons
+        name="chevron-forward"
+        size={12}
+        color="black"
+        style={styles.separator}
+      />
+      <TouchableOpacity>
+        <Text style={styles.linkText}>Nebula</Text>
+      </TouchableOpacity>
+      <Ionicons
+        name="chevron-forward"
+        size={12}
+        color="black"
+        style={styles.separator}
+      />
+      <TouchableOpacity>
+        <Text style={styles.linkText}>Galaxy</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  separator: {
+    marginHorizontal: 4,
+    marginTop: 6,
+  },
+  linkText: {
+    color: "gray",
+    fontSize: 14,
+    textDecorationLine: "none",
+  },
+});
+
+export default Breadcrumb;
+`,
+        code2: `import React from "react";
+import { View, Text, TouchableOpacity } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+
+const Breadcrumb = () => {
+  return (
+    <View className="flex flex-row items-center">
+      <TouchableOpacity>
+        <Text className="text-gray-600 text-sm">Home</Text>
+      </TouchableOpacity>
+      <Ionicons
+        name="chevron-forward"
+        size={12}
+        color="black"
+        className="mx-1 mt-[6px]"
+      />
+      <TouchableOpacity>
+        <Text className="text-gray-600 text-sm">Nebula</Text>
+      </TouchableOpacity>
+      <Ionicons
+        name="chevron-forward"
+        size={12}
+        color="black"
+        className="mx-1 mt-[6px]"
+      />
+      <TouchableOpacity>
+        <Text className="text-gray-600 text-sm">Galaxy</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+export default Breadcrumb;
+`,
+        render: <Comp.GalaxyBreadcrumb />,
+      },
+      {
+        name: "Earth Breadcrumb",
+        description: "A breadcrumb for navigating on the earth surface.",
+        code: `import React from "react";
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+
+const Breadcrumb = () => {
+  return (
+    <View style={styles.container} accessibilityLabel="Breadcrumb">
+      <TouchableOpacity>
+        <Text style={styles.linkText}>Home</Text>
+      </TouchableOpacity>
+      <MaterialCommunityIcons
+        name="slash-forward"
+        size={12}
+        color="black"
+        style={styles.separator}
+      />
+      <TouchableOpacity>
+        <Text style={styles.linkText}>Nebula</Text>
+      </TouchableOpacity>
+      <MaterialCommunityIcons
+        name="slash-forward"
+        size={12}
+        color="black"
+        style={styles.separator}
+      />
+      <TouchableOpacity>
+        <Text style={styles.linkText}>Galaxy</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  separator: {
+    marginHorizontal: 4,
+    marginTop: 4,
+  },
+  linkText: {
+    color: "gray",
+    fontSize: 14,
+    textDecorationLine: "none",
+  },
+});
+
+export default Breadcrumb;
+`,
+        code2: `import React from "react";
+import { View, Text, TouchableOpacity } from "react-native";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+
+const Breadcrumb = () => {
+  return (
+    <View className="flex flex-row items-center">
+      <TouchableOpacity>
+        <Text className="text-gray-600 text-sm">Home</Text>
+      </TouchableOpacity>
+      <MaterialCommunityIcons
+        name="slash-forward"
+        size={12}
+        color="black"
+        className="mx-1 mt-1"
+      />
+      <TouchableOpacity>
+        <Text className="text-gray-600 text-sm">Nebula</Text>
+      </TouchableOpacity>
+      <MaterialCommunityIcons
+        name="slash-forward"
+        size={12}
+        color="black"
+        className="mx-1 mt-1"
+      />
+      <TouchableOpacity>
+        <Text className="text-gray-600 text-sm">Galaxy</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+export default Breadcrumb;`,
+        render: <Comp.EarthBreadcrumb />,
+      },
+    ],
+  },
+  button: {
+    id: 5,
     name: "Button",
     icon: AlienUIIcons.AlienReddit,
     description:
@@ -394,11 +580,10 @@ export default Button;`,
     ],
   },
   checkbox: {
-    id: 5,
+    id: 6,
     name: "Checkbox",
     icon: AlienUIIcons.AlienStare,
-    description:
-      "A customizable checkbox component with variants.",
+    description: "A customizable checkbox component with variants.",
     variants: [
       {
         name: "Galaxy Checkbox",
@@ -500,7 +685,7 @@ export default CheckBox;
     ],
   },
   input: {
-    id: 6,
+    id: 7,
     name: "Input",
     icon: AlienUIIcons.AlienEgg,
     description: "A customizable input component for capturing user data.",

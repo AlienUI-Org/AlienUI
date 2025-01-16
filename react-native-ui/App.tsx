@@ -8,6 +8,8 @@ import Alert from "./components/Alert/GalaxyAlert";
 import KrytharWailAlert from "./components/Alert/KrytharWailAlert";
 import GalaxyAvatar from "./components/Avatar/GalaxyAvatar";
 import GalaxyCheckbox from "./components/Checkbox/GalaxyCheckbox";
+import GalaxyBreadcrumb from "./components/BreadCrumbs/GalaxyBreadcrumb";
+import EarthBreadcrumb from "./components/BreadCrumbs/EarthBreadcrumb";
 
 export default function App() {
   return (
@@ -21,6 +23,8 @@ export default function App() {
       <KrytharWailAlert />
       <GalaxyAvatar />
       <GalaxyCheckbox />
+      <GalaxyBreadcrumb />
+      <EarthBreadcrumb />
     </View>
   );
 }
