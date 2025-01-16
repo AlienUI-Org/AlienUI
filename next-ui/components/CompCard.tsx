@@ -11,7 +11,7 @@ function CompCard({ name, icon }: CompCardProps) {
   const router = useRouter();
 
   const handleClick = () => {
-    router.push(`/comp/compdetails/${name}`);
+    router.push(`/compdetails/${name}`);
   };
   return (
     <div
