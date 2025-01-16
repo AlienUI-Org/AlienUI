@@ -20,7 +20,7 @@ function Hero() {
             mobile app.
           </p>
           <div className="flex items-center gap-3 justify-center mt-6 mb-4">
-            <p> ✅ No installation</p>
+            <p> ✅ No npm installation</p>
             <p>✅ No configuration</p>
             <p>✅ No setup</p>
           </div>

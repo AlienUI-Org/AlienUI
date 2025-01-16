@@ -13,7 +13,7 @@ function FaQ() {
     {
       title: "Is AlienUI a component library?",
       content:
-        "No, It is a UI Kit. You do not install it as a dependency. It is not available or distributed via npm. Pick the components you need. " +
+        "Yes, It is a self-hosted component library but you do not install it as a dependency. It is not available via npm like other traditional component library. Pick the components you need. " +
         "Copy and paste the code into your project and customize to your needs. The code is yours.",
     },
     {
