@@ -1,5 +1,4 @@
 "use client";
-import Suggestion from "@/components/Suggestion";
 import React from "react";
 import CompCard from "@/components/CompCard";
 import { components } from "@/utils/data";
@@ -44,7 +43,6 @@ function page() {
           return <CompCard key={comp.id} name={comp.name} icon={comp.icon} />;
         })}
       </div>
-      <Suggestion />
     </section>
   );
 }
