@@ -57,7 +57,7 @@ function Footer() {
         {" "}
         <p className="text-white text-center mt-8">
           Created by{" "}
-          <span className="text-white font-semibold">AlienUI team</span>
+          <span className="text-white font-semibold">Kenneth Akpo</span>
         </p>
         <GiAlienStare size={24} className="text-white" />
       </div>
