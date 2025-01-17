@@ -1,12 +1,14 @@
 import { StyleSheet, ScrollView } from "react-native";
-import GalaxyStep from "./components/Step/GalaxyStep";
 import GalaxyTab from "./components/Tab/GalaxyTab";
+import EarthTab from "./components/Tab/EarthTab";
+import GalaxyCard from "./components/Card/GalaxyCard";
 
 export default function App() {
   return (
     <ScrollView style={styles.container}>
-      <GalaxyStep />
       <GalaxyTab />
+      <EarthTab />
+      <GalaxyCard />
     </ScrollView>
   );
 }

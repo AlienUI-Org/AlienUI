@@ -2,7 +2,7 @@ import { StyleSheet, View } from "react-native";
 import React from "react";
 import AntDesign from "@expo/vector-icons/AntDesign";
 
-const GalaxyTab = () => {
+const EarthTab = () => {
   return (
     <View style={styles.container}>
       <View style={styles.iconContainer}>
@@ -35,14 +35,14 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-around",
-    borderRadius: 30,
+    borderRadius: 4,
     paddingVertical: 6,
     backgroundColor: "#ba8463",
   },
   active: {
-    borderRadius: 30,
     width: 50,
     height: 50,
+    borderRadius: 4,
     backgroundColor: "#ffffff",
     color: "#ba8463",
     padding: 4,
@@ -50,5 +50,4 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 });
-
-export default GalaxyTab;
+export default EarthTab;
