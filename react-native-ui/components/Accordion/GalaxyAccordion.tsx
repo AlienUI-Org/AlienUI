@@ -98,9 +98,10 @@ function Accordion() {
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
+    alignItems: "center",
   },
   accordionContainer: {
-    width: "100%",
+    width: "90%",
     overflow: "hidden",
   },
   accordionItem: {

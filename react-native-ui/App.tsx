@@ -1,14 +1,10 @@
 import { StyleSheet, ScrollView } from "react-native";
-import GalaxyAccordion from "./components/Accordion/GalaxyAccordion";
-import GalaxyPagination from "./components/Pagination/GalaxyPagination";
-import MarsPagination from "./components/Pagination/MarsPagination";
+import GalaxyStep from "./components/Step/GalaxyStep";
 
 export default function App() {
   return (
     <ScrollView style={styles.container}>
-      <GalaxyAccordion />
-      <GalaxyPagination />
-      <MarsPagination />
+      <GalaxyStep />
     </ScrollView>
   );
 }
