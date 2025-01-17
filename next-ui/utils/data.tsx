@@ -845,7 +845,7 @@ export default Button;`,
 import React from "react";
 import AntDesign from "@expo/vector-icons/AntDesign";
 
-const GalaxyCard = () => {
+const Card = () => {
   return (
     <View style={styles.container}>
       <View style={styles.cardContainer}>
@@ -886,7 +886,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default GalaxyCard;
+export default Card;
 `,
         code2: `import React from "react";
 import { FaChartBar } from "react-icons/fa";
