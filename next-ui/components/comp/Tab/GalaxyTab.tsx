@@ -9,8 +9,8 @@ import {
 
 const GalaxyTab = () => {
   return (
-    <div className="flex justify-center">
-      <div className="flex w-11/12 items-center justify-around bg-[#ba8463] rounded-full py-2">
+    <div className="">
+      <div className="flex w-[400px] items-center justify-around bg-[#ba8463] rounded-full py-2">
         <div className="bg-white text-[#ba8463] rounded-full w-12 h-12 flex items-center justify-center">
           <AiOutlineHome size={24} />
         </div>
