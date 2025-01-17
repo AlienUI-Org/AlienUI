@@ -11,13 +11,13 @@ function Hero() {
             AlienUI
           </h1>
           <p className="text-brown-800 text-xl text-center font-semibold">
-            Free Open Source NativeWind Components for React Native{" "}
+            Free open source Nativewind components for React native{" "}
           </p>
           <p className="mt-4 text-lg text-gray-800 text-center font-medium lg:w-[1000px]">
-            Alien UI is a collection of free NativeWind components designed
-            specifically for React Native mobile apps. With a versatile range of
-            components, you can create stunning user interfaces for your next
-            mobile app.
+            A component library of reusable Nativewind components designed
+            specifically for React Native mobile apps. AlienUI is the shadcnui
+            of mobile app development. With a versatile range of components, you
+            can create stunning user interfaces for your next mobile app.
           </p>
           <div className="flex items-center gap-3 justify-center mt-6 mb-4">
             <p> ✅ No npm installation</p>

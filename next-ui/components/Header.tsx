@@ -14,8 +14,7 @@ function Header() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/">
-              {" "}
-              <span className="text-3xl font-semibold text-gray-800">Aui</span>
+              <h2 className="text-3xl font-semibold">Aui</h2>
             </Link>
           </div>
 
