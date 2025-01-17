@@ -2,7 +2,7 @@ import { StyleSheet, View } from "react-native";
 import React from "react";
 import AntDesign from "@expo/vector-icons/AntDesign";
 
-const GalaxyTab = () => {
+const Tab = () => {
   return (
     <View style={styles.container}>
       <View style={styles.iconContainer}>
@@ -51,4 +51,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default GalaxyTab;
+export default Tab;

@@ -41,7 +41,7 @@ import {
   ScrollView,
 } from "react-native";
 
-function Accordion() {
+const Accordion = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
   const accordionItems = [
@@ -178,7 +178,7 @@ export default Accordion;
         code2: `import React, { useState } from "react";
 import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 
-function Accordion() {
+const Accordion = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
   const accordionItems = [
@@ -832,8 +832,86 @@ export default Button;`,
       },
     ],
   },
-  checkbox: {
+  card: {
     id: 7,
+    name: "Card",
+    icon: AlienUIIcons.AlienAlienware,
+    description: "A customizable card component with different variant.",
+    variants: [
+      {
+        name: "Galaxy Card",
+        description: "A ticket into the galaxy.",
+        code: `import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import AntDesign from "@expo/vector-icons/AntDesign";
+
+const GalaxyCard = () => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.cardContainer}>
+        <View style={styles.iconContainer}>
+          <AntDesign name="barschart" size={24} color="#ba8463" />
+        </View>
+        <Text style={styles.text}>Bar chart showing energy usage</Text>
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    alignItems: "center",
+  },
+  cardContainer: {
+    width: "60%",
+    height: 170,
+    borderRadius: 20,
+    backgroundColor: "#fdf8f6",
+    padding: 18,
+  },
+  iconContainer: {
+    borderRadius: 30,
+    width: 50,
+    height: 50,
+    backgroundColor: "#fff",
+    color: "#24150b",
+    padding: 4,
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 30,
+  },
+  text: {
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+});
+
+export default GalaxyCard;
+`,
+        code2: `import React from "react";
+import { FaChartBar } from "react-icons/fa";
+
+const Card = () => {
+  return (
+    <div className="flex justify-center">
+      <div className="w-3/5 h-44 rounded-2xl bg-[#fdf8f6] p-6">
+        <div className="flex items-center justify-center w-12 h-12 bg-white text-[#24150b] rounded-full mb-6">
+          <FaChartBar className="text-[#ba8463]" size={24} />
+        </div>
+        <p className="text-lg font-bold">Bar chart showing energy usage</p>
+      </div>
+    </div>
+  );
+};
+
+export default Card;
+`,
+        render: <Comp.GalaxyCard />,
+      },
+    ],
+  },
+  checkbox: {
+    id: 8,
     name: "Checkbox",
     icon: AlienUIIcons.AlienStare,
     description: "A customizable checkbox component with variants.",
@@ -938,7 +1016,7 @@ export default CheckBox;
     ],
   },
   input: {
-    id: 8,
+    id: 9,
     name: "Input",
     icon: AlienUIIcons.AlienEgg,
     description: "A customizable input component for capturing user data.",
@@ -1039,7 +1117,7 @@ export default Input;`,
     ],
   },
   pagination: {
-    id: 9,
+    id: 10,
     name: "Pagination",
     icon: AlienUIIcons.AlienCrackedAlienSkull,
     description: "A customizable pagination component.",
@@ -1226,6 +1304,193 @@ const Pagination = () => {
 export default Pagination;
 `,
         render: <Comp.MarsPagination />,
+      },
+    ],
+  },
+  tab: {
+    id: 11,
+    name: "Tab",
+    icon: AlienUIIcons.AlienRiAliensLine,
+    description: "A customizable tab navigation component with variants.",
+    variants: [
+      {
+        name: "Galaxy Tab",
+        description: "A default galactic tab navigator.",
+        code: `import React from "react";
+import { StyleSheet, View } from "react-native";
+import AntDesign from "@expo/vector-icons/AntDesign";
+
+const Tab = () => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.iconContainer}>
+        <View style={styles.active}>
+          <AntDesign name="home" size={24} color="#ba8463" />
+        </View>
+        <View>
+          <AntDesign name="contacts" size={24} color="white" />
+        </View>
+        <View>
+          <AntDesign name="shoppingcart" size={24} color="white" />
+        </View>
+        <View>
+          <AntDesign name="barschart" size={24} color="white" />
+        </View>
+        <View>
+          <AntDesign name="setting" size={24} color="white" />
+        </View>
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    alignItems: "center",
+  },
+  iconContainer: {
+    width: "90%",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-around",
+    borderRadius: 30,
+    paddingVertical: 6,
+    backgroundColor: "#ba8463",
+  },
+  active: {
+    borderRadius: 30,
+    width: 50,
+    height: 50,
+    backgroundColor: "#ffffff",
+    color: "#ba8463",
+    padding: 4,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});
+
+export default Tab;
+`,
+        code2: `import React from "react";
+import { View, Text } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
+
+const Tab = () => {
+  return (
+    <View className="flex items-center">
+      <View className="flex-row w-11/12 items-center justify-around rounded-full bg-[#ba8463] py-2">
+        <View className="bg-white text-[#ba8463] rounded-full w-12 h-12 flex items-center justify-center">
+          <AntDesign name="home" size={24} color="#ba8463" />
+        </View>
+        <View className="text-white">
+          <AntDesign name="contacts" size={24} color="white" />
+        </View>
+        <View className="text-white">
+          <AntDesign name="shoppingcart" size={24} color="white" />
+        </View>
+        <View className="text-white">
+          <AntDesign name="barschart" size={24} color="white" />
+        </View>
+        <View className="text-white">
+          <AntDesign name="setting" size={24} color="white" />
+        </View>
+      </View>
+    </View>
+  );
+};
+
+export default Tab;
+`,
+        render: <Comp.GalaxyTab />,
+      },
+      {
+        name: "Earth Tab",
+        description: "Tab navigator on the earth surface.",
+        code: `import React from "react";
+import { StyleSheet, View } from "react-native";
+import AntDesign from "@expo/vector-icons/AntDesign";
+
+const Tab = () => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.iconContainer}>
+        <View style={styles.active}>
+          <AntDesign name="home" size={24} color="#ba8463" />
+        </View>
+        <View>
+          <AntDesign name="contacts" size={24} color="white" />
+        </View>
+        <View>
+          <AntDesign name="shoppingcart" size={24} color="white" />
+        </View>
+        <View>
+          <AntDesign name="barschart" size={24} color="white" />
+        </View>
+        <View>
+          <AntDesign name="setting" size={24} color="white" />
+        </View>
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    alignItems: "center",
+  },
+  iconContainer: {
+    width: "90%",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-around",
+    borderRadius: 4,
+    paddingVertical: 6,
+    backgroundColor: "#ba8463",
+  },
+  active: {
+    width: 50,
+    height: 50,
+    borderRadius: 4,
+    backgroundColor: "#ffffff",
+    color: "#ba8463",
+    padding: 4,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});
+export default Tab;
+`,
+        code2: `import React from "react";
+import { View, Text } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
+
+const Tab = () => {
+  return (
+    <View className="flex items-center">
+      <View className="flex-row w-11/12 items-center justify-around rounded-[4px] bg-[#ba8463] py-2">
+        <View className="bg-white text-[#ba8463] rounded-[4px] w-12 h-12 flex items-center justify-center">
+          <AntDesign name="home" size={24} color="#ba8463" />
+        </View>
+        <View className="text-white">
+          <AntDesign name="contacts" size={24} color="white" />
+        </View>
+        <View className="text-white">
+          <AntDesign name="shoppingcart" size={24} color="white" />
+        </View>
+        <View className="text-white">
+          <AntDesign name="barschart" size={24} color="white" />
+        </View>
+        <View className="text-white">
+          <AntDesign name="setting" size={24} color="white" />
+        </View>
+      </View>
+    </View>
+  );
+};
+
+export default Tab;
+`,
+        render: <Comp.EarthTab />,
       },
     ],
   },

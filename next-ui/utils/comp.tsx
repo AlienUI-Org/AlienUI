@@ -13,6 +13,12 @@ import GalaxyAccordion from "@/components/comp/Accordion/GalaxyAccordion";
 import GalaxyPagination from "@/components/comp/Pagination/GalaxyPagination";
 import MarsPagination from "@/components/comp/Pagination/MarsPagination";
 import GalaxyStep from "@/components/comp/Step/GalaxyStep";
+import GalaxyTab from "@/components/comp/Tab/GalaxyTab";
+import EarthTab from "@/components/comp/Tab/EarthTab";
+import GalaxyCard from "@/components/comp/Card/GalaxyCard";
+import EarthCard from "@/components/comp/Card/EarthCard";
+import JupiterCard from "@/components/comp/Card/JupiterCard";
+import PlutoCard from "@/components/comp/Card/PlutoCard";
 
 export const Comp = {
   EarthButton,
@@ -30,4 +36,10 @@ export const Comp = {
   GalaxyPagination,
   MarsPagination,
   GalaxyStep,
+  GalaxyTab,
+  EarthTab,
+  GalaxyCard,
+  EarthCard,
+  JupiterCard,
+  PlutoCard,
 };
