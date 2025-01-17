@@ -8,7 +8,7 @@ import {
 } from "react-native";
 
 function Accordion() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState(null);
 
   const accordionItems = [
     {
@@ -63,7 +63,7 @@ function Accordion() {
     },
   ];
 
-  const toggleAccordion = (index: number) => {
+  const toggleAccordion = (index: any) => {
     setOpenIndex(index === openIndex ? null : index);
   };
 

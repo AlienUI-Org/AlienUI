@@ -27,7 +27,7 @@ export const components: Components = {
     id: 1,
     name: "Accordion",
     icon: AlienUIIcons.AlienRiAliensFill,
-    description: "An accordion component with multiple types",
+    description: "An accordion component",
     variants: [
       {
         name: "Galaxy Accordion",
@@ -42,7 +42,7 @@ import {
 } from "react-native";
 
 function Accordion() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState(null);
 
   const accordionItems = [
     {
@@ -97,7 +97,7 @@ function Accordion() {
     },
   ];
 
-  const toggleAccordion = (index: number) => {
+  const toggleAccordion = (index: any) => {
     setOpenIndex(index === openIndex ? null : index);
   };
 
@@ -174,27 +174,102 @@ const styles = StyleSheet.create({
 
 export default Accordion;
 `,
-        code2: `import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
-import { Feather } from "@expo/vector-icons";
+        code2: `import React, { useState } from "react";
+import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 
-const Alert = () => {
+function Accordion() {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const accordionItems = [
+    {
+      title: "Is AlienUI a component library?",
+      content:
+        "Yes, It is a self-hosted component library but you do not install it as a dependency. It is not available via npm like other traditional component library. Pick the components you need. " +
+        "Copy and paste the code into your project and customize to your needs. The code is yours.",
+    },
+    {
+      title: "Why copy/paste and not packaged as a dependency?",
+      content:
+        "The goal is to give you full control over your components, enabling you to decide their structure and styling. By starting with sensible defaults, you can customize them to fit your needs. Unlike packaged npm components, where styles are tightly coupled to implementation, separating design from functionality ensures flexibility and adaptability.",
+    },
+    {
+      title: "Do you plan to publish it as an npm package?",
+      content: "No. We have no plans to publish it as an npm package.",
+    },
+    {
+      title: "Which frameworks are supported?",
+      content:
+        "You can use any framework that supports React Native. Expo etc.",
+    },
+    {
+      title: "Can I use this in my project?",
+      content:
+        "Yes, you can use AlienUI in your React Native project. The code is yours. But hey, let us know if you do. We'd love to see what you build.",
+    },
+    {
+      title: "Do I need to credit AlienUI?",
+      content:
+        "No, crediting AlienUI is not necessary. However, giving the project a star on GitHub and/or sharing it on Twitter and LinkedIn would be appreciated.",
+    },
+    {
+      title: "How can I support AlienUI?",
+      content:
+        "You can support AlienUI by starring the project on GitHub and/or sharing it on Twitter and LinkedIn. It helps increase the project's visibility.",
+    },
+    {
+      title: "How do I contribute?",
+      content:
+        "You can contribute by adding new components, fixing bugs, or improving the documentation. Please create an issue before starting any work.",
+    },
+    {
+      title: "How do I get updates?",
+      content:
+        "The best way to get updates is by following the project on GitHub and all social media platforms like Twitter, LinkedIn etc. You can also get latest updates by subscribing to our newsletter.",
+    },
+    {
+      title: "Can I request new features for AlienUI?",
+      content:
+        "Yes, you can create a new issue on GitHub to request new features. While not every request will be implemented, they all will be considered.",
+    },
+  ];
+
+  const toggleAccordion = (index: any) => {
+    setOpenIndex(index === openIndex ? null : index);
+  };
+
   return (
-    <View className="rounded-xl border border-gray-300 bg-white p-4 w-[250px]">
-      <View className="flex flex-row items-start gap-4">
-        <Feather name="check-circle" size={24} color="#16a34a" />
-        <View className="flex-1">
-          <Text className="text-lg font-medium text-gray-900">Zeltron Whisper</Text>
-          <Text className="mt-1 text-sm text-gray-700">
-            Everything is on track.
-          </Text>
-        </View>
+    <ScrollView className="flex-1">
+      <View className="w-full">
+        {accordionItems.map((item, index) => (
+          <View key={index} className="border-b border-gray-300">
+            <TouchableOpacity
+              onPress={() => toggleAccordion(index)}
+              className={\`flex flex-row justify-between items-center px-5 py-4 bg-[#f3eae4] \${openIndex === index ? "bg-[#fdf8f6]" : ""}\`}
+            >
+              <Text className="text-[16px] font-medium text-gray-800">
+                {item.title}
+              </Text>
+              <Text
+                className={\`text-[16px] transition-transform duration-300 \${
+                  openIndex === index ? "rotate-180" : ""
+                }\`}
+              >
+                ▼
+              </Text>
+            </TouchableOpacity>
+            {openIndex === index && (
+              <View className="px-5 py-4 bg-[#fdf8f6]">
+                <Text className="text-sm text-gray-600">{item.content}</Text>
+              </View>
+            )}
+          </View>
+        ))}
       </View>
-    </View>
+    </ScrollView>
   );
-};
+}
 
-export default Alert;
+export default Accordion;
 `,
         render: <Comp.GalaxyAccordion />,
       },
@@ -959,6 +1034,197 @@ const Input = () => {
 
 export default Input;`,
         render: <Comp.EarthInput />,
+      },
+    ],
+  },
+  pagination: {
+    id: 9,
+    name: "Pagination",
+    icon: AlienUIIcons.AlienCrackedAlienSkull,
+    description: "A customizable pagination component.",
+    variants: [
+      {
+        name: "Galaxy Pagination",
+        description: "A default galactic pagination in the galaxy.",
+        code: `import React from "react";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
+
+const Pagination = () => {
+  return (
+    <View style={styles.container}>
+      <TouchableOpacity style={styles.arrowButton}>
+        <AntDesign name="left" size={10} color="black" />
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.pageNumberButton}>
+        <Text style={styles.pageNumberText}>1</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={[styles.pageNumberButton, styles.activePage]}>
+        <Text style={styles.activePageText}>2</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.pageNumberButton}>
+        <Text style={styles.pageNumberText}>3</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.pageNumberButton}>
+        <Text style={styles.pageNumberText}>4</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.arrowButton}>
+        <AntDesign name="right" size={10} color="black" />
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+  },
+  arrowButton: {
+    width: 32,
+    height: 32,
+    justifyContent: "center",
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "#e0e0e0",
+    borderRadius: 4,
+    backgroundColor: "#fff",
+  },
+  pageNumberButton: {
+    width: 32,
+    height: 32,
+    justifyContent: "center",
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "#e0e0e0",
+    borderRadius: 4,
+    backgroundColor: "#fff",
+  },
+  activePage: {
+    backgroundColor: "#2563eb",
+    borderColor: "#2563eb",
+  },
+  pageNumberText: {
+    color: "#333",
+    fontSize: 14,
+    fontWeight: "500",
+  },
+  activePageText: {
+    color: "#fff",
+    fontSize: 14,
+    fontWeight: "500",
+  },
+});
+
+export default Pagination;
+`,
+        code2: `import React from "react";
+import { View, Text, TouchableOpacity } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
+
+const Pagination = () => {
+  return (
+    <View className="flex-row gap-2">
+      <TouchableOpacity className="w-8 h-8 justify-center items-center border border-gray-300 rounded bg-white">
+        <AntDesign name="left" size={10} color="black" />
+      </TouchableOpacity>
+      <TouchableOpacity className="w-8 h-8 justify-center items-center border border-gray-300 rounded bg-white">
+        <Text className="text-gray-800 text-sm font-medium">1</Text>
+      </TouchableOpacity>
+      <TouchableOpacity className="w-8 h-8 justify-center items-center border border-blue-600 rounded bg-blue-600">
+        <Text className="text-white text-sm font-medium">2</Text>
+      </TouchableOpacity>
+      <TouchableOpacity className="w-8 h-8 justify-center items-center border border-gray-300 rounded bg-white">
+        <Text className="text-gray-800 text-sm font-medium">3</Text>
+      </TouchableOpacity>
+      <TouchableOpacity className="w-8 h-8 justify-center items-center border border-gray-300 rounded bg-white">
+        <Text className="text-gray-800 text-sm font-medium">4</Text>
+      </TouchableOpacity>
+      <TouchableOpacity className="w-8 h-8 justify-center items-center border border-gray-300 rounded bg-white">
+        <AntDesign name="right" size={10} color="black" />
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+export default Pagination;`,
+
+        render: <Comp.GalaxyPagination />,
+      },
+      {
+        name: "Mars Pagination",
+        description: "Paginating to mars.",
+        code: `import React from "react";
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
+
+const Pagination = () => {
+  return (
+    <View style={styles.container}>
+      <TouchableOpacity style={styles.arrowButton}>
+        <AntDesign name="left" size={10} color="black" />
+      </TouchableOpacity>
+      <Text style={styles.pageText}>
+        1<Text style={styles.divider}> / </Text>47
+      </Text>
+      <TouchableOpacity style={styles.arrowButton}>
+        <AntDesign name="right" size={10} color="black" />
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
+  },
+  arrowButton: {
+    width: 32,
+    height: 32,
+    justifyContent: "center",
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "#e0e0e0",
+    borderRadius: 4,
+    backgroundColor: "#fff",
+  },
+  pageText: {
+    fontSize: 12,
+    color: "#333",
+  },
+  divider: {
+    marginHorizontal: 2,
+  },
+});
+
+export default Pagination;
+`,
+        code2: `import React from "react";
+import { View, Text, TouchableOpacity } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
+
+const Pagination = () => {
+  return (
+    <View className="flex-row items-center gap-3">
+      <TouchableOpacity className="w-8 h-8 justify-center items-center border border-gray-300 rounded bg-white">
+        <AntDesign name="left" size={10} color="black" />
+      </TouchableOpacity>
+      <Text className="text-xs text-gray-800">
+        1<Text className="mx-0.5"> / </Text>47
+      </Text>
+      <TouchableOpacity className="w-8 h-8 justify-center items-center border border-gray-300 rounded bg-white">
+        <AntDesign name="right" size={10} color="black" />
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+export default Pagination;
+`,
+        render: <Comp.MarsPagination />,
       },
     ],
   },
