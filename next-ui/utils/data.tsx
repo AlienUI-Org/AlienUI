@@ -132,9 +132,10 @@ function Accordion() {
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
+    alignItems: "center",
   },
   accordionContainer: {
-    width: "100%",
+    width: "90%",
     overflow: "hidden",
   },
   accordionItem: {
@@ -546,7 +547,7 @@ export default Badge;
     variants: [
       {
         name: "Galaxy Breadcrumb",
-        description: "A breadcrumb for navigation in the galaxy.",
+        description: "A breadcrumb for navigation, in the galaxy.",
         code: `import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
