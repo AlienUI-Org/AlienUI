@@ -24,7 +24,7 @@ function page() {
               If you plan to use <strong>NativeWind</strong> for styling, ensure
               your app is properly configured. Check the{" "}
               <a
-                href="https://nativewind.dev/docs/installation"
+                href="https://nativewind.dev"
                 className="text-blue-600 underline"
               >
                 NativeWind configuration guide
