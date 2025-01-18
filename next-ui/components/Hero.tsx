@@ -24,7 +24,7 @@ function Hero() {
             <p>✅ No configuration</p>
             <p>✅ No setup</p>
           </div>
-          <p>Say no to dependency issue. Just copy and paste components to build your next mobile app</p>
+          <p>Say no to dependency issue and complex setup. Just copy and paste components to build your next mobile app</p>
           <div className="mt-6 flex-row flex items-center gap-2 justify-center">
             <Link href="/comp" prefetch>
               <button className="px-6 py-3 bg-transparent border border-brown-600 text-black hover:text-white font-medium rounded-lg shadow-md  hover:bg-brown-600 transition duration-300 cursor-pointer">
