@@ -58,7 +58,7 @@ function FaQ() {
     {
       title: "Can I request new features for AlienUI?",
       content:
-        "Yes, you can create a new issue on GitHub to request new features. While not every request will be implemented, they all will be considered.",
+        "Yes, you can create a new issue on GitHub to request new features or you can use the suggestion box below to suggest new features. While not every request will be implemented, they all will be considered.",
     },
   ];
 
