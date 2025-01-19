@@ -2,6 +2,7 @@ import { StyleSheet, ScrollView } from "react-native";
 import GalaxyTab from "./components/Tab/GalaxyTab";
 import EarthTab from "./components/Tab/EarthTab";
 import GalaxyCard from "./components/Card/GalaxyCard";
+import JupiterCard from "./components/Card/JupiterCard";
 
 export default function App() {
   return (
@@ -9,6 +10,7 @@ export default function App() {
       <GalaxyTab />
       <EarthTab />
       <GalaxyCard />
+      <JupiterCard />
     </ScrollView>
   );
 }
