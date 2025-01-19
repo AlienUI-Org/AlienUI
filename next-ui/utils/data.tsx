@@ -922,7 +922,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 
 function Card() {
   return (
-    <View className="flex flex-col items-center bg-[#fdf8f6] p-7 shadow-md w-4/5 h-64">
+    <View className="flex flex-col items-center bg-[#fdf8f6] p-7 shadow-md w-4/5 h-[260px]">
       <MaterialIcons
         name="join-inner"
         size={56}
