@@ -3,7 +3,7 @@ import { MdJoinInner } from "react-icons/md";
 
 function JupiterCard() {
   return (
-    <div className="flex flex-col items-center text-center bg-brown-50 p-7 shadow-md w-3/5 h-64">
+    <div className="flex flex-col items-center text-center bg-brown-50 p-7 shadow-md w-4/5 h-64">
       <MdJoinInner className="w-14 h-14 pb-4" />
       <h3 className="text-lg font-bold text-brown-800">
         Open-Source Contributions
