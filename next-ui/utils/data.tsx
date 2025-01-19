@@ -70,31 +70,6 @@ const Accordion = () => {
       content:
         "Yes, you can use AlienUI in your React Native project. The code is yours. But hey, let us know if you do. We'd love to see what you build.",
     },
-    {
-      title: "Do I need to credit AlienUI?",
-      content:
-        "No, crediting AlienUI is not necessary. However, giving the project a star on GitHub and/or sharing it on Twitter and LinkedIn would be appreciated.",
-    },
-    {
-      title: "How can I support AlienUI?",
-      content:
-        "You can support AlienUI by starring the project on GitHub and/or sharing it on Twitter and LinkedIn. It helps increase the project's visibility.",
-    },
-    {
-      title: "How do I contribute?",
-      content:
-        "You can contribute by adding new components, fixing bugs, or improving the documentation. Please create an issue before starting any work.",
-    },
-    {
-      title: "How do I get updates?",
-      content:
-        "The best way to get updates is by following the project on GitHub and all social media platforms like Twitter, LinkedIn etc. You can also get latest updates by subscribing to our newsletter.",
-    },
-    {
-      title: "Can I request new features for AlienUI?",
-      content:
-        "Yes, you can create a new issue on GitHub to request new features. While not every request will be implemented, they all will be considered.",
-    },
   ];
 
   const toggleAccordion = (index: any) => {
@@ -207,31 +182,6 @@ const Accordion = () => {
       content:
         "Yes, you can use AlienUI in your React Native project. The code is yours. But hey, let us know if you do. We'd love to see what you build.",
     },
-    {
-      title: "Do I need to credit AlienUI?",
-      content:
-        "No, crediting AlienUI is not necessary. However, giving the project a star on GitHub and/or sharing it on Twitter and LinkedIn would be appreciated.",
-    },
-    {
-      title: "How can I support AlienUI?",
-      content:
-        "You can support AlienUI by starring the project on GitHub and/or sharing it on Twitter and LinkedIn. It helps increase the project's visibility.",
-    },
-    {
-      title: "How do I contribute?",
-      content:
-        "You can contribute by adding new components, fixing bugs, or improving the documentation. Please create an issue before starting any work.",
-    },
-    {
-      title: "How do I get updates?",
-      content:
-        "The best way to get updates is by following the project on GitHub and all social media platforms like Twitter, LinkedIn etc. You can also get latest updates by subscribing to our newsletter.",
-    },
-    {
-      title: "Can I request new features for AlienUI?",
-      content:
-        "Yes, you can create a new issue on GitHub to request new features. While not every request will be implemented, they all will be considered.",
-    },
   ];
 
   const toggleAccordion = (index: any) => {
@@ -240,7 +190,7 @@ const Accordion = () => {
 
   return (
     <ScrollView className="flex-1">
-      <View className="w-full">
+      <View className="w-[90%]">
         {accordionItems.map((item, index) => (
           <View key={index} className="border-b border-gray-300">
             <TouchableOpacity
