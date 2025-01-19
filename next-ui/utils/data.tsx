@@ -1166,7 +1166,7 @@ export default Card;
     id: 8,
     name: "Checkbox",
     icon: AlienUIIcons.AlienStare,
-    description: "A customizable checkbox component with variants.",
+    description: "A customizable checkbox component.",
     variants: [
       {
         name: "Galaxy Checkbox",
