@@ -228,7 +228,7 @@ export default Accordion;
     variants: [
       {
         name: "Galaxy Alert",
-        description: "An galactic alert for notifications",
+        description: "A galactic alert for notifications",
         code: `import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Feather } from "@expo/vector-icons";
@@ -437,7 +437,7 @@ export default Avatar;
     variants: [
       {
         name: "Galaxy Badge",
-        description: "An alien badge for galactic identification",
+        description: "An alien badge for galactic verification",
         code: `import React from "react" ;
 import { StyleSheet, Text, View } from "react-native";
 
