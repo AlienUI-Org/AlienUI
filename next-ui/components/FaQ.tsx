@@ -33,7 +33,7 @@ function FaQ() {
     {
       title: "Can I use this in my project?",
       content:
-        "Yes, you can use AlienUI in your React Native project. The code is yours. But hey, let us know if you do. We'd love to see what you build.",
+        "Yes, you can use AlienUI components in your React Native project. The code is yours. But hey, let us know if you do. We'd love to see what you build.",
     },
     {
       title: "Do I need to credit AlienUI?",
