@@ -1,46 +1,67 @@
-import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import AntDesign from "@expo/vector-icons/AntDesign";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
-const GalaxyCard = () => {
+const Card = () => {
   return (
-    <View style={styles.container}>
-      <View style={styles.cardContainer}>
-        <View style={styles.iconContainer}>
-          <AntDesign name="barschart" size={24} color="#ba8463" />
-        </View>
-        <Text style={styles.text}>Bar chart showing energy usage</Text>
+    <View style={styles.card}>
+      <Image
+        source={require("../../assets/images/alien1.avif")}
+        style={styles.image}
+      />
+      <View style={styles.content}>
+        <Text style={styles.date}>07th July 1997</Text>
+        <TouchableOpacity>
+          <Text style={styles.title}>
+            Exploring the Unknown: The Alien Encounter Chronicles
+          </Text>
+        </TouchableOpacity>
+        <Text style={styles.description}>
+          Deep in the vastness of space lies a story untold—of strange beings,
+          otherworldly landscapes, and encounters that defy imagination.
+          Discover the mysteries of alien civilizations, their technology, and
+          the secrets they carry across galaxies.
+        </Text>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    alignItems: "center",
+  card: {
+    borderRadius: 16,
+    overflow: "hidden",
+    backgroundColor: "#ffffff",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 5,
+    margin: 16,
   },
-  cardContainer: {
-    width: "60%",
-    height: 170,
-    borderRadius: 20,
-    backgroundColor: "#fdf8f6",
-    padding: 18,
+  image: {
+    width: "100%",
+    height: 200,
+    resizeMode: "cover",
   },
-  iconContainer: {
-    borderRadius: 30,
-    width: 50,
-    height: 50,
-    backgroundColor: "#fff",
-    color: "#24150b",
-    padding: 4,
-    alignItems: "center",
-    justifyContent: "center",
-    marginBottom: 30,
+  content: {
+    padding: 16,
   },
-  text: {
-    fontSize: 20,
+  date: {
+    fontSize: 12,
+    color: "#6b7280",
+    marginBottom: 4,
+  },
+  title: {
+    fontSize: 18,
     fontWeight: "bold",
+    color: "#111827",
+    marginBottom: 8,
+  },
+  description: {
+    fontSize: 14,
+    color: "#6b7280",
+    lineHeight: 20,
   },
 });
 
-export default GalaxyCard;
+export default Card;

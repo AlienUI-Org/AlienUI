@@ -33,13 +33,7 @@ export const components: Components = {
         name: "Galaxy Accordion",
         description: "A default galactic accordion",
         code: `import React, { useState } from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  ScrollView,
-} from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from "react-native";
 
 const Accordion = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -792,65 +786,99 @@ export default Button;`,
         name: "Galaxy Card",
         description: "A ticket into the galaxy.",
         code: `import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-import AntDesign from "@expo/vector-icons/AntDesign";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
 const Card = () => {
   return (
-    <View style={styles.container}>
-      <View style={styles.cardContainer}>
-        <View style={styles.iconContainer}>
-          <AntDesign name="barschart" size={24} color="#ba8463" />
-        </View>
-        <Text style={styles.text}>Bar chart showing energy usage</Text>
+    <View style={styles.card}>
+      <Image
+        source={require("../../assets/images/alien1.avif")}
+        style={styles.image}
+      />
+      <View style={styles.content}>
+        <Text style={styles.date}>07th July 1997</Text>
+        <TouchableOpacity>
+          <Text style={styles.title}>
+            Exploring the Unknown: The Alien Encounter Chronicles
+          </Text>
+        </TouchableOpacity>
+        <Text style={styles.description}>
+          Deep in the vastness of space lies a story untold—of strange beings,
+          otherworldly landscapes, and encounters that defy imagination.
+          Discover the mysteries of alien civilizations, their technology, and
+          the secrets they carry across galaxies.
+        </Text>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    alignItems: "center",
+  card: {
+    borderRadius: 16,
+    overflow: "hidden",
+    backgroundColor: "#ffffff",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 5,
+    margin: 16,
   },
-  cardContainer: {
-    width: "60%",
-    height: 170,
-    borderRadius: 20,
-    backgroundColor: "#fdf8f6",
-    padding: 18,
+  image: {
+    width: "100%",
+    height: 200,
+    resizeMode: "cover",
   },
-  iconContainer: {
-    borderRadius: 30,
-    width: 50,
-    height: 50,
-    backgroundColor: "#fff",
-    color: "#24150b",
-    padding: 4,
-    alignItems: "center",
-    justifyContent: "center",
-    marginBottom: 30,
+  content: {
+    padding: 16,
   },
-  text: {
-    fontSize: 20,
+  date: {
+    fontSize: 12,
+    color: "#6b7280",
+    marginBottom: 4,
+  },
+  title: {
+    fontSize: 18,
     fontWeight: "bold",
+    color: "#111827",
+    marginBottom: 8,
+  },
+  description: {
+    fontSize: 14,
+    color: "#6b7280",
+    lineHeight: 20,
   },
 });
 
 export default Card;
 `,
         code2: `import React from "react";
-import { FaChartBar } from "react-icons/fa";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 
 const Card = () => {
   return (
-    <div className="flex justify-center">
-      <div className="w-3/5 h-44 rounded-2xl bg-[#fdf8f6] p-6">
-        <div className="flex items-center justify-center w-12 h-12 bg-white text-[#24150b] rounded-full mb-6">
-          <FaChartBar className="text-[#ba8463]" size={24} />
-        </div>
-        <p className="text-lg font-bold">Bar chart showing energy usage</p>
-      </div>
-    </div>
+    <View className="bg-white rounded-lg overflow-hidden shadow-lg m-4">
+      <Image
+        source={require("../../assets/images/alien1.avif")}
+        className="w-full h-52"
+        resizeMode="cover"
+      />
+      <View className="p-4">
+        <Text className="text-xs text-gray-500 mb-1">07th July 1997</Text>
+        <TouchableOpacity>
+          <Text className="text-lg font-bold text-gray-900 mb-2">
+            Exploring the Unknown: The Alien Encounter Chronicles
+          </Text>
+        </TouchableOpacity>
+        <Text className="text-sm text-gray-500 leading-5">
+          Deep in the vastness of space lies a story untold—of strange beings,
+          otherworldly landscapes, and encounters that defy imagination.
+          Discover the mysteries of alien civilizations, their technology, and
+          the secrets they carry across galaxies.
+        </Text>
+      </View>
+    </View>
   );
 };
 
@@ -947,13 +975,7 @@ export default Card;
         name: "Earth Card",
         description: "A ticket for navigating on the earth surface.",
         code: `import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  ImageBackground,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from "react-native";
 
 const Card = () => {
   return (
@@ -1067,6 +1089,76 @@ const Card = () => {
 export default Card;
 `,
         render: <Comp.EarthCard />,
+      },
+      {
+        name: "Pluto Card",
+        description: "A small regular ticket into pluto.",
+        code: `import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import AntDesign from "@expo/vector-icons/AntDesign";
+
+const Card = () => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.cardContainer}>
+        <View style={styles.iconContainer}>
+          <AntDesign name="barschart" size={24} color="#ba8463" />
+        </View>
+        <Text style={styles.text}>Bar chart showing energy usage</Text>
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    alignItems: "center",
+  },
+  cardContainer: {
+    width: "60%",
+    height: 170,
+    borderRadius: 20,
+    backgroundColor: "#fdf8f6",
+    padding: 18,
+  },
+  iconContainer: {
+    borderRadius: 30,
+    width: 50,
+    height: 50,
+    backgroundColor: "#fff",
+    color: "#24150b",
+    padding: 4,
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 30,
+  },
+  text: {
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+});
+
+export default Card;
+`,
+        code2: `import React from "react";
+import { FaChartBar } from "react-icons/fa";
+
+const Card = () => {
+  return (
+    <div className="flex justify-center">
+      <div className="w-3/5 h-44 rounded-2xl bg-[#fdf8f6] p-6">
+        <div className="flex items-center justify-center w-12 h-12 bg-white text-[#24150b] rounded-full mb-6">
+          <FaChartBar className="text-[#ba8463]" size={24} />
+        </div>
+        <p className="text-lg font-bold">Bar chart showing energy usage</p>
+      </div>
+    </div>
+  );
+};
+
+export default Card;
+`,
+        render: <Comp.PlutoCard />,
       },
     ],
   },

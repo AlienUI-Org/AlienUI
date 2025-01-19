@@ -1,10 +1,12 @@
 import { StyleSheet, ScrollView } from "react-native";
-import EarthCard from "./components/Card/EarthCard";
+import GalaxyCard from "./components/Card/GalaxyCard";
+import PlutoCard from "./components/Card/PlutoCard";
 
 export default function App() {
   return (
     <ScrollView style={styles.container}>
-      <EarthCard />
+      <GalaxyCard />
+      <PlutoCard />
     </ScrollView>
   );
 }
