@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function GalaxyCard() {
   return (
-    <section className="overflow-hidden rounded-lg shadow">
+    <section className="overflow-hidden rounded-lg shadow w-[320px]">
       <Image
         alt=""
         src="/images/alien1.avif"

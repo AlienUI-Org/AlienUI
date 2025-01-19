@@ -1,7 +1,7 @@
 import React from "react";
 import { FaChartBar } from "react-icons/fa";
 
-function GalaxyCard() {
+function PlutoCard() {
   return (
     <div className="flex justify-center">
       <div className="w-3/5 h-52 rounded-2xl bg-brown-50 p-6">
@@ -14,4 +14,4 @@ function GalaxyCard() {
   );
 }
 
-export default GalaxyCard;
+export default PlutoCard;
