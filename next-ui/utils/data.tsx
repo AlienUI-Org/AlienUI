@@ -949,7 +949,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 
 function Card() {
   return (
-    <View className="flex flex-col items-center bg-[#fdf8f6] p-7 shadow-md w-4/5 h-[260px]">
+    <View className="flex flex-col items-center bg-[#fdf8f6] p-7 shadow-md w-4/5 h-64">
       <MaterialIcons
         name="join-inner"
         size={56}
@@ -1308,9 +1308,9 @@ import { TextInput, View } from 'react-native';
 
 const Input = () => {
     return (
-        <View>
+        <View className="w-52">
             <TextInput
-                className="border-1 border-black rounded-md p-2"
+                className="border-1 border-black rounded-md p-2.5"
                 placeholder="Nebulon Input"
             />
         </View>
@@ -1354,9 +1354,9 @@ import { TextInput, View } from 'react-native';
 
 const Input = () => {
     return (
-        <View>
+        <View className="w-52">
             <TextInput
-                className="border-1 border-b border-b-black p-2"
+                className="border-1 border-b border-b-black p-2.5"
                 placeholder="Earth Input"
             />
         </View>
