@@ -1629,7 +1629,7 @@ import { FontAwesome, MaterialCommunityIcons, AntDesign } from "@expo/vector-ico
 const ProgressBar = () => {
   return (
     <View className="p-4 bg-white">
-      <View className="h-2 bg-gray-300 rounded-lg overflow-hidden">
+      <View className="h-2 w-full bg-gray-300 rounded-lg overflow-hidden">
         <View className="h-full w-1/2 bg-blue-500" />
       </View>
       <View className="flex-row justify-between mt-4">
@@ -1694,7 +1694,7 @@ import { View } from "react-native";
 const ProgressBar = () => {
   return (
     <View className="m-4">
-        <View className="mt-4 h-2 rounded-full bg-gray-200 overflow-hidden">
+        <View className="mt-4 h-2 w-full rounded-full bg-gray-200 overflow-hidden">
           <View className="h-full w-2/3 rounded-full bg-blue-500"></View>
         </View>
     </View>
@@ -1802,7 +1802,7 @@ import { FontAwesome } from "@expo/vector-icons";
 const ProgressBar = () => {
   return (
     <View className="my-5 px-4">
-      <View className="relative mt-4 h-[6px] bg-gray-200 rounded-lg">
+      <View className="relative w-full mt-4 h-[6px] bg-gray-200 rounded-lg">
         <View className="absolute inset-0 flex flex-row justify-between -top-4">
           <View className="flex-1 items-start">
             <View className="w-9 h-9 rounded-full bg-blue-500 justify-center items-center mb-2">
