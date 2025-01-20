@@ -4,7 +4,7 @@ import { FaCheckCircle } from "react-icons/fa";
 const MarsProgressBar = () => {
   return (
     <div className="my-5 px-4">
-      <div className="relative mt-4 h-1 bg-gray-200 rounded-lg">
+      <div className="relative mt-4 h-[6px] bg-gray-200 rounded-lg">
         <div className="absolute inset-0 flex justify-between -top-4">
           <div className="flex flex-col items-start flex-1">
             <div className="w-9 h-9 rounded-full bg-blue-500 flex justify-center items-center mb-2">
