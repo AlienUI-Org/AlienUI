@@ -1559,8 +1559,283 @@ export default Pagination;
       },
     ],
   },
-  tab: {
+  progressbar: {
     id: 11,
+    name: "Progress Bar",
+    icon: AlienUIIcons.AlienTbAlien,
+    description: "A customizable progress bar component.",
+    variants: [
+      {
+        name: "Galaxy Progress Bar",
+        description: "A default galactic progress bar.",
+        code: `import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+import { FontAwesome, MaterialCommunityIcons, AntDesign } from "@expo/vector-icons";
+
+const ProgressBar = () => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.progressBarContainer}>
+        <View style={styles.progressBarFilled}></View>
+      </View>
+      <View style={styles.stepsContainer}>
+        <View style={styles.step}>
+          <FontAwesome name="info-circle" size={24} color="#3B82F6" />
+        </View>
+        <View style={styles.step}>
+          <MaterialCommunityIcons name="map-marker" size={24} color="#3B82F6" />
+        </View>
+        <View style={styles.step}>
+          <AntDesign name="creditcard" size={24} color="#A1A1AA" />
+        </View>
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 16,
+    backgroundColor: "#fff",
+  },
+  progressBarContainer: {
+    height: 8,
+    backgroundColor: "#E5E7EB",
+    borderRadius: 8,
+    overflow: "hidden",
+  },
+  progressBarFilled: {
+    height: "100%",
+    width: "50%",
+    backgroundColor: "#3B82F6",
+  },
+  stepsContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: 16,
+  },
+  step: {
+    alignItems: "center",
+    flex: 1,
+  },
+});
+
+export default ProgressBar;
+`,
+        code2: `import React from "react";
+import { View, Text } from "react-native";
+import { FontAwesome, MaterialCommunityIcons, AntDesign } from "@expo/vector-icons";
+
+const ProgressBar = () => {
+  return (
+    <View className="p-4 bg-white">
+      <View className="h-2 bg-gray-300 rounded-lg overflow-hidden">
+        <View className="h-full w-1/2 bg-blue-500" />
+      </View>
+      <View className="flex-row justify-between mt-4">
+        <View className="flex-1 items-center">
+          <FontAwesome name="info-circle" size={24} color="#3B82F6" />
+        </View>
+        <View className="flex-1 items-center">
+          <MaterialCommunityIcons name="map-marker" size={24} color="#3B82F6" />
+        </View>
+        <View className="flex-1 items-center">
+          <AntDesign name="creditcard" size={24} color="#A1A1AA" />
+        </View>
+      </View>
+    </View>
+  );
+};
+
+export default ProgressBar;`,
+
+        render: <Comp.GalaxyProgressBar />,
+      },
+      {
+        name: "Earth Progress Bar",
+        description: "A progress bar showing progression on the earth surface.",
+        code: `import React from "react";
+import { View, StyleSheet } from "react-native";
+
+const ProgressBar = () => {
+  return (
+    <View style={styles.container}>
+        <View style={styles.progressBarBackground}>
+          <View style={styles.progressBarFilled}></View>
+        </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    margin: 16,
+  },
+  progressBarBackground: {
+    marginTop: 16,
+    height: 8,
+    borderRadius: 9999,
+    backgroundColor: "#E5E7EB",
+    overflow: "hidden",
+  },
+  progressBarFilled: {
+    height: "100%",
+    width: "66.6667%",
+    borderRadius: 9999,
+    backgroundColor: "#3B82F6",
+  },
+});
+
+export default ProgressBar;
+`,
+        code2: `import React from "react";
+import { View } from "react-native";
+
+const ProgressBar = () => {
+  return (
+    <View className="m-4">
+        <View className="mt-4 h-2 rounded-full bg-gray-200 overflow-hidden">
+          <View className="h-full w-2/3 rounded-full bg-blue-500"></View>
+        </View>
+    </View>
+  );
+};
+
+export default ProgressBar;
+`,
+        render: <Comp.EarthProgressBar />,
+      },
+      {
+        name: "Mars Progress Bar",
+        description: "A progress bar showing progression on mars.",
+        code: `import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+import { FontAwesome } from "@expo/vector-icons";
+
+const ProgressBar = () => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.progressBar}>
+        <View style={styles.stepsContainer}>
+          <View style={[styles.stepItem, styles.stepStart]}>
+            <View style={[styles.stepIcon, styles.activeStep]}>
+              <FontAwesome name="check-circle" size={20} color="white" />
+            </View>
+            <Text style={[styles.stepLabel, styles.activeLabel]}>Details</Text>
+          </View>
+          <View style={styles.stepItem}>
+            <View style={[styles.stepIcon, styles.activeStep]}>
+              <FontAwesome name="check-circle" size={20} color="white" />
+            </View>
+            <Text style={[styles.stepLabel, styles.activeLabel]}>Address</Text>
+          </View>
+          <View style={[styles.stepItem, styles.stepEnd]}>
+            <View style={styles.stepIcon}>
+              <FontAwesome name="check-circle" size={20} color="white" />
+            </View>
+            <Text style={styles.stepLabel}>Payment</Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    marginVertical: 20,
+    paddingHorizontal: 16,
+  },
+  progressBar: {
+    position: "relative",
+    marginTop: 16,
+    height: 6,
+    backgroundColor: "#E5E7EB",
+    borderRadius: 8,
+  },
+  stepsContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    position: "absolute",
+    top: -16,
+    left: 0,
+    right: 0,
+  },
+  stepItem: {
+    alignItems: "center",
+    flex: 1,
+  },
+  stepStart: {
+    alignItems: "flex-start",
+  },
+  stepEnd: {
+    alignItems: "flex-end",
+  },
+  stepIcon: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: "#6B7280",
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 8,
+  },
+  activeStep: {
+    backgroundColor: "#3B82F6",
+  },
+  stepLabel: {
+    fontSize: 12,
+    fontWeight: "500",
+    color: "#6B7280",
+  },
+  activeLabel: {
+    color: "#3B82F6",
+  },
+});
+
+export default ProgressBar;
+`,
+        code2: `import React from "react";
+import { View, Text } from "react-native";
+import { FontAwesome } from "@expo/vector-icons";
+
+const ProgressBar = () => {
+  return (
+    <View className="my-5 px-4">
+      <View className="relative mt-4 h-[6px] bg-gray-200 rounded-lg">
+        <View className="absolute inset-0 flex flex-row justify-between -top-4">
+          <View className="flex-1 items-start">
+            <View className="w-9 h-9 rounded-full bg-blue-500 justify-center items-center mb-2">
+              <FontAwesome name="check-circle" size={20} color="white" />
+            </View>
+            <Text className="text-xs font-medium text-blue-500">Details</Text>
+          </View>
+          <View className="flex-1 items-center">
+            <View className="w-9 h-9 rounded-full bg-blue-500 justify-center items-center mb-2">
+              <FontAwesome name="check-circle" size={20} color="white" />
+            </View>
+            <Text className="text-xs font-medium text-blue-500">Address</Text>
+          </View>
+          <View className="flex-1 items-end">
+            <View className="w-9 h-9 rounded-full bg-gray-400 justify-center items-center mb-2">
+              <FontAwesome name="check-circle" size={20} color="white" />
+            </View>
+            <Text className="text-xs font-medium text-gray-500">Payment</Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  );
+};
+
+export default ProgressBar;
+`,
+        render: <Comp.MarsProgressBar />,
+      },
+    ],
+  },
+  tab: {
+    id: 12,
     name: "Tab",
     icon: AlienUIIcons.AlienRiAliensLine,
     description: "A customizable tab navigation component with variants.",

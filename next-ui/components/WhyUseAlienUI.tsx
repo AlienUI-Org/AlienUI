@@ -56,8 +56,8 @@ function WhyUseAlienUI() {
               Open-Source Contributions
             </h3>
             <p className="text-gray-600 mt-2">
-              Alien UI is open-source, inviting developers to collaborate and
-              share components to improve mobile app design.{" "}
+              Alien UI is open-source, inviting developers and designers to
+              collaborate and share UI components.
             </p>
           </div>
         </div>

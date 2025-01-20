@@ -1,14 +1,57 @@
-import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+import {
+  FontAwesome,
+  MaterialCommunityIcons,
+  AntDesign,
+} from "@expo/vector-icons";
 
-const GalaxyProgressBar = () => {
+const ProgressBar = () => {
   return (
-    <View>
-      <Text>GalaxyProgressBar</Text>
+    <View style={styles.container}>
+      <View style={styles.progressBarContainer}>
+        <View style={styles.progressBarFilled}></View>
+      </View>
+      <View style={styles.stepsContainer}>
+        <View style={styles.step}>
+          <FontAwesome name="info-circle" size={24} color="#3B82F6" />
+        </View>
+        <View style={styles.step}>
+          <MaterialCommunityIcons name="map-marker" size={24} color="#3B82F6" />
+        </View>
+        <View style={styles.step}>
+          <AntDesign name="creditcard" size={24} color="#A1A1AA" />
+        </View>
+      </View>
     </View>
   );
 };
 
-export default GalaxyProgressBar;
+const styles = StyleSheet.create({
+  container: {
+    padding: 16,
+    backgroundColor: "#fff",
+  },
+  progressBarContainer: {
+    height: 8,
+    backgroundColor: "#E5E7EB",
+    borderRadius: 8,
+    overflow: "hidden",
+  },
+  progressBarFilled: {
+    height: "100%",
+    width: "50%",
+    backgroundColor: "#3B82F6",
+  },
+  stepsContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: 16,
+  },
+  step: {
+    alignItems: "center",
+    flex: 1,
+  },
+});
 
-const styles = StyleSheet.create({});
+export default ProgressBar;

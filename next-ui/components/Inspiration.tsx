@@ -19,6 +19,15 @@ function Inspiration() {
             <Image src="/images/native.png" alt="" width={300} height={300} />
           </div>
 
+          <div className="flex flex-col items-center bg-black rounded-md p-6 hover:shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
+            <Image
+              src="/images/flowbite1.png"
+              alt=""
+              width={300}
+              height={300}
+            />
+          </div>
+
           <div className="flex flex-col items-center border border-black rounded-md p-6 hover:shadow-md hover:scale-105 transition-transform duration-300 ease-in-ou">
             {" "}
             <Image src="/images/hyperui.webp" alt="" width={300} height={300} />

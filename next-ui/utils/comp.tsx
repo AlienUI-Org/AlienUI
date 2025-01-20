@@ -19,6 +19,8 @@ import GalaxyCard from "@/components/comp/Card/GalaxyCard";
 import EarthCard from "@/components/comp/Card/EarthCard";
 import JupiterCard from "@/components/comp/Card/JupiterCard";
 import PlutoCard from "@/components/comp/Card/PlutoCard";
+import EarthProgressBar from "@/components/comp/Progress Bar/EarthProgressBar";
+import MarsProgressBar from "@/components/comp/Progress Bar/MarsProgressBar";
 
 export const Comp = {
   EarthButton,
@@ -36,6 +38,8 @@ export const Comp = {
   GalaxyPagination,
   MarsPagination,
   GalaxyProgressBar,
+  EarthProgressBar,
+  MarsProgressBar,
   GalaxyTab,
   EarthTab,
   GalaxyCard,
