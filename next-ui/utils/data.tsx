@@ -1561,7 +1561,7 @@ export default Pagination;
   },
   progressbar: {
     id: 11,
-    name: "Progress Bar",
+    name: "ProgressBar",
     icon: AlienUIIcons.AlienTbAlien,
     description: "A customizable progress bar component.",
     variants: [

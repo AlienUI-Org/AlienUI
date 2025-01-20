@@ -5,15 +5,13 @@ function GalaxyProgressBar() {
     <div>
       <h2 className="sr-only">Steps</h2>
 
-      <div>
-        <div className="overflow-hidden rounded-full bg-gray-200">
+      <div className="w-[400px]">
+        <div className="overflow-hidden w-full rounded-full bg-gray-200">
           <div className="h-2 w-1/2 rounded-full bg-blue-500"></div>
         </div>
 
         <ol className="mt-4 grid grid-cols-3 text-sm font-medium text-gray-500">
           <li className="flex items-center justify-start text-blue-600 sm:gap-1.5">
-            <span className="hidden sm:inline"> Details </span>
-
             <svg
               className="size-6 sm:size-5"
               xmlns="http://www.w3.org/2000/svg"
@@ -31,8 +29,6 @@ function GalaxyProgressBar() {
           </li>
 
           <li className="flex items-center justify-center text-blue-600 sm:gap-1.5">
-            <span className="hidden sm:inline"> Address </span>
-
             <svg
               className="size-6 sm:size-5"
               xmlns="http://www.w3.org/2000/svg"
@@ -55,8 +51,6 @@ function GalaxyProgressBar() {
           </li>
 
           <li className="flex items-center justify-end sm:gap-1.5">
-            <span className="hidden sm:inline"> Payment </span>
-
             <svg
               className="size-6 sm:size-5"
               xmlns="http://www.w3.org/2000/svg"
