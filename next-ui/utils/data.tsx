@@ -184,7 +184,7 @@ const Accordion = () => {
 
   return (
     <ScrollView className="flex-1">
-      <View className="w-[90%]">
+      <View className="w-11/12">
         {accordionItems.map((item, index) => (
           <View key={index} className="border-b border-gray-300">
             <TouchableOpacity
@@ -287,7 +287,7 @@ import { Feather } from "@expo/vector-icons";
 
 const Alert = () => {
   return (
-    <View className="rounded-xl border border-gray-300 bg-white p-4 w-[250px]">
+    <View className="rounded-xl border border-gray-300 bg-white p-4 w-64">
       <View className="flex flex-row items-start gap-4">
         <Feather name="check-circle" size={24} color="#16a34a" />
         <View className="flex-1">
@@ -464,13 +464,14 @@ const styles = StyleSheet.create({
     color: "#FFFFFF",
     fontSize: 12,
   },
-});`,
+});
+`,
         code2: `import React from 'react';
 import { View, Text } from 'react-native'
 
 const Badge = () => {
     return (
-        <View className="bg-black px-2 py-1 rounded-full flex items-center justify-center w-[80px]">
+        <View className="bg-black px-2 py-1 rounded-full flex items-center justify-center w-20">
             <Text className="text-white text-xs">Badge</Text>
         </View>
     )
@@ -712,7 +713,7 @@ import { TouchableOpacity, Text } from 'react-native';
 
 const Button = () => {
     return (
-        <TouchableOpacity className="bg-black py-2 px-4 rounded-md flex items-center justify-center w-[200px]">
+        <TouchableOpacity className="bg-black py-2 px-4 rounded-md flex items-center justify-center w-52">
             <Text className="text-white text-base">Galaxy Button</Text>
         </TouchableOpacity>
     );
@@ -764,14 +765,15 @@ import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 const Button = () => {
     return (
-        <TouchableOpacity className="bg-black border py-2 px-4 rounded-md flex flex-row items-center justify-center w-[200px]">
+        <TouchableOpacity className="bg-black border py-2 px-4 rounded-md flex flex-row items-center justify-center w-52">
             <Text className="text-white text-base mr-1">Earth Button</Text>
             <MaterialCommunityIcons name="alien-outline" size={20} color="white" />
         </TouchableOpacity>
     );
 };
 
-export default Button;`,
+export default Button;
+`,
         render: <Comp.EarthButton />,
       },
     ],
@@ -1062,8 +1064,9 @@ const Card = () => {
     <View className="rounded-lg overflow-hidden shadow-lg w-4/5">
       <ImageBackground
         source={require("../../assets/images/alien1.avif")}
-        className="w-full h-88"
+        className="w-full"
         imageStyle={{ resizeMode: "cover" }}
+        style={{ height: 350 }}
       >
         <View className="flex-1 bg-black/50 justify-end p-4">
           <View className="p-4">
