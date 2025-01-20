@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const GalaxyStep = () => {
+const GalaxyProgressBar = () => {
   return (
     <View>
-      <Text>GalaxyStep</Text>
+      <Text>GalaxyProgressBar</Text>
     </View>
   );
 };
 
-export default GalaxyStep;
+export default GalaxyProgressBar;
 
 const styles = StyleSheet.create({});
