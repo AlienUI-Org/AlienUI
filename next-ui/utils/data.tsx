@@ -1802,7 +1802,7 @@ import { FontAwesome } from "@expo/vector-icons";
 const ProgressBar = () => {
   return (
     <View className="my-5 px-4">
-      <View className="relative w-full mt-4 h-[6px] bg-gray-200 rounded-lg">
+      <View className="relative w-full mt-4 h-1.5 bg-gray-200 rounded-lg">
         <View className="absolute inset-0 flex flex-row justify-between -top-4">
           <View className="flex-1 items-start">
             <View className="w-9 h-9 rounded-full bg-blue-500 justify-center items-center mb-2">
