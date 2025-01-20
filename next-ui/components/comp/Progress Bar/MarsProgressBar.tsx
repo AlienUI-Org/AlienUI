@@ -5,7 +5,7 @@ const MarsProgressBar = () => {
   return (
     <div className="my-5 px-4">
       <div className="relative w-[400px] mt-4 h-1.5 bg-gray-200 rounded-lg">
-        <div className="absolute inset-0 flex justify-between -top-2">
+        <div className="absolute inset-0 flex justify-between -top-4">
           <div className="flex flex-col items-start flex-1">
             <div className="w-9 h-9 p-2 rounded-full bg-blue-500 flex justify-center items-center mb-2">
               <FaCheckCircle size={20} className="text-white" />
