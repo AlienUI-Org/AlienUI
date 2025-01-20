@@ -12,7 +12,7 @@ import EarthBreadcrumb from "@/components/comp/BreadCrumbs/EarthBreadcrumb";
 import GalaxyAccordion from "@/components/comp/Accordion/GalaxyAccordion";
 import GalaxyPagination from "@/components/comp/Pagination/GalaxyPagination";
 import MarsPagination from "@/components/comp/Pagination/MarsPagination";
-import GalaxyStep from "@/components/comp/Step/GalaxyStep";
+import GalaxyProgressBar from "@/components/comp/Progress Bar/GalaxyProgressBar";
 import GalaxyTab from "@/components/comp/Tab/GalaxyTab";
 import EarthTab from "@/components/comp/Tab/EarthTab";
 import GalaxyCard from "@/components/comp/Card/PlutoCard";
@@ -35,7 +35,7 @@ export const Comp = {
   GalaxyAccordion,
   GalaxyPagination,
   MarsPagination,
-  GalaxyStep,
+  GalaxyProgressBar,
   GalaxyTab,
   EarthTab,
   GalaxyCard,
