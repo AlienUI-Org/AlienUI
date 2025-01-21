@@ -82,8 +82,8 @@ const styles = StyleSheet.create({
     fontWeight: "semibold",
   },
   toastContainer: {
-    position: "absolute",
-    top: 50,
+    position: "static",
+    top: 20,
     alignSelf: "center",
     padding: 15,
     backgroundColor: "#28a745",

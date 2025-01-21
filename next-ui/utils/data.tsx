@@ -228,7 +228,8 @@ export default Accordion;
     variants: [
       {
         name: "Galaxy Alert",
-        description: "A galactic alert for notifications",
+        description:
+          "A galactic alert for notifications. This variant takes in three props: success, failure and warning. Just change the color and icon to suit your use case",
         code: `import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Feather } from "@expo/vector-icons";
@@ -308,7 +309,7 @@ export default Alert;
       {
         name: "Krythar Wail Alert",
         description:
-          "An galactic alert for urgent and critical issues in the galaxy",
+          "A galactic alert for critical issues in the galaxy. This variant takes in three props: success, failure and warning. Just change the color to suit your use case",
         code: `import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
@@ -317,7 +318,7 @@ const Alert = () => {
     <View style={styles.alertContainer}>
       <Text style={styles.alertTitle}>Krythar Wail</Text>
       <Text style={styles.alertMessage}>
-        Something is wrong. There is a critical error.
+        Everything is good.
       </Text>
     </View>
   );
@@ -327,20 +328,18 @@ const styles = StyleSheet.create({
   alertContainer: {
     borderRadius: 8,
     borderLeftWidth: 4,
-    borderLeftColor: "#ef4444",
-    backgroundColor: "#fef2f2",
+    borderLeftColor: "#22c55e",
+    backgroundColor: "#f0fdf4",
     padding: 16,
     width: 250,
   },
   alertTitle: {
     fontSize: 16,
     fontWeight: "bold",
-    color: "#991b1b",
     marginBottom: 8,
   },
   alertMessage: {
     fontSize: 14,
-    color: "#b91c1c",
     lineHeight: 15,
   },
 });
@@ -352,10 +351,10 @@ import { View, Text } from "react-native";
 
 const Alert = () => {
   return (
-    <View className="rounded-xl border-l-4 border-red-500 bg-red-50 p-4 w-[250px]">
-      <Text className="text-lg font-bold text-red-800">Krythar Wail</Text>
-      <Text className="mt-1 text-sm text-red-700">
-        Something is wrong. There is a critical error.
+    <View className="rounded-xl border-l-4 border-green-500 bg-green-50 p-4 w-64">
+      <Text className="text-lg font-bold">Krythar Wail</Text>
+      <Text className="mt-1 text-sm">
+        Everything is good.
       </Text>
     </View>
   );
@@ -1937,27 +1936,26 @@ export default Tab;
         name: "Earth Tab",
         description: "Tab navigator on the earth surface.",
         code: `import React from "react";
-import { StyleSheet, View } from "react-native";
-import AntDesign from "@expo/vector-icons/AntDesign";
+import { StyleSheet, Text, View } from "react-native";
 
 const Tab = () => {
   return (
     <View style={styles.container}>
       <View style={styles.iconContainer}>
-        <View style={styles.active}>
-          <AntDesign name="home" size={24} color="#ba8463" />
+        <View>
+          <Text style={styles.text}>Home</Text>
         </View>
         <View>
-          <AntDesign name="contacts" size={24} color="white" />
+          <Text style={styles.text}>Contacts</Text>
         </View>
         <View>
-          <AntDesign name="shoppingcart" size={24} color="white" />
+          <Text style={styles.text}>Cart</Text>
         </View>
         <View>
-          <AntDesign name="barschart" size={24} color="white" />
+          <Text style={styles.text}>Chart</Text>
         </View>
         <View>
-          <AntDesign name="setting" size={24} color="white" />
+          <Text style={styles.text}>Settings</Text>
         </View>
       </View>
     </View>
@@ -1974,20 +1972,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-around",
     borderRadius: 4,
-    paddingVertical: 6,
+    paddingVertical: 16,
     backgroundColor: "#ba8463",
   },
-  active: {
-    width: 50,
-    height: 50,
-    borderRadius: 4,
-    backgroundColor: "#ffffff",
-    color: "#ba8463",
-    padding: 4,
-    alignItems: "center",
-    justifyContent: "center",
+  text: {
+    color: "#ffffff",
+    fontWeight: "bold",
   },
 });
+
 export default Tab;
 `,
         code2: `import React from "react";
@@ -1997,22 +1990,22 @@ import { AntDesign } from "@expo/vector-icons";
 const Tab = () => {
   return (
     <View className="flex items-center">
-      <View className="flex-row w-11/12 items-center justify-around rounded-[4px] bg-[#ba8463] py-2">
-        <View className="bg-white text-[#ba8463] rounded-[4px] w-12 h-12 flex items-center justify-center">
-          <AntDesign name="home" size={24} color="#ba8463" />
+      <View className="flex-row w-11/12 items-center justify-around rounded bg-[#ba8463] py-4">
+        <View>
+          <Text className="text-white font-bold">Home</Text>
         </View>
-        <View className="text-white">
-          <AntDesign name="contacts" size={24} color="white" />
+        <View>
+          <Text className="text-white font-bold">Contact</Text>
         </View>
-        <View className="text-white">
-          <AntDesign name="shoppingcart" size={24} color="white" />
+        <View>
+          <Text className="text-white font-bold">Carts</Text>        
         </View>
-        <View className="text-white">
-          <AntDesign name="barschart" size={24} color="white" />
+        <View>
+          <Text className="text-white font-bold">Chart</Text>        
         </View>
-        <View className="text-white">
-          <AntDesign name="setting" size={24} color="white" />
-        </View>
+        <View>
+          <Text className="text-white font-bold">Settings</Text>        
+         </View>
       </View>
     </View>
   );
