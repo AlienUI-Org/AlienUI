@@ -1,5 +1,4 @@
 import { StyleSheet, ScrollView } from "react-native";
-
 import GalaxyToast from "./components/Toast/GalaxyToast";
 
 export default function App() {

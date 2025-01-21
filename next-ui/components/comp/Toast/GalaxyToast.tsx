@@ -31,7 +31,7 @@ const GalaxyToast = () => {
         onClick={() => setShowToast(true)}
         className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
       >
-        Click me to show success toast
+        Click me
       </button>
       {showToast && (
         <SuccessToast
