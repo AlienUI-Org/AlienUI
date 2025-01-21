@@ -27,7 +27,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "utils/data.jsx"
+    "utils/data.jsx",
+    "components/comp/Toast/GalaxyToast.tsx"
   ],
   "exclude": ["node_modules"]
 }

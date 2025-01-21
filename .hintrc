@@ -9,6 +9,7 @@
         "label": "off"
       }
     ],
-    "apple-touch-icons": "off"
+    "apple-touch-icons": "off",
+    "typescript-config/consistent-casing": "off"
   }
 }

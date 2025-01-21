@@ -1,14 +1,11 @@
 import { StyleSheet, ScrollView } from "react-native";
-import GalaxyProgressBar from "./components/Progress Bar/GalaxyProgressBar";
-import EarthProgressBar from "./components/Progress Bar/EarthProgressBar";
-import MarsProgressBar from "./components/Progress Bar/MarsProgressBar";
+
+import GalaxyToast from "./components/Toast/GalaxyToast";
 
 export default function App() {
   return (
     <ScrollView style={styles.container}>
-      <GalaxyProgressBar />
-      <EarthProgressBar />
-      <MarsProgressBar />
+      <GalaxyToast />
     </ScrollView>
   );
 }

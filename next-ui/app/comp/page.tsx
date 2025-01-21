@@ -35,6 +35,11 @@ function page() {
               If you’re using the <strong>StyleSheet API</strong>, no additional
               setup is needed.
             </li>
+            <li>
+              Also make sure you project supports{" "}
+              <strong>Typescript or Javascript</strong>, as some component may
+              support <strong>Typescript or Javascript</strong>
+            </li>
           </ul>
         </div>
       </div>
