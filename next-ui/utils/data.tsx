@@ -1286,7 +1286,7 @@ const Input = () => {
         <View style={styles.container}>
             <TextInput
                 style={styles.input}
-                placeholder="Nebulon Input"
+                placeholder="Nebulon Input..."
             />
         </View>
     );
@@ -1313,7 +1313,7 @@ const Input = () => {
         <View className="w-52">
             <TextInput
                 className="border-1 border-black rounded-md p-2.5"
-                placeholder="Nebulon Input"
+                placeholder="Nebulon Input..."
             />
         </View>
     );
@@ -1333,7 +1333,7 @@ const Input = () => {
         <View style={styles.container}>
             <TextInput
                 style={styles.input}
-                placeholder="Earth Input"
+                placeholder="Earth Input..."
             />
         </View>
     );
@@ -1359,7 +1359,7 @@ const Input = () => {
         <View className="w-52">
             <TextInput
                 className="border-1 border-b border-b-black p-2.5"
-                placeholder="Earth Input"
+                placeholder="Earth Input..."
             />
         </View>
     );
