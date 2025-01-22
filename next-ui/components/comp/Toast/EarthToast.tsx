@@ -12,8 +12,11 @@ const SuccessToast: React.FC<SuccessToastProps> = ({ onClose }) => {
   }, [onClose]);
 
   return (
-    <div className="fixed top-5 right-5 z-50 px-4 py-2 bg-green-500 rounded shadow-lg flex items-center justify-between text-white">
-      <p className="text-sm">Operation successful!</p>
+    <div className="fixed top-5 right-5 z-50 px-4 py-2 self-center flex justify-between items-center bg-green-50 border-b-4 border-green-500  shadow-lg">
+      <div>
+        <p className="text-sm mb-1">Operation successful!</p>
+        <p className="text-sm">Moving to the next planet</p>
+      </div>
       <button onClick={onClose} className="ml-4 font-bold">
         ×
       </button>
@@ -21,7 +24,7 @@ const SuccessToast: React.FC<SuccessToastProps> = ({ onClose }) => {
   );
 };
 
-const GalaxyToast = () => {
+const EarthToast = () => {
   const [showToast, setShowToast] = useState(false);
 
   return (
@@ -37,4 +40,4 @@ const GalaxyToast = () => {
   );
 };
 
-export default GalaxyToast;
+export default EarthToast;

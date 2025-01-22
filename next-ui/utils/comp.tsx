@@ -21,6 +21,8 @@ import JupiterCard from "@/components/comp/Card/JupiterCard";
 import PlutoCard from "@/components/comp/Card/PlutoCard";
 import EarthProgressBar from "@/components/comp/Progress Bar/EarthProgressBar";
 import MarsProgressBar from "@/components/comp/Progress Bar/MarsProgressBar";
+import GalaxyToast from "@/components/comp/Toast/GalaxyToast";
+import EarthToast from "@/components/comp/Toast/EarthToast";
 
 export const Comp = {
   EarthButton,
@@ -46,4 +48,6 @@ export const Comp = {
   EarthCard,
   JupiterCard,
   PlutoCard,
+  GalaxyToast,
+  EarthToast,
 };

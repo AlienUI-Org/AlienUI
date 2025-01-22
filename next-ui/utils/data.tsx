@@ -229,7 +229,7 @@ export default Accordion;
       {
         name: "Galaxy Alert",
         description:
-          "A galactic alert for notifications. This variant takes in three props: success, failure and warning. Just change the color and icon to suit your use case",
+          "A galactic alert for notifications. This variant shows three props: success, failure and warning. Just change the color and icon to suit your use case",
         code: `import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Feather } from "@expo/vector-icons";
@@ -309,7 +309,7 @@ export default Alert;
       {
         name: "Krythar Wail Alert",
         description:
-          "A galactic alert for critical issues in the galaxy. This variant takes in three props: success, failure and warning. Just change the color to suit your use case",
+          "A galactic alert for critical issues in the galaxy. This variant shows three props: success, failure and warning. Just change the color to suit your use case",
         code: `import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
@@ -2014,6 +2014,357 @@ const Tab = () => {
 export default Tab;
 `,
         render: <Comp.EarthTab />,
+      },
+    ],
+  },
+  toast: {
+    id: 13,
+    name: "Toast",
+    icon: AlienUIIcons.AlienPiAlienLight,
+    description: "A customizable toast component with variants.",
+    variants: [
+      {
+        name: "Galaxy Toast",
+        description:
+          "A default toast component that shows different props: success, failure and warning, by changing the color and text to suit your use case.",
+        code: `import React, { useState, useEffect } from "react";
+import { View, Text, TouchableOpacity, StyleSheet, Animated } from "react-native";
+
+const SuccessToast = ({ onClose }) => {
+  const [opacity] = useState(new Animated.Value(0));
+
+  useEffect(() => {
+    Animated.timing(opacity, {
+      toValue: 1,
+      duration: 300,
+      useNativeDriver: true,
+    }).start();
+
+    const timer = setTimeout(() => {
+      Animated.timing(opacity, {
+        toValue: 0,
+        duration: 300,
+        useNativeDriver: true,
+      }).start(() => onClose());
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [onClose, opacity]);
+
+  return (
+    <Animated.View style={[styles.toastContainer, { opacity }]}>
+      <Text style={styles.toastText}>Operation successful!</Text>
+      <TouchableOpacity onPress={onClose} style={styles.closeButton}>
+        <Text style={styles.closeButtonText}>×</Text>
+      </TouchableOpacity>
+    </Animated.View>
+  );
+};
+
+const Toast = () => {
+  const [showToast, setShowToast] = useState(false);
+
+  return (
+    <View style={styles.container}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => setShowToast(true)}
+      >
+        <Text style={styles.buttonText}>Click me</Text>
+      </TouchableOpacity>
+      {showToast && <SuccessToast onClose={() => setShowToast(false)} />}
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    position: "relative",
+  },
+  button: {
+    backgroundColor: "#000000",
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "semibold",
+  },
+  toastContainer: {
+    position: "absolute",
+    top: 50,
+    left: 20,
+    right: 20,
+    alignSelf: "center",
+    padding: 15,
+    backgroundColor: "#28a745",
+    borderRadius: 8,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
+    elevation: 5,
+    width: "60%",
+    maxWidth: 400,
+  },
+  toastText: {
+    color: "#fff",
+    fontSize: 14,
+  },
+  closeButton: {
+    marginLeft: 10,
+    paddingHorizontal: 10,
+  },
+  closeButtonText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+});
+
+export default Toast;
+`,
+        code2: `import React, { useState, useEffect } from "react";
+import { View, Text, TouchableOpacity, Animated } from "react-native";
+
+const SuccessToast = ({ onClose }) => {
+  const [opacity] = useState(new Animated.Value(0));
+
+  useEffect(() => {
+    Animated.timing(opacity, {
+      toValue: 1,
+      duration: 300,
+      useNativeDriver: true,
+    }).start();
+
+    const timer = setTimeout(() => {
+      Animated.timing(opacity, {
+        toValue: 0,
+        duration: 300,
+        useNativeDriver: true,
+      }).start(() => onClose());
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [onClose, opacity]);
+
+  return (
+    <Animated.View
+      className="absolute top-12 left-5 right-5 self-center bg-green-600 px-4 py-3 flex-row justify-between items-center rounded-lg shadow-md"
+      style={{ opacity }}
+    >
+      <Text className="text-white text-sm">Operation successful!</Text>
+      <TouchableOpacity onPress={onClose} className="ml-2 px-2">
+        <Text className="text-white text-lg font-bold">×</Text>
+      </TouchableOpacity>
+    </Animated.View>
+  );
+};
+
+const Toast = () => {
+  const [showToast, setShowToast] = useState(false);
+
+  return (
+    <View className="flex-1 justify-center items-center relative">
+      <TouchableOpacity
+        className="bg-black px-5 py-3 rounded-lg"
+        onPress={() => setShowToast(true)}
+      >
+        <Text className="text-white text-base font-semibold">Click me</Text>
+      </TouchableOpacity>
+      {showToast && (
+        <SuccessToast onClose={() => setShowToast(false)} />
+      )}
+    </View>
+  );
+};
+
+export default Toast;
+`,
+        render: <Comp.GalaxyToast />,
+      },
+      {
+        name: "Earth Toast",
+        description:
+          "A toast component that shows different props: success, failure and warning, by changing the color and text to suit your use case.",
+        code: `import React, { useState, useEffect } from "react";
+import { View, Text, TouchableOpacity, StyleSheet, Animated } from "react-native";
+
+const SuccessToast = ({ onClose }) => {
+  const [opacity] = useState(new Animated.Value(0));
+
+  useEffect(() => {
+    Animated.timing(opacity, {
+      toValue: 1,
+      duration: 300,
+      useNativeDriver: true,
+    }).start();
+
+    const timer = setTimeout(() => {
+      Animated.timing(opacity, {
+        toValue: 0,
+        duration: 300,
+        useNativeDriver: true,
+      }).start(() => onClose());
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [onClose, opacity]);
+
+  return (
+    <Animated.View style={[styles.toastContainer, { opacity }]}>
+      <View>
+        <Text style={styles.toastText}>Operation successful!</Text>
+        <Text style={styles.toastText2}>Moving to the next planet</Text>
+      </View>
+      <TouchableOpacity onPress={onClose} style={styles.closeButton}>
+        <Text style={styles.closeButtonText}>×</Text>
+      </TouchableOpacity>
+    </Animated.View>
+  );
+};
+
+const Toast = () => {
+  const [showToast, setShowToast] = useState(false);
+
+  return (
+    <View style={styles.container}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => setShowToast(true)}
+      >
+        <Text style={styles.buttonText}>Click me</Text>
+      </TouchableOpacity>
+      {showToast && <SuccessToast onClose={() => setShowToast(false)} />}
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    position: "relative",
+  },
+  button: {
+    backgroundColor: "#000000",
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "semibold",
+  },
+  toastContainer: {
+    position: "absolute",
+    top: 50,
+    left: 20,
+    right: 20,
+    alignSelf: "center",
+    padding: 15,
+    borderBottomWidth: 4,
+    borderBottomColor: "#22c55e",
+    backgroundColor: "#f0fdf4",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
+    elevation: 5,
+    width: "60%",
+    maxWidth: 400,
+  },
+  toastText: {
+    fontSize: 14,
+    marginBottom: 4,
+  },
+  toastText2: {
+    fontSize: 14,
+  },
+  closeButton: {
+    marginLeft: 10,
+    paddingHorizontal: 10,
+  },
+  closeButtonText: {
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+});
+
+export default Toast;
+`,
+        code2: `import React, { useState, useEffect } from "react";
+import { View, Text, TouchableOpacity, Animated } from "react-native";
+
+const SuccessToast = ({ onClose }) => {
+  const [opacity] = useState(new Animated.Value(0));
+
+  useEffect(() => {
+    Animated.timing(opacity, {
+      toValue: 1,
+      duration: 300,
+      useNativeDriver: true,
+    }).start();
+
+    const timer = setTimeout(() => {
+      Animated.timing(opacity, {
+        toValue: 0,
+        duration: 300,
+        useNativeDriver: true,
+      }).start(() => onClose());
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [onClose, opacity]);
+
+  return (
+    <Animated.View
+      className="absolute top-12 left-5 right-5 self-center bg-green-50 border-b-4 border-green-500 px-4 py-3 flex-row justify-between items-center shadow-lg"
+      style={{ opacity }}
+    >
+      <View>
+        <Text className="text-sm mb-1">Operation successful!</Text>
+        <Text className="text-sm">Moving to the next planet</Text>
+      </View>
+      <TouchableOpacity onPress={onClose} className="ml-2 px-2">
+        <Text className="text-xl font-bold">×</Text>
+      </TouchableOpacity>
+    </Animated.View>
+  );
+};
+
+const Toast = () => {
+  const [showToast, setShowToast] = useState(false);
+
+  return (
+    <View className="flex-1 justify-center items-center relative">
+      <TouchableOpacity
+        className="bg-black px-5 py-3 rounded-lg"
+        onPress={() => setShowToast(true)}
+      >
+        <Text className="text-white text-base font-semibold">Click me</Text>
+      </TouchableOpacity>
+      {showToast && <SuccessToast onClose={() => setShowToast(false)} />}
+    </View>
+  );
+};
+
+export default Toast;
+`,
+        render: <Comp.EarthToast />,
       },
     ],
   },
