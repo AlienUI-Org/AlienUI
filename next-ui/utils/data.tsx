@@ -192,11 +192,11 @@ const Accordion = () => {
               onPress={() => toggleAccordion(index)}
               className={\`flex flex-row justify-between items-center px-5 py-4 bg-white \${openIndex === index ? "bg-white" : ""}\`}
             >
-              <Text className="text-[16px] font-medium text-gray-800">
+              <Text className="text-base font-medium text-gray-800">
                 {item.title}
               </Text>
               <Text
-                className={\`text-[16px] transition-transform duration-300 \${
+                className={\`text-base transition-transform duration-300 \${
                   openIndex === index ? "rotate-180" : ""
                 }\`}
               >
