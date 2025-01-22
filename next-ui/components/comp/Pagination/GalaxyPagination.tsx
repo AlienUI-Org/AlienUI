@@ -34,7 +34,7 @@ function GalaxyPagination() {
           </a>
         </li>
 
-        <li className="block size-8 rounded border-blue-600 bg-blue-600 text-center leading-8 text-white">
+        <li className="block size-8 rounded border-black bg-black text-center leading-8 text-white">
           2
         </li>
 
