@@ -34,7 +34,10 @@ const SuccessToast: React.FC<SuccessToastProps> = ({ onClose }) => {
 
   return (
     <Animated.View style={[styles.toastContainer, { opacity }]}>
-      <Text style={styles.toastText}>Operation successful!</Text>
+      <View>
+        <Text style={styles.toastText}>Operation successful!</Text>
+        <Text style={styles.toastText2}>Moving to the next planet</Text>
+      </View>
       <TouchableOpacity onPress={onClose} style={styles.closeButton}>
         <Text style={styles.closeButtonText}>×</Text>
       </TouchableOpacity>
@@ -42,7 +45,7 @@ const SuccessToast: React.FC<SuccessToastProps> = ({ onClose }) => {
   );
 };
 
-const GalaxyToast = () => {
+const EarthToast = () => {
   const [showToast, setShowToast] = useState(false);
 
   return (
@@ -83,8 +86,9 @@ const styles = StyleSheet.create({
     right: 20,
     alignSelf: "center",
     padding: 15,
-    backgroundColor: "#28a745",
-    borderRadius: 8,
+    borderBottomWidth: 4,
+    borderBottomColor: "#22c55e",
+    backgroundColor: "#f0fdf4",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -97,7 +101,10 @@ const styles = StyleSheet.create({
     maxWidth: 400,
   },
   toastText: {
-    color: "#fff",
+    fontSize: 14,
+    marginBottom: 4,
+  },
+  toastText2: {
     fontSize: 14,
   },
   closeButton: {
@@ -105,10 +112,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   closeButtonText: {
-    color: "#fff",
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: "bold",
   },
 });
 
-export default GalaxyToast;
+export default EarthToast;

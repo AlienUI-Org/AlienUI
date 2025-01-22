@@ -16,8 +16,8 @@ const styles = StyleSheet.create({
   alertContainer: {
     borderRadius: 8,
     borderLeftWidth: 4,
-    borderLeftColor: "#ef4444",
-    backgroundColor: "#fef2f2",
+    borderLeftColor: "#22c55e",
+    backgroundColor: "#f0fdf4",
     padding: 16,
     marginTop: 10,
     width: 250,
