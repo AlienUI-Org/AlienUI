@@ -6,7 +6,7 @@ function NebulonInput() {
       {" "}
       <input
         className="border border-gray-600 rounded-md p-2"
-        placeholder="Nebulon Input"
+        placeholder="Nebulon Input..."
       />
     </div>
   );

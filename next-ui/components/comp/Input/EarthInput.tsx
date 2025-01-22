@@ -6,7 +6,7 @@ function EarthInput() {
       {" "}
       <input
         className="border-1 border-b border-b-gray-600 p-2"
-        placeholder="Earth Input"
+        placeholder="Earth Input..."
       />
     </div>
   );
