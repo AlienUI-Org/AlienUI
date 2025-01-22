@@ -10,5 +10,43 @@ There is no AlienUI installation, if you have a bare React Native project setup 
 
 ## Usage
 
-Browse the website for the components you need, copy the code and paste it into your project. Some components will have support TypeScript.
+Browse the website for the components you need, copy the code and paste it into your project. Some components will have TypeScript support.
+
+1. Browse the website for a component you like.
+2. Click on the 'Copy' button to copy the source code.
+3. Paste the copied code into your project.
+
+## Components
+
+AlienUI has a wide range of freely available components. These components include:
+
+- [Accordion](https://alienui.vercel.app/compdetails/Accordion)
+- [Alert](https://alienui.vercel.app/compdetails/Alert)
+- [Avatar](https://alienui.vercel.app/compdetails/Avatar)
+- [Badge](https://alienui.vercel.app/compdetails/Badge)
+- [Breadcrumb](https://alienui.vercel.app/compdetails/Breadcrumb)
+- [Button](https://alienui.vercel.app/compdetails/Button)
+- [Card](https://alienui.vercel.app/compdetails/Card)
+- [Checkbox](https://alienui.vercel.app/compdetails/Checkbox)
+- [Input](https://alienui.vercel.app/compdetails/Input)
+- [Pagination](https://alienui.vercel.app/compdetails/Pagination)
+- [Progress](https://alienui.vercel.app/compdetails/Progress)
+- [Spinner](https://alienui.vercel.app/compdetails/Spinner)
+- [Tab](https://alienui.vercel.app/compdetails/Tab)
+- [Toast](https://alienui.vercel.app/compdetails/Toast)
+
+## Contributing
+
+Contributors can contribute by adding new components, fixing bugs or improving the documentation. Please create an issue before starting any work. Once you get approval on your issue, you can create a new branch and submit your changes in a PR. Please note that all PRs need to be reviewed.
+
+## License
+
+
+
+
+
+
+
+
+
 
