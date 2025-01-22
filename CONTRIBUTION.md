@@ -35,7 +35,7 @@ Thank you for considering contributing to **AlienUI**! Your contributions play a
     ```
 
 5. **Make Changes :**
-    * Review the project structure and documentation to familiarize yourself with the project.
+    * Review the project structure and `next-ui` folder to familiarize yourself with the project.
     * Pick a task or feature you'd like to work on. Check out the [Issues](https://github.com/khaymanii/AlienUI/issues) tab for open task
 6. **Committing Changes**
 
