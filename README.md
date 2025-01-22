@@ -39,7 +39,7 @@ AlienUI has a wide range of freely available components. These components includ
 
 Contributors can contribute by adding new components, fixing bugs or improving the documentation. Please create an issue before starting any work. Once you get approval on your issue, you can create a new branch and submit your changes in a PR. Please note that all PRs need to be reviewed.
 
-A detailed contribution guide is found in the [CONTRIBUTION.md](https://github.com/khaymanii/AlienUI/blob/main/CONTRIBUTION.md)
+A detailed contribution guide is found in [CONTRIBUTION.md](https://github.com/khaymanii/AlienUI/blob/main/CONTRIBUTION.md)
 
 ## License 🪐
 
