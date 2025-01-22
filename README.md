@@ -41,6 +41,9 @@ Contributors can contribute by adding new components, fixing bugs or improving t
 
 ## License
 
+AlienUI is an open source project licensed under the [MIT LICENSE](https://github.com/)
+.
+
 
 
 
