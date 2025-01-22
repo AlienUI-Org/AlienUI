@@ -4,11 +4,11 @@ AlienUI is an open-source UI component library built on Nativewind for React Nat
 
 ![AlienUI](https://github.com/user-attachments/assets/ee79bc02-0bd5-4512-9544-4eb02e019c35)
 
-## Getting started
+## Getting started 🚀 
 
 There is no AlienUI installation, if you have a bare React Native project setup with NativeWind, you can copy the code and paste it into your project. React Native in-built Stylesheet Api is also supported if you do not wish to use NativeWind.
 
-## Usage
+## Usage ✨ 
 
 Browse the website for the components you need, copy the code and paste it into your project. Some components will have TypeScript support.
 
@@ -16,7 +16,7 @@ Browse the website for the components you need, copy the code and paste it into 
 2. Click on the 'Copy' button to copy the source code.
 3. Paste the copied code into your project.
 
-## Components
+## Components 🛸
 
 AlienUI has a wide range of freely available components. These components include:
 
@@ -35,11 +35,13 @@ AlienUI has a wide range of freely available components. These components includ
 - [Tab](https://alienui.vercel.app/compdetails/Tab)
 - [Toast](https://alienui.vercel.app/compdetails/Toast)
 
-## Contributing
+## Contributing 🌌
 
 Contributors can contribute by adding new components, fixing bugs or improving the documentation. Please create an issue before starting any work. Once you get approval on your issue, you can create a new branch and submit your changes in a PR. Please note that all PRs need to be reviewed.
 
-## License
+A detailed contribution guide is found in the [CONTRIBUTION.md](https://github.com/khaymanii/AlienUI/blob/main/CONTRIBUTION.md)
+
+## License 🪐
 
 AlienUI is an open source project licensed under the [MIT LICENSE](https://github.com/khaymanii/AlienUI/blob/main/LICENSE)
 
