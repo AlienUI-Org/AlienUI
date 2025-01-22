@@ -106,6 +106,7 @@ const styles = StyleSheet.create({
   accordionContainer: {
     width: "90%",
     overflow: "hidden",
+    borderWidth:1,
   },
   accordionItem: {
     borderBottomWidth: 1,
@@ -117,7 +118,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingVertical: 16,
     paddingHorizontal: 20,
-    backgroundColor: "#f3eae4",
+    backgroundColor: "#ffffff",
   },
   accordionTitle: {
     fontSize: 16,
@@ -134,7 +135,7 @@ const styles = StyleSheet.create({
   },
   accordionContent: {
     padding: 16,
-    backgroundColor: "#fdf8f6",
+    backgroundColor: "#ffffff",
   },
   contentText: {
     fontSize: 14,
@@ -184,12 +185,12 @@ const Accordion = () => {
 
   return (
     <ScrollView className="flex-1">
-      <View className="w-11/12">
+      <View className="w-11/12 border">
         {accordionItems.map((item, index) => (
-          <View key={index} className="border-b border-gray-300">
+          <View key={index} className="border-b last:border-b-0 border-gray-300">
             <TouchableOpacity
               onPress={() => toggleAccordion(index)}
-              className={\`flex flex-row justify-between items-center px-5 py-4 bg-[#f3eae4] \${openIndex === index ? "bg-[#fdf8f6]" : ""}\`}
+              className={\`flex flex-row justify-between items-center px-5 py-4 bg-white \${openIndex === index ? "bg-white" : ""}\`}
             >
               <Text className="text-[16px] font-medium text-gray-800">
                 {item.title}
@@ -224,12 +225,13 @@ export default Accordion;
     id: 2,
     name: "Alert",
     icon: AlienUIIcons.AlienBug,
-    description: "An alert component with multiple types",
+    description:
+      "An alert component with multiple types that provides feedback",
     variants: [
       {
         name: "Galaxy Alert",
         description:
-          "A galactic alert for notifications. This variant shows three props: success, failure and warning. Just change the color and icon to suit your use case",
+          "A galactic alert for feedbacks. This variant shows three props: success, failure and warning. Just change the color and icon to suit your use case",
         code: `import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Feather } from "@expo/vector-icons";
@@ -309,7 +311,7 @@ export default Alert;
       {
         name: "Krythar Wail Alert",
         description:
-          "A galactic alert for critical issues in the galaxy. This variant shows three props: success, failure and warning. Just change the color to suit your use case",
+          "A galactic alert that provides critical feedback in the galaxy. This variant shows three props: success, failure and warning. Just change the color to suit your use case",
         code: `import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
@@ -432,7 +434,8 @@ export default Avatar;
     id: 4,
     name: "Badge",
     icon: AlienUIIcons.AlienFire,
-    description: "A customizable badge component with multiple variants",
+    description:
+      "A customizable badge component with multiple variants for status indication",
     variants: [
       {
         name: "Galaxy Badge",
@@ -673,7 +676,7 @@ export default Breadcrumb;`,
     name: "Button",
     icon: AlienUIIcons.AlienReddit,
     description:
-      "A customizable button component with multiple variants to suit different use cases.",
+      "A customizable button component to trigger an action or event.",
     variants: [
       {
         name: "Galaxy Button",
@@ -1168,7 +1171,8 @@ export default Card;
     id: 8,
     name: "Checkbox",
     icon: AlienUIIcons.AlienStare,
-    description: "A customizable checkbox component.",
+    description:
+      "A customizable checkbox component to toggle options on and off.",
     variants: [
       {
         name: "Galaxy Checkbox",
@@ -1563,15 +1567,16 @@ export default Pagination;
   },
   progressbar: {
     id: 11,
-    name: "ProgressBar",
+    name: "Progress",
     icon: AlienUIIcons.AlienTbAlien,
-    description: "A customizable progress bar component.",
+    description:
+      "A customizable progress bar component for tracking task progression.",
     variants: [
       {
         name: "Galaxy Progress Bar",
         description: "A default galactic progress bar.",
         code: `import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { FontAwesome, MaterialCommunityIcons, AntDesign } from "@expo/vector-icons";
 
 const ProgressBar = () => {
@@ -1582,10 +1587,10 @@ const ProgressBar = () => {
       </View>
       <View style={styles.stepsContainer}>
         <View style={styles.step}>
-          <FontAwesome name="info-circle" size={24} color="#3B82F6" />
+          <FontAwesome name="info-circle" size={24} color="black" />
         </View>
         <View style={styles.step}>
-          <MaterialCommunityIcons name="map-marker" size={24} color="#3B82F6" />
+          <MaterialCommunityIcons name="map-marker" size={24} color="black" />
         </View>
         <View style={styles.step}>
           <AntDesign name="creditcard" size={24} color="#A1A1AA" />
@@ -1598,7 +1603,6 @@ const ProgressBar = () => {
 const styles = StyleSheet.create({
   container: {
     padding: 16,
-    backgroundColor: "#fff",
   },
   progressBarContainer: {
     height: 8,
@@ -1609,7 +1613,7 @@ const styles = StyleSheet.create({
   progressBarFilled: {
     height: "100%",
     width: "50%",
-    backgroundColor: "#3B82F6",
+    backgroundColor: "#000000",
   },
   stepsContainer: {
     flexDirection: "row",
@@ -1625,21 +1629,21 @@ const styles = StyleSheet.create({
 export default ProgressBar;
 `,
         code2: `import React from "react";
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import { FontAwesome, MaterialCommunityIcons, AntDesign } from "@expo/vector-icons";
 
 const ProgressBar = () => {
   return (
-    <View className="p-4 bg-white">
+    <View className="p-4">
       <View className="h-2 w-full bg-gray-300 rounded-lg overflow-hidden">
-        <View className="h-full w-1/2 bg-blue-500" />
+        <View className="h-full w-1/2 bg-black" />
       </View>
       <View className="flex-row justify-between mt-4">
         <View className="flex-1 items-center">
-          <FontAwesome name="info-circle" size={24} color="#3B82F6" />
+          <FontAwesome name="info-circle" size={24} color="black" />
         </View>
         <View className="flex-1 items-center">
-          <MaterialCommunityIcons name="map-marker" size={24} color="#3B82F6" />
+          <MaterialCommunityIcons name="map-marker" size={24} color="black" />
         </View>
         <View className="flex-1 items-center">
           <AntDesign name="creditcard" size={24} color="#A1A1AA" />
@@ -1649,8 +1653,8 @@ const ProgressBar = () => {
   );
 };
 
-export default ProgressBar;`,
-
+export default ProgressBar;
+`,
         render: <Comp.GalaxyProgressBar />,
       },
       {
@@ -1684,7 +1688,7 @@ const styles = StyleSheet.create({
     height: "100%",
     width: "66.6667%",
     borderRadius: 9999,
-    backgroundColor: "#3B82F6",
+    backgroundColor: "#000000",
   },
 });
 
@@ -1697,7 +1701,7 @@ const ProgressBar = () => {
   return (
     <View className="m-4">
         <View className="mt-4 h-2 w-full rounded-full bg-gray-200 overflow-hidden">
-          <View className="h-full w-2/3 rounded-full bg-blue-500"></View>
+          <View className="h-full w-2/3 rounded-full bg-black"></View>
         </View>
     </View>
   );
@@ -1783,7 +1787,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   activeStep: {
-    backgroundColor: "#3B82F6",
+    backgroundColor: "#000000",
   },
   stepLabel: {
     fontSize: 12,
@@ -1791,7 +1795,7 @@ const styles = StyleSheet.create({
     color: "#6B7280",
   },
   activeLabel: {
-    color: "#3B82F6",
+    color: "#000000",
   },
 });
 
@@ -1807,16 +1811,16 @@ const ProgressBar = () => {
       <View className="relative w-full mt-4 h-1.5 bg-gray-200 rounded-lg">
         <View className="absolute inset-0 flex flex-row justify-between -top-4">
           <View className="flex-1 items-start">
-            <View className="w-9 h-9 p-2 rounded-full bg-blue-500 justify-center items-center mb-2">
+            <View className="w-9 h-9 p-2 rounded-full bg-black justify-center items-center mb-2">
               <FontAwesome name="check-circle" size={20} color="white" />
             </View>
-            <Text className="text-xs font-medium text-blue-500">Details</Text>
+            <Text className="text-xs font-medium text-black">Details</Text>
           </View>
           <View className="flex-1 items-center">
-            <View className="w-9 h-9 p-2 rounded-full bg-blue-500 justify-center items-center mb-2">
+            <View className="w-9 h-9 p-2 rounded-full bg-black justify-center items-center mb-2">
               <FontAwesome name="check-circle" size={20} color="white" />
             </View>
-            <Text className="text-xs font-medium text-blue-500">Address</Text>
+            <Text className="text-xs font-medium text-black">Address</Text>
           </View>
           <View className="flex-1 items-end">
             <View className="w-9 h-9 p-2 rounded-full bg-gray-400 justify-center items-center mb-2">
@@ -1840,11 +1844,12 @@ export default ProgressBar;
     id: 12,
     name: "Spinner",
     icon: AlienUIIcons.AlienLiaRedditAlien,
-    description: "A customizable spinner.",
+    description:
+      "A customizable spinner that provides visual feedback during processing.",
     variants: [
       {
         name: "Galaxy Spinner",
-        description: "A default spinner for loading state.",
+        description: "A default spinner for loading state changes.",
         code: `import React, { useRef, useEffect } from "react";
 import { View, StyleSheet, Animated, Easing } from "react-native";
 
@@ -2107,7 +2112,8 @@ export default Tab;
     id: 14,
     name: "Toast",
     icon: AlienUIIcons.AlienPiAlienLight,
-    description: "A customizable toast component with variants.",
+    description:
+      "A customizable toast component with variants that provides feedback.",
     variants: [
       {
         name: "Galaxy Toast",

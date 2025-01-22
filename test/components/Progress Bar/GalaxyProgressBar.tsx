@@ -14,10 +14,10 @@ const ProgressBar = () => {
       </View>
       <View style={styles.stepsContainer}>
         <View style={styles.step}>
-          <FontAwesome name="info-circle" size={24} color="#3B82F6" />
+          <FontAwesome name="info-circle" size={24} color="black" />
         </View>
         <View style={styles.step}>
-          <MaterialCommunityIcons name="map-marker" size={24} color="#3B82F6" />
+          <MaterialCommunityIcons name="map-marker" size={24} color="black" />
         </View>
         <View style={styles.step}>
           <AntDesign name="creditcard" size={24} color="#A1A1AA" />
@@ -30,7 +30,6 @@ const ProgressBar = () => {
 const styles = StyleSheet.create({
   container: {
     padding: 16,
-    backgroundColor: "#fff",
   },
   progressBarContainer: {
     height: 8,
@@ -41,7 +40,7 @@ const styles = StyleSheet.create({
   progressBarFilled: {
     height: "100%",
     width: "50%",
-    backgroundColor: "#3B82F6",
+    backgroundColor: "#000000",
   },
   stepsContainer: {
     flexDirection: "row",

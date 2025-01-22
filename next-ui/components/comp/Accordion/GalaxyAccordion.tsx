@@ -38,12 +38,12 @@ function Accordion() {
 
   return (
     <section className="w-full flex flex-col items-center justify-center px-4 my-16">
-      <div className="w-full max-w-7xl mx-auto rounded-lg bg-white">
+      <div className="w-full max-w-7xl mx-auto border bg-white">
         {accordionItems.map((item, index) => (
           <div key={index} className="border-b last:border-b-0 border-gray-300">
             <button
               onClick={() => toggleAccordion(index)}
-              className="w-full text-left py-4 px-6 flex justify-between items-center bg-brown-100"
+              className="w-full text-left py-4 px-6 flex justify-between items-center"
             >
               <span className="text-lg font-medium">{item.title}</span>
               <span
@@ -55,7 +55,7 @@ function Accordion() {
               </span>
             </button>
             {openIndex === index && (
-              <div className="px-6 py-4 bg-brown-50">
+              <div className="px-6 py-4">
                 <p className="text-gray-700">{item.content}</p>
               </div>
             )}

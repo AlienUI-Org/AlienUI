@@ -103,6 +103,7 @@ const styles = StyleSheet.create({
   accordionContainer: {
     width: "90%",
     overflow: "hidden",
+    borderWidth: 1,
   },
   accordionItem: {
     borderBottomWidth: 1,
@@ -114,7 +115,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingVertical: 16,
     paddingHorizontal: 20,
-    backgroundColor: "#f3eae4",
+    backgroundColor: "#ffffff",
   },
   accordionTitle: {
     fontSize: 16,
@@ -131,7 +132,7 @@ const styles = StyleSheet.create({
   },
   accordionContent: {
     padding: 16,
-    backgroundColor: "#fdf8f6",
+    backgroundColor: "#ffffff",
   },
   contentText: {
     fontSize: 14,

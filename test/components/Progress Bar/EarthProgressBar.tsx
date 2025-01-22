@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     height: "100%",
     width: "66.6667%",
     borderRadius: 9999,
-    backgroundColor: "#3B82F6",
+    backgroundColor: "#000000",
   },
 });
 

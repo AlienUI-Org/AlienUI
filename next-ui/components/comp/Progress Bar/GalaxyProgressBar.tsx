@@ -7,11 +7,11 @@ function GalaxyProgressBar() {
 
       <div className="w-[400px]">
         <div className="overflow-hidden w-full rounded-full bg-gray-200">
-          <div className="h-2 w-1/2 rounded-full bg-blue-500"></div>
+          <div className="h-2 w-1/2 rounded-full bg-black"></div>
         </div>
 
         <ol className="mt-4 grid grid-cols-3 text-sm font-medium text-gray-500">
-          <li className="flex items-center justify-start text-blue-600 sm:gap-1.5">
+          <li className="flex items-center justify-start text-black sm:gap-1.5">
             <svg
               className="size-6 sm:size-5"
               xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +28,7 @@ function GalaxyProgressBar() {
             </svg>
           </li>
 
-          <li className="flex items-center justify-center text-blue-600 sm:gap-1.5">
+          <li className="flex items-center justify-center text-black sm:gap-1.5">
             <svg
               className="size-6 sm:size-5"
               xmlns="http://www.w3.org/2000/svg"

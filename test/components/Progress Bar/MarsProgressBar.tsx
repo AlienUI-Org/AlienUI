@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   activeStep: {
-    backgroundColor: "#3B82F6",
+    backgroundColor: "#000000",
   },
   stepLabel: {
     fontSize: 12,
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     color: "#6B7280",
   },
   activeLabel: {
-    color: "#3B82F6",
+    color: "#000000",
   },
 });
 
