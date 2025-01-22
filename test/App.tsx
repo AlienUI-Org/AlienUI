@@ -1,10 +1,9 @@
 import { StyleSheet, ScrollView } from "react-native";
-import EarthToast from "./components/Toast/EarthToast";
-
+import GalaxyPagination from "./components/Pagination/GalaxyPagination";
 export default function App() {
   return (
     <ScrollView style={styles.container}>
-      <EarthToast />
+      <GalaxyPagination />
     </ScrollView>
   );
 }

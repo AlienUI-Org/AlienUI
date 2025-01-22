@@ -7,7 +7,7 @@ const Tab = () => {
     <View style={styles.container}>
       <View style={styles.iconContainer}>
         <View style={styles.active}>
-          <AntDesign name="home" size={24} color="#ba8463" />
+          <AntDesign name="home" size={24} color="black" />
         </View>
         <View>
           <AntDesign name="contacts" size={24} color="white" />
@@ -37,14 +37,13 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     borderRadius: 30,
     paddingVertical: 6,
-    backgroundColor: "#ba8463",
+    backgroundColor: "#000000",
   },
   active: {
     borderRadius: 30,
     width: 50,
     height: 50,
     backgroundColor: "#ffffff",
-    color: "#ba8463",
     padding: 4,
     alignItems: "center",
     justifyContent: "center",

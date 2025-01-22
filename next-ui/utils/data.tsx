@@ -1435,8 +1435,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   activePage: {
-    backgroundColor: "#2563eb",
-    borderColor: "#2563eb",
+    backgroundColor: "#000000",
+    borderColor: "#000000",
   },
   pageNumberText: {
     color: "#333",
@@ -1465,7 +1465,7 @@ const Pagination = () => {
       <TouchableOpacity className="w-8 h-8 justify-center items-center border border-gray-300 rounded bg-white">
         <Text className="text-gray-800 text-sm font-medium">1</Text>
       </TouchableOpacity>
-      <TouchableOpacity className="w-8 h-8 justify-center items-center border border-blue-600 rounded bg-blue-600">
+      <TouchableOpacity className="w-8 h-8 justify-center items-center border border-black rounded bg-black">
         <Text className="text-white text-sm font-medium">2</Text>
       </TouchableOpacity>
       <TouchableOpacity className="w-8 h-8 justify-center items-center border border-gray-300 rounded bg-white">
@@ -1836,8 +1836,95 @@ export default ProgressBar;
       },
     ],
   },
-  tab: {
+  spinner: {
     id: 12,
+    name: "Spinner",
+    icon: AlienUIIcons.AlienLiaRedditAlien,
+    description: "A customizable spinner.",
+    variants: [
+      {
+        name: "Galaxy Spinner",
+        description: "A default spinner for loading state.",
+        code: `import React, { useRef, useEffect } from "react";
+import { View, StyleSheet, Animated, Easing } from "react-native";
+
+const Spinner = () => {
+  const spinValue = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    const spin = () => {
+      spinValue.setValue(0);
+
+      Animated.timing(spinValue, {
+        toValue: 1,
+        duration: 1000,
+        easing: Easing.linear,
+        useNativeDriver: true,
+      }).start((finished) => {
+        if (finished) {
+          spin();
+        }
+      });
+    };
+
+    spin();
+
+    return () => {
+      spinValue.stopAnimation();
+    };
+  }, []);
+
+  const spin = spinValue.interpolate({
+    inputRange: [0, 1],
+    outputRange: ["0deg", "360deg"],
+  });
+
+  return (
+    <View style={styles.container}>
+      <Animated.View
+        style={[styles.spinner, { transform: [{ rotate: spin }] }]}
+      />
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  spinner: {
+    width: 48,
+    height: 48,
+    borderWidth: 4,
+    borderColor: "#000000",
+    borderTopColor: "transparent",
+    borderRadius: 25,
+  },
+});
+
+export default Spinner;
+`,
+        code2: `import React from "react";
+import { View } from "react-native";
+
+const Spinner = () => {
+  return (
+    <View className="flex items-center justify-center">
+      <View className="h-12 w-12 border-4 border-black border-t-transparent rounded-full animate-spin" />
+    </View>
+  );
+};
+
+export default Spinner;
+`,
+        render: <Comp.GalaxySpinner />,
+      },
+    ],
+  },
+  tab: {
+    id: 13,
     name: "Tab",
     icon: AlienUIIcons.AlienRiAliensLine,
     description: "A customizable tab navigation component with variants.",
@@ -1854,7 +1941,7 @@ const Tab = () => {
     <View style={styles.container}>
       <View style={styles.iconContainer}>
         <View style={styles.active}>
-          <AntDesign name="home" size={24} color="#ba8463" />
+          <AntDesign name="home" size={24} color="black" />
         </View>
         <View>
           <AntDesign name="contacts" size={24} color="white" />
@@ -1884,14 +1971,13 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     borderRadius: 30,
     paddingVertical: 6,
-    backgroundColor: "#ba8463",
+    backgroundColor: "#000000",
   },
   active: {
     borderRadius: 30,
     width: 50,
     height: 50,
     backgroundColor: "#ffffff",
-    color: "#ba8463",
     padding: 4,
     alignItems: "center",
     justifyContent: "center",
@@ -1907,9 +1993,9 @@ import { AntDesign } from "@expo/vector-icons";
 const Tab = () => {
   return (
     <View className="flex items-center">
-      <View className="flex-row w-11/12 items-center justify-around rounded-full bg-[#ba8463] py-2">
-        <View className="bg-white text-[#ba8463] rounded-full w-12 h-12 flex items-center justify-center">
-          <AntDesign name="home" size={24} color="#ba8463" />
+      <View className="flex-row w-11/12 items-center justify-around rounded-full bg-black py-2">
+        <View className="bg-white rounded-full w-12 h-12 flex items-center justify-center">
+          <AntDesign name="home" size={24} color="#000000" />
         </View>
         <View className="text-white">
           <AntDesign name="contacts" size={24} color="white" />
@@ -1973,7 +2059,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     borderRadius: 4,
     paddingVertical: 16,
-    backgroundColor: "#ba8463",
+    backgroundColor: "#000000",
   },
   text: {
     color: "#ffffff",
@@ -1990,7 +2076,7 @@ import { AntDesign } from "@expo/vector-icons";
 const Tab = () => {
   return (
     <View className="flex items-center">
-      <View className="flex-row w-11/12 items-center justify-around rounded bg-[#ba8463] py-4">
+      <View className="flex-row w-11/12 items-center justify-around rounded bg-black py-4">
         <View>
           <Text className="text-white font-bold">Home</Text>
         </View>
@@ -2018,7 +2104,7 @@ export default Tab;
     ],
   },
   toast: {
-    id: 13,
+    id: 14,
     name: "Toast",
     icon: AlienUIIcons.AlienPiAlienLight,
     description: "A customizable toast component with variants.",

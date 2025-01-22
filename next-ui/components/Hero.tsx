@@ -14,17 +14,20 @@ function Hero() {
             Free open-source UI components for React native{" "}
           </p>
           <p className="mt-4 text-lg text-gray-800 text-center font-medium lg:w-[1000px]">
-            AlienUI is an open-source UI component library built ontop of Nativewind, designed
-            specifically for React Native mobile apps. AlienUI is the shadcnui
-            of mobile app development. With a versatile range of components, you
-            can create stunning user interfaces for your next mobile app.
+            AlienUI is an open-source UI component library built on Nativewind
+            for React Native apps. It leverages native tags for seamless
+            integration and maintains zero to minimal dependencies, enabling
+            high-performance, and stunning interfaces with ease.
           </p>
           <div className="flex items-center gap-3 justify-center mt-6 mb-4">
             <p> ✅ No npm installation</p>
             <p>✅ No configuration</p>
             <p>✅ No setup</p>
           </div>
-          <p>Say no to dependency issue and complex setup. Just copy and paste components to build your next mobile app</p>
+          <p>
+            Say no to dependency issue and complex setup. Just copy and paste
+            components to build your next mobile app
+          </p>
           <div className="mt-6 flex-row flex items-center gap-2 justify-center">
             <Link href="/comp" prefetch>
               <button className="px-6 py-3 bg-transparent border border-brown-600 text-black hover:text-white font-medium rounded-lg shadow-md  hover:bg-brown-600 transition duration-300 cursor-pointer">

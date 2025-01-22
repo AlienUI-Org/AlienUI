@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     borderRadius: 4,
     paddingVertical: 16,
-    backgroundColor: "#ba8463",
+    backgroundColor: "#000000",
   },
   text: {
     color: "#ffffff",

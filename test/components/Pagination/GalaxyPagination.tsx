@@ -54,8 +54,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   activePage: {
-    backgroundColor: "#2563eb",
-    borderColor: "#2563eb",
+    backgroundColor: "#000000",
+    borderColor: "#000000",
   },
   pageNumberText: {
     color: "#333",
