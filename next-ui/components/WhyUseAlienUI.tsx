@@ -23,7 +23,7 @@ function WhyUseAlienUI() {
               No npm Installation
             </h3>
             <p className="text-gray-600 mt-2">
-              Alien UI requires no NPM installations. Simply copy, paste them
+              AlienUI requires no NPM installations. Simply copy, paste them
               into your React Native project seamlessly.
             </p>
           </div>
@@ -34,7 +34,7 @@ function WhyUseAlienUI() {
               No Configuration
             </h3>
             <p className="text-gray-600 mt-2">
-              Alien UI works out of the box with zero configuration, so you can
+              AlienUI works out of the box with zero configuration as it uses in-built native tags, so you can
               focus on building your app instantly.{" "}
             </p>
           </div>
@@ -56,7 +56,7 @@ function WhyUseAlienUI() {
               Open-Source Contributions
             </h3>
             <p className="text-gray-600 mt-2">
-              Alien UI is open-source, inviting developers and designers to
+              AlienUI is open-source, inviting developers and designers to
               collaborate and share UI components.
             </p>
           </div>
