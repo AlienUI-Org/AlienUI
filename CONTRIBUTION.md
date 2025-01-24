@@ -71,6 +71,8 @@ Thank you for considering contributing to **AlienUI**! Your contributions play a
 * Ensure your code follows the project's coding standards.
 * Be responsive to feedback and make necessary adjustments.
 
+**N/B:** AlienUI uses Firebase to manage the form database. Incase you encounter any error while configuring in your local machine, you can setup your own firebase project and populate you API KEY in your .env file. Just for testing purpose. 
+
 ## Code of Conduct
 
 * Review and adhere to our [Code of Conduct](https://github.com/khaymanii/AlienUI/blob/main/CODE%20OF%20CONDUCT.md) during your contribution.
