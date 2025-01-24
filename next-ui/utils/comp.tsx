@@ -24,6 +24,7 @@ import MarsProgressBar from "@/components/comp/Progress Bar/MarsProgressBar";
 import GalaxyToast from "@/components/comp/Toast/GalaxyToast";
 import EarthToast from "@/components/comp/Toast/EarthToast";
 import GalaxySpinner from "@/components/comp/Spinner/GalaxySpinner";
+import EarthSpinner from "@/components/comp/Spinner/EarthSpinner";
 
 export const Comp = {
   EarthButton,
@@ -52,4 +53,5 @@ export const Comp = {
   GalaxyToast,
   EarthToast,
   GalaxySpinner,
+  EarthSpinner,
 };

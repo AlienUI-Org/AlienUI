@@ -1926,6 +1926,88 @@ export default Spinner;
 `,
         render: <Comp.GalaxySpinner />,
       },
+      {
+        name: "Earth Spinner",
+        description:
+          "A spherical earth-shaped loader that changes color while loading.",
+        code: `import React, { useState, useEffect } from "react";
+import { View, StyleSheet } from "react-native";
+
+const Spinner = () => {
+  const [currentColorIndex, setCurrentColorIndex] = useState(0);
+
+  useEffect(() => {
+    const colors = ["black", "red", "blue", "green", "yellow"];
+    let index = 0;
+
+    const interval = setInterval(() => {
+      setCurrentColorIndex(index);
+      index = (index + 1) % colors.length;
+    }, 500);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const colors = ["black", "red", "blue", "green", "yellow"];
+  const currentColor = colors[currentColorIndex];
+
+  return (
+    <View style={styles.container}>
+      <View style={[styles.spinner, { backgroundColor: currentColor }]} />
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  spinner: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+  },
+});
+
+export default Spinner;
+`,
+        code2: `import React, { useState, useEffect } from "react";
+import { View } from "react-native";
+
+const Spinner = () => {
+  const [currentColor, setCurrentColor] = useState("bg-black");
+
+  useEffect(() => {
+    const colors = [
+      "bg-black",
+      "bg-red-500",
+      "bg-blue-500",
+      "bg-green-500",
+      "bg-yellow-500",
+    ];
+    let index = 0;
+
+    const interval = setInterval(() => {
+      setCurrentColor(colors[index]);
+      index = (index + 1) % colors.length;
+    }, 500);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <View className="flex items-center justify-center">
+      <View className={\`w-12 h-12 \${currentColor} rounded-full animate-spin\`} />
+    </View>
+  );
+};
+
+export default Spinner;
+`,
+        render: <Comp.EarthSpinner />,
+      },
     ],
   },
   tab: {
