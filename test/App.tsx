@@ -1,10 +1,10 @@
 import { StyleSheet, ScrollView } from "react-native";
-import EarthSpinner from "./components/Spinner/EarthSpinner";
+import GalaxyDropdown from "./components/Dropdown/GalaxyDropdown";
 
 export default function App() {
   return (
     <ScrollView style={styles.container}>
-      <EarthSpinner />
+      <GalaxyDropdown />
     </ScrollView>
   );
 }
