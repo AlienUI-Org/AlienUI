@@ -33,9 +33,8 @@ function Suggestion() {
       });
 
       toast.success(
-        "Suggestion sent successfully, Thank you for your feedback! We appreciate your input."
+        "Suggestion sent successfully, Thank you for your feedback!"
       );
-
       setFormData({ name: "", email: "", message: "" });
     } catch (err) {
       console.error("Error submitting suggestion:", err);

@@ -11,6 +11,7 @@ function NewsLetter() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    toast.dismiss();
 
     try {
       await addDoc(collection(db, "newsletter"), {
@@ -18,12 +19,16 @@ function NewsLetter() {
         createdAt: new Date(),
       });
 
-      toast.success("Newsletter subscribed successfully!");
+      toast.success("Newsletter subscribed successfully!", {
+        toastId: "subscribe-success",
+      });
 
       setEmail("");
     } catch (err) {
       console.error("Error subscribing :", err);
-      toast.error("Failed to subscribe. Please try again.");
+      toast.error("Failed to subscribe. Please try again.", {
+        toastId: "subscribe-error",
+      });
     }
   };
 
@@ -52,13 +57,18 @@ function NewsLetter() {
           />
           <button
             type="submit"
-            className="px-6 py-3 bg-brown-600 hover:bg-brown-800 text-white rounded-md shadow-md focus:outline-none focus:ring-2"
+            className="px-6 py-3 bg-brown-600 hover:bg-brown-800 text-white rounded-md shadow-md "
           >
             Subscribe
           </button>
         </form>
       </div>
-      <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar
+        closeOnClick
+      />
     </section>
   );
 }
