@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  FlatList,
-  StyleSheet,
-} from "react-native";
+import { View, Text, Pressable, FlatList, StyleSheet } from "react-native";
 
 const Dropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +15,7 @@ const Dropdown = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>Choose an option</Text>
-      <TouchableOpacity
+      <Pressable
         onPress={() => setIsOpen(!isOpen)}
         style={[styles.button, isOpen ? styles.roundedTop : styles.roundedFull]}
       >
@@ -29,19 +23,19 @@ const Dropdown = () => {
           {selectedOption || "Select an option"}
         </Text>
         <Text style={styles.icon}>{isOpen ? "▲" : "▼"}</Text>
-      </TouchableOpacity>
+      </Pressable>
       {isOpen && (
         <View style={styles.dropdown}>
           <FlatList
             data={options}
             keyExtractor={(item, index) => index.toString()}
             renderItem={({ item }) => (
-              <TouchableOpacity
+              <Pressable
                 onPress={() => handleOptionClick(item)}
                 style={styles.option}
               >
                 <Text style={styles.optionText}>{item}</Text>
-              </TouchableOpacity>
+              </Pressable>
             )}
           />
         </View>

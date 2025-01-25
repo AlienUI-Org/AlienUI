@@ -33,7 +33,7 @@ export const components: Components = {
         name: "Galaxy Accordion",
         description: "A default galactic accordion",
         code: `import React, { useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from "react-native";
+import { View, Text, Pressable, StyleSheet, ScrollView } from "react-native";
 
 const Accordion = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -75,7 +75,7 @@ const Accordion = () => {
       <View style={styles.accordionContainer}>
         {accordionItems.map((item, index) => (
           <View key={index} style={styles.accordionItem}>
-            <TouchableOpacity
+            <Pressable
               onPress={() => toggleAccordion(index)}
               style={styles.accordionHeader}
             >
@@ -85,7 +85,7 @@ const Accordion = () => {
               >
                 ▼
               </Text>
-            </TouchableOpacity>
+            </Pressable>
             {openIndex === index && (
               <View style={styles.accordionContent}>
                 <Text style={styles.contentText}>{item.content}</Text>
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
 export default Accordion;
 `,
         code2: `import React, { useState } from "react";
-import { View, Text, TouchableOpacity, ScrollView } from "react-native";
+import { View, Text, Pressable, ScrollView } from "react-native";
 
 const Accordion = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -188,7 +188,7 @@ const Accordion = () => {
       <View className="w-11/12 border">
         {accordionItems.map((item, index) => (
           <View key={index} className="border-b last:border-b-0 border-gray-300">
-            <TouchableOpacity
+            <Pressable
               onPress={() => toggleAccordion(index)}
               className={\`flex flex-row justify-between items-center px-5 py-4 bg-white \${openIndex === index ? "bg-white" : ""}\`}
             >
@@ -202,7 +202,7 @@ const Accordion = () => {
               >
                 ▼
               </Text>
-            </TouchableOpacity>
+            </Pressable>
             {openIndex === index && (
               <View className="px-5 py-4 bg-[#fdf8f6]">
                 <Text className="text-sm text-gray-600">{item.content}</Text>
@@ -1283,7 +1283,7 @@ export default CheckBox;
         name: "Galaxy Dropdown",
         description: "A intergalactic dropdown for selection.",
         code: `import React, { useState } from "react";
-import { View, Text, TouchableOpacity, FlatList, StyleSheet } from "react-native";
+import { View, Text, Pressable, FlatList, StyleSheet } from "react-native";
 
 const Dropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -1299,7 +1299,7 @@ const Dropdown = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>Choose an option</Text>
-      <TouchableOpacity
+      <Pressable
         onPress={() => setIsOpen(!isOpen)}
         style={[styles.button, isOpen ? styles.roundedTop : styles.roundedFull]}
       >
@@ -1307,19 +1307,19 @@ const Dropdown = () => {
           {selectedOption || "Select an option"}
         </Text>
         <Text style={styles.icon}>{isOpen ? "▲" : "▼"}</Text>
-      </TouchableOpacity>
+      </Pressable>
       {isOpen && (
         <View style={styles.dropdown}>
           <FlatList
             data={options}
             keyExtractor={(item, index) => index.toString()}
             renderItem={({ item }) => (
-              <TouchableOpacity
+              <Pressable
                 onPress={() => handleOptionClick(item)}
                 style={styles.option}
               >
                 <Text style={styles.optionText}>{item}</Text>
-              </TouchableOpacity>
+              </Pressable>
             )}
           />
         </View>
@@ -1387,7 +1387,56 @@ const styles = StyleSheet.create({
 
 export default Dropdown;
 `,
-        code2: ``,
+        code2: `import React, { useState } from "react";
+import { View, Text, Pressable, FlatList } from "react-native";
+
+const Dropdown = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  const options = ["Galaxy Dropdown", "Nebula Dropdown", "Earth Dropdown"];
+
+  const handleOptionClick = (option) => {
+    setSelectedOption(option);
+    setIsOpen(false);
+  };
+
+  return (
+    <View className="w-4/5 self-center mt-12">
+      <Text className="text-base text-gray-700 mb-2">Choose an option</Text>
+      <Pressable
+        onPress={() => setIsOpen(!isOpen)}
+        className={\`flex-row justify-between items-center bg-white border border-gray-300 px-4 py-3 \${
+          isOpen ? "rounded-t-lg" : "rounded-lg"
+        }\`}
+      >
+        <Text className="text-base text-gray-700">
+          {selectedOption || "Select an option"}
+        </Text>
+        <Text className="text-base text-gray-700">{isOpen ? "▲" : "▼"}</Text>
+      </Pressable>
+      {isOpen && (
+        <View className="bg-white border border-gray-300 rounded-b-lg mt-2 max-h-40">
+          <FlatList
+            data={options}
+            keyExtractor={(item, index) => index.toString()}
+            renderItem={({ item }) => (
+              <Pressable
+                onPress={() => handleOptionClick(item)}
+                className="px-4 py-3"
+              >
+                <Text className="text-base text-gray-700">{item}</Text>
+              </Pressable>
+            )}
+          />
+        </View>
+      )}
+    </View>
+  );
+};
+
+export default Dropdown;
+`,
         render: <Comp.GalaxyDropdown />,
       },
     ],
@@ -1604,7 +1653,8 @@ const Pagination = () => {
   );
 };
 
-export default Pagination;`,
+export default Pagination;
+`,
 
         render: <Comp.GalaxyPagination />,
       },
