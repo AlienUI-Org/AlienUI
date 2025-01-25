@@ -2179,8 +2179,94 @@ export default Spinner;
       },
     ],
   },
-  tab: {
+  switch: {
     id: 14,
+    name: "Switch",
+    icon: AlienUIIcons.AlienPiAlienThin,
+    description: "A customizable switch for enabling and disabling options.",
+    variants: [
+      {
+        name: "Galaxy Switch",
+        description: "A default switch for toggling on and off.",
+        code: `import React, { useState } from "react";
+import { StyleSheet, Animated, Pressable } from "react-native";
+
+const Switch = () => {
+  const [isEnabled, setIsEnabled] = useState(false);
+  const translateX = new Animated.Value(isEnabled ? 20 : 0);
+
+  const toggleSwitch = () => {
+    setIsEnabled(!isEnabled);
+    Animated.timing(translateX, {
+      toValue: isEnabled ? 0 : 20,
+      duration: 200,
+      useNativeDriver: true,
+    }).start();
+  };
+
+  return (
+    <Pressable
+      style={[
+        styles.switchContainer,
+        { backgroundColor: isEnabled ? "#000000" : "#ccc" },
+      ]}
+      onPress={toggleSwitch}
+    >
+      <Animated.View
+        style={[styles.switchKnob, { transform: [{ translateX }] }]}
+      />
+    </Pressable>
+  );
+};
+
+const styles = StyleSheet.create({
+  switchContainer: {
+    width: 55,
+    height: 30,
+    borderRadius: 15,
+    justifyContent: "center",
+    padding: 2,
+  },
+  switchKnob: {
+    width: 26,
+    height: 26,
+    borderRadius: 13,
+    backgroundColor: "#FFFFFF",
+  },
+});
+
+export default Switch;
+`,
+        code2: `import React, { useState } from "react";
+import { Pressable, View } from "react-native";
+
+const Switch = () => {
+  const [isEnabled, setIsEnabled] = useState(false);
+
+  return (
+    <Pressable
+      onPress={() => setIsEnabled(!isEnabled)}
+      className={\`relative inline-flex h-7 w-14 items-center rounded-full transition \${
+        isEnabled ? "bg-black" : "bg-gray-400"
+      }\`}
+    >
+      <View
+        className={\`absolute inline-block h-6 w-6 transform rounded-full bg-white transition \${
+          isEnabled ? "translate-x-7" : "translate-x-1"
+        }\`}
+      />
+    </Pressable>
+  );
+};
+
+export default Switch;
+`,
+        render: <Comp.GalaxySwitch />,
+      },
+    ],
+  },
+  tab: {
+    id: 15,
     name: "Tab",
     icon: AlienUIIcons.AlienRiAliensLine,
     description: "A customizable tab navigation component with variants.",
@@ -2359,7 +2445,7 @@ export default Tab;
     ],
   },
   toast: {
-    id: 15,
+    id: 16,
     name: "Toast",
     icon: AlienUIIcons.AlienPiAlienLight,
     description:
