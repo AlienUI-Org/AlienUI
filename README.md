@@ -4,6 +4,61 @@ AlienUI is an open-source UI component library built on Nativewind for React Nat
 
 ![aui](https://github.com/user-attachments/assets/925df950-86b2-4c0a-9340-da96a755f98e)
 
+## Features
+
+### **1. Zero Dependencies**
+
+- No external dependencies required.
+- Fully functional with just React Native and NativeWind installed.
+- Simplifies integration into any project.
+
+### **2. Native Tags for Components**
+
+- Built entirely on native React Native components like `View`, `Text`, `TouchableOpacity`, Pressable etc.
+- Ensures compatibility with all React Native environments.
+
+### **3. Lightweight and Performant**
+
+- Minimal overhead for faster app performance.
+- Ideal for MVPs, small-scale projects, or large apps requiring lightweight components.
+
+### **4. Customization-Friendly**
+
+- Provides fully customizable components.
+- Works seamlessly with styling libraries like **NativeWind**, or plain stylesheets.
+
+### **5. Plug-and-Play**
+
+- No setup or configuration required.
+- Just import the components and start building.
+
+### **6. Comprehensive Documentation**
+
+- Easy-to-follow documentation to help you get started quickly.
+- Includes usage examples, code snippets, and preview.
+
+### **7. Ready-to-Use Component Variants**
+
+- Pre-designed components with multiple variants for buttons, inputs, and more.
+- Examples include:
+  - **Galaxy and Earth Buttons**
+  - **Galaxy and Nebulon Inputs**
+
+### **8. Developer-Friendly**
+
+- Fully open-source and free to use.
+- Encourages collaboration and contributions from the community.
+
+### **9. Compatible with Popular Tools**
+
+- Designed to work seamlessly with tools like **Expo**, **NativeWind**, and **React Navigation**.
+- Easy to integrate with animation libraries and other React Native tools.
+
+### **10. Self-Hosted and Independent**
+
+- No reliance on third-party servers or APIs.
+- Gives developers full control over the library and its components.
+
 ## Getting started
 
 There is no AlienUI installation, if you have a bare React Native project setup with NativeWind, you can copy the code and paste it into your project. React Native in-built Stylesheet API is also supported if you do not wish to use NativeWind.
