@@ -14,7 +14,7 @@ AlienUI is an open-source UI component library built on Nativewind for React Nat
 
 ### **2. Native Tags for Components**
 
-- Built entirely on native React Native components like `View`, `Text`, `TouchableOpacity`, Pressable etc.
+- Built entirely on native React Native components like `View`, `Text`, `TouchableOpacity`, `Pressable`, `Animated` etc.
 - Ensures compatibility with all React Native environments.
 
 ### **3. Lightweight and Performant**
