@@ -36,11 +36,6 @@ function FaQ() {
         "Yes, you can use AlienUI components in your React Native project. The code is yours. But hey, let us know if you do. We'd love to see what you build.",
     },
     {
-      title: "Do I need to credit AlienUI?",
-      content:
-        "No, crediting AlienUI is not necessary. However, giving the project a star on GitHub and/or sharing it on Twitter and LinkedIn would be appreciated.",
-    },
-    {
       title: "How can I support AlienUI?",
       content:
         "You can support AlienUI by starring the project on GitHub and/or sharing it on Twitter and LinkedIn. It helps increase the project's visibility.",
