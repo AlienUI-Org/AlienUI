@@ -1,12 +1,10 @@
 import { StyleSheet, ScrollView } from "react-native";
-import GalaxyDropdown from "./components/Dropdown/GalaxyDropdown";
-import GalaxySwitch from "./components/Switch/GalaxySwitch";
+import GalaxyModal from "./components/Modal/GalaxyModal";
 
 export default function App() {
   return (
     <ScrollView style={styles.container}>
-      <GalaxyDropdown />
-      <GalaxySwitch />
+      <GalaxyModal />
     </ScrollView>
   );
 }

@@ -85,6 +85,7 @@ AlienUI has a wide range of freely available components. These components includ
 - [Checkbox](https://alienui.vercel.app/compdetails/Checkbox)
 - [Dropdown](https://alienui.vercel.app/compdetails/Dropdown)
 - [Input](https://alienui.vercel.app/compdetails/Input)
+- [Modal](https://alienui.vercel.app/compdetails/Modal)
 - [Pagination](https://alienui.vercel.app/compdetails/Pagination)
 - [Progress](https://alienui.vercel.app/compdetails/Progress)
 - [Spinner](https://alienui.vercel.app/compdetails/Spinner)
