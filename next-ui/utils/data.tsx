@@ -666,7 +666,9 @@ const Breadcrumb = () => {
   );
 };
 
-export default Breadcrumb;`,
+export default Breadcrumb;
+`,
+
         render: <Comp.EarthBreadcrumb />,
       },
     ],
@@ -728,15 +730,15 @@ export default Button;`,
         name: "Earth Button",
         description: "A button with an icon, used for secondary actions.",
         code: `import React from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { Pressable, Text, StyleSheet } from 'react-native';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 const Button = () => {
     return (
-        <TouchableOpacity style={styles.button}>
+        <Pressable style={styles.button}>
             <Text style={styles.text}>Earth Button</Text>
             <MaterialCommunityIcons name="alien-outline" size={20} color="white" />
-        </TouchableOpacity>
+        </Pressable>
     );
 };
 
@@ -761,16 +763,16 @@ const styles = StyleSheet.create({
 export default Button;
 `,
         code2: `import React from 'react';
-import { TouchableOpacity, Text } from 'react-native';
+import { Pressable, Text } from 'react-native';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 
 const Button = () => {
     return (
-        <TouchableOpacity className="bg-black border py-2 px-4 rounded-md flex flex-row items-center justify-center w-52">
+        <Pressable className="bg-black border py-2 px-4 rounded-md flex flex-row items-center justify-center w-52">
             <Text className="text-white text-base mr-1">Earth Button</Text>
             <MaterialCommunityIcons name="alien-outline" size={20} color="white" />
-        </TouchableOpacity>
+        </Pressable>
     );
 };
 
