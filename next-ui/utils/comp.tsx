@@ -27,6 +27,7 @@ import GalaxySpinner from "@/components/comp/Spinner/GalaxySpinner";
 import EarthSpinner from "@/components/comp/Spinner/EarthSpinner";
 import GalaxyDropdown from "@/components/comp/Dropdown/GalaxyDropdown";
 import GalaxySwitch from "@/components/comp/Switch/GalaxySwitch";
+import GalaxyModal from "@/components/comp/Modal/GalaxyModal";
 
 export const Comp = {
   EarthButton,
@@ -58,4 +59,5 @@ export const Comp = {
   EarthSpinner,
   GalaxyDropdown,
   GalaxySwitch,
+  GalaxyModal,
 };
