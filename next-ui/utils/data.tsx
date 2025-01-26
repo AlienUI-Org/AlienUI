@@ -1544,8 +1544,203 @@ export default Input;`,
       },
     ],
   },
-  pagination: {
+  modal: {
     id: 11,
+    name: "Modal",
+    icon: AlienUIIcons.AlienSkull,
+    description:
+      "A customizable modal that highlights key information or actions.",
+    variants: [
+      {
+        name: "Galaxy Modal",
+        description:
+          "A default galactic modal for highlighting key information in the galaxy.",
+        code: `import React, { useState } from "react";
+import { View, Text, Pressable, Modal, StyleSheet } from "react-native";
+
+const Modal = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => setIsOpen(false);
+
+  return (
+    <View style={styles.container}>
+      <Pressable onPress={openModal} style={styles.openButton}>
+        <Text style={styles.buttonText}>Open Modal</Text>
+      </Pressable>
+
+      <Modal
+        visible={isOpen}
+        transparent
+        animationType="fade"
+        onRequestClose={closeModal}
+      >
+        <View style={styles.overlay}>
+          <View style={styles.modalContainer}>
+            <View style={styles.modalHeader}>
+              <Text style={styles.modalTitle}>Galaxy Modal</Text>
+              <Pressable onPress={closeModal}>
+                <Text style={styles.closeButton}>✖</Text>
+              </Pressable>
+            </View>
+
+            <View style={styles.modalBody}>
+              <Text style={styles.modalContent}>
+                This is a default galaxy modal component that highlights key
+                information
+              </Text>
+            </View>
+
+            <View style={styles.modalFooter}>
+              <Pressable
+                onPress={closeModal}
+                style={styles.closeButtonContainer}
+              >
+                <Text style={styles.buttonText}>Close</Text>
+              </Pressable>
+            </View>
+          </View>
+        </View>
+      </Modal>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  openButton: {
+    backgroundColor: "#000",
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 6,
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 16,
+    textAlign: "center",
+  },
+  overlay: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+  },
+  modalContainer: {
+    width: "90%",
+    backgroundColor: "#fff",
+    borderRadius: 10,
+    padding: 20,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  modalHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    borderBottomWidth: 1,
+    borderBottomColor: "#ddd",
+    paddingBottom: 6,
+  },
+  modalTitle: {
+    fontSize: 18,
+    fontWeight: "600",
+  },
+  closeButton: {
+    fontSize: 18,
+    color: "#000000",
+  },
+  modalBody: {
+    marginVertical: 20,
+  },
+  modalContent: {
+    fontSize: 16,
+    color: "#555",
+  },
+  modalFooter: {
+    borderTopWidth: 1,
+    borderTopColor: "#ddd",
+    paddingTop: 10,
+    flexDirection: "row",
+    justifyContent: "flex-end",
+  },
+  closeButtonContainer: {
+    backgroundColor: "#000",
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 6,
+  },
+});
+
+export default Modal;
+`,
+        code2: `import React, { useState } from "react";
+import { View, Text, Pressable, Modal } from "react-native";
+
+const Modal = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => setIsOpen(false);
+
+  return (
+    <View className="flex-1 items-center justify-center">
+      <Pressable onPress={openModal} className="bg-black py-2 px-4 rounded-md">
+        <Text className="text-white text-base">Open Modal</Text>
+      </Pressable>
+
+      <Modal
+        visible={isOpen}
+        transparent
+        animationType="fade"
+        onRequestClose={closeModal}
+      >
+        <View className="flex-1 items-center justify-center bg-black/50">
+          <View className="w-11/12 bg-white rounded-md shadow-md p-6">
+            <View className="flex-row items-center justify-between border-b pb-4">
+              <Text className="text-xl font-semibold">Galaxy Modal</Text>
+              <Pressable onPress={closeModal}>
+                <Text className="text-gray-400 text-lg">✖</Text>
+              </Pressable>
+            </View>
+
+            <View className="my-4">
+              <Text className="text-gray-600 text-base">
+                This is a default galaxy modal component that highlights key
+                information.
+              </Text>
+            </View>
+
+            <View className="flex-row justify-end border-t pt-4">
+              <Pressable
+                onPress={closeModal}
+                className="bg-black py-2 px-4 rounded-md"
+              >
+                <Text className="text-white text-base">Close</Text>
+              </Pressable>
+            </View>
+          </View>
+        </View>
+      </Modal>
+    </View>
+  );
+};
+
+export default Modal;
+`,
+        render: <Comp.GalaxyModal />,
+      },
+    ],
+  },
+  pagination: {
+    id: 12,
     name: "Pagination",
     icon: AlienUIIcons.AlienCrackedAlienSkull,
     description: "A customizable pagination component.",
@@ -1737,7 +1932,7 @@ export default Pagination;
     ],
   },
   progressbar: {
-    id: 12,
+    id: 13,
     name: "Progress",
     icon: AlienUIIcons.AlienTbAlien,
     description:
@@ -2012,7 +2207,7 @@ export default ProgressBar;
     ],
   },
   spinner: {
-    id: 13,
+    id: 14,
     name: "Spinner",
     icon: AlienUIIcons.AlienLiaRedditAlien,
     description:
@@ -2182,7 +2377,7 @@ export default Spinner;
     ],
   },
   switch: {
-    id: 14,
+    id: 15,
     name: "Switch",
     icon: AlienUIIcons.AlienPiAlienThin,
     description: "A customizable switch for enabling and disabling options.",
@@ -2268,7 +2463,7 @@ export default Switch;
     ],
   },
   tab: {
-    id: 15,
+    id: 16,
     name: "Tab",
     icon: AlienUIIcons.AlienRiAliensLine,
     description: "A customizable tab navigation component with variants.",
@@ -2447,7 +2642,7 @@ export default Tab;
     ],
   },
   toast: {
-    id: 16,
+    id: 17,
     name: "Toast",
     icon: AlienUIIcons.AlienPiAlienLight,
     description:

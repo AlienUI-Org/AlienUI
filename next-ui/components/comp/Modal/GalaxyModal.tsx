@@ -20,10 +20,7 @@ const GalaxyModal = () => {
           <div className="relative w-full max-w-md p-6 bg-white rounded-md shadow-lg">
             <div className="flex items-center justify-between pb-4 border-b">
               <h2 className="text-xl font-semibold">Galaxy Modal</h2>
-              <button
-                onClick={closeModal}
-                className="text-gray-400 hover:text-gray-600 focus:outline-none"
-              >
+              <button onClick={closeModal} className="text-black">
                 ✖
               </button>
             </div>
