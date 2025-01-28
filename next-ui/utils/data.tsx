@@ -1171,7 +1171,7 @@ export default Card;
   },
   carousel: {
     id: 8,
-    name: "Checkbox",
+    name: "Carousel",
     icon: AlienUIIcons.AlienPiAlienDuotone,
     description: "A customizable carousel component for swiping.",
     variants: [
