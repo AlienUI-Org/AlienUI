@@ -2114,8 +2114,155 @@ export default Pagination;
       },
     ],
   },
-  progressbar: {
+  popover: {
     id: 14,
+    name: "Popover",
+    icon: AlienUIIcons.AlienPiAlienBold,
+    description: "A customizable popover component.",
+    variants: [
+      {
+        name: "Galaxy Popover",
+        description: "A default popover that displays rich content in a page.",
+        code: `import React, { useState } from "react";
+import { View, Text, StyleSheet, Dimensions, TouchableWithoutFeedback, Pressable } from "react-native";
+
+const { width } = Dimensions.get("window");
+
+const Popover = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const togglePopover = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  const closePopover = () => {
+    setIsOpen(false);
+  };
+
+  return (
+    <TouchableWithoutFeedback onPress={closePopover}>
+      <View style={styles.container}>
+        <Pressable style={styles.button} onPress={togglePopover}>
+          <Text style={styles.buttonText}>Toggle Popover</Text>
+        </Pressable>
+
+        {isOpen && (
+          <TouchableWithoutFeedback>
+            <View style={styles.overlay}>
+              <View style={styles.popover}>
+                <Text style={styles.popoverText}>This is a Galaxy Popover</Text>
+                <Text style={styles.popoverSubtext}>
+                  You can put any content here.
+                </Text>
+              </View>
+            </View>
+          </TouchableWithoutFeedback>
+        )}
+      </View>
+    </TouchableWithoutFeedback>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  button: {
+    backgroundColor: "#000",
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 4,
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 16,
+  },
+  overlay: {
+    position: "absolute",
+    bottom: "100%",
+    justifyContent: "flex-end",
+    alignItems: "center",
+    width: "100%",
+    marginBottom: -60,
+  },
+  popover: {
+    width: width * 0.6,
+    height: "auto",
+    padding: 16,
+    backgroundColor: "#fff",
+    borderRadius: 4,
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "flex-start",
+    elevation: 5,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+  },
+  popoverText: {
+    fontSize: 16,
+  },
+  popoverSubtext: {
+    fontSize: 14,
+    color: "#666",
+    marginTop: 10,
+  },
+});
+
+export default Popover;
+`,
+        code2: `import React, { useState } from "react";
+import { View, Text, Pressable, TouchableWithoutFeedback } from "react-native";
+
+const Popover = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const togglePopover = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  const closePopover = () => {
+    setIsOpen(false);
+  };
+
+  return (
+    <TouchableWithoutFeedback onPress={closePopover}>
+      <View className="flex-1 justify-center items-center">
+        <Pressable
+          className="bg-black px-4 py-2 rounded"
+          onPress={togglePopover}
+        >
+          <Text className="text-white text-base">Toggle Popover</Text>
+        </Pressable>
+
+        {isOpen && (
+          <TouchableWithoutFeedback>
+            <View className="absolute bottom-full mb-2 z-10 justify-center items-center">
+              <View className="w-3/4 h-auto bg-white p-4 rounded shadow">
+                <Text className="text-base">This is a Galaxy Popover</Text>
+                <Text className="text-gray-500 mt-2 text-sm">
+                  You can put any content here.
+                </Text>
+              </View>
+            </View>
+          </TouchableWithoutFeedback>
+        )}
+      </View>
+    </TouchableWithoutFeedback>
+  );
+};
+
+export default Popover;
+`,
+        render: <Comp.GalaxyPopover />,
+      },
+    ],
+  },
+  progressbar: {
+    id: 15,
     name: "Progress",
     icon: AlienUIIcons.AlienTbAlien,
     description:
@@ -2390,7 +2537,7 @@ export default ProgressBar;
     ],
   },
   spinner: {
-    id: 15,
+    id: 16,
     name: "Spinner",
     icon: AlienUIIcons.AlienLiaRedditAlien,
     description:
@@ -2560,7 +2707,7 @@ export default Spinner;
     ],
   },
   switch: {
-    id: 16,
+    id: 17,
     name: "Switch",
     icon: AlienUIIcons.AlienPiAlienThin,
     description: "A customizable switch for enabling and disabling options.",
@@ -2646,7 +2793,7 @@ export default Switch;
     ],
   },
   tab: {
-    id: 17,
+    id: 18,
     name: "Tab",
     icon: AlienUIIcons.AlienRiAliensLine,
     description: "A customizable tab navigation component with variants.",
@@ -2825,7 +2972,7 @@ export default Tab;
     ],
   },
   toast: {
-    id: 18,
+    id: 19,
     name: "Toast",
     icon: AlienUIIcons.AlienPiAlienLight,
     description:
