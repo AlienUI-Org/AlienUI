@@ -1,10 +1,10 @@
 import { StyleSheet, ScrollView } from "react-native";
-import GalaxyModal from "./components/Modal/GalaxyModal";
+import GalaxyCarousel from "./components/Carousel/GalaxyCarousel";
 
 export default function App() {
   return (
     <ScrollView style={styles.container}>
-      <GalaxyModal />
+      <GalaxyCarousel />{" "}
     </ScrollView>
   );
 }

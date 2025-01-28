@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
 const Carousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -17,7 +17,7 @@ const Carousel: React.FC = () => {
 
   return (
     <div className="relative w-72 max-w-sm mx-auto flex flex-col items-center">
-      <div className="relative w-full h-48 flex items-center justify-center border text-4xl font-bold rounded-lg">
+      <div className="relative w-full h-48 flex items-center justify-center border shadow text-4xl font-bold rounded">
         {slides[currentIndex]}
       </div>
 
@@ -26,13 +26,13 @@ const Carousel: React.FC = () => {
           onClick={prevSlide}
           className="flex items-center justify-center w-10 h-10 border rounded-full"
         >
-          <FaArrowLeft />
+          <AiOutlineArrowLeft />
         </button>
         <button
           onClick={nextSlide}
           className="flex items-center justify-center w-10 h-10 border rounded-full"
         >
-          <FaArrowRight />
+          <AiOutlineArrowRight />
         </button>
       </div>
 
@@ -40,7 +40,7 @@ const Carousel: React.FC = () => {
         {slides.map((_, index) => (
           <span
             key={index}
-            className={`block w-2 h-2 border rounded-full ${
+            className={`block w-3 h-3 border rounded-full ${
               index === currentIndex ? "bg-black" : "bg-white"
             }`}
           ></span>

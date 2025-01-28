@@ -1169,8 +1169,191 @@ export default Card;
       },
     ],
   },
-  checkbox: {
+  carousel: {
     id: 8,
+    name: "Checkbox",
+    icon: AlienUIIcons.AlienPiAlienDuotone,
+    description: "A customizable carousel component for swiping.",
+    variants: [
+      {
+        name: "Galaxy Carousel",
+        description: "A carousel for swiping the galaxy.",
+        code: `import React, { useState } from "react";
+import { View, Text, Pressable, StyleSheet } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
+
+const Carousel = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const slides = [1, 2, 3, 4, 5];
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  };
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.slideContainer}>
+        <Text style={styles.slideText}>{slides[currentIndex]}</Text>
+      </View>
+
+      <View style={styles.navContainer}>
+        <Pressable onPress={prevSlide} style={styles.navButton}>
+          <AntDesign name="arrowleft" size={16} color="black" />
+        </Pressable>
+        <Pressable onPress={nextSlide} style={styles.navButton}>
+          <AntDesign name="arrowright" size={16} color="black" />
+        </Pressable>
+      </View>
+
+      <View style={styles.pagination}>
+        {slides.map((_, index) => (
+          <View
+            key={index}
+            style={[
+              styles.dot,
+              index === currentIndex ? styles.activeDot : styles.inactiveDot,
+            ]}
+          />
+        ))}
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  slideContainer: {
+    width: "80%",
+    height: 230,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#fff",
+    borderWidth: 1,
+    borderColor: "#ddd",
+    borderRadius: 4,
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  slideText: {
+    fontSize: 32,
+    fontWeight: "bold",
+    color: "#333",
+  },
+  navContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "80%",
+    marginTop: 16,
+  },
+  navButton: {
+    width: 40,
+    height: 40,
+    justifyContent: "center",
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "#ddd",
+    borderRadius: 20,
+    backgroundColor: "#fff",
+  },
+  pagination: {
+    flexDirection: "row",
+    marginTop: 16,
+    gap: 8,
+  },
+  dot: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    borderWidth: 1,
+  },
+  activeDot: {
+    backgroundColor: "#000",
+    borderColor: "#000",
+  },
+  inactiveDot: {
+    backgroundColor: "#fff",
+    borderColor: "#ddd",
+  },
+});
+
+export default Carousel;
+`,
+        code2: `import React, { useState } from "react";
+import { View, Text, Pressable } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
+
+const Carousel = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const slides = [1, 2, 3, 4, 5];
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  };
+
+  return (
+    <View className="flex-1 justify-center items-center">
+      <View className="w-4/5 h-56 justify-center items-center bg-white border border-gray-300 rounded shadow">
+        <Text className="text-4xl font-bold text-gray-800">
+          {slides[currentIndex]}
+        </Text>
+      </View>
+
+      <View className="flex-row justify-between w-4/5 mt-4">
+        <Pressable
+          onPress={prevSlide}
+          className="w-10 h-10 justify-center items-center bg-white border border-gray-300 rounded-full"
+        >
+          <AntDesign name="arrowleft" size={16} color="black" />
+        </Pressable>
+        <Pressable
+          onPress={nextSlide}
+          className="w-10 h-10 justify-center items-center bg-white border border-gray-300 rounded-full"
+        >
+          <AntDesign name="arrowright" size={16} color="black" />
+        </Pressable>
+      </View>
+
+      <View className="flex-row mt-4 space-x-2">
+        {slides.map((_, index) => (
+          <View
+            key={index}
+            className={\`w-3 h-3 rounded-full \${
+              index === currentIndex
+                ? "bg-black border-black"
+                : "bg-white border-gray-300"
+            } border\`}
+          />
+        ))}
+      </View>
+    </View>
+  );
+};
+
+export default Carousel;
+`,
+        render: <Comp.GalaxyCarousel />,
+      },
+    ],
+  },
+  checkbox: {
+    id: 9,
     name: "Checkbox",
     icon: AlienUIIcons.AlienStare,
     description:
@@ -1276,7 +1459,7 @@ export default CheckBox;
     ],
   },
   dropdown: {
-    id: 9,
+    id: 10,
     name: "Dropdown",
     icon: AlienUIIcons.AlienTbAlienFilled,
     description: "A customizable dropdown component.",
@@ -1444,7 +1627,7 @@ export default Dropdown;
     ],
   },
   input: {
-    id: 10,
+    id: 11,
     name: "Input",
     icon: AlienUIIcons.AlienEgg,
     description: "A customizable input component for capturing user data.",
@@ -1545,7 +1728,7 @@ export default Input;`,
     ],
   },
   modal: {
-    id: 11,
+    id: 12,
     name: "Modal",
     icon: AlienUIIcons.AlienSkull,
     description:
@@ -1740,7 +1923,7 @@ export default Modal;
     ],
   },
   pagination: {
-    id: 12,
+    id: 13,
     name: "Pagination",
     icon: AlienUIIcons.AlienCrackedAlienSkull,
     description: "A customizable pagination component.",
@@ -1932,7 +2115,7 @@ export default Pagination;
     ],
   },
   progressbar: {
-    id: 13,
+    id: 14,
     name: "Progress",
     icon: AlienUIIcons.AlienTbAlien,
     description:
@@ -2207,7 +2390,7 @@ export default ProgressBar;
     ],
   },
   spinner: {
-    id: 14,
+    id: 15,
     name: "Spinner",
     icon: AlienUIIcons.AlienLiaRedditAlien,
     description:
@@ -2377,7 +2560,7 @@ export default Spinner;
     ],
   },
   switch: {
-    id: 15,
+    id: 16,
     name: "Switch",
     icon: AlienUIIcons.AlienPiAlienThin,
     description: "A customizable switch for enabling and disabling options.",
@@ -2463,7 +2646,7 @@ export default Switch;
     ],
   },
   tab: {
-    id: 16,
+    id: 17,
     name: "Tab",
     icon: AlienUIIcons.AlienRiAliensLine,
     description: "A customizable tab navigation component with variants.",
@@ -2642,7 +2825,7 @@ export default Tab;
     ],
   },
   toast: {
-    id: 17,
+    id: 18,
     name: "Toast",
     icon: AlienUIIcons.AlienPiAlienLight,
     description:
