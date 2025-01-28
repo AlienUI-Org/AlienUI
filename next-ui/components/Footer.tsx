@@ -50,7 +50,11 @@ function Footer() {
       <div className="flex items-center justify-center">
         <p className="text-white text-center mt-8">
           Created by{" "}
-          <span className="text-white font-semibold">Kenneth Akpo</span>
+          <Link href="https://x.com/kenneth_akpo">
+            <span className="text-white font-semibold border-b">
+              Kenneth Akpo
+            </span>
+          </Link>
         </p>
         <GiAlienStare size={24} className="text-white" />
       </div>
