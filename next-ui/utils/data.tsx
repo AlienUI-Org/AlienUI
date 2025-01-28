@@ -2971,8 +2971,172 @@ export default Tab;
       },
     ],
   },
-  toast: {
+  table: {
     id: 19,
+    name: "Table",
+    icon: AlienUIIcons.AlienBug,
+    description: "A customizable table component for data storage",
+    variants: [
+      {
+        name: "Galaxy Table",
+        description: "A default table for storing data in rows and column",
+        code: `import React from "react";
+import { View, Text, StyleSheet, FlatList, ScrollView } from "react-native";
+
+const Table = () => {
+  const tableData = [
+    { id: 1, name: "John Doe", email: "john@example.com", role: "Admin" },
+    { id: 2, name: "Jane Smith", email: "jane@example.com", role: "Editor" },
+    { id: 3, name: "Sam Wilson", email: "sam@example.com", role: "Viewer" },
+  ];
+
+  return (
+    <View style={styles.container}>
+      <ScrollView horizontal>
+        <View style={styles.table}>
+          {/* Table Header */}
+          <View style={[styles.row, styles.header]}>
+            <Text style={[styles.cell, styles.headerText, styles.idColumn]}>
+              ID
+            </Text>
+            <Text style={[styles.cell, styles.headerText]}>Name</Text>
+            <Text style={[styles.cell, styles.headerText]}>Email</Text>
+            <Text style={[styles.cell, styles.headerText]}>Role</Text>
+          </View>
+
+          {/* Table Body */}
+          <FlatList
+            data={tableData}
+            renderItem={({ item, index }) => (
+              <View
+                style={[
+                  styles.row,
+                  index % 2 === 1 ? styles.evenRow : styles.oddRow,
+                ]}
+              >
+                <Text style={[styles.cell, styles.idColumn]}>{item.id}</Text>
+                <Text style={styles.cell}>{item.name}</Text>
+                <Text style={styles.cell}>{item.email}</Text>
+                <Text style={styles.cell}>{item.role}</Text>
+              </View>
+            )}
+            keyExtractor={(item) => item.id.toString()}
+          />
+        </View>
+      </ScrollView>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 16,
+    backgroundColor: "#fff",
+    flex: 1,
+    width: "100%",
+  },
+  table: {
+    minWidth: 500,
+  },
+  row: {
+    flexDirection: "row",
+    paddingHorizontal: 8,
+  },
+  cell: {
+    flex: 1,
+    paddingVertical: 12,
+    paddingHorizontal: 8,
+    textAlign: "left",
+    fontSize: 16,
+  },
+  idColumn: {
+    flex: 0.5,
+  },
+  header: {
+    backgroundColor: "#f3f4f6",
+  },
+  headerText: {
+    fontWeight: "bold",
+    fontSize: 16,
+    textAlign: "left",
+  },
+  oddRow: {
+    backgroundColor: "#fff",
+  },
+  evenRow: {
+    backgroundColor: "#f9f9f9",
+  },
+});
+
+export default Table;
+`,
+        code2: `import React from "react";
+import { View, Text, FlatList, ScrollView } from "react-native";
+
+const Table = () => {
+  const tableData = [
+    { id: 1, name: "John Doe", email: "john@example.com", role: "Admin" },
+    { id: 2, name: "Jane Smith", email: "jane@example.com", role: "Editor" },
+    { id: 3, name: "Sam Wilson", email: "sam@example.com", role: "Viewer" },
+  ];
+
+  return (
+    <View className="flex-1 bg-white p-4">
+      <ScrollView horizontal>
+        <View className="min-w-[500px] border-collapse">
+          <View className="flex-row bg-gray-100">
+            <Text className="flex-[0.5] font-bold text-base text-left px-4 py-2">
+              ID
+            </Text>
+            <Text className="flex-1 font-bold text-base text-left px-4 py-2">
+              Name
+            </Text>
+            <Text className="flex-1 font-bold text-base text-left px-4 py-2">
+              Email
+            </Text>
+            <Text className="flex-1 font-bold text-base text-left px-4 py-2">
+              Role
+            </Text>
+          </View>
+
+          <FlatList
+            data={tableData}
+            renderItem={({ item, index }) => (
+              <View
+                className={\`flex-row \${
+                  index % 2 === 1 ? "bg-white" : "bg-gray-100"
+                }\`}
+              >
+                <Text className="flex-[0.5] text-base text-left px-4 py-2">
+                  {item.id}
+                </Text>
+                <Text className="flex-1 text-base text-left px-4 py-2">
+                  {item.name}
+                </Text>
+                <Text className="flex-1 text-base text-left px-4 py-2">
+                  {item.email}
+                </Text>
+                <Text className="flex-1 text-base text-left px-4 py-2">
+                  {item.role}
+                </Text>
+              </View>
+            )}
+            keyExtractor={(item) => item.id.toString()}
+          />
+        </View>
+      </ScrollView>
+    </View>
+  );
+};
+
+export default Table;
+`,
+        render: <Comp.GalaxyTable />,
+      },
+    ],
+  },
+  toast: {
+    id: 20,
     name: "Toast",
     icon: AlienUIIcons.AlienPiAlienLight,
     description:

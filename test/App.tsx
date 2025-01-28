@@ -1,10 +1,11 @@
+import React from "react";
 import { StyleSheet, ScrollView } from "react-native";
-import GalaxyPopover from "./components/Popover/GalaxyPopover";
+import GalaxyTable from "./components/Table/GalaxyTable";
 
 export default function App() {
   return (
     <ScrollView style={styles.container}>
-      <GalaxyPopover />
+      <GalaxyTable />
     </ScrollView>
   );
 }

@@ -30,6 +30,7 @@ import GalaxySwitch from "@/components/comp/Switch/GalaxySwitch";
 import GalaxyModal from "@/components/comp/Modal/GalaxyModal";
 import GalaxyCarousel from "@/components/comp/Carousel/GalaxyCarousel";
 import GalaxyPopover from "@/components/comp/Popover/GalaxyPopover";
+import GalaxyTable from "@/components/comp/Table/GalaxyTable";
 
 export const Comp = {
   EarthButton,
@@ -64,4 +65,5 @@ export const Comp = {
   GalaxyModal,
   GalaxyCarousel,
   GalaxyPopover,
+  GalaxyTable,
 };
