@@ -37,7 +37,7 @@ function Accordion() {
   };
 
   return (
-    <section className="w-96 flex flex-col items-center justify-center px-4 my-16">
+    <section className="w-[450px] flex flex-col items-center justify-center px-4 my-16">
       <div className="w-full max-w-7xl mx-auto border bg-white">
         {accordionItems.map((item, index) => (
           <div key={index} className="border-b last:border-b-0 border-gray-300">

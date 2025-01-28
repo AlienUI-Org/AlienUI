@@ -3036,7 +3036,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   table: {
-    minWidth: 500,
+    minWidth: 600,
   },
   row: {
     flexDirection: "row",
@@ -3083,7 +3083,7 @@ const Table = () => {
   return (
     <View className="flex-1 bg-white p-4">
       <ScrollView horizontal>
-        <View className="min-w-[500px] border-collapse">
+        <View className="min-w-[600px] border-collapse">
           <View className="flex-row bg-gray-100">
             <Text className="flex-[0.5] font-bold text-base text-left px-4 py-2">
               ID
