@@ -8,7 +8,7 @@ function PlutoCard() {
         <div className="flex items-center justify-center w-12 h-12 bg-white text-[#24150b] rounded-full mb-6">
           <FaChartBar className="text-black" size={24} />
         </div>
-        <p className="text-lg font-bold">Bar chart showing energy usage</p>
+        <p className="text-lg text-white font-bold">Bar chart showing energy usage</p>
       </div>
     </div>
   );
