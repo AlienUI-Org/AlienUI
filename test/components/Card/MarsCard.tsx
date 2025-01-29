@@ -78,11 +78,11 @@ const styles = StyleSheet.create({
   balanceContainer: {
     flexDirection: "row",
     alignItems: "center",
+    gap: 8,
     marginBottom: 8,
   },
   balanceLabel: {
     fontSize: 16,
-    marginRight: 8,
   },
   balanceAmount: {
     fontSize: 48,
