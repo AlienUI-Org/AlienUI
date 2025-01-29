@@ -1,11 +1,10 @@
 import React from "react";
-import { StyleSheet, ScrollView } from "react-native";
-import GalaxyTable from "./components/Table/GalaxyTable";
+import { StyleSheet, ScrollView, Image } from "react-native";
 
 export default function App() {
   return (
     <ScrollView style={styles.container}>
-      <GalaxyTable />
+      <Image source={require("./assets/icon/card.svg")} />
     </ScrollView>
   );
 }
