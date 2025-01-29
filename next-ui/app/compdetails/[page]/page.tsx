@@ -92,7 +92,7 @@ const VariantBlock = ({ variant }: { variant: any }) => {
         <div className="lg:w-1/2 w-full py-10 px-6 flex flex-col items-center justify-center rounded-md h-auto border border-black mt-2">
           {variant.render}
         </div>
-        <div className="">
+        <div className="mt-1">
           <p className="text-sm">
             Designer: <strong>{variant.designer}</strong>
           </p>
