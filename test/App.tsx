@@ -1,10 +1,11 @@
 import React from "react";
 import { StyleSheet, ScrollView, Image } from "react-native";
+import MarsCard from "./components/Card/MarsCard";
 
 export default function App() {
   return (
     <ScrollView style={styles.container}>
-      <Image source={require("./assets/icon/card.svg")} />
+      <MarsCard />{" "}
     </ScrollView>
   );
 }

@@ -5,8 +5,8 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 function MarsCard() {
   return (
     <section>
-      <div className="w-[420px] h-auto py-8 rounded-3xl border border-black outline-none flex flex-col items-center">
-        <div className="w-28 h-auto py-2 px-2 border border-white bg-black rounded-full mb-4 flex items-center justify-between">
+      <div className="w-[400px] h-auto py-8 rounded-3xl border border-black flex flex-col items-center">
+        <div className="w-28 h-auto p-2 border border-white bg-black rounded-full mb-4 flex items-center justify-between">
           <Image src="/icon/flag.svg" alt="Eye icon" width={28} height={28} />
           <span className="text-white ml-2">USD</span>
           <MdOutlineKeyboardArrowDown className="text-white" size={28} />
