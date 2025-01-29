@@ -905,7 +905,7 @@ function Card() {
       <MaterialIcons
         name="join-inner"
         size={56}
-        color="#6B4226"
+        color="#ffffff"
         style={styles.icon}
       />
       <Text style={styles.title}>Open-Source Contributions</Text>
@@ -921,7 +921,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "column",
     alignItems: "center",
-    backgroundColor: "#fdf8f6",
+    backgroundColor: "#000000",
     padding: 30,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
@@ -936,13 +936,13 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "#422a19",
+    color: "#ffffff",
     textAlign: "center",
   },
   description: {
     marginTop: 8,
     fontSize: 14,
-    color: "#4b5563",
+    color: "#ffffff",
     textAlign: "center",
   },
 });
@@ -955,17 +955,17 @@ import { MaterialIcons } from "@expo/vector-icons";
 
 function Card() {
   return (
-    <View className="flex flex-col items-center bg-[#fdf8f6] p-7 shadow-md w-4/5 h-64">
+    <View className="flex flex-col items-center bg-black p-7 shadow-md w-4/5 h-64">
       <MaterialIcons
         name="join-inner"
         size={56}
-        color="#6B4226"
+        color="#ffffff"
         className="mb-4"
       />
-      <Text className="text-lg font-bold text-[#422a19] text-center">
+      <Text className="text-lg font-bold text-white text-center">
         Open-Source Contributions
       </Text>
-      <Text className="mt-2 text-sm text-[#4b5563] text-center">
+      <Text className="mt-2 text-sm text-white text-center">
         Alien UI is open-source, inviting developers to collaborate and share
         components to improve mobile app design.
       </Text>
@@ -1124,7 +1124,6 @@ const styles = StyleSheet.create({
   cardContainer: {
     width: "60%",
     height: 170,
-    borderRadius: 20,
     backgroundColor: "#000000",
     padding: 18,
   },
@@ -1154,7 +1153,7 @@ import { FaChartBar } from "react-icons/fa";
 const Card = () => {
   return (
     <div className="flex justify-center">
-      <div className="w-3/5 h-44 rounded-2xl bg-black p-6">
+      <div className="w-3/5 h-44 bg-black p-6">
         <div className="flex items-center justify-center w-12 h-12 bg-white rounded-full mb-6">
           <FaChartBar className="text-black" size={24} />
         </div>
