@@ -1125,15 +1125,15 @@ const styles = StyleSheet.create({
     width: "60%",
     height: 170,
     borderRadius: 20,
-    backgroundColor: "#fdf8f6",
+    backgroundColor: "#000000",
     padding: 18,
   },
   iconContainer: {
     borderRadius: 30,
     width: 50,
     height: 50,
-    backgroundColor: "#fff",
-    color: "#24150b",
+    backgroundColor: "#ffffff",
+    color: "#000000",
     padding: 4,
     alignItems: "center",
     justifyContent: "center",
@@ -1142,6 +1142,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 20,
     fontWeight: "bold",
+    color: "#ffffff",
   },
 });
 
@@ -1153,11 +1154,11 @@ import { FaChartBar } from "react-icons/fa";
 const Card = () => {
   return (
     <div className="flex justify-center">
-      <div className="w-3/5 h-44 rounded-2xl bg-[#fdf8f6] p-6">
-        <div className="flex items-center justify-center w-12 h-12 bg-white text-[#24150b] rounded-full mb-6">
-          <FaChartBar className="text-[#ba8463]" size={24} />
+      <div className="w-3/5 h-44 rounded-2xl bg-black p-6">
+        <div className="flex items-center justify-center w-12 h-12 bg-white rounded-full mb-6">
+          <FaChartBar className="text-black" size={24} />
         </div>
-        <p className="text-lg font-bold">Bar chart showing energy usage</p>
+        <p className="text-lg text-white font-bold">Bar chart showing energy usage</p>
       </div>
     </div>
   );
