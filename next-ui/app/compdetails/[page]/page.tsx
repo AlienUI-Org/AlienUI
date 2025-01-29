@@ -94,10 +94,10 @@ const VariantBlock = ({ variant }: { variant: any }) => {
         </div>
         <div className="mt-1">
           <p className="text-sm">
-            Designer: <strong>{variant.designer}</strong>
+            <strong>{variant.designer}</strong>
           </p>
           <p className="text-sm">
-            Developer: <strong>{variant.developer}</strong>
+            <strong>{variant.developer}</strong>
           </p>
         </div>
       </div>

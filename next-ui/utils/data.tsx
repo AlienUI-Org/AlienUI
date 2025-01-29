@@ -1199,8 +1199,8 @@ export default Card;
       {
         name: "Mars Card",
         description: "A small regular card for transaction in mars.",
-        designer: "Anwurii Alabi",
-        developer: "Kenneth Akpo",
+        designer: "Designer: Anwurii Alabi",
+        developer: "Developer: Kenneth Akpo",
         code: `import React from "react";
 import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
