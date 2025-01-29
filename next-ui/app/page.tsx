@@ -5,6 +5,7 @@ import FaQ from "@/components/FaQ";
 import Inspiration from "@/components/Inspiration";
 import Suggestion from "@/components/Suggestion";
 import Contributors from "@/components/Contributors";
+import MarsCard from "@/components/comp/Card/MarsCard";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <FaQ />
       <Suggestion />
       <Contributors />
+      <MarsCard />
     </section>
   );
 }

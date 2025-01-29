@@ -5,6 +5,8 @@ import { Comp } from "./comp";
 type Variant = {
   name: string;
   description: string;
+  designer: string;
+  developer: string;
   code: string;
   code2: string;
   render: React.ReactNode;
@@ -32,6 +34,8 @@ export const components: Components = {
       {
         name: "Galaxy Accordion",
         description: "A default galactic accordion",
+        designer: "",
+        developer: "",
         code: `import React, { useState } from "react";
 import { View, Text, Pressable, StyleSheet, ScrollView } from "react-native";
 
@@ -232,6 +236,8 @@ export default Accordion;
         name: "Galaxy Alert",
         description:
           "A galactic alert for feedbacks. This variant shows three props: success, failure and warning. Just change the color and icon to suit your use case",
+        designer: "",
+        developer: "",
         code: `import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Feather } from "@expo/vector-icons";
@@ -312,6 +318,8 @@ export default Alert;
         name: "Krythar Wail Alert",
         description:
           "A galactic alert that provides critical feedback in the galaxy. This variant shows three props: success, failure and warning. Just change the color to suit your use case",
+        designer: "",
+        developer: "",
         code: `import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
@@ -377,6 +385,8 @@ export default Alert;
       {
         name: "Galaxy Avatar",
         description: "An avatar for identification",
+        designer: "",
+        developer: "",
         code: `import React from "react";
 import { View, Image, StyleSheet } from "react-native";
 
@@ -440,6 +450,8 @@ export default Avatar;
       {
         name: "Galaxy Badge",
         description: "An alien badge for galactic verification",
+        designer: "",
+        developer: "",
         code: `import React from "react" ;
 import { StyleSheet, Text, View } from "react-native";
 
@@ -495,6 +507,8 @@ export default Badge;
       {
         name: "Galaxy Breadcrumb",
         description: "A breadcrumb for navigation, in the galaxy.",
+        designer: "",
+        developer: "",
         code: `import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
@@ -584,6 +598,8 @@ export default Breadcrumb;
       {
         name: "Earth Breadcrumb",
         description: "A breadcrumb for navigating on the earth surface.",
+        designer: "",
+        developer: "",
         code: `import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
@@ -684,6 +700,8 @@ export default Breadcrumb;
         name: "Galaxy Button",
         description:
           "A button with a solid background, used for primary actions.",
+        designer: "",
+        developer: "",
         code: `import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
@@ -723,12 +741,15 @@ const Button = () => {
     );
 };
 
-export default Button;`,
+export default Button;
+`,
         render: <Comp.GalaxyButton />,
       },
       {
         name: "Earth Button",
         description: "A button with an icon, used for secondary actions.",
+        designer: "",
+        developer: "",
         code: `import React from 'react';
 import { Pressable, Text, StyleSheet } from 'react-native';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
@@ -791,6 +812,8 @@ export default Button;
       {
         name: "Galaxy Card",
         description: "A ticket into the galaxy.",
+        designer: "",
+        developer: "",
         code: `import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
@@ -893,93 +916,10 @@ export default Card;
         render: <Comp.GalaxyCard />,
       },
       {
-        name: "Jupiter Card",
-        description: "A VIP ticket for entering jupiter.",
-        code: `import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { MaterialIcons } from "@expo/vector-icons";
-
-function Card() {
-  return (
-    <View style={styles.container}>
-      <MaterialIcons
-        name="join-inner"
-        size={56}
-        color="#ffffff"
-        style={styles.icon}
-      />
-      <Text style={styles.title}>Open-Source Contributions</Text>
-      <Text style={styles.description}>
-        Alien UI is open-source, inviting developers to collaborate and share
-        components to improve mobile app design.
-      </Text>
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: "column",
-    alignItems: "center",
-    backgroundColor: "#000000",
-    padding: 30,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    width: "80%",
-    height: 260,
-  },
-  icon: {
-    marginBottom: 16,
-  },
-  title: {
-    fontSize: 18,
-    fontWeight: "bold",
-    color: "#ffffff",
-    textAlign: "center",
-  },
-  description: {
-    marginTop: 8,
-    fontSize: 14,
-    color: "#ffffff",
-    textAlign: "center",
-  },
-});
-
-export default Card;
-`,
-        code2: `import React from "react";
-import { View, Text } from "react-native";
-import { MaterialIcons } from "@expo/vector-icons";
-
-function Card() {
-  return (
-    <View className="flex flex-col items-center bg-black p-7 shadow-md w-4/5 h-64">
-      <MaterialIcons
-        name="join-inner"
-        size={56}
-        color="#ffffff"
-        className="mb-4"
-      />
-      <Text className="text-lg font-bold text-white text-center">
-        Open-Source Contributions
-      </Text>
-      <Text className="mt-2 text-sm text-white text-center">
-        Alien UI is open-source, inviting developers to collaborate and share
-        components to improve mobile app design.
-      </Text>
-    </View>
-  );
-}
-
-export default Card;
-`,
-        render: <Comp.JupiterCard />,
-      },
-      {
         name: "Earth Card",
         description: "A ticket for navigating on the earth surface.",
+        designer: "",
+        developer: "",
         code: `import React from "react";
 import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from "react-native";
 
@@ -1098,8 +1038,97 @@ export default Card;
         render: <Comp.EarthCard />,
       },
       {
+        name: "Jupiter Card",
+        description: "A VIP ticket for entering jupiter.",
+        designer: "",
+        developer: "",
+        code: `import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
+
+function Card() {
+  return (
+    <View style={styles.container}>
+      <MaterialIcons
+        name="join-inner"
+        size={56}
+        color="#ffffff"
+        style={styles.icon}
+      />
+      <Text style={styles.title}>Open-Source Contributions</Text>
+      <Text style={styles.description}>
+        Alien UI is open-source, inviting developers to collaborate and share
+        components to improve mobile app design.
+      </Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "column",
+    alignItems: "center",
+    backgroundColor: "#000000",
+    padding: 30,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    width: "80%",
+    height: 260,
+  },
+  icon: {
+    marginBottom: 16,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#ffffff",
+    textAlign: "center",
+  },
+  description: {
+    marginTop: 8,
+    fontSize: 14,
+    color: "#ffffff",
+    textAlign: "center",
+  },
+});
+
+export default Card;
+`,
+        code2: `import React from "react";
+import { View, Text } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
+
+function Card() {
+  return (
+    <View className="flex flex-col items-center bg-black p-7 shadow-md w-4/5 h-64">
+      <MaterialIcons
+        name="join-inner"
+        size={56}
+        color="#ffffff"
+        className="mb-4"
+      />
+      <Text className="text-lg font-bold text-white text-center">
+        Open-Source Contributions
+      </Text>
+      <Text className="mt-2 text-sm text-white text-center">
+        Alien UI is open-source, inviting developers to collaborate and share
+        components to improve mobile app design.
+      </Text>
+    </View>
+  );
+}
+
+export default Card;
+`,
+        render: <Comp.JupiterCard />,
+      },
+      {
         name: "Pluto Card",
         description: "A small regular ticket into pluto.",
+        designer: "",
+        developer: "",
         code: `import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
@@ -1167,6 +1196,78 @@ export default Card;
 `,
         render: <Comp.PlutoCard />,
       },
+      {
+        name: "Mars Card",
+        description: "A small regular card for transaction in mars.",
+        designer: "Anwurii Alabi",
+        developer: "Kenneth Akpo",
+        code: `import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import AntDesign from "@expo/vector-icons/AntDesign";
+
+const Card = () => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.cardContainer}>
+        <View style={styles.iconContainer}>
+          <AntDesign name="barschart" size={24} color="#000000" />
+        </View>
+        <Text style={styles.text}>Bar chart showing energy usage</Text>
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    alignItems: "center",
+  },
+  cardContainer: {
+    width: "60%",
+    height: 170,
+    backgroundColor: "#000000",
+    padding: 18,
+  },
+  iconContainer: {
+    borderRadius: 30,
+    width: 50,
+    height: 50,
+    backgroundColor: "#ffffff",
+    padding: 4,
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 30,
+  },
+  text: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#ffffff",
+  },
+});
+
+export default Card;
+`,
+        code2: `import React from "react";
+import { View, Text } from "react-native";
+import { AntDesign } from "@expo/vector-icons/AntDesign"
+
+const Card = () => {
+  return (
+    <View className="flex justify-center">
+      <View className="w-3/5 h-44 bg-black p-6">
+        <View className="flex items-center justify-center w-12 h-12 bg-white rounded-full mb-6">
+          <AntDesign name="barschart" size={24} color="#000000" />
+        </View>
+        <Text className="text-lg text-white font-bold">Bar chart showing energy usage</Text>
+      </View>
+    </View>
+  );
+};
+
+export default Card;
+`,
+        render: <Comp.MarsCard />,
+      },
     ],
   },
   carousel: {
@@ -1178,6 +1279,8 @@ export default Card;
       {
         name: "Galaxy Carousel",
         description: "A carousel for swiping the galaxy.",
+        designer: "",
+        developer: "",
         code: `import React, { useState } from "react";
 import { View, Text, Pressable, StyleSheet } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
@@ -1362,6 +1465,8 @@ export default Carousel;
       {
         name: "Galaxy Checkbox",
         description: "An intergalactic checkbox for cosmic forms.",
+        designer: "",
+        developer: "",
         code: `import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 
@@ -1467,6 +1572,8 @@ export default CheckBox;
       {
         name: "Galaxy Dropdown",
         description: "A intergalactic dropdown for selection.",
+        designer: "",
+        developer: "",
         code: `import React, { useState } from "react";
 import { View, Text, Pressable, FlatList, StyleSheet } from "react-native";
 
@@ -1635,6 +1742,8 @@ export default Dropdown;
       {
         name: "Nebulon Input",
         description: "A simple input box for text entry.",
+        designer: "",
+        developer: "",
         code: `import React from 'react';
 import { TextInput, View, StyleSheet } from 'react-native';
 
@@ -1661,7 +1770,8 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Input;`,
+export default Input;
+`,
         code2: `import React from 'react';
 import { TextInput, View } from 'react-native';
 
@@ -1676,12 +1786,15 @@ const Input = () => {
     );
 };
 
-export default Input;`,
+export default Input;
+`,
         render: <Comp.NebulonInput />,
       },
       {
         name: "Earth Input",
         description: "An input box with a bottom border.",
+        designer: "",
+        developer: "",
         code: `import React from 'react';
 import { TextInput, View, StyleSheet } from 'react-native';
 
@@ -1738,6 +1851,8 @@ export default Input;`,
         name: "Galaxy Modal",
         description:
           "A default galactic modal for highlighting key information in the galaxy.",
+        designer: "",
+        developer: "",
         code: `import React, { useState } from "react";
 import { View, Text, Pressable, Modal, StyleSheet } from "react-native";
 
@@ -1931,6 +2046,8 @@ export default Modal;
       {
         name: "Galaxy Pagination",
         description: "A default galactic pagination in the galaxy.",
+        designer: "",
+        developer: "",
         code: `import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
@@ -2041,6 +2158,8 @@ export default Pagination;
       {
         name: "Mars Pagination",
         description: "Paginating to mars.",
+        designer: "",
+        developer: "",
         code: `import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
@@ -2123,6 +2242,8 @@ export default Pagination;
       {
         name: "Galaxy Popover",
         description: "A default popover that displays rich content in a page.",
+        designer: "",
+        developer: "",
         code: `import React, { useState } from "react";
 import { View, Text, StyleSheet, Dimensions, TouchableWithoutFeedback, Pressable } from "react-native";
 
@@ -2271,6 +2392,8 @@ export default Popover;
       {
         name: "Galaxy Progress Bar",
         description: "A default galactic progress bar.",
+        designer: "",
+        developer: "",
         code: `import React from "react";
 import { View, StyleSheet } from "react-native";
 import { FontAwesome, MaterialCommunityIcons, AntDesign } from "@expo/vector-icons";
@@ -2356,6 +2479,8 @@ export default ProgressBar;
       {
         name: "Earth Progress Bar",
         description: "A progress bar showing progression on the earth surface.",
+        designer: "",
+        developer: "",
         code: `import React from "react";
 import { View, StyleSheet } from "react-native";
 
@@ -2410,6 +2535,8 @@ export default ProgressBar;
       {
         name: "Mars Progress Bar",
         description: "A progress bar showing progression on mars.",
+        designer: "",
+        developer: "",
         code: `import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
@@ -2546,6 +2673,8 @@ export default ProgressBar;
       {
         name: "Galaxy Spinner",
         description: "A default spinner for loading state changes.",
+        designer: "",
+        developer: "",
         code: `import React, { useRef, useEffect } from "react";
 import { View, StyleSheet, Animated, Easing } from "react-native";
 
@@ -2626,6 +2755,8 @@ export default Spinner;
         name: "Earth Spinner",
         description:
           "A spherical earth-shaped loader that changes color while loading.",
+        designer: "",
+        developer: "",
         code: `import React, { useState, useEffect } from "react";
 import { View, StyleSheet } from "react-native";
 
@@ -2715,6 +2846,8 @@ export default Spinner;
       {
         name: "Galaxy Switch",
         description: "A default switch for toggling on and off.",
+        designer: "",
+        developer: "",
         code: `import React, { useState } from "react";
 import { StyleSheet, Animated, Pressable } from "react-native";
 
@@ -2801,6 +2934,8 @@ export default Switch;
       {
         name: "Galaxy Tab",
         description: "A default galactic tab navigator.",
+        designer: "",
+        developer: "",
         code: `import React from "react";
 import { StyleSheet, View } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
@@ -2890,6 +3025,8 @@ export default Tab;
       {
         name: "Earth Tab",
         description: "Tab navigator on the earth surface.",
+        designer: "",
+        developer: "",
         code: `import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
@@ -2980,6 +3117,8 @@ export default Tab;
       {
         name: "Galaxy Table",
         description: "A default table for storing data in rows and column",
+        designer: "",
+        developer: "",
         code: `import React from "react";
 import { View, Text, StyleSheet, FlatList, ScrollView } from "react-native";
 
@@ -3146,6 +3285,8 @@ export default Table;
         name: "Galaxy Toast",
         description:
           "A default toast component that shows different props: success, failure and warning, by changing the color and text to suit your use case.",
+        designer: "",
+        developer: "",
         code: `import React, { useState, useEffect } from "react";
 import { View, Text, TouchableOpacity, StyleSheet, Animated } from "react-native";
 
@@ -3314,6 +3455,8 @@ export default Toast;
         name: "Earth Toast",
         description:
           "A toast component that shows different props: success, failure and warning, by changing the color and text to suit your use case.",
+        designer: "",
+        developer: "",
         code: `import React, { useState, useEffect } from "react";
 import { View, Text, TouchableOpacity, StyleSheet, Animated } from "react-native";
 
