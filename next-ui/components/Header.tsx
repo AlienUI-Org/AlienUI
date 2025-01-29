@@ -11,14 +11,12 @@ function Header() {
     <nav className="bg-white shadow-md sticky top-0 z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/">
               <h2 className="text-3xl font-semibold">Aui</h2>
             </Link>
           </div>
 
-          {/* GitHub Icon */}
           <div className="flex items-center gap-4">
             <Link href="https://linkedin.com/company/alien-ui">
               <FaLinkedin size={24} />
@@ -29,7 +27,7 @@ function Header() {
             <Link href="https://github.com/khaymanii/alienui">
               <FaGithub size={24} />
             </Link>
-            {/*/<span className="font-medium text-md">3 ⭐</span> */}
+            <span className="font-medium text-md">2⭐</span>
           </div>
 
           {/* Hamburger Menu (optional, if you want to toggle mobile menu later) */}

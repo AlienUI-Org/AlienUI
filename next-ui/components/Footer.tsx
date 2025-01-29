@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { GiAlienStare } from "react-icons/gi";
+import { GoMail } from "react-icons/go";
 
 function Footer() {
   return (
@@ -19,6 +20,9 @@ function Footer() {
           </div>
 
           <div className="flex items-center gap-4 text-white">
+            <Link href="mailto:alienuiteam@gmail.com">
+              <GoMail size={24} />
+            </Link>
             <Link href="https://linkedin.com/company/alien-ui">
               <FaLinkedin size={24} />
             </Link>
@@ -28,7 +32,7 @@ function Footer() {
             <Link href="https://github.com/khaymanii/alienui">
               <FaGithub size={24} />
             </Link>
-            {/* <span className="font-medium text-md ml-2 text-white">3 ⭐</span>*/}
+            <span className="font-medium text-md text-white">2⭐</span>
           </div>
         </div>
         <div className="my-6 border-t border-brown-700"></div>
