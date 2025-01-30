@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 :root {
-  font-family: var(--font-poppins), sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
 }
 
 body {
-  font-family: var(--font-poppins), sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   line-height: 1.5;
 }
