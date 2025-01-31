@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { useParams } from "next/navigation";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { duotoneSpace } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { duotoneLight } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { BsClipboard2Heart } from "react-icons/bs";
 import { components } from "@/utils/data";
 
@@ -66,7 +66,7 @@ const VariantBlock = ({ variant }: { variant: any }) => {
               <div className="relative rounded-md">
                 <SyntaxHighlighter
                   language="jsx"
-                  style={duotoneSpace}
+                  style={duotoneLight}
                   className="rounded-lg h-[400px]"
                 >
                   {variant[codeType]}
