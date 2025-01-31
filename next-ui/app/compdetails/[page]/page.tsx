@@ -73,7 +73,7 @@ const VariantBlock = ({ variant }: { variant: any }) => {
                 </SyntaxHighlighter>
                 <BsClipboard2Heart
                   onClick={() => handleCopy(variant[codeType], codeType)}
-                  className="absolute top-3 right-6 text-white text-xl cursor-pointer"
+                  className="absolute top-3 right-6 text-black text-xl cursor-pointer"
                 />
                 {copiedCode === codeType && (
                   <span className="absolute top-3 right-12 text-white text-[10px] font-semibold">
