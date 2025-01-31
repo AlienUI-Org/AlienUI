@@ -76,7 +76,7 @@ const VariantBlock = ({ variant }: { variant: any }) => {
                   className="absolute top-3 right-6 text-black text-xl cursor-pointer"
                 />
                 {copiedCode === codeType && (
-                  <span className="absolute top-3 right-12 text-white text-[10px] font-semibold">
+                  <span className="absolute top-3 right-12 text-black text-[10px] font-semibold">
                     Copied!
                   </span>
                 )}
