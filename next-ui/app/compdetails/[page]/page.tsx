@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { useParams } from "next/navigation";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { duotoneSpace } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { duotoneLight } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { BsClipboard2Heart } from "react-icons/bs";
 import { components } from "@/utils/data";
 
@@ -66,17 +66,17 @@ const VariantBlock = ({ variant }: { variant: any }) => {
               <div className="relative rounded-md">
                 <SyntaxHighlighter
                   language="jsx"
-                  style={duotoneSpace}
+                  style={duotoneLight}
                   className="rounded-lg h-[400px]"
                 >
                   {variant[codeType]}
                 </SyntaxHighlighter>
                 <BsClipboard2Heart
                   onClick={() => handleCopy(variant[codeType], codeType)}
-                  className="absolute top-3 right-6 text-white text-xl cursor-pointer"
+                  className="absolute top-3 right-6 text-black text-xl cursor-pointer"
                 />
                 {copiedCode === codeType && (
-                  <span className="absolute top-3 right-12 text-white text-[10px] font-semibold">
+                  <span className="absolute top-3 right-12 text-black text-[10px] font-semibold">
                     Copied!
                   </span>
                 )}
@@ -93,11 +93,11 @@ const VariantBlock = ({ variant }: { variant: any }) => {
           {variant.render}
         </div>
         <div className="mt-1">
-          <p className="text-sm">
-            <strong>{variant.designer}</strong>
+          <p className="text-sm font-medium">
+            {variant.designer}
           </p>
           <p className="text-sm">
-            <strong>{variant.developer}</strong>
+            {variant.developer}
           </p>
         </div>
       </div>
