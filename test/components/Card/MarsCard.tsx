@@ -4,53 +4,59 @@ import { MaterialIcons } from "@expo/vector-icons";
 
 const MarsCard = () => {
   return (
-    <View style={styles.container}>
-      <View style={styles.currencySelector}>
-        <Image
-          source={require("../../assets/icon/flag.svg")}
-          style={styles.icon}
-        />
-        <Text style={styles.currencyText}>USD</Text>
-        <MaterialIcons name="keyboard-arrow-down" size={28} color="white" />
-      </View>
-      <View style={styles.balanceContainer}>
-        <Text style={styles.balanceLabel}>Account balance</Text>
-        <Image
-          source={require("../../assets/icon/eye.svg")}
-          style={styles.icon}
-        />
-      </View>
-      <Text style={styles.balanceAmount}>
-        $150,000.<Text style={styles.balanceDecimal}>00</Text>
-      </Text>
-      <View style={styles.accountContainer}>
-        <Image
-          source={require("../../assets/icon/copy.svg")}
-          style={styles.icon}
-        />
-        <Text style={styles.accountText}>0771224074</Text>
-      </View>
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Deposit</Text>
+    <View style={styles.cont}>
+      <View style={styles.container}>
+        <View style={styles.currencySelector}>
           <Image
-            source={require("../../assets/icon/import.svg")}
+            source={require("../../assets/icon/flag.svg")}
             style={styles.icon}
           />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Transfer</Text>
+          <Text style={styles.currencyText}>USD</Text>
+          <MaterialIcons name="keyboard-arrow-down" size={28} color="white" />
+        </View>
+        <View style={styles.balanceContainer}>
+          <Text style={styles.balanceLabel}>Account balance</Text>
           <Image
-            source={require("../../assets/icon/export.svg")}
+            source={require("../../assets/icon/eye.svg")}
             style={styles.icon}
           />
-        </TouchableOpacity>
+        </View>
+        <Text style={styles.balanceAmount}>
+          $150,000.<Text style={styles.balanceDecimal}>00</Text>
+        </Text>
+        <View style={styles.accountContainer}>
+          <Image
+            source={require("../../assets/icon/copy.svg")}
+            style={styles.icon}
+          />
+          <Text style={styles.accountText}>0771224074</Text>
+        </View>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>Deposit</Text>
+            <Image
+              source={require("../../assets/icon/import.svg")}
+              style={styles.icon}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>Transfer</Text>
+            <Image
+              source={require("../../assets/icon/export.svg")}
+              style={styles.icon}
+            />
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  cont: {
+    flex: 1,
+    margin: 10,
+  },
   container: {
     width: "100%",
     height: "auto",
@@ -105,7 +111,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: "row",
     justifyContent: "center",
-    gap: 16,
+    gap: 10,
   },
   button: {
     flexDirection: "row",
