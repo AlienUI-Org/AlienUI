@@ -9,7 +9,7 @@ AlienUI is an open-source UI component library built on Nativewind for React Nat
 ### **1. Zero Dependencies**
 
 - No external dependencies required.
-- Fully functional with just React Native and NativeWind installed.
+- Fully functional with just React Native and **NativeWind** installed.
 - Simplifies integration into any project.
 
 ### **2. Native Tags for Components**
