@@ -8,7 +8,6 @@ type Variant = {
   designer: string;
   developer: string;
   code: string;
-  code2: string;
   render: React.ReactNode;
 };
 
@@ -37,119 +36,6 @@ export const components: Components = {
         designer: "",
         developer: "",
         code: `import React, { useState } from "react";
-import { View, Text, Pressable, StyleSheet, ScrollView } from "react-native";
-
-const Accordion = () => {
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const accordionItems = [
-    {
-      title: "Is AlienUI a component library?",
-      content:
-        "Yes, It is a self-hosted component library but you do not install it as a dependency. It is not available via npm like other traditional component library. Pick the components you need. " +
-        "Copy and paste the code into your project and customize to your needs. The code is yours.",
-    },
-    {
-      title: "Why copy/paste and not packaged as a dependency?",
-      content:
-        "The goal is to give you full control over your components, enabling you to decide their structure and styling. By starting with sensible defaults, you can customize them to fit your needs. Unlike packaged npm components, where styles are tightly coupled to implementation, separating design from functionality ensures flexibility and adaptability.",
-    },
-    {
-      title: "Do you plan to publish it as an npm package?",
-      content: "No. We have no plans to publish it as an npm package.",
-    },
-    {
-      title: "Which frameworks are supported?",
-      content:
-        "You can use any framework that supports React Native. Expo etc.",
-    },
-    {
-      title: "Can I use this in my project?",
-      content:
-        "Yes, you can use AlienUI in your React Native project. The code is yours. But hey, let us know if you do. We'd love to see what you build.",
-    },
-  ];
-
-  const toggleAccordion = (index: any) => {
-    setOpenIndex(index === openIndex ? null : index);
-  };
-
-  return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <View style={styles.accordionContainer}>
-        {accordionItems.map((item, index) => (
-          <View key={index} style={styles.accordionItem}>
-            <Pressable
-              onPress={() => toggleAccordion(index)}
-              style={styles.accordionHeader}
-            >
-              <Text style={styles.accordionTitle}>{item.title}</Text>
-              <Text
-                style={[styles.icon, openIndex === index && styles.iconOpen]}
-              >
-                ▼
-              </Text>
-            </Pressable>
-            {openIndex === index && (
-              <View style={styles.accordionContent}>
-                <Text style={styles.contentText}>{item.content}</Text>
-              </View>
-            )}
-          </View>
-        ))}
-      </View>
-    </ScrollView>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flexGrow: 1,
-    alignItems: "center",
-  },
-  accordionContainer: {
-    width: "90%",
-    overflow: "hidden",
-    borderWidth:1,
-  },
-  accordionItem: {
-    borderBottomWidth: 1,
-    borderBottomColor: "#ccc",
-  },
-  accordionHeader: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingVertical: 16,
-    paddingHorizontal: 20,
-    backgroundColor: "#ffffff",
-  },
-  accordionTitle: {
-    fontSize: 16,
-    fontWeight: "500",
-    color: "#333",
-  },
-  icon: {
-    fontSize: 16,
-    color: "#000000",
-    transform: [{ rotate: "0deg" }],
-  },
-  iconOpen: {
-    transform: [{ rotate: "180deg" }],
-  },
-  accordionContent: {
-    padding: 16,
-    backgroundColor: "#ffffff",
-  },
-  contentText: {
-    fontSize: 14,
-    color: "#666",
-  },
-});
-
-export default Accordion;
-`,
-        code2: `import React, { useState } from "react";
 import { View, Text, Pressable, ScrollView } from "react-native";
 
 const Accordion = () => {
@@ -208,7 +94,7 @@ const Accordion = () => {
               </Text>
             </Pressable>
             {openIndex === index && (
-              <View className="px-5 py-4 bg-[#fdf8f6]">
+              <View className="px-5 py-4">
                 <Text className="text-sm text-gray-600">{item.content}</Text>
               </View>
             )}
@@ -239,58 +125,6 @@ export default Accordion;
         designer: "",
         developer: "",
         code: `import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { Feather } from "@expo/vector-icons";
-
-const Alert = () => {
-  return (
-    <View style={styles.alertContainer}>
-      <View style={styles.contentContainer}>
-        <Feather name="check-circle" size={24} color="#16a34a" />
-        <View style={styles.textContainer}>
-          <Text style={styles.alertTitle}>Zeltron Whisper</Text>
-          <Text style={styles.alertMessage}>Everything is on track </Text>
-        </View>
-      </View>
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  alertContainer: {
-    borderRadius: 12,
-    borderWidth: 1,
-    borderColor: "#e5e7eb",
-    backgroundColor: "#f0fdf4",
-    padding: 16,
-    width: 250,
-  },
-  contentContainer: {
-    flexDirection: "row",
-    alignItems: "flex-start",
-    gap: 16,
-  },
-  textContainer: {
-    flex: 1,
-  },
-  alertTitle: {
-    fontSize: 16,
-    fontWeight: "bold",
-    color: "#111827",
-  },
-  alertMessage: {
-    marginTop: 4,
-    fontSize: 14,
-    color: "#374151",
-  },
-  dismissButton: {
-    alignSelf: "center",
-  },
-});
-
-export default Alert;
-`,
-        code2: `import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { Feather } from "@expo/vector-icons";
 
@@ -321,42 +155,6 @@ export default Alert;
         designer: "",
         developer: "",
         code: `import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-
-const Alert = () => {
-  return (
-    <View style={styles.alertContainer}>
-      <Text style={styles.alertTitle}>Krythar Wail</Text>
-      <Text style={styles.alertMessage}>
-        Everything is good.
-      </Text>
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  alertContainer: {
-    borderRadius: 8,
-    borderLeftWidth: 4,
-    borderLeftColor: "#22c55e",
-    backgroundColor: "#f0fdf4",
-    padding: 16,
-    width: 250,
-  },
-  alertTitle: {
-    fontSize: 16,
-    fontWeight: "bold",
-    marginBottom: 8,
-  },
-  alertMessage: {
-    fontSize: 14,
-    lineHeight: 15,
-  },
-});
-
-export default Alert;
-`,
-        code2: `import React from "react";
 import { View, Text } from "react-native";
 
 const Alert = () => {
@@ -388,39 +186,6 @@ export default Alert;
         designer: "",
         developer: "",
         code: `import React from "react";
-import { View, Image, StyleSheet } from "react-native";
-
-const Avatar = () => {
-  return (
-    <View style={styles.avatarContainer}>
-      <Image
-        source={require("../../assets/images/alien1.avif")}
-        style={styles.avatarImage}
-      />
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  avatarContainer: {
-    width: 60,
-    height: 60,
-    borderRadius: 40,
-    justifyContent: "center",
-    alignItems: "center",
-    overflow: "hidden",
-  },
-  avatarImage: {
-    width: "100%",
-    height: "100%",
-    borderRadius: 40,
-  },
-});
-
-export default Avatar;
-
-`,
-        code2: `import React from "react";
 import { View, Image } from "react-native";
 
 const Avatar = () => {
@@ -452,35 +217,7 @@ export default Avatar;
         description: "An alien badge for galactic verification",
         designer: "",
         developer: "",
-        code: `import React from "react" ;
-import { StyleSheet, Text, View } from "react-native";
-
-const Badge = () => {
-  return (
-      <View style={styles.container}>
-          <Text style={styles.text}>Badge</Text>
-      </View>
-  );
-};
-
-export default Badge;
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "#000000",
-    paddingVertical: 5,
-    paddingHorizontal: 5,
-    borderRadius: 20,
-    alignItems: "center",
-    width: 80,
-  },
-  text: {
-    color: "#FFFFFF",
-    fontSize: 12,
-  },
-});
-`,
-        code2: `import React from 'react';
+        code: `import React from 'react';
 import { View, Text } from 'react-native'
 
 const Badge = () => {
@@ -510,56 +247,6 @@ export default Badge;
         designer: "",
         developer: "",
         code: `import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
-
-const Breadcrumb = () => {
-  return (
-    <View style={styles.container} accessibilityLabel="Breadcrumb">
-      <TouchableOpacity>
-        <Text style={styles.linkText}>Home</Text>
-      </TouchableOpacity>
-      <Ionicons
-        name="chevron-forward"
-        size={12}
-        color="black"
-        style={styles.separator}
-      />
-      <TouchableOpacity>
-        <Text style={styles.linkText}>Nebula</Text>
-      </TouchableOpacity>
-      <Ionicons
-        name="chevron-forward"
-        size={12}
-        color="black"
-        style={styles.separator}
-      />
-      <TouchableOpacity>
-        <Text style={styles.linkText}>Galaxy</Text>
-      </TouchableOpacity>
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  separator: {
-    marginHorizontal: 4,
-    marginTop: 6,
-  },
-  linkText: {
-    color: "gray",
-    fontSize: 14,
-    textDecorationLine: "none",
-  },
-});
-
-export default Breadcrumb;
-`,
-        code2: `import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -601,56 +288,6 @@ export default Breadcrumb;
         designer: "",
         developer: "",
         code: `import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-
-const Breadcrumb = () => {
-  return (
-    <View style={styles.container} accessibilityLabel="Breadcrumb">
-      <TouchableOpacity>
-        <Text style={styles.linkText}>Home</Text>
-      </TouchableOpacity>
-      <MaterialCommunityIcons
-        name="slash-forward"
-        size={12}
-        color="black"
-        style={styles.separator}
-      />
-      <TouchableOpacity>
-        <Text style={styles.linkText}>Nebula</Text>
-      </TouchableOpacity>
-      <MaterialCommunityIcons
-        name="slash-forward"
-        size={12}
-        color="black"
-        style={styles.separator}
-      />
-      <TouchableOpacity>
-        <Text style={styles.linkText}>Galaxy</Text>
-      </TouchableOpacity>
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  separator: {
-    marginHorizontal: 4,
-    marginTop: 4,
-  },
-  linkText: {
-    color: "gray",
-    fontSize: 14,
-    textDecorationLine: "none",
-  },
-});
-
-export default Breadcrumb;
-`,
-        code2: `import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
@@ -702,35 +339,8 @@ export default Breadcrumb;
           "A button with a solid background, used for primary actions.",
         designer: "",
         developer: "",
+
         code: `import React from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
-
-const Button = () => {
-    return (
-        <TouchableOpacity style={styles.button}>
-            <Text style={styles.text}>Galaxy Button</Text>
-        </TouchableOpacity>
-    );
-};
-
-const styles = StyleSheet.create({
-    button: {
-        backgroundColor: '#000000',
-        paddingVertical: 10,
-        paddingHorizontal: 20,
-        borderRadius: 5,
-        alignItems: 'center',
-        width: 200,
-    },
-    text: {
-        color: '#FFFFFF',
-        fontSize: 16,
-    }
-});
-
-export default Button;
-`,
-        code2: `import React from 'react';
 import { TouchableOpacity, Text } from 'react-native';
 
 const Button = () => {
@@ -751,39 +361,6 @@ export default Button;
         designer: "",
         developer: "",
         code: `import React from 'react';
-import { Pressable, Text, StyleSheet } from 'react-native';
-import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
-
-const Button = () => {
-    return (
-        <Pressable style={styles.button}>
-            <Text style={styles.text}>Earth Button</Text>
-            <MaterialCommunityIcons name="alien-outline" size={20} color="white" />
-        </Pressable>
-    );
-};
-
-const styles = StyleSheet.create({
-    button: {
-        backgroundColor: '#000000'
-        paddingVertical: 10,
-        paddingHorizontal: 20,
-        borderRadius: 5,
-        alignItems: 'center',
-        width: 200,
-        flexDirection: "row",
-        justifyContent: "center,
-    },
-    text: {
-        color: '#FFFFFF',
-        fontSize: 16,
-        marginRight: 2,
-    }
-});
-
-export default Button;
-`,
-        code2: `import React from 'react';
 import { Pressable, Text } from 'react-native';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
@@ -815,74 +392,6 @@ export default Button;
         designer: "",
         developer: "",
         code: `import React from "react";
-import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
-
-const Card = () => {
-  return (
-    <View style={styles.card}>
-      <Image
-        source={require("../../assets/images/alien1.avif")}
-        style={styles.image}
-      />
-      <View style={styles.content}>
-        <Text style={styles.date}>07th July 1997</Text>
-        <TouchableOpacity>
-          <Text style={styles.title}>
-            Exploring the Unknown: The Alien Encounter Chronicles
-          </Text>
-        </TouchableOpacity>
-        <Text style={styles.description}>
-          Deep in the vastness of space lies a story untold—of strange beings,
-          otherworldly landscapes, and encounters that defy imagination.
-          Discover the mysteries of alien civilizations, their technology, and
-          the secrets they carry across galaxies.
-        </Text>
-      </View>
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  card: {
-    borderRadius: 16,
-    overflow: "hidden",
-    backgroundColor: "#ffffff",
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 5,
-    margin: 16,
-  },
-  image: {
-    width: "100%",
-    height: 200,
-    resizeMode: "cover",
-  },
-  content: {
-    padding: 16,
-  },
-  date: {
-    fontSize: 12,
-    color: "#6b7280",
-    marginBottom: 4,
-  },
-  title: {
-    fontSize: 18,
-    fontWeight: "bold",
-    color: "#111827",
-    marginBottom: 8,
-  },
-  description: {
-    fontSize: 14,
-    color: "#6b7280",
-    lineHeight: 20,
-  },
-});
-
-export default Card;
-`,
-        code2: `import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 
 const Card = () => {
@@ -921,86 +430,6 @@ export default Card;
         designer: "",
         developer: "",
         code: `import React from "react";
-import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from "react-native";
-
-const Card = () => {
-  return (
-    <View style={styles.container}>
-      <ImageBackground
-        source={require("../../assets/images/alien1.avif")}
-        style={styles.imageBackground}
-        imageStyle={styles.image}
-      >
-        <View style={styles.overlay}>
-          <View style={styles.content}>
-            <Text style={styles.date}>07th July 1997</Text>
-            <TouchableOpacity>
-              <Text style={styles.title}>
-                Exploring the Unknown: The Alien Encounter Chronicles
-              </Text>
-            </TouchableOpacity>
-            <Text style={styles.description}>
-              Deep in the vastness of space lies a story untold—of strange
-              beings, otherworldly landscapes, and encounters that defy
-              imagination. Discover the mysteries of alien civilizations, their
-              technology, and the secrets they carry across galaxies.
-            </Text>
-          </View>
-        </View>
-      </ImageBackground>
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    borderRadius: 16,
-    overflow: "hidden",
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.3,
-    shadowRadius: 4,
-    elevation: 5,
-    width: "80%",
-  },
-  imageBackground: {
-    width: "100%",
-    height: 350,
-  },
-  image: {
-    resizeMode: "cover",
-  },
-  overlay: {
-    flex: 1,
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
-    justifyContent: "flex-end",
-    paddingVertical: 10,
-    paddingHorizontal: 4,
-  },
-  content: {
-    padding: 16,
-  },
-  date: {
-    fontSize: 12,
-    color: "rgba(255, 255, 255, 0.9)",
-  },
-  title: {
-    marginTop: 4,
-    fontSize: 18,
-    fontWeight: "bold",
-    color: "white",
-  },
-  description: {
-    marginTop: 8,
-    fontSize: 14,
-    lineHeight: 20,
-    color: "rgba(255, 255, 255, 0.95)",
-  },
-});
-
-export default Card;
-`,
-        code2: `import React from "react";
 import { View, Text, ImageBackground, TouchableOpacity } from "react-native";
 
 const Card = () => {
@@ -1043,60 +472,6 @@ export default Card;
         designer: "",
         developer: "",
         code: `import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { MaterialIcons } from "@expo/vector-icons";
-
-function Card() {
-  return (
-    <View style={styles.container}>
-      <MaterialIcons
-        name="join-inner"
-        size={56}
-        color="#ffffff"
-        style={styles.icon}
-      />
-      <Text style={styles.title}>Open-Source Contributions</Text>
-      <Text style={styles.description}>
-        Alien UI is open-source, inviting developers to collaborate and share
-        components to improve mobile app design.
-      </Text>
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: "column",
-    alignItems: "center",
-    backgroundColor: "#000000",
-    padding: 30,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    width: "80%",
-    height: 260,
-  },
-  icon: {
-    marginBottom: 16,
-  },
-  title: {
-    fontSize: 18,
-    fontWeight: "bold",
-    color: "#ffffff",
-    textAlign: "center",
-  },
-  description: {
-    marginTop: 8,
-    fontSize: 14,
-    color: "#ffffff",
-    textAlign: "center",
-  },
-});
-
-export default Card;
-`,
-        code2: `import React from "react";
 import { View, Text } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
@@ -1130,52 +505,6 @@ export default Card;
         designer: "",
         developer: "",
         code: `import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-import AntDesign from "@expo/vector-icons/AntDesign";
-
-const Card = () => {
-  return (
-    <View style={styles.container}>
-      <View style={styles.cardContainer}>
-        <View style={styles.iconContainer}>
-          <AntDesign name="barschart" size={24} color="#000000" />
-        </View>
-        <Text style={styles.text}>Bar chart showing energy usage</Text>
-      </View>
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: "center",
-  },
-  cardContainer: {
-    width: "60%",
-    height: 170,
-    backgroundColor: "#000000",
-    padding: 18,
-  },
-  iconContainer: {
-    borderRadius: 30,
-    width: 50,
-    height: 50,
-    backgroundColor: "#ffffff",
-    padding: 4,
-    alignItems: "center",
-    justifyContent: "center",
-    marginBottom: 30,
-  },
-  text: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: "#ffffff",
-  },
-});
-
-export default Card;
-`,
-        code2: `import React from "react";
 import { View, Text } from "react-native";
 import { AntDesign } from "@expo/vector-icons/AntDesign"
 
@@ -1202,140 +531,6 @@ export default Card;
         designer: "Designer: Anwurii Alabi",
         developer: "",
         code: `import React from "react";
-import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
-import { MaterialIcons } from "@expo/vector-icons";
-
-const Card = () => {
-  return (
-    <View style={styles.container}>
-      <View style={styles.currencySelector}>
-        <Image
-          source={require("../../assets/icon/flag.svg")}
-          style={styles.icon}
-        />
-        <Text style={styles.currencyText}>USD</Text>
-        <MaterialIcons name="keyboard-arrow-down" size={28} color="white" />
-      </View>
-      <View style={styles.balanceContainer}>
-        <Text style={styles.balanceLabel}>Account balance</Text>
-        <Image
-          source={require("../../assets/icon/eye.svg")}
-          style={styles.icon}
-        />
-      </View>
-      <Text style={styles.balanceAmount}>
-        $150,000.<Text style={styles.balanceDecimal}>00</Text>
-      </Text>
-      <View style={styles.accountContainer}>
-        <Image
-          source={require("../../assets/icon/copy.svg")}
-          style={styles.icon}
-        />
-        <Text style={styles.accountText}>0771224074</Text>
-      </View>
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Deposit</Text>
-          <Image
-            source={require("../../assets/icon/import.svg")}
-            style={styles.icon}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Transfer</Text>
-          <Image
-            source={require("../../assets/icon/export.svg")}
-            style={styles.icon}
-          />
-        </TouchableOpacity>
-      </View>
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    width: "100%",
-    height: "auto",
-    paddingVertical: 32,
-    borderRadius: 24,
-    borderWidth: 1,
-    borderColor: "black",
-    alignItems: "center",
-    backgroundColor: "white",
-  },
-  currencySelector: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    backgroundColor: "black",
-    padding: 8,
-    borderRadius: 50,
-    marginBottom: 16,
-  },
-  currencyText: {
-    color: "white",
-    fontSize: 16,
-    marginLeft: 8,
-  },
-  balanceContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 8,
-    marginBottom: 8,
-  },
-  balanceLabel: {
-    fontSize: 16,
-  },
-  balanceAmount: {
-    fontSize: 48,
-    fontWeight: "bold",
-    marginBottom: 16,
-  },
-  balanceDecimal: {
-    fontSize: 36,
-    color: "gray",
-  },
-  accountContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginBottom: 16,
-    gap: 8,
-  },
-  accountText: {
-    fontSize: 16,
-  },
-  buttonContainer: {
-    flexDirection: "row",
-    justifyContent: "center",
-    gap: 16,
-  },
-  button: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "black",
-    borderRadius: 50,
-    paddingVertical: 12,
-    width: 160,
-  },
-  buttonText: {
-    color: "white",
-    fontSize: 18,
-    fontWeight: "700",
-    marginRight: 8,
-  },
-  icon: {
-    width: 24,
-    height: 24,
-    resizeMode: "contain",
-  },
-});
-
-export default Card;
-
-`,
-        code2: `import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
@@ -1389,119 +584,8 @@ export default Card;
         description: "A carousel for swiping the galaxy.",
         designer: "",
         developer: "",
+
         code: `import React, { useState } from "react";
-import { View, Text, Pressable, StyleSheet } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
-
-const Carousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const slides = [1, 2, 3, 4, 5];
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-  };
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-  };
-
-  return (
-    <View style={styles.container}>
-      <View style={styles.slideContainer}>
-        <Text style={styles.slideText}>{slides[currentIndex]}</Text>
-      </View>
-
-      <View style={styles.navContainer}>
-        <Pressable onPress={prevSlide} style={styles.navButton}>
-          <AntDesign name="arrowleft" size={16} color="black" />
-        </Pressable>
-        <Pressable onPress={nextSlide} style={styles.navButton}>
-          <AntDesign name="arrowright" size={16} color="black" />
-        </Pressable>
-      </View>
-
-      <View style={styles.pagination}>
-        {slides.map((_, index) => (
-          <View
-            key={index}
-            style={[
-              styles.dot,
-              index === currentIndex ? styles.activeDot : styles.inactiveDot,
-            ]}
-          />
-        ))}
-      </View>
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  slideContainer: {
-    width: "80%",
-    height: 230,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#fff",
-    borderWidth: 1,
-    borderColor: "#ddd",
-    borderRadius: 4,
-    shadowColor: "#000",
-    shadowOpacity: 0.1,
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 4,
-    elevation: 3,
-  },
-  slideText: {
-    fontSize: 32,
-    fontWeight: "bold",
-    color: "#333",
-  },
-  navContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    width: "80%",
-    marginTop: 16,
-  },
-  navButton: {
-    width: 40,
-    height: 40,
-    justifyContent: "center",
-    alignItems: "center",
-    borderWidth: 1,
-    borderColor: "#ddd",
-    borderRadius: 20,
-    backgroundColor: "#fff",
-  },
-  pagination: {
-    flexDirection: "row",
-    marginTop: 16,
-    gap: 8,
-  },
-  dot: {
-    width: 10,
-    height: 10,
-    borderRadius: 5,
-    borderWidth: 1,
-  },
-  activeDot: {
-    backgroundColor: "#000",
-    borderColor: "#000",
-  },
-  inactiveDot: {
-    backgroundColor: "#fff",
-    borderColor: "#ddd",
-  },
-});
-
-export default Carousel;
-`,
-        code2: `import React, { useState } from "react";
 import { View, Text, Pressable } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
@@ -1575,72 +659,8 @@ export default Carousel;
         description: "An intergalactic checkbox for cosmic forms.",
         designer: "",
         developer: "",
+
         code: `import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
-
-const CheckBox = () => {
-  return (
-    <View style={styles.fieldset}>
-      <Text style={styles.legend}>Checkboxes</Text>
-      <View style={styles.optionsContainer}>
-        <TouchableOpacity style={styles.option} activeOpacity={0.7}>
-          <View style={styles.checkbox}></View>
-          <Text style={styles.label}>John Clapton</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.option} activeOpacity={0.7}>
-          <View style={styles.checkbox}></View>
-          <Text style={styles.label}>Peter Mayer</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.option} activeOpacity={0.7}>
-          <View style={styles.checkbox}></View>
-          <Text style={styles.label}>Eric King</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  fieldset: {
-    margin: 16,
-  },
-  legend: {
-    position: "absolute",
-    left: -9999,
-    top: -9999,
-    color: "transparent",
-  },
-  optionsContainer: {
-    gap: 8,
-  },
-  option: {
-    flexDirection: "row",
-    alignItems: "center",
-    paddingVertical: 8,
-    paddingHorizontal: 12,
-    borderRadius: 4,
-    backgroundColor: "#fff",
-  },
-  checkbox: {
-    width: 20,
-    height: 20,
-    marginRight: 12,
-    borderRadius: 4,
-    borderWidth: 1,
-    borderColor: "#D1D5DB",
-    backgroundColor: "#fff",
-  },
-  label: {
-    fontSize: 16,
-    fontWeight: "500",
-    color: "#1F2937",
-  },
-});
-
-export default CheckBox;
-;
-`,
-        code2: `import React from "react";
 import { View, Text, Pressable } from "react-native";
 
 const CheckBox = () => {
@@ -1683,111 +703,6 @@ export default CheckBox;
         designer: "",
         developer: "",
         code: `import React, { useState } from "react";
-import { View, Text, Pressable, FlatList, StyleSheet } from "react-native";
-
-const Dropdown = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(null);
-
-  const options = ["Galaxy Dropdown", "Nebula Dropdown", "Earth Dropdown"];
-
-  const handleOptionClick = (option) => {
-    setSelectedOption(option);
-    setIsOpen(false);
-  };
-
-  return (
-    <View style={styles.container}>
-      <Text style={styles.label}>Choose an option</Text>
-      <Pressable
-        onPress={() => setIsOpen(!isOpen)}
-        style={[styles.button, isOpen ? styles.roundedTop : styles.roundedFull]}
-      >
-        <Text style={styles.buttonText}>
-          {selectedOption || "Select an option"}
-        </Text>
-        <Text style={styles.icon}>{isOpen ? "▲" : "▼"}</Text>
-      </Pressable>
-      {isOpen && (
-        <View style={styles.dropdown}>
-          <FlatList
-            data={options}
-            keyExtractor={(item, index) => index.toString()}
-            renderItem={({ item }) => (
-              <Pressable
-                onPress={() => handleOptionClick(item)}
-                style={styles.option}
-              >
-                <Text style={styles.optionText}>{item}</Text>
-              </Pressable>
-            )}
-          />
-        </View>
-      )}
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    width: "80%",
-    alignSelf: "center",
-    marginTop: 50,
-  },
-  label: {
-    fontSize: 16,
-    color: "#4A4A4A",
-    marginBottom: 8,
-  },
-  button: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    backgroundColor: "#FFFFFF",
-    borderWidth: 1,
-    borderColor: "#C0C0C0",
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-  },
-  roundedTop: {
-    borderTopLeftRadius: 8,
-    borderTopRightRadius: 8,
-    borderBottomLeftRadius: 0,
-    borderBottomRightRadius: 0,
-  },
-  roundedFull: {
-    borderRadius: 8,
-  },
-  buttonText: {
-    fontSize: 16,
-    color: "#4A4A4A",
-  },
-  icon: {
-    fontSize: 16,
-    color: "#4A4A4A",
-  },
-  dropdown: {
-    backgroundColor: "#FFFFFF",
-    borderWidth: 1,
-    borderColor: "#C0C0C0",
-    borderBottomLeftRadius: 8,
-    borderBottomRightRadius: 8,
-    maxHeight: 150,
-    marginTop: 8,
-  },
-  option: {
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-  },
-  optionText: {
-    fontSize: 16,
-    color: "#4A4A4A",
-  },
-});
-
-export default Dropdown;
-`,
-        code2: `import React, { useState } from "react";
 import { View, Text, Pressable, FlatList } from "react-native";
 
 const Dropdown = () => {
@@ -1853,34 +768,6 @@ export default Dropdown;
         designer: "",
         developer: "",
         code: `import React from 'react';
-import { TextInput, View, StyleSheet } from 'react-native';
-
-const Input = () => {
-    return (
-        <View style={styles.container}>
-            <TextInput
-                style={styles.input}
-                placeholder="Nebulon Input..."
-            />
-        </View>
-    );
-};
-
-const styles = StyleSheet.create({
-    container: {
-        width: 250,
-    },
-    input: {
-        borderWidth: 1,
-        borderColor: '#000000',
-        borderRadius: 5,
-        padding: 10,
-    },
-});
-
-export default Input;
-`,
-        code2: `import React from 'react';
 import { TextInput, View } from 'react-native';
 
 const Input = () => {
@@ -1904,32 +791,6 @@ export default Input;
         designer: "",
         developer: "",
         code: `import React from 'react';
-import { TextInput, View, StyleSheet } from 'react-native';
-
-const Input = () => {
-    return (
-        <View style={styles.container}>
-            <TextInput
-                style={styles.input}
-                placeholder="Earth Input..."
-            />
-        </View>
-    );
-};
-
-const styles = StyleSheet.create({
-    container: {
-        width: 250,
-    },
-    input: {
-        borderBottomWidth: 1,
-        borderColor: '#000000',
-        padding: 10,
-    },
-});
-
-export default Input;`,
-        code2: `import React from 'react';
 import { TextInput, View } from 'react-native';
 
 const Input = () => {
@@ -1943,7 +804,8 @@ const Input = () => {
     );
 };
 
-export default Input;`,
+export default Input;
+`,
         render: <Comp.EarthInput />,
       },
     ],
@@ -1962,132 +824,6 @@ export default Input;`,
         designer: "",
         developer: "",
         code: `import React, { useState } from "react";
-import { View, Text, Pressable, Modal, StyleSheet } from "react-native";
-
-const Modal = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const openModal = () => setIsOpen(true);
-  const closeModal = () => setIsOpen(false);
-
-  return (
-    <View style={styles.container}>
-      <Pressable onPress={openModal} style={styles.openButton}>
-        <Text style={styles.buttonText}>Open Modal</Text>
-      </Pressable>
-
-      <Modal
-        visible={isOpen}
-        transparent
-        animationType="fade"
-        onRequestClose={closeModal}
-      >
-        <View style={styles.overlay}>
-          <View style={styles.modalContainer}>
-            <View style={styles.modalHeader}>
-              <Text style={styles.modalTitle}>Galaxy Modal</Text>
-              <Pressable onPress={closeModal}>
-                <Text style={styles.closeButton}>✖</Text>
-              </Pressable>
-            </View>
-
-            <View style={styles.modalBody}>
-              <Text style={styles.modalContent}>
-                This is a default galaxy modal component that highlights key
-                information
-              </Text>
-            </View>
-
-            <View style={styles.modalFooter}>
-              <Pressable
-                onPress={closeModal}
-                style={styles.closeButtonContainer}
-              >
-                <Text style={styles.buttonText}>Close</Text>
-              </Pressable>
-            </View>
-          </View>
-        </View>
-      </Modal>
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  openButton: {
-    backgroundColor: "#000",
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    borderRadius: 6,
-  },
-  buttonText: {
-    color: "#fff",
-    fontSize: 16,
-    textAlign: "center",
-  },
-  overlay: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
-  },
-  modalContainer: {
-    width: "90%",
-    backgroundColor: "#fff",
-    borderRadius: 10,
-    padding: 20,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
-  },
-  modalHeader: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    borderBottomWidth: 1,
-    borderBottomColor: "#ddd",
-    paddingBottom: 6,
-  },
-  modalTitle: {
-    fontSize: 18,
-    fontWeight: "600",
-  },
-  closeButton: {
-    fontSize: 18,
-    color: "#000000",
-  },
-  modalBody: {
-    marginVertical: 20,
-  },
-  modalContent: {
-    fontSize: 16,
-    color: "#555",
-  },
-  modalFooter: {
-    borderTopWidth: 1,
-    borderTopColor: "#ddd",
-    paddingTop: 10,
-    flexDirection: "row",
-    justifyContent: "flex-end",
-  },
-  closeButtonContainer: {
-    backgroundColor: "#000",
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    borderRadius: 6,
-  },
-});
-
-export default Modal;
-`,
-        code2: `import React, { useState } from "react";
 import { View, Text, Pressable, Modal } from "react-native";
 
 const Modal = () => {
@@ -2157,79 +893,6 @@ export default Modal;
         designer: "",
         developer: "",
         code: `import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
-
-const Pagination = () => {
-  return (
-    <View style={styles.container}>
-      <TouchableOpacity style={styles.arrowButton}>
-        <AntDesign name="left" size={10} color="black" />
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.pageNumberButton}>
-        <Text style={styles.pageNumberText}>1</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={[styles.pageNumberButton, styles.activePage]}>
-        <Text style={styles.activePageText}>2</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.pageNumberButton}>
-        <Text style={styles.pageNumberText}>3</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.pageNumberButton}>
-        <Text style={styles.pageNumberText}>4</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.arrowButton}>
-        <AntDesign name="right" size={10} color="black" />
-      </TouchableOpacity>
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 8,
-  },
-  arrowButton: {
-    width: 32,
-    height: 32,
-    justifyContent: "center",
-    alignItems: "center",
-    borderWidth: 1,
-    borderColor: "#e0e0e0",
-    borderRadius: 4,
-    backgroundColor: "#fff",
-  },
-  pageNumberButton: {
-    width: 32,
-    height: 32,
-    justifyContent: "center",
-    alignItems: "center",
-    borderWidth: 1,
-    borderColor: "#e0e0e0",
-    borderRadius: 4,
-    backgroundColor: "#fff",
-  },
-  activePage: {
-    backgroundColor: "#000000",
-    borderColor: "#000000",
-  },
-  pageNumberText: {
-    color: "#333",
-    fontSize: 14,
-    fontWeight: "500",
-  },
-  activePageText: {
-    color: "#fff",
-    fontSize: 14,
-    fontWeight: "500",
-  },
-});
-
-export default Pagination;
-`,
-        code2: `import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
@@ -2269,53 +932,6 @@ export default Pagination;
         designer: "",
         developer: "",
         code: `import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
-
-const Pagination = () => {
-  return (
-    <View style={styles.container}>
-      <TouchableOpacity style={styles.arrowButton}>
-        <AntDesign name="left" size={10} color="black" />
-      </TouchableOpacity>
-      <Text style={styles.pageText}>
-        1<Text style={styles.divider}> / </Text>47
-      </Text>
-      <TouchableOpacity style={styles.arrowButton}>
-        <AntDesign name="right" size={10} color="black" />
-      </TouchableOpacity>
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 12,
-  },
-  arrowButton: {
-    width: 32,
-    height: 32,
-    justifyContent: "center",
-    alignItems: "center",
-    borderWidth: 1,
-    borderColor: "#e0e0e0",
-    borderRadius: 4,
-    backgroundColor: "#fff",
-  },
-  pageText: {
-    fontSize: 12,
-    color: "#333",
-  },
-  divider: {
-    marginHorizontal: 2,
-  },
-});
-
-export default Pagination;
-`,
-        code2: `import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
@@ -2353,97 +969,6 @@ export default Pagination;
         designer: "",
         developer: "",
         code: `import React, { useState } from "react";
-import { View, Text, StyleSheet, Dimensions, TouchableWithoutFeedback, Pressable } from "react-native";
-
-const { width } = Dimensions.get("window");
-
-const Popover = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const togglePopover = () => {
-    setIsOpen((prev) => !prev);
-  };
-
-  const closePopover = () => {
-    setIsOpen(false);
-  };
-
-  return (
-    <TouchableWithoutFeedback onPress={closePopover}>
-      <View style={styles.container}>
-        <Pressable style={styles.button} onPress={togglePopover}>
-          <Text style={styles.buttonText}>Toggle Popover</Text>
-        </Pressable>
-
-        {isOpen && (
-          <TouchableWithoutFeedback>
-            <View style={styles.overlay}>
-              <View style={styles.popover}>
-                <Text style={styles.popoverText}>This is a Galaxy Popover</Text>
-                <Text style={styles.popoverSubtext}>
-                  You can put any content here.
-                </Text>
-              </View>
-            </View>
-          </TouchableWithoutFeedback>
-        )}
-      </View>
-    </TouchableWithoutFeedback>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  button: {
-    backgroundColor: "#000",
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    borderRadius: 4,
-  },
-  buttonText: {
-    color: "#fff",
-    fontSize: 16,
-  },
-  overlay: {
-    position: "absolute",
-    bottom: "100%",
-    justifyContent: "flex-end",
-    alignItems: "center",
-    width: "100%",
-    marginBottom: -60,
-  },
-  popover: {
-    width: width * 0.6,
-    height: "auto",
-    padding: 16,
-    backgroundColor: "#fff",
-    borderRadius: 4,
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "flex-start",
-    elevation: 5,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-  },
-  popoverText: {
-    fontSize: 16,
-  },
-  popoverSubtext: {
-    fontSize: 14,
-    color: "#666",
-    marginTop: 10,
-  },
-});
-
-export default Popover;
-`,
-        code2: `import React, { useState } from "react";
 import { View, Text, Pressable, TouchableWithoutFeedback } from "react-native";
 
 const Popover = () => {
@@ -2503,59 +1028,6 @@ export default Popover;
         designer: "",
         developer: "",
         code: `import React from "react";
-import { View, StyleSheet } from "react-native";
-import { FontAwesome, MaterialCommunityIcons, AntDesign } from "@expo/vector-icons";
-
-const ProgressBar = () => {
-  return (
-    <View style={styles.container}>
-      <View style={styles.progressBarContainer}>
-        <View style={styles.progressBarFilled}></View>
-      </View>
-      <View style={styles.stepsContainer}>
-        <View style={styles.step}>
-          <FontAwesome name="info-circle" size={24} color="black" />
-        </View>
-        <View style={styles.step}>
-          <MaterialCommunityIcons name="map-marker" size={24} color="black" />
-        </View>
-        <View style={styles.step}>
-          <AntDesign name="creditcard" size={24} color="#A1A1AA" />
-        </View>
-      </View>
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 16,
-  },
-  progressBarContainer: {
-    height: 8,
-    backgroundColor: "#E5E7EB",
-    borderRadius: 8,
-    overflow: "hidden",
-  },
-  progressBarFilled: {
-    height: "100%",
-    width: "50%",
-    backgroundColor: "#000000",
-  },
-  stepsContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginTop: 16,
-  },
-  step: {
-    alignItems: "center",
-    flex: 1,
-  },
-});
-
-export default ProgressBar;
-`,
-        code2: `import React from "react";
 import { View } from "react-native";
 import { FontAwesome, MaterialCommunityIcons, AntDesign } from "@expo/vector-icons";
 
@@ -2590,40 +1062,6 @@ export default ProgressBar;
         designer: "",
         developer: "",
         code: `import React from "react";
-import { View, StyleSheet } from "react-native";
-
-const ProgressBar = () => {
-  return (
-    <View style={styles.container}>
-        <View style={styles.progressBarBackground}>
-          <View style={styles.progressBarFilled}></View>
-        </View>
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    margin: 16,
-  },
-  progressBarBackground: {
-    marginTop: 16,
-    height: 8,
-    borderRadius: 9999,
-    backgroundColor: "#E5E7EB",
-    overflow: "hidden",
-  },
-  progressBarFilled: {
-    height: "100%",
-    width: "66.6667%",
-    borderRadius: 9999,
-    backgroundColor: "#000000",
-  },
-});
-
-export default ProgressBar;
-`,
-        code2: `import React from "react";
 import { View } from "react-native";
 
 const ProgressBar = () => {
@@ -2646,93 +1084,6 @@ export default ProgressBar;
         designer: "",
         developer: "",
         code: `import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { FontAwesome } from "@expo/vector-icons";
-
-const ProgressBar = () => {
-  return (
-    <View style={styles.container}>
-      <View style={styles.progressBar}>
-        <View style={styles.stepsContainer}>
-          <View style={[styles.stepItem, styles.stepStart]}>
-            <View style={[styles.stepIcon, styles.activeStep]}>
-              <FontAwesome name="check-circle" size={20} color="white" />
-            </View>
-            <Text style={[styles.stepLabel, styles.activeLabel]}>Details</Text>
-          </View>
-          <View style={styles.stepItem}>
-            <View style={[styles.stepIcon, styles.activeStep]}>
-              <FontAwesome name="check-circle" size={20} color="white" />
-            </View>
-            <Text style={[styles.stepLabel, styles.activeLabel]}>Address</Text>
-          </View>
-          <View style={[styles.stepItem, styles.stepEnd]}>
-            <View style={styles.stepIcon}>
-              <FontAwesome name="check-circle" size={20} color="white" />
-            </View>
-            <Text style={styles.stepLabel}>Payment</Text>
-          </View>
-        </View>
-      </View>
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    marginVertical: 20,
-    paddingHorizontal: 16,
-  },
-  progressBar: {
-    position: "relative",
-    marginTop: 16,
-    height: 6,
-    backgroundColor: "#E5E7EB",
-    borderRadius: 8,
-  },
-  stepsContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    position: "absolute",
-    top: -16,
-    left: 0,
-    right: 0,
-  },
-  stepItem: {
-    alignItems: "center",
-    flex: 1,
-  },
-  stepStart: {
-    alignItems: "flex-start",
-  },
-  stepEnd: {
-    alignItems: "flex-end",
-  },
-  stepIcon: {
-    width: 36,
-    height: 36,
-    borderRadius: 18,
-    backgroundColor: "#6B7280",
-    justifyContent: "center",
-    alignItems: "center",
-    marginBottom: 8,
-  },
-  activeStep: {
-    backgroundColor: "#000000",
-  },
-  stepLabel: {
-    fontSize: 12,
-    fontWeight: "500",
-    color: "#6B7280",
-  },
-  activeLabel: {
-    color: "#000000",
-  },
-});
-
-export default ProgressBar;
-`,
-        code2: `import React from "react";
 import { View, Text } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 
@@ -2783,68 +1134,7 @@ export default ProgressBar;
         description: "A default spinner for loading state changes.",
         designer: "",
         developer: "",
-        code: `import React, { useRef, useEffect } from "react";
-import { View, StyleSheet, Animated, Easing } from "react-native";
-
-const Spinner = () => {
-  const spinValue = useRef(new Animated.Value(0)).current;
-
-  useEffect(() => {
-    const spin = () => {
-      spinValue.setValue(0);
-
-      Animated.timing(spinValue, {
-        toValue: 1,
-        duration: 1000,
-        easing: Easing.linear,
-        useNativeDriver: true,
-      }).start((finished) => {
-        if (finished) {
-          spin();
-        }
-      });
-    };
-
-    spin();
-
-    return () => {
-      spinValue.stopAnimation();
-    };
-  }, []);
-
-  const spin = spinValue.interpolate({
-    inputRange: [0, 1],
-    outputRange: ["0deg", "360deg"],
-  });
-
-  return (
-    <View style={styles.container}>
-      <Animated.View
-        style={[styles.spinner, { transform: [{ rotate: spin }] }]}
-      />
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  spinner: {
-    width: 48,
-    height: 48,
-    borderWidth: 4,
-    borderColor: "#000000",
-    borderTopColor: "transparent",
-    borderRadius: 25,
-  },
-});
-
-export default Spinner;
-`,
-        code2: `import React from "react";
+        code: `import React from "react";
 import { View } from "react-native";
 
 const Spinner = () => {
@@ -2866,49 +1156,6 @@ export default Spinner;
         designer: "",
         developer: "",
         code: `import React, { useState, useEffect } from "react";
-import { View, StyleSheet } from "react-native";
-
-const Spinner = () => {
-  const [currentColorIndex, setCurrentColorIndex] = useState(0);
-
-  useEffect(() => {
-    const colors = ["black", "red", "blue", "green", "yellow"];
-    let index = 0;
-
-    const interval = setInterval(() => {
-      setCurrentColorIndex(index);
-      index = (index + 1) % colors.length;
-    }, 500);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const colors = ["black", "red", "blue", "green", "yellow"];
-  const currentColor = colors[currentColorIndex];
-
-  return (
-    <View style={styles.container}>
-      <View style={[styles.spinner, { backgroundColor: currentColor }]} />
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  spinner: {
-    width: 48,
-    height: 48,
-    borderRadius: 24,
-  },
-});
-
-export default Spinner;
-`,
-        code2: `import React, { useState, useEffect } from "react";
 import { View } from "react-native";
 
 const Spinner = () => {
@@ -2957,55 +1204,6 @@ export default Spinner;
         designer: "",
         developer: "",
         code: `import React, { useState } from "react";
-import { StyleSheet, Animated, Pressable } from "react-native";
-
-const Switch = () => {
-  const [isEnabled, setIsEnabled] = useState(false);
-  const translateX = new Animated.Value(isEnabled ? 20 : 0);
-
-  const toggleSwitch = () => {
-    setIsEnabled(!isEnabled);
-    Animated.timing(translateX, {
-      toValue: isEnabled ? 0 : 20,
-      duration: 200,
-      useNativeDriver: true,
-    }).start();
-  };
-
-  return (
-    <Pressable
-      style={[
-        styles.switchContainer,
-        { backgroundColor: isEnabled ? "#000000" : "#ccc" },
-      ]}
-      onPress={toggleSwitch}
-    >
-      <Animated.View
-        style={[styles.switchKnob, { transform: [{ translateX }] }]}
-      />
-    </Pressable>
-  );
-};
-
-const styles = StyleSheet.create({
-  switchContainer: {
-    width: 55,
-    height: 30,
-    borderRadius: 15,
-    justifyContent: "center",
-    padding: 2,
-  },
-  switchKnob: {
-    width: 26,
-    height: 26,
-    borderRadius: 13,
-    backgroundColor: "#FFFFFF",
-  },
-});
-
-export default Switch;
-`,
-        code2: `import React, { useState } from "react";
 import { Pressable, View } from "react-native";
 
 const Switch = () => {
@@ -3045,60 +1243,6 @@ export default Switch;
         designer: "",
         developer: "",
         code: `import React from "react";
-import { StyleSheet, View } from "react-native";
-import AntDesign from "@expo/vector-icons/AntDesign";
-
-const Tab = () => {
-  return (
-    <View style={styles.container}>
-      <View style={styles.iconContainer}>
-        <View style={styles.active}>
-          <AntDesign name="home" size={24} color="black" />
-        </View>
-        <View>
-          <AntDesign name="contacts" size={24} color="white" />
-        </View>
-        <View>
-          <AntDesign name="shoppingcart" size={24} color="white" />
-        </View>
-        <View>
-          <AntDesign name="barschart" size={24} color="white" />
-        </View>
-        <View>
-          <AntDesign name="setting" size={24} color="white" />
-        </View>
-      </View>
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: "center",
-  },
-  iconContainer: {
-    width: "90%",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-around",
-    borderRadius: 30,
-    paddingVertical: 6,
-    backgroundColor: "#000000",
-  },
-  active: {
-    borderRadius: 30,
-    width: 50,
-    height: 50,
-    backgroundColor: "#ffffff",
-    padding: 4,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
-
-export default Tab;
-`,
-        code2: `import React from "react";
 import { View, Text } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
@@ -3136,53 +1280,6 @@ export default Tab;
         designer: "",
         developer: "",
         code: `import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-
-const Tab = () => {
-  return (
-    <View style={styles.container}>
-      <View style={styles.iconContainer}>
-        <View>
-          <Text style={styles.text}>Home</Text>
-        </View>
-        <View>
-          <Text style={styles.text}>Contacts</Text>
-        </View>
-        <View>
-          <Text style={styles.text}>Cart</Text>
-        </View>
-        <View>
-          <Text style={styles.text}>Chart</Text>
-        </View>
-        <View>
-          <Text style={styles.text}>Settings</Text>
-        </View>
-      </View>
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: "center",
-  },
-  iconContainer: {
-    width: "90%",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-around",
-    borderRadius: 4,
-    paddingVertical: 16,
-    backgroundColor: "#000000",
-  },
-  text: {
-    color: "#ffffff",
-  },
-});
-
-export default Tab;
-`,
-        code2: `import React from "react";
 import { View, Text } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
@@ -3228,96 +1325,6 @@ export default Tab;
         designer: "",
         developer: "",
         code: `import React from "react";
-import { View, Text, StyleSheet, FlatList, ScrollView } from "react-native";
-
-const Table = () => {
-  const tableData = [
-    { id: 1, name: "John Doe", email: "john@example.com", role: "Admin" },
-    { id: 2, name: "Jane Smith", email: "jane@example.com", role: "Editor" },
-    { id: 3, name: "Sam Wilson", email: "sam@example.com", role: "Viewer" },
-  ];
-
-  return (
-    <View style={styles.container}>
-      <ScrollView horizontal>
-        <View style={styles.table}>
-          {/* Table Header */}
-          <View style={[styles.row, styles.header]}>
-            <Text style={[styles.cell, styles.headerText, styles.idColumn]}>
-              ID
-            </Text>
-            <Text style={[styles.cell, styles.headerText]}>Name</Text>
-            <Text style={[styles.cell, styles.headerText]}>Email</Text>
-            <Text style={[styles.cell, styles.headerText]}>Role</Text>
-          </View>
-
-          {/* Table Body */}
-          <FlatList
-            data={tableData}
-            renderItem={({ item, index }) => (
-              <View
-                style={[
-                  styles.row,
-                  index % 2 === 1 ? styles.evenRow : styles.oddRow,
-                ]}
-              >
-                <Text style={[styles.cell, styles.idColumn]}>{item.id}</Text>
-                <Text style={styles.cell}>{item.name}</Text>
-                <Text style={styles.cell}>{item.email}</Text>
-                <Text style={styles.cell}>{item.role}</Text>
-              </View>
-            )}
-            keyExtractor={(item) => item.id.toString()}
-          />
-        </View>
-      </ScrollView>
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 16,
-    backgroundColor: "#fff",
-    flex: 1,
-    width: "100%",
-  },
-  table: {
-    minWidth: 600,
-  },
-  row: {
-    flexDirection: "row",
-    paddingHorizontal: 8,
-  },
-  cell: {
-    flex: 1,
-    paddingVertical: 12,
-    paddingHorizontal: 8,
-    textAlign: "left",
-    fontSize: 16,
-  },
-  idColumn: {
-    flex: 0.5,
-  },
-  header: {
-    backgroundColor: "#f3f4f6",
-  },
-  headerText: {
-    fontWeight: "bold",
-    fontSize: 16,
-    textAlign: "left",
-  },
-  oddRow: {
-    backgroundColor: "#fff",
-  },
-  evenRow: {
-    backgroundColor: "#f9f9f9",
-  },
-});
-
-export default Table;
-`,
-        code2: `import React from "react";
 import { View, Text, FlatList, ScrollView } from "react-native";
 
 const Table = () => {
@@ -3396,111 +1403,6 @@ export default Table;
         designer: "",
         developer: "",
         code: `import React, { useState, useEffect } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Animated } from "react-native";
-
-const SuccessToast = ({ onClose }) => {
-  const [opacity] = useState(new Animated.Value(0));
-
-  useEffect(() => {
-    Animated.timing(opacity, {
-      toValue: 1,
-      duration: 300,
-      useNativeDriver: true,
-    }).start();
-
-    const timer = setTimeout(() => {
-      Animated.timing(opacity, {
-        toValue: 0,
-        duration: 300,
-        useNativeDriver: true,
-      }).start(() => onClose());
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, [onClose, opacity]);
-
-  return (
-    <Animated.View style={[styles.toastContainer, { opacity }]}>
-      <Text style={styles.toastText}>Operation successful!</Text>
-      <TouchableOpacity onPress={onClose} style={styles.closeButton}>
-        <Text style={styles.closeButtonText}>×</Text>
-      </TouchableOpacity>
-    </Animated.View>
-  );
-};
-
-const Toast = () => {
-  const [showToast, setShowToast] = useState(false);
-
-  return (
-    <View style={styles.container}>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => setShowToast(true)}
-      >
-        <Text style={styles.buttonText}>Click me</Text>
-      </TouchableOpacity>
-      {showToast && <SuccessToast onClose={() => setShowToast(false)} />}
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    position: "relative",
-  },
-  button: {
-    backgroundColor: "#000000",
-    paddingVertical: 12,
-    paddingHorizontal: 20,
-    borderRadius: 8,
-  },
-  buttonText: {
-    color: "#fff",
-    fontSize: 16,
-    fontWeight: "semibold",
-  },
-  toastContainer: {
-    position: "absolute",
-    top: 50,
-    left: 20,
-    right: 20,
-    alignSelf: "center",
-    padding: 15,
-    backgroundColor: "#28a745",
-    borderRadius: 8,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.3,
-    shadowRadius: 3,
-    elevation: 5,
-    width: "60%",
-    maxWidth: 400,
-  },
-  toastText: {
-    color: "#fff",
-    fontSize: 14,
-  },
-  closeButton: {
-    marginLeft: 10,
-    paddingHorizontal: 10,
-  },
-  closeButtonText: {
-    color: "#fff",
-    fontSize: 16,
-    fontWeight: "bold",
-  },
-});
-
-export default Toast;
-`,
-        code2: `import React, { useState, useEffect } from "react";
 import { View, Text, TouchableOpacity, Animated } from "react-native";
 
 const SuccessToast = ({ onClose }) => {
@@ -3566,117 +1468,6 @@ export default Toast;
         designer: "",
         developer: "",
         code: `import React, { useState, useEffect } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Animated } from "react-native";
-
-const SuccessToast = ({ onClose }) => {
-  const [opacity] = useState(new Animated.Value(0));
-
-  useEffect(() => {
-    Animated.timing(opacity, {
-      toValue: 1,
-      duration: 300,
-      useNativeDriver: true,
-    }).start();
-
-    const timer = setTimeout(() => {
-      Animated.timing(opacity, {
-        toValue: 0,
-        duration: 300,
-        useNativeDriver: true,
-      }).start(() => onClose());
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, [onClose, opacity]);
-
-  return (
-    <Animated.View style={[styles.toastContainer, { opacity }]}>
-      <View>
-        <Text style={styles.toastText}>Operation successful!</Text>
-        <Text style={styles.toastText2}>Moving to the next planet</Text>
-      </View>
-      <TouchableOpacity onPress={onClose} style={styles.closeButton}>
-        <Text style={styles.closeButtonText}>×</Text>
-      </TouchableOpacity>
-    </Animated.View>
-  );
-};
-
-const Toast = () => {
-  const [showToast, setShowToast] = useState(false);
-
-  return (
-    <View style={styles.container}>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => setShowToast(true)}
-      >
-        <Text style={styles.buttonText}>Click me</Text>
-      </TouchableOpacity>
-      {showToast && <SuccessToast onClose={() => setShowToast(false)} />}
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    position: "relative",
-  },
-  button: {
-    backgroundColor: "#000000",
-    paddingVertical: 12,
-    paddingHorizontal: 20,
-    borderRadius: 8,
-  },
-  buttonText: {
-    color: "#fff",
-    fontSize: 16,
-    fontWeight: "semibold",
-  },
-  toastContainer: {
-    position: "absolute",
-    top: 50,
-    left: 20,
-    right: 20,
-    alignSelf: "center",
-    padding: 15,
-    borderBottomWidth: 4,
-    borderBottomColor: "#22c55e",
-    backgroundColor: "#f0fdf4",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.3,
-    shadowRadius: 3,
-    elevation: 5,
-    width: "60%",
-    maxWidth: 400,
-  },
-  toastText: {
-    fontSize: 14,
-    marginBottom: 4,
-  },
-  toastText2: {
-    fontSize: 14,
-  },
-  closeButton: {
-    marginLeft: 10,
-    paddingHorizontal: 10,
-  },
-  closeButtonText: {
-    fontSize: 18,
-    fontWeight: "bold",
-  },
-});
-
-export default Toast;
-`,
-        code2: `import React, { useState, useEffect } from "react";
 import { View, Text, TouchableOpacity, Animated } from "react-native";
 
 const SuccessToast = ({ onClose }) => {

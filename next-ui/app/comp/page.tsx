@@ -21,8 +21,8 @@ function page() {
           ⚠️ Before using these components in your React Native app:
           <ul className="list-disc ml-6 mt-2 text-sm text-red-500 font-semibold">
             <li>
-              If you plan to use <strong>NativeWind</strong> for styling, ensure
-              your app is properly configured. Check the{" "}
+              Ensure your app is properly configured to use nativewind utility
+              classes. Check the{" "}
               <a
                 href="https://www.nativewind.dev"
                 className="text-blue-600 underline"
@@ -30,10 +30,6 @@ function page() {
                 NativeWind configuration guide
               </a>
               .
-            </li>
-            <li>
-              If you’re using the <strong>StyleSheet API</strong>, no additional
-              setup is needed.
             </li>
             <li>
               Also make sure you project supports{" "}

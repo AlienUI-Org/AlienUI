@@ -39,51 +39,39 @@ const Page = () => {
 };
 
 const VariantBlock = ({ variant }: { variant: any }) => {
-  const [copiedCode, setCopiedCode] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
 
-  const handleCopy = (text: string, codeType: string) => {
-    navigator.clipboard.writeText(text);
-    setCopiedCode(codeType);
-
-    setTimeout(() => setCopiedCode(null), 2000);
+  const handleCopy = () => {
+    navigator.clipboard.writeText(variant.code);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
     <div className="mb-6">
-      <div className="">
-        <h1 className="text-2xl font-semibold text-brown-800 sm:text-3xl">
-          {variant.name}
-        </h1>
-        <p className="mt-2 text-md text-gray-800">{variant.description}</p>
-      </div>
-      <div className="my-6">
-        <div className="flex lg:flex-row flex-col justify-between items-center gap-4">
-          {["code", "code2"].map((codeType, i) => (
-            <div
-              key={i}
-              className="lg:w-1/2 w-full relative rounded-md overflow-auto bg-black p-4"
-            >
-              <div className="relative rounded-md">
-                <SyntaxHighlighter
-                  language="jsx"
-                  style={duotoneLight}
-                  className="rounded-lg h-[400px]"
-                >
-                  {variant[codeType]}
-                </SyntaxHighlighter>
-                <BsClipboard2Heart
-                  onClick={() => handleCopy(variant[codeType], codeType)}
-                  className="absolute top-3 right-6 text-black text-xl cursor-pointer"
-                />
-                {copiedCode === codeType && (
-                  <span className="absolute top-3 right-12 text-black text-[10px] font-semibold">
-                    Copied!
-                  </span>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
+      <h1 className="text-2xl font-semibold text-brown-800 sm:text-3xl">
+        {variant.name}
+      </h1>
+      <p className="mt-2 text-md text-gray-800">{variant.description}</p>
+
+      {/* Full-screen Code Block */}
+      <div className="my-6 w-full relative rounded-lg overflow-auto bg-black p-4">
+        <SyntaxHighlighter
+          language="jsx"
+          style={duotoneLight}
+          className="rounded-lg h-[400px]"
+        >
+          {variant.code}
+        </SyntaxHighlighter>
+        <BsClipboard2Heart
+          onClick={handleCopy}
+          className="absolute top-8 right-10 text-black text-xl cursor-pointer"
+        />
+        {copied && (
+          <span className="absolute top-8 right-16 text-black text-[10px] font-semibold">
+            Copied!
+          </span>
+        )}
       </div>
       <div className="">
         <h1 className="text-xl font-semibold text-brown-800 sm:text-2xl">
@@ -93,12 +81,8 @@ const VariantBlock = ({ variant }: { variant: any }) => {
           {variant.render}
         </div>
         <div className="mt-1">
-          <p className="text-sm font-medium">
-            {variant.designer}
-          </p>
-          <p className="text-sm">
-            {variant.developer}
-          </p>
+          <p className="text-sm font-medium">{variant.designer}</p>
+          <p className="text-sm">{variant.developer}</p>
         </div>
       </div>
     </div>
