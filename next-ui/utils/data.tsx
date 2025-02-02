@@ -766,21 +766,20 @@ export default Dropdown;
         description: "A simple input box for text entry.",
         designer: "",
         developer: "",
-        code: `import React from 'react';
-import { TextInput, View } from 'react-native';
+        code: `import React from "react";
+import { TextInput } from "react-native";
 
 const Input = () => {
-    return (
-        <View className="w-52">
-            <TextInput
-                className="border-1 border-black rounded-md p-2.5"
-                placeholder="Nebulon Input..."
-            />
-        </View>
-    );
+  return (
+    <TextInput
+      className="border-1 border-black rounded-md p-2.5 w-[80%]"
+      placeholder="Nebulon Input..."
+    />
+  );
 };
 
 export default Input;
+
 `,
         render: <Comp.NebulonInput />,
       },
@@ -789,18 +788,16 @@ export default Input;
         description: "An input box with a bottom border.",
         designer: "",
         developer: "",
-        code: `import React from 'react';
-import { TextInput, View } from 'react-native';
+        code: `import React from "react";
+import { TextInput } from "react-native";
 
 const Input = () => {
-    return (
-        <View className="w-52">
-            <TextInput
-                className="border-1 border-b border-b-black p-2.5"
-                placeholder="Earth Input..."
-            />
-        </View>
-    );
+  return (
+    <TextInput
+      className="border-1 border-b border-b-black p-2.5  w-[80%]"
+      placeholder="Earth Input..."
+    />
+  );
 };
 
 export default Input;
@@ -825,7 +822,7 @@ export default Input;
         code: `import React, { useState } from "react";
 import { View, Text, Pressable, Modal } from "react-native";
 
-const Modal = () => {
+const GalaxyModal = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => setIsOpen(true);
@@ -874,7 +871,7 @@ const Modal = () => {
   );
 };
 
-export default Modal;
+export default GalaxyModal;
 `,
         render: <Comp.GalaxyModal />,
       },
@@ -922,7 +919,6 @@ const Pagination = () => {
 
 export default Pagination;
 `,
-
         render: <Comp.GalaxyPagination />,
       },
       {
@@ -993,8 +989,8 @@ const Popover = () => {
 
         {isOpen && (
           <TouchableWithoutFeedback>
-            <View className="absolute bottom-full mb-2 z-10 justify-center items-center">
-              <View className="w-3/4 h-auto bg-white p-4 rounded shadow">
+            <View className="absolute w-[100%] bottom-full mb-2 z-10 justify-center items-center">
+              <View className="h-auto bg-white p-4 rounded shadow">
                 <Text className="text-base">This is a Galaxy Popover</Text>
                 <Text className="text-gray-500 mt-2 text-sm">
                   You can put any content here.
@@ -1032,8 +1028,8 @@ import { FontAwesome, MaterialCommunityIcons, AntDesign } from "@expo/vector-ico
 
 const ProgressBar = () => {
   return (
-    <View className="p-4">
-      <View className="h-2 w-full bg-gray-300 rounded-lg overflow-hidden">
+    <View>
+      <View className="h-2 w-[90%]  bg-gray-300 rounded-lg overflow-hidden">
         <View className="h-full w-1/2 bg-black" />
       </View>
       <View className="flex-row justify-between mt-4">
@@ -1065,8 +1061,8 @@ import { View } from "react-native";
 
 const ProgressBar = () => {
   return (
-    <View className="m-4">
-        <View className="mt-4 h-2 w-full rounded-full bg-gray-200 overflow-hidden">
+    <View>
+        <View className="mt-4 h-2 w-[90%]  rounded-full bg-gray-200 overflow-hidden">
           <View className="h-full w-2/3 rounded-full bg-black"></View>
         </View>
     </View>
@@ -1088,8 +1084,8 @@ import { FontAwesome } from "@expo/vector-icons";
 
 const ProgressBar = () => {
   return (
-    <View className="my-5 px-4">
-      <View className="relative w-full mt-4 h-1.5 bg-gray-200 rounded-lg">
+    <View className="my-5">
+      <View className="relative w-[90%]  mt-4 h-1.5 bg-gray-200 rounded-lg">
         <View className="absolute inset-0 flex flex-row justify-between -top-4">
           <View className="flex-1 items-start">
             <View className="w-9 h-9 p-2 rounded-full bg-black justify-center items-center mb-2">

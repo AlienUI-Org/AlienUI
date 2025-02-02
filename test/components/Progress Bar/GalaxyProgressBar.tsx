@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View } from "react-native";
 import {
   FontAwesome,
   MaterialCommunityIcons,
@@ -8,49 +8,23 @@ import {
 
 const ProgressBar = () => {
   return (
-    <View style={styles.container}>
-      <View style={styles.progressBarContainer}>
-        <View style={styles.progressBarFilled}></View>
+    <View>
+      <View className="h-2 w-[90%] bg-gray-300 rounded-lg overflow-hidden">
+        <View className="h-full w-1/2 bg-black" />
       </View>
-      <View style={styles.stepsContainer}>
-        <View style={styles.step}>
+      <View className="flex-row justify-between mt-4">
+        <View className="flex-1 items-center">
           <FontAwesome name="info-circle" size={24} color="black" />
         </View>
-        <View style={styles.step}>
+        <View className="flex-1 items-center">
           <MaterialCommunityIcons name="map-marker" size={24} color="black" />
         </View>
-        <View style={styles.step}>
+        <View className="flex-1 items-center">
           <AntDesign name="creditcard" size={24} color="#A1A1AA" />
         </View>
       </View>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 16,
-  },
-  progressBarContainer: {
-    height: 8,
-    backgroundColor: "#E5E7EB",
-    borderRadius: 8,
-    overflow: "hidden",
-  },
-  progressBarFilled: {
-    height: "100%",
-    width: "50%",
-    backgroundColor: "#000000",
-  },
-  stepsContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginTop: 16,
-  },
-  step: {
-    alignItems: "center",
-    flex: 1,
-  },
-});
 
 export default ProgressBar;

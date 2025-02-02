@@ -1,72 +1,30 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
-const GalaxyPagination = () => {
+const Pagination = () => {
   return (
-    <View style={styles.container}>
-      <TouchableOpacity style={styles.arrowButton}>
+    <View className="flex-row gap-2">
+      <TouchableOpacity className="w-8 h-8 justify-center items-center border border-gray-300 rounded bg-white">
         <AntDesign name="left" size={10} color="black" />
       </TouchableOpacity>
-      <TouchableOpacity style={styles.pageNumberButton}>
-        <Text style={styles.pageNumberText}>1</Text>
+      <TouchableOpacity className="w-8 h-8 justify-center items-center border border-gray-300 rounded bg-white">
+        <Text className="text-gray-800 text-sm font-medium">1</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={[styles.pageNumberButton, styles.activePage]}>
-        <Text style={styles.activePageText}>2</Text>
+      <TouchableOpacity className="w-8 h-8 justify-center items-center border border-black rounded bg-black">
+        <Text className="text-white text-sm font-medium">2</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.pageNumberButton}>
-        <Text style={styles.pageNumberText}>3</Text>
+      <TouchableOpacity className="w-8 h-8 justify-center items-center border border-gray-300 rounded bg-white">
+        <Text className="text-gray-800 text-sm font-medium">3</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.pageNumberButton}>
-        <Text style={styles.pageNumberText}>4</Text>
+      <TouchableOpacity className="w-8 h-8 justify-center items-center border border-gray-300 rounded bg-white">
+        <Text className="text-gray-800 text-sm font-medium">4</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.arrowButton}>
+      <TouchableOpacity className="w-8 h-8 justify-center items-center border border-gray-300 rounded bg-white">
         <AntDesign name="right" size={10} color="black" />
       </TouchableOpacity>
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 8,
-  },
-  arrowButton: {
-    width: 32,
-    height: 32,
-    justifyContent: "center",
-    alignItems: "center",
-    borderWidth: 1,
-    borderColor: "#e0e0e0",
-    borderRadius: 4,
-    backgroundColor: "#fff",
-  },
-  pageNumberButton: {
-    width: 32,
-    height: 32,
-    justifyContent: "center",
-    alignItems: "center",
-    borderWidth: 1,
-    borderColor: "#e0e0e0",
-    borderRadius: 4,
-    backgroundColor: "#fff",
-  },
-  activePage: {
-    backgroundColor: "#000000",
-    borderColor: "#000000",
-  },
-  pageNumberText: {
-    color: "#333",
-    fontSize: 14,
-    fontWeight: "500",
-  },
-  activePageText: {
-    color: "#fff",
-    fontSize: 14,
-    fontWeight: "500",
-  },
-});
-
-export default GalaxyPagination;
+export default Pagination;

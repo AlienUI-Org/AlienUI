@@ -1,46 +1,21 @@
 import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
-const MarsPagination = () => {
+const Pagination = () => {
   return (
-    <View style={styles.container}>
-      <TouchableOpacity style={styles.arrowButton}>
+    <View className="flex-row items-center gap-3">
+      <TouchableOpacity className="w-8 h-8 justify-center items-center border border-gray-300 rounded bg-white">
         <AntDesign name="left" size={10} color="black" />
       </TouchableOpacity>
-      <Text style={styles.pageText}>
-        1<Text style={styles.divider}> / </Text>47
+      <Text className="text-xs text-gray-800">
+        1<Text className="mx-0.5"> / </Text>47
       </Text>
-      <TouchableOpacity style={styles.arrowButton}>
+      <TouchableOpacity className="w-8 h-8 justify-center items-center border border-gray-300 rounded bg-white">
         <AntDesign name="right" size={10} color="black" />
       </TouchableOpacity>
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 12,
-  },
-  arrowButton: {
-    width: 32,
-    height: 32,
-    justifyContent: "center",
-    alignItems: "center",
-    borderWidth: 1,
-    borderColor: "#e0e0e0",
-    borderRadius: 4,
-    backgroundColor: "#fff",
-  },
-  pageText: {
-    fontSize: 12,
-    color: "#333",
-  },
-  divider: {
-    marginHorizontal: 2,
-  },
-});
-
-export default MarsPagination;
+export default Pagination;

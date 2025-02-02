@@ -1,42 +1,32 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet } from "react-native";
+import { View } from "react-native";
 
 const Spinner = () => {
-  const [currentColorIndex, setCurrentColorIndex] = useState(0);
+  const [currentColor, setCurrentColor] = useState("bg-black");
 
   useEffect(() => {
-    const colors = ["black", "red", "blue", "green", "yellow"];
+    const colors = [
+      "bg-black",
+      "bg-red-500",
+      "bg-blue-500",
+      "bg-green-500",
+      "bg-yellow-500",
+    ];
     let index = 0;
 
     const interval = setInterval(() => {
-      setCurrentColorIndex(index);
+      setCurrentColor(colors[index]);
       index = (index + 1) % colors.length;
     }, 500);
 
     return () => clearInterval(interval);
   }, []);
 
-  const colors = ["black", "red", "blue", "green", "yellow"];
-  const currentColor = colors[currentColorIndex];
-
   return (
-    <View style={styles.container}>
-      <View style={[styles.spinner, { backgroundColor: currentColor }]} />
+    <View className="flex items-center justify-center">
+      <View className={`w-12 h-12 ${currentColor} rounded-full animate-spin`} />
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  spinner: {
-    width: 48,
-    height: 48,
-    borderRadius: 24,
-  },
-});
 
 export default Spinner;

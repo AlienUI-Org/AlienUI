@@ -1,86 +1,34 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 
 const ProgressBar = () => {
   return (
-    <View style={styles.container}>
-      <View style={styles.progressBar}>
-        <View style={styles.stepsContainer}>
-          <View style={[styles.stepItem, styles.stepStart]}>
-            <View style={[styles.stepIcon, styles.activeStep]}>
+    <View className="my-5">
+      <View className="relative w-[90%] mt-4 h-1.5 bg-gray-200 rounded-lg">
+        <View className="absolute inset-0 flex flex-row justify-between -top-4">
+          <View className="flex-1 items-start">
+            <View className="w-9 h-9 p-2 rounded-full bg-black justify-center items-center mb-2">
               <FontAwesome name="check-circle" size={20} color="white" />
             </View>
-            <Text style={[styles.stepLabel, styles.activeLabel]}>Details</Text>
+            <Text className="text-xs font-medium text-black">Details</Text>
           </View>
-          <View style={styles.stepItem}>
-            <View style={[styles.stepIcon, styles.activeStep]}>
+          <View className="flex-1 items-center">
+            <View className="w-9 h-9 p-2 rounded-full bg-black justify-center items-center mb-2">
               <FontAwesome name="check-circle" size={20} color="white" />
             </View>
-            <Text style={[styles.stepLabel, styles.activeLabel]}>Address</Text>
+            <Text className="text-xs font-medium text-black">Address</Text>
           </View>
-          <View style={[styles.stepItem, styles.stepEnd]}>
-            <View style={styles.stepIcon}>
+          <View className="flex-1 items-end">
+            <View className="w-9 h-9 p-2 rounded-full bg-gray-400 justify-center items-center mb-2">
               <FontAwesome name="check-circle" size={20} color="white" />
             </View>
-            <Text style={styles.stepLabel}>Payment</Text>
+            <Text className="text-xs font-medium text-gray-500">Payment</Text>
           </View>
         </View>
       </View>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    marginVertical: 20,
-    paddingHorizontal: 16,
-  },
-  progressBar: {
-    position: "relative",
-    marginTop: 16,
-    height: 6,
-    backgroundColor: "#E5E7EB",
-    borderRadius: 8,
-  },
-  stepsContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    position: "absolute",
-    top: -16,
-    left: 0,
-    right: 0,
-  },
-  stepItem: {
-    alignItems: "center",
-    flex: 1,
-  },
-  stepStart: {
-    alignItems: "flex-start",
-  },
-  stepEnd: {
-    alignItems: "flex-end",
-  },
-  stepIcon: {
-    width: 36,
-    height: 36,
-    borderRadius: 18,
-    backgroundColor: "#6B7280",
-    justifyContent: "center",
-    alignItems: "center",
-    marginBottom: 8,
-  },
-  activeStep: {
-    backgroundColor: "#000000",
-  },
-  stepLabel: {
-    fontSize: 12,
-    fontWeight: "500",
-    color: "#6B7280",
-  },
-  activeLabel: {
-    color: "#000000",
-  },
-});
 
 export default ProgressBar;
