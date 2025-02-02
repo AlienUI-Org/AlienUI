@@ -1,114 +1,38 @@
-import React, { useState, useEffect } from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  Animated,
-} from "react-native";
+import { useState } from "react";
+import { View, Text, TouchableOpacity } from "react-native";
 
-interface SuccessToastProps {
-  onClose: () => void;
-}
+const Toast = () => {
+  const [visible, setVisible] = useState(false);
 
-const SuccessToast: React.FC<SuccessToastProps> = ({ onClose }) => {
-  const [opacity] = useState(new Animated.Value(0));
+  const showToast = () => {
+    setVisible(true);
+    setTimeout(() => {
+      setVisible(false);
+    }, 2000);
+  };
 
-  useEffect(() => {
-    Animated.timing(opacity, {
-      toValue: 1,
-      duration: 300,
-      useNativeDriver: true,
-    }).start();
-
-    const timer = setTimeout(() => {
-      Animated.timing(opacity, {
-        toValue: 0,
-        duration: 300,
-        useNativeDriver: true,
-      }).start(() => onClose());
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, [onClose, opacity]);
+  const onClose = () => {
+    setVisible(false);
+  };
 
   return (
-    <Animated.View style={[styles.toastContainer, { opacity }]}>
-      <Text style={styles.toastText}>Operation successful!</Text>
-      <TouchableOpacity onPress={onClose} style={styles.closeButton}>
-        <Text style={styles.closeButtonText}>×</Text>
-      </TouchableOpacity>
-    </Animated.View>
-  );
-};
-
-const GalaxyToast = () => {
-  const [showToast, setShowToast] = useState(false);
-
-  return (
-    <View style={styles.container}>
+    <View className="flex-1 items-center justify-center">
       <TouchableOpacity
-        style={styles.button}
-        onPress={() => setShowToast(true)}
+        onPress={showToast}
+        className="px-4 py-2 bg-black rounded-lg"
       >
-        <Text style={styles.buttonText}>Click me</Text>
+        <Text className="text-white font-semibold">Click me</Text>
       </TouchableOpacity>
-      {showToast && <SuccessToast onClose={() => setShowToast(false)} />}
+      {visible && (
+        <View className="absolute bottom-40 w-[80%] px-4 py-2 bg-green-500 rounded-lg transition-opacity duration-300 opacity-100 flex-row justify-between items-center">
+          <Text className="text-white">Operation successful</Text>
+          <TouchableOpacity onPress={onClose} className="ml-2 px-2">
+            <Text className="text-white text-lg font-bold">×</Text>
+          </TouchableOpacity>
+        </View>
+      )}
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    position: "relative",
-  },
-  button: {
-    backgroundColor: "#000000",
-    paddingVertical: 12,
-    paddingHorizontal: 20,
-    borderRadius: 8,
-  },
-  buttonText: {
-    color: "#fff",
-    fontSize: 16,
-    fontWeight: "semibold",
-  },
-  toastContainer: {
-    position: "absolute",
-    top: 50,
-    left: 20,
-    right: 20,
-    alignSelf: "center",
-    padding: 15,
-    backgroundColor: "#28a745",
-    borderRadius: 8,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.3,
-    shadowRadius: 3,
-    elevation: 5,
-    width: "60%",
-    maxWidth: 400,
-  },
-  toastText: {
-    color: "#fff",
-    fontSize: 14,
-  },
-  closeButton: {
-    marginLeft: 10,
-    paddingHorizontal: 10,
-  },
-  closeButtonText: {
-    color: "#fff",
-    fontSize: 16,
-    fontWeight: "bold",
-  },
-});
-
-export default GalaxyToast;
+export default Toast;

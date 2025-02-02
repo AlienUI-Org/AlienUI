@@ -1352,7 +1352,7 @@ const Table = () => {
             renderItem={({ item, index }) => (
               <View
                 className={\`flex-row \${
-                  index % 2 === 1 ? "bg-white" : "bg-gray-100"
+                  index % 2 === 0 ? "bg-white" : "bg-gray-100"
                 }\`}
               >
                 <Text className="flex-[0.5] text-base text-left px-4 py-2">
@@ -1396,56 +1396,38 @@ export default Table;
           "A default toast component that shows different props: success, failure and warning, by changing the color and text to suit your use case.",
         designer: "",
         developer: "",
-        code: `import React, { useState, useEffect } from "react";
-import { View, Text, TouchableOpacity, Animated } from "react-native";
-
-const SuccessToast = ({ onClose }) => {
-  const [opacity] = useState(new Animated.Value(0));
-
-  useEffect(() => {
-    Animated.timing(opacity, {
-      toValue: 1,
-      duration: 300,
-      useNativeDriver: true,
-    }).start();
-
-    const timer = setTimeout(() => {
-      Animated.timing(opacity, {
-        toValue: 0,
-        duration: 300,
-        useNativeDriver: true,
-      }).start(() => onClose());
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, [onClose, opacity]);
-
-  return (
-    <Animated.View
-      className="absolute top-12 left-5 right-5 self-center bg-green-600 px-4 py-3 flex-row justify-between items-center rounded-lg shadow-md"
-      style={{ opacity }}
-    >
-      <Text className="text-white text-sm">Operation successful!</Text>
-      <TouchableOpacity onPress={onClose} className="ml-2 px-2">
-        <Text className="text-white text-lg font-bold">×</Text>
-      </TouchableOpacity>
-    </Animated.View>
-  );
-};
+        code: `import { useState } from "react";
+import { View, Text, TouchableOpacity } from "react-native";
 
 const Toast = () => {
-  const [showToast, setShowToast] = useState(false);
+  const [visible, setVisible] = useState(false);
+
+  const showToast = () => {
+    setVisible(true);
+    setTimeout(() => {
+      setVisible(false);
+    }, 2000);
+  };
+
+  const onClose = () => {
+    setVisible(false);
+  };
 
   return (
-    <View className="flex-1 justify-center items-center relative">
+    <View className="flex-1 items-center justify-center">
       <TouchableOpacity
-        className="bg-black px-5 py-3 rounded-lg"
-        onPress={() => setShowToast(true)}
+        onPress={showToast}
+        className="px-4 py-2 bg-black rounded-lg"
       >
-        <Text className="text-white text-base font-semibold">Click me</Text>
+        <Text className="text-white font-semibold">Click me</Text>
       </TouchableOpacity>
-      {showToast && (
-        <SuccessToast onClose={() => setShowToast(false)} />
+      {visible && (
+        <View className="absolute bottom-40 w-[80%] px-4 py-2 bg-green-500 rounded-lg transition-opacity duration-300 opacity-100 flex-row justify-between items-center">
+          <Text className="text-white">Operation successful</Text>
+          <TouchableOpacity onPress={onClose} className="ml-2 px-2">
+            <Text className="text-white text-lg font-bold">×</Text>
+          </TouchableOpacity>
+        </View>
       )}
     </View>
   );
@@ -1461,63 +1443,48 @@ export default Toast;
           "A toast component that shows different props: success, failure and warning, by changing the color and text to suit your use case.",
         designer: "",
         developer: "",
-        code: `import React, { useState, useEffect } from "react";
-import { View, Text, TouchableOpacity, Animated } from "react-native";
-
-const SuccessToast = ({ onClose }) => {
-  const [opacity] = useState(new Animated.Value(0));
-
-  useEffect(() => {
-    Animated.timing(opacity, {
-      toValue: 1,
-      duration: 300,
-      useNativeDriver: true,
-    }).start();
-
-    const timer = setTimeout(() => {
-      Animated.timing(opacity, {
-        toValue: 0,
-        duration: 300,
-        useNativeDriver: true,
-      }).start(() => onClose());
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, [onClose, opacity]);
-
-  return (
-    <Animated.View
-      className="absolute top-12 left-5 right-5 self-center bg-green-50 border-b-4 border-green-500 px-4 py-3 flex-row justify-between items-center shadow-lg"
-      style={{ opacity }}
-    >
-      <View>
-        <Text className="text-sm mb-1">Operation successful!</Text>
-        <Text className="text-sm">Moving to the next planet</Text>
-      </View>
-      <TouchableOpacity onPress={onClose} className="ml-2 px-2">
-        <Text className="text-xl font-bold">×</Text>
-      </TouchableOpacity>
-    </Animated.View>
-  );
-};
+        code: `import { useState } from "react";
+import { View, Text, TouchableOpacity } from "react-native";
 
 const Toast = () => {
-  const [showToast, setShowToast] = useState(false);
+  const [visible, setVisible] = useState(false);
+
+  const showToast = () => {
+    setVisible(true);
+    setTimeout(() => {
+      setVisible(false);
+    }, 2000);
+  };
+
+  const onClose = () => {
+    setVisible(false);
+  };
 
   return (
-    <View className="flex-1 justify-center items-center relative">
+    <View className="flex-1 items-center justify-center">
       <TouchableOpacity
-        className="bg-black px-5 py-3 rounded-lg"
-        onPress={() => setShowToast(true)}
+        onPress={showToast}
+        className="px-4 py-2 bg-black rounded-lg"
       >
-        <Text className="text-white text-base font-semibold">Click me</Text>
+        <Text className="text-white font-semibold">Click me</Text>
       </TouchableOpacity>
-      {showToast && <SuccessToast onClose={() => setShowToast(false)} />}
+      {visible && (
+        <View className="absolute bottom-40 w-[80%] bg-green-50 border-b-4 border-green-500 px-4 py-3  rounded-lg transition-opacity duration-300 opacity-100 flex-row justify-between items-center">
+          <View>
+            <Text className="text-sm mb-1">Operation successful!</Text>
+            <Text className="text-sm">Moving to the next planet</Text>
+          </View>
+          <TouchableOpacity onPress={onClose} className="ml-2 px-2">
+            <Text className="text-xl font-bold">×</Text>
+          </TouchableOpacity>
+        </View>
+      )}
     </View>
   );
 };
 
 export default Toast;
+
 `,
         render: <Comp.EarthToast />,
       },
