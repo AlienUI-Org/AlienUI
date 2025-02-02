@@ -1,13 +1,12 @@
 import React from "react";
 import "./global.css";
 import { StyleSheet, ScrollView } from "react-native";
-import GalaxyCard from "./components/Card/GalaxyCard";
-import EarthCard from "./components/Card/EarthCard";
+import GalaxyDropdown from "./components/Dropdown/GalaxyDropdown";
 
 export default function App() {
   return (
     <ScrollView style={styles.container}>
-      <EarthCard />
+      <GalaxyDropdown />
     </ScrollView>
   );
 }

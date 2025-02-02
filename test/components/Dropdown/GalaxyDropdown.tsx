@@ -1,40 +1,42 @@
 import React, { useState } from "react";
-import { View, Text, Pressable, FlatList, StyleSheet } from "react-native";
+import { View, Text, Pressable, FlatList } from "react-native";
 
 const Dropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const [selectedOption, setSelectedOption] = useState(null);
 
   const options = ["Galaxy Dropdown", "Nebula Dropdown", "Earth Dropdown"];
 
-  const handleOptionClick = (option: string) => {
+  const handleOptionClick = (option: any) => {
     setSelectedOption(option);
     setIsOpen(false);
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.label}>Choose an option</Text>
+    <View className="w-4/5 self-center mt-12">
+      <Text className="text-base text-gray-700 mb-2">Choose an option</Text>
       <Pressable
         onPress={() => setIsOpen(!isOpen)}
-        style={[styles.button, isOpen ? styles.roundedTop : styles.roundedFull]}
+        className={`flex-row justify-between items-center bg-white border border-gray-300 px-4 py-3 ${
+          isOpen ? "rounded-t-lg" : "rounded-lg"
+        }`}
       >
-        <Text style={styles.buttonText}>
+        <Text className="text-base text-gray-700">
           {selectedOption || "Select an option"}
         </Text>
-        <Text style={styles.icon}>{isOpen ? "▲" : "▼"}</Text>
+        <Text className="text-base text-gray-700">{isOpen ? "▲" : "▼"}</Text>
       </Pressable>
       {isOpen && (
-        <View style={styles.dropdown}>
+        <View className="bg-white border border-gray-300 rounded-b-lg mt-2 max-h-40">
           <FlatList
             data={options}
             keyExtractor={(item, index) => index.toString()}
             renderItem={({ item }) => (
               <Pressable
                 onPress={() => handleOptionClick(item)}
-                style={styles.option}
+                className="px-4 py-3"
               >
-                <Text style={styles.optionText}>{item}</Text>
+                <Text className="text-base text-gray-700">{item}</Text>
               </Pressable>
             )}
           />
@@ -43,62 +45,5 @@ const Dropdown = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    width: "80%",
-    alignSelf: "center",
-    marginTop: 50,
-  },
-  label: {
-    fontSize: 16,
-    color: "#4A4A4A",
-    marginBottom: 8,
-  },
-  button: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    backgroundColor: "#FFFFFF",
-    borderWidth: 1,
-    borderColor: "#C0C0C0",
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-  },
-  roundedTop: {
-    borderTopLeftRadius: 8,
-    borderTopRightRadius: 8,
-    borderBottomLeftRadius: 0,
-    borderBottomRightRadius: 0,
-  },
-  roundedFull: {
-    borderRadius: 8,
-  },
-  buttonText: {
-    fontSize: 16,
-    color: "#4A4A4A",
-  },
-  icon: {
-    fontSize: 16,
-    color: "#4A4A4A",
-  },
-  dropdown: {
-    backgroundColor: "#FFFFFF",
-    borderWidth: 1,
-    borderColor: "#C0C0C0",
-    borderBottomLeftRadius: 8,
-    borderBottomRightRadius: 8,
-    maxHeight: 150,
-    marginTop: 8,
-  },
-  option: {
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-  },
-  optionText: {
-    fontSize: 16,
-    color: "#4A4A4A",
-  },
-});
 
 export default Dropdown;

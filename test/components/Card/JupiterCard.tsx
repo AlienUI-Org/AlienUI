@@ -1,53 +1,25 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
 function Card() {
   return (
-    <View style={styles.container}>
+    <View className="flex flex-col items-center bg-black p-7 shadow-md w-4/5 h-64">
       <MaterialIcons
         name="join-inner"
         size={56}
-        color="#6B4226"
-        style={styles.icon}
+        color="#ffffff"
+        className="mb-4"
       />
-      <Text style={styles.title}>Open-Source Contributions</Text>
-      <Text style={styles.description}>
+      <Text className="text-lg font-bold text-white text-center">
+        Open-Source Contributions
+      </Text>
+      <Text className="mt-2 text-sm text-white text-center">
         Alien UI is open-source, inviting developers to collaborate and share
         components to improve mobile app design.
       </Text>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: "column",
-    alignItems: "center",
-    backgroundColor: "#fdf8f6",
-    padding: 30,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    width: "80%",
-    height: 260,
-  },
-  icon: {
-    marginBottom: 16,
-  },
-  title: {
-    fontSize: 18,
-    fontWeight: "bold",
-    color: "#422a19",
-    textAlign: "center",
-  },
-  description: {
-    marginTop: 8,
-    fontSize: 14,
-    color: "#4b5563",
-    textAlign: "center",
-  },
-});
 
 export default Card;

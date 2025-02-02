@@ -1,66 +1,30 @@
 import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, Pressable } from "react-native";
 
 const CheckBox = () => {
   return (
-    <View style={styles.fieldset}>
-      <Text style={styles.legend}>Checkboxes</Text>
-
-      <View style={styles.optionsContainer}>
-        <TouchableOpacity style={styles.option} activeOpacity={0.7}>
-          <View style={styles.checkbox}></View>
-          <Text style={styles.label}>John Clapton</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.option} activeOpacity={0.7}>
-          <View style={styles.checkbox}></View>
-          <Text style={styles.label}>Peter Mayer</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.option} activeOpacity={0.7}>
-          <View style={styles.checkbox}></View>
-          <Text style={styles.label}>Eric King</Text>
-        </TouchableOpacity>
+    <View className="p-4">
+      <Text className="sr-only">Checkboxes</Text>
+      <View className="space-y-2">
+        <Pressable className="flex flex-row items-center gap-4 p-2 rounded bg-white">
+          <View className="w-5 h-5 border border-gray-300 rounded bg-white"></View>
+          <Text className="text-base font-medium text-gray-900">
+            John Clapton
+          </Text>
+        </Pressable>
+        <Pressable className="flex flex-row items-center gap-4 p-2 rounded bg-white">
+          <View className="w-5 h-5 border border-gray-300 rounded bg-white"></View>
+          <Text className="text-base font-medium text-gray-900">
+            Peter Mayer
+          </Text>
+        </Pressable>
+        <Pressable className="flex flex-row items-center gap-4 p-2 rounded bg-white">
+          <View className="w-5 h-5 border border-gray-300 rounded bg-white"></View>
+          <Text className="text-base font-medium text-gray-900">Eric King</Text>
+        </Pressable>
       </View>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  fieldset: {
-    margin: 16,
-  },
-  legend: {
-    position: "absolute",
-    left: -9999,
-    top: -9999,
-    color: "transparent",
-  },
-  optionsContainer: {
-    gap: 8,
-  },
-  option: {
-    flexDirection: "row",
-    alignItems: "center",
-    paddingVertical: 8,
-    paddingHorizontal: 12,
-    borderRadius: 4,
-    backgroundColor: "#fff",
-  },
-  checkbox: {
-    width: 20,
-    height: 20,
-    marginRight: 12,
-    borderRadius: 4,
-    borderWidth: 1,
-    borderColor: "#D1D5DB",
-    backgroundColor: "#fff",
-  },
-  label: {
-    fontSize: 16,
-    fontWeight: "500",
-    color: "#1F2937",
-  },
-});
 
 export default CheckBox;

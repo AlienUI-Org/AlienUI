@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, Pressable, StyleSheet } from "react-native";
+import { View, Text, Pressable } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
 const Carousel = () => {
@@ -16,96 +16,42 @@ const Carousel = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.slideContainer}>
-        <Text style={styles.slideText}>{slides[currentIndex]}</Text>
+    <View className="flex-1 justify-center items-center">
+      <View className="w-4/5 h-56 justify-center items-center bg-white border border-gray-300 rounded shadow">
+        <Text className="text-4xl font-bold text-gray-800">
+          {slides[currentIndex]}
+        </Text>
       </View>
 
-      <View style={styles.navContainer}>
-        <Pressable onPress={prevSlide} style={styles.navButton}>
+      <View className="flex-row justify-between w-4/5 mt-4">
+        <Pressable
+          onPress={prevSlide}
+          className="w-10 h-10 justify-center items-center bg-white border border-gray-300 rounded-full"
+        >
           <AntDesign name="arrowleft" size={16} color="black" />
         </Pressable>
-        <Pressable onPress={nextSlide} style={styles.navButton}>
+        <Pressable
+          onPress={nextSlide}
+          className="w-10 h-10 justify-center items-center bg-white border border-gray-300 rounded-full"
+        >
           <AntDesign name="arrowright" size={16} color="black" />
         </Pressable>
       </View>
 
-      <View style={styles.pagination}>
+      <View className="flex-row mt-4 space-x-2">
         {slides.map((_, index) => (
           <View
             key={index}
-            style={[
-              styles.dot,
-              index === currentIndex ? styles.activeDot : styles.inactiveDot,
-            ]}
+            className={`w-3 h-3 rounded-full ${
+              index === currentIndex
+                ? "bg-black border-black"
+                : "bg-white border-gray-300"
+            } border`}
           />
         ))}
       </View>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  slideContainer: {
-    width: "80%",
-    height: 230,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#fff",
-    borderWidth: 1,
-    borderColor: "#ddd",
-    borderRadius: 4,
-    shadowColor: "#000",
-    shadowOpacity: 0.1,
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 4,
-    elevation: 3,
-  },
-  slideText: {
-    fontSize: 32,
-    fontWeight: "bold",
-    color: "#333",
-  },
-  navContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    width: "80%",
-    marginTop: 16,
-  },
-  navButton: {
-    width: 40,
-    height: 40,
-    justifyContent: "center",
-    alignItems: "center",
-    borderWidth: 1,
-    borderColor: "#ddd",
-    borderRadius: 20,
-    backgroundColor: "#fff",
-  },
-  pagination: {
-    flexDirection: "row",
-    marginTop: 16,
-    gap: 8,
-  },
-  dot: {
-    width: 10,
-    height: 10,
-    borderRadius: 5,
-    borderWidth: 1,
-  },
-  activeDot: {
-    backgroundColor: "#000",
-    borderColor: "#000",
-  },
-  inactiveDot: {
-    backgroundColor: "#fff",
-    borderColor: "#ddd",
-  },
-});
 
 export default Carousel;
