@@ -440,8 +440,8 @@ const Card = () => {
         imageStyle={{ resizeMode: "cover" }}
         style={{ height: 350 }}
       >
-        <View className="flex-1 bg-black/50 justify-end p-4">
-          <View className="p-4">
+        <View className="flex-1 bg-black/50 justify-end">
+          <View className="p-3">
             <Text className="text-xs text-white/90">07th July 1997</Text>
             <TouchableOpacity>
               <Text className="mt-1 text-lg font-bold text-white">

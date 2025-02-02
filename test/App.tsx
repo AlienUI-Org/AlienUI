@@ -7,7 +7,6 @@ import EarthCard from "./components/Card/EarthCard";
 export default function App() {
   return (
     <ScrollView style={styles.container}>
-      <GalaxyCard />
       <EarthCard />
     </ScrollView>
   );
