@@ -1,11 +1,12 @@
 import React from "react";
-import { StyleSheet, ScrollView, Image } from "react-native";
-import MarsCard from "./components/Card/MarsCard";
+import "./global.css";
+import { StyleSheet, ScrollView } from "react-native";
+import EarthBreadcrumb from "./components/BreadCrumbs/EarthBreadcrumb";
 
 export default function App() {
   return (
     <ScrollView style={styles.container}>
-      <MarsCard />{" "}
+      <EarthBreadcrumb />
     </ScrollView>
   );
 }

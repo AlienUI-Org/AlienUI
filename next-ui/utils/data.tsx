@@ -321,7 +321,6 @@ const Breadcrumb = () => {
 
 export default Breadcrumb;
 `,
-
         render: <Comp.EarthBreadcrumb />,
       },
     ],
@@ -341,13 +340,13 @@ export default Breadcrumb;
         developer: "",
 
         code: `import React from 'react';
-import { TouchableOpacity, Text } from 'react-native';
+import { Pressable, Text } from 'react-native';
 
 const Button = () => {
     return (
-        <TouchableOpacity className="bg-black py-2 px-4 rounded-md flex items-center justify-center w-52">
+        <Pressable className="bg-black py-2 px-4 rounded-md flex items-center justify-center w-52">
             <Text className="text-white text-base">Galaxy Button</Text>
-        </TouchableOpacity>
+        </Pressable>
     );
 };
 

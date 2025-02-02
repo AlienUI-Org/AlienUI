@@ -1,28 +1,12 @@
-import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { View, Text } from "react-native";
 
-const GalaxyBadge = () => {
+const Badge = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Badge</Text>
+    <View className="bg-black px-2 py-1 rounded-full flex items-center justify-center w-20">
+      <Text className="text-white text-xs">Badge</Text>
     </View>
   );
 };
 
-export default GalaxyBadge;
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "#000000",
-    paddingVertical: 5,
-    paddingHorizontal: 5,
-    borderRadius: 20,
-    alignItems: "center",
-    width: 80,
-    marginBottom: 10,
-  },
-  text: {
-    color: "#FFFFFF",
-    fontSize: 12,
-  },
-});
+export default Badge;

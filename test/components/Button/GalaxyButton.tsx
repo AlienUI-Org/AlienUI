@@ -1,28 +1,12 @@
 import React from "react";
-import { TouchableOpacity, Text, StyleSheet } from "react-native";
+import { Pressable, Text } from "react-native";
 
 const Button = () => {
   return (
-    <TouchableOpacity style={styles.button}>
-      <Text style={styles.text}>Galaxy Button</Text>
-    </TouchableOpacity>
+    <Pressable className="bg-black py-2 px-4 rounded-md flex items-center justify-center w-52">
+      <Text className="text-white text-base">Galaxy Button</Text>
+    </Pressable>
   );
 };
-
-const styles = StyleSheet.create({
-  button: {
-    backgroundColor: "#000000",
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 5,
-    alignItems: "center",
-    width: 200,
-    marginBottom: 10,
-  },
-  text: {
-    color: "#FFFFFF",
-    fontSize: 16,
-  },
-});
 
 export default Button;

@@ -1,13 +1,7 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  ScrollView,
-} from "react-native";
+import { View, Text, Pressable, ScrollView } from "react-native";
 
-function Accordion() {
+const Accordion = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
   const accordionItems = [
@@ -36,31 +30,6 @@ function Accordion() {
       content:
         "Yes, you can use AlienUI in your React Native project. The code is yours. But hey, let us know if you do. We'd love to see what you build.",
     },
-    {
-      title: "Do I need to credit AlienUI?",
-      content:
-        "No, crediting AlienUI is not necessary. However, giving the project a star on GitHub and/or sharing it on Twitter and LinkedIn would be appreciated.",
-    },
-    {
-      title: "How can I support AlienUI?",
-      content:
-        "You can support AlienUI by starring the project on GitHub and/or sharing it on Twitter and LinkedIn. It helps increase the project's visibility.",
-    },
-    {
-      title: "How do I contribute?",
-      content:
-        "You can contribute by adding new components, fixing bugs, or improving the documentation. Please create an issue before starting any work.",
-    },
-    {
-      title: "How do I get updates?",
-      content:
-        "The best way to get updates is by following the project on GitHub and all social media platforms like Twitter, LinkedIn etc. You can also get latest updates by subscribing to our newsletter.",
-    },
-    {
-      title: "Can I request new features for AlienUI?",
-      content:
-        "Yes, you can create a new issue on GitHub to request new features. While not every request will be implemented, they all will be considered.",
-    },
   ];
 
   const toggleAccordion = (index: any) => {
@@ -68,24 +37,33 @@ function Accordion() {
   };
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <View style={styles.accordionContainer}>
+    <ScrollView className="flex-1">
+      <View className="w-11/12 border">
         {accordionItems.map((item, index) => (
-          <View key={index} style={styles.accordionItem}>
-            <TouchableOpacity
+          <View
+            key={index}
+            className="border-b last:border-b-0 border-gray-300"
+          >
+            <Pressable
               onPress={() => toggleAccordion(index)}
-              style={styles.accordionHeader}
+              className={`flex flex-row justify-between items-center px-5 py-4 bg-white ${
+                openIndex === index ? "bg-white" : ""
+              }`}
             >
-              <Text style={styles.accordionTitle}>{item.title}</Text>
+              <Text className="text-base font-medium text-gray-800">
+                {item.title}
+              </Text>
               <Text
-                style={[styles.icon, openIndex === index && styles.iconOpen]}
+                className={`text-base transition-transform duration-300 ${
+                  openIndex === index ? "rotate-180" : ""
+                }`}
               >
                 ▼
               </Text>
-            </TouchableOpacity>
+            </Pressable>
             {openIndex === index && (
-              <View style={styles.accordionContent}>
-                <Text style={styles.contentText}>{item.content}</Text>
+              <View className="px-5 py-4">
+                <Text className="text-sm text-gray-600">{item.content}</Text>
               </View>
             )}
           </View>
@@ -93,51 +71,6 @@ function Accordion() {
       </View>
     </ScrollView>
   );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flexGrow: 1,
-    alignItems: "center",
-  },
-  accordionContainer: {
-    width: "90%",
-    overflow: "hidden",
-    borderWidth: 1,
-  },
-  accordionItem: {
-    borderBottomWidth: 1,
-    borderBottomColor: "#ccc",
-  },
-  accordionHeader: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingVertical: 16,
-    paddingHorizontal: 20,
-    backgroundColor: "#ffffff",
-  },
-  accordionTitle: {
-    fontSize: 16,
-    fontWeight: "500",
-    color: "#333",
-  },
-  icon: {
-    fontSize: 16,
-    color: "#000000",
-    transform: [{ rotate: "0deg" }],
-  },
-  iconOpen: {
-    transform: [{ rotate: "180deg" }],
-  },
-  accordionContent: {
-    padding: 16,
-    backgroundColor: "#ffffff",
-  },
-  contentText: {
-    fontSize: 14,
-    color: "#666",
-  },
-});
+};
 
 export default Accordion;

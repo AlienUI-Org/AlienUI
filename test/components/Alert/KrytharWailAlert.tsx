@@ -1,38 +1,13 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text } from "react-native";
 
 const Alert = () => {
   return (
-    <View style={styles.alertContainer}>
-      <Text style={styles.alertTitle}>Krythar Wail</Text>
-      <Text style={styles.alertMessage}>
-        Something is wrong. There is a critical error.
-      </Text>
+    <View className="rounded-xl border-l-4 border-green-500 bg-green-50 p-4 w-64">
+      <Text className="text-lg font-bold">Krythar Wail</Text>
+      <Text className="mt-1 text-sm">Everything is good.</Text>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  alertContainer: {
-    borderRadius: 8,
-    borderLeftWidth: 4,
-    borderLeftColor: "#22c55e",
-    backgroundColor: "#f0fdf4",
-    padding: 16,
-    marginTop: 10,
-    width: 250,
-  },
-  alertTitle: {
-    fontSize: 16,
-    fontWeight: "bold",
-    color: "#991b1b",
-    marginBottom: 8,
-  },
-  alertMessage: {
-    fontSize: 14,
-    color: "#b91c1c",
-    lineHeight: 15,
-  },
-});
 
 export default Alert;
