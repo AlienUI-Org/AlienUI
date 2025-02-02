@@ -1,21 +1,22 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 
 const Card = () => {
   return (
-    <View style={styles.card}>
+    <View className="bg-white rounded-lg overflow-hidden shadow-lg m-4">
       <Image
         source={require("../../assets/images/alien1.avif")}
-        style={styles.image}
+        className="w-full h-52"
+        resizeMode="cover"
       />
-      <View style={styles.content}>
-        <Text style={styles.date}>07th July 1997</Text>
+      <View className="p-4">
+        <Text className="text-xs text-gray-500 mb-1">07th July 1997</Text>
         <TouchableOpacity>
-          <Text style={styles.title}>
+          <Text className="text-lg font-bold text-gray-900 mb-2">
             Exploring the Unknown: The Alien Encounter Chronicles
           </Text>
         </TouchableOpacity>
-        <Text style={styles.description}>
+        <Text className="text-sm text-gray-500 leading-5">
           Deep in the vastness of space lies a story untold—of strange beings,
           otherworldly landscapes, and encounters that defy imagination.
           Discover the mysteries of alien civilizations, their technology, and
@@ -25,43 +26,5 @@ const Card = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  card: {
-    borderRadius: 16,
-    overflow: "hidden",
-    backgroundColor: "#ffffff",
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 5,
-    margin: 16,
-  },
-  image: {
-    width: "100%",
-    height: 200,
-    resizeMode: "cover",
-  },
-  content: {
-    padding: 16,
-  },
-  date: {
-    fontSize: 12,
-    color: "#6b7280",
-    marginBottom: 4,
-  },
-  title: {
-    fontSize: 18,
-    fontWeight: "bold",
-    color: "#111827",
-    marginBottom: 8,
-  },
-  description: {
-    fontSize: 14,
-    color: "#6b7280",
-    lineHeight: 20,
-  },
-});
 
 export default Card;
