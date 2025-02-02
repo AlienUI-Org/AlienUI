@@ -1,15 +1,12 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, ScrollView } from "react-native";
 import "./global.css";
+import Button from "./components/Button";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text className="font-bold text-4xl">
-        Open up App.js to start working on your app!
-      </Text>
-      <StatusBar style="auto" />
-    </View>
+    <ScrollView style={styles.container}>
+      <Button />
+    </ScrollView>
   );
 }
 
