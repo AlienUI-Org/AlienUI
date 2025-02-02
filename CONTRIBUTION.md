@@ -37,8 +37,9 @@ Thank you for considering contributing to **AlienUI**! Your contributions play a
    ```
 
 5. **Make Changes :**
+   - Pick a task or feature you'd like to work on. Check out the [Issues](https://github.com/khaymanii/AlienUI/issues) tab for open task.
    - Review the project structure, `next-ui` and `playground` folder to familiarize yourself with the project and build your UI components.
-   - Pick a task or feature you'd like to work on. Check out the [Issues](https://github.com/khaymanii/AlienUI/issues) tab for open task
+   - Fix or build the task assigned to you on the `issues` tab, and then attach an image or recorded video to the Pull request (PR) of the UI you built.
 6. **Committing Changes**
 
    ```bash
@@ -68,7 +69,7 @@ Thank you for considering contributing to **AlienUI**! Your contributions play a
 9. **Open a Pull Request (PR):**
    - Visit your fork on GitHub and switch to the branch you just pushed.
    - Click on the "New Pull Request" button.
-   - Provide a clear and descriptive title and rendered image for your PR.
+   - Provide a clear and descriptive title and rendered image or recorded video for your PR.
    - Explain the purpose of your changes in the PR description.
 
 ## Pull Request Guidelines
