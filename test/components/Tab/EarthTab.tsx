@@ -1,46 +1,29 @@
-import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { View, Text } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
 
-const EarthTab = () => {
+const Tab = () => {
   return (
-    <View style={styles.container}>
-      <View style={styles.iconContainer}>
+    <View className="flex items-center">
+      <View className="flex-row w-11/12 items-center justify-around rounded bg-black py-4">
         <View>
-          <Text style={styles.text}>Home</Text>
+          <Text className="text-white">Home</Text>
         </View>
         <View>
-          <Text style={styles.text}>Contacts</Text>
+          <Text className="text-white">Contact</Text>
         </View>
         <View>
-          <Text style={styles.text}>Cart</Text>
+          <Text className="text-white">Carts</Text>
         </View>
         <View>
-          <Text style={styles.text}>Chart</Text>
+          <Text className="text-white">Chart</Text>
         </View>
         <View>
-          <Text style={styles.text}>Settings</Text>
+          <Text className="text-white">Settings</Text>
         </View>
       </View>
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    alignItems: "center",
-  },
-  iconContainer: {
-    width: "90%",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-around",
-    borderRadius: 4,
-    paddingVertical: 16,
-    backgroundColor: "#000000",
-  },
-  text: {
-    color: "#ffffff",
-    fontWeight: "bold",
-  },
-});
-export default EarthTab;
+export default Tab;

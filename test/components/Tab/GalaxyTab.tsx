@@ -1,53 +1,29 @@
-import { StyleSheet, View } from "react-native";
 import React from "react";
-import AntDesign from "@expo/vector-icons/AntDesign";
+import { View } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
 
 const Tab = () => {
   return (
-    <View style={styles.container}>
-      <View style={styles.iconContainer}>
-        <View style={styles.active}>
-          <AntDesign name="home" size={24} color="black" />
+    <View className="flex items-center">
+      <View className="flex-row w-11/12 items-center justify-around rounded-full bg-black py-2">
+        <View className="bg-white rounded-full w-12 h-12 flex items-center justify-center">
+          <AntDesign name="home" size={24} color="#000000" />
         </View>
-        <View>
+        <View className="text-white">
           <AntDesign name="contacts" size={24} color="white" />
         </View>
-        <View>
+        <View className="text-white">
           <AntDesign name="shoppingcart" size={24} color="white" />
         </View>
-        <View>
+        <View className="text-white">
           <AntDesign name="barschart" size={24} color="white" />
         </View>
-        <View>
+        <View className="text-white">
           <AntDesign name="setting" size={24} color="white" />
         </View>
       </View>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: "center",
-  },
-  iconContainer: {
-    width: "90%",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-around",
-    borderRadius: 30,
-    paddingVertical: 6,
-    backgroundColor: "#000000",
-  },
-  active: {
-    borderRadius: 30,
-    width: 50,
-    height: 50,
-    backgroundColor: "#ffffff",
-    padding: 4,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
 
 export default Tab;

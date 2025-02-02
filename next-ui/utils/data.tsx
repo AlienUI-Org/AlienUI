@@ -1207,13 +1207,13 @@ const Switch = () => {
   return (
     <Pressable
       onPress={() => setIsEnabled(!isEnabled)}
-      className={\`relative inline-flex h-7 w-14 items-center rounded-full transition \${
+      className={\`relative flex h-7 w-14 items-center justify-center rounded-full p-1 transition \${
         isEnabled ? "bg-black" : "bg-gray-400"
       }\`}
     >
       <View
-        className={\`absolute inline-block h-6 w-6 transform rounded-full bg-white transition \${
-          isEnabled ? "translate-x-7" : "translate-x-1"
+        className={\`h-6 w-6 transform rounded-full bg-white transition \${
+          isEnabled ? "translate-x-3" : "translate-x-0"
         }\`}
       />
     </Pressable>
