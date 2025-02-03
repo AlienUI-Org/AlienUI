@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Banner from "@/components/Banner";
 import Head from "next/head";
+import { Analytics } from "@vercel/analytics/react";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -53,6 +54,7 @@ export default function RootLayout({
         <Header />
         <Banner />
         {children}
+        <Analytics />
         <Footer />
       </body>
     </html>
