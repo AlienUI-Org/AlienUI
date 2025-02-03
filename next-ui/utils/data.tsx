@@ -69,7 +69,7 @@ const Accordion = () => {
     },
   ];
 
-  const toggleAccordion = (index: any) => {
+  const toggleAccordion = (index) => {
     setOpenIndex(index === openIndex ? null : index);
   };
 
