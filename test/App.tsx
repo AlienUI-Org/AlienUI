@@ -3,7 +3,9 @@ import "./global.css";
 import { StyleSheet, ScrollView } from "react-native";
 
 export default function App() {
-  return <ScrollView style={styles.container}></ScrollView>;
+  return (
+    <ScrollView style={styles.container} className="font-sans"></ScrollView>
+  );
 }
 
 const styles = StyleSheet.create({
