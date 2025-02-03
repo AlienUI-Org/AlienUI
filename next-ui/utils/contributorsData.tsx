@@ -1,7 +1,7 @@
 export const contributors = [
   {
     name: "Kenneth Akpo",
-    role: "Creator/Maintainer",
+    role: "Creator",
     avatar: "/images/ken.jpg",
   },
   {
