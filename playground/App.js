@@ -4,7 +4,7 @@ import Button from "./components/comp1/Button";
 
 export default function App() {
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.container} className="font-sans">
       <Button />
     </ScrollView>
   );
