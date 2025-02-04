@@ -4,7 +4,7 @@ import TempScreen1 from "./screens/TempScreen1";
 
 export default function App() {
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <ScrollView className="bg-blue-50" style={styles.container}>
       <TempScreen1 />
     </ScrollView>
   );
