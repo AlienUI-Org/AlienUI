@@ -9,4 +9,9 @@ export const contributors = [
     role: "Product Designer",
     avatar: "/images/anwurii.jpg",
   },
+  {
+    name: "Farid Ahmed",
+    role: "UI/UX Designer",
+    avatar: "/images/farid.jpg",
+  },
 ];
