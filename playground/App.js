@@ -1,11 +1,11 @@
 import { StyleSheet, ScrollView } from "react-native";
 import "./global.css";
-import Button from "./components/comp1/Button";
+import TempScreen1 from "./screens/TempScreen1";
 
 export default function App() {
   return (
-    <ScrollView style={styles.container} className="font-sans">
-      <Button />
+    <ScrollView contentContainerStyle={styles.container}>
+      <TempScreen1 />
     </ScrollView>
   );
 }
