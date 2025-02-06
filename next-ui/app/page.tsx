@@ -14,7 +14,6 @@ export default function Home() {
       <Inspiration />
       <NewsLetter />
       <FaQ />
-      <Suggestion />
       <Contributors />
     </section>
   );
