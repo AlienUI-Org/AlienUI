@@ -1,4 +1,4 @@
-doimport React from "react";
+import React from "react";
 import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 import { FaXTwitter } from "react-icons/fa6";
