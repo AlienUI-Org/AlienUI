@@ -1,4 +1,4 @@
-import React from "react";
+doimport React from "react";
 import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 import { FaXTwitter } from "react-icons/fa6";
@@ -32,7 +32,7 @@ function Footer() {
             <Link href="https://github.com/khaymanii/alienui">
               <FaGithub size={24} />
             </Link>
-            <span className="font-medium text-md text-white">7⭐</span>
+            <span className="font-medium text-md text-white">8⭐</span>
           </div>
         </div>
         <div className="my-6 border-t border-brown-700"></div>
