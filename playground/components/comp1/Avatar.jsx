@@ -5,12 +5,8 @@ const Avatar = () => {
   return (
     <View className="flex-row justify-between items-center m-4">
       <View className="flex-row items-center gap-2">
-        <View className="w-12 h-12 rounded-full bg-gray-200 flex justify-center items-center overflow-hidden">
-          <Image
-            source={require("../../assets/images/anwurii.jpg")}
-            className="w-[100%] h-[100%]"
-            resizeMode="contain"
-          />
+        <View className="w-10 h-10 rounded-full flex justify-center items-center overflow-hidden">
+          <Image source={require("../../assets/images/anwuriii.svg")} />
         </View>
         <View>
           <Text className="text-xs text-gray-700">Good morning</Text>

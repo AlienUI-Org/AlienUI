@@ -8,7 +8,7 @@ import Card3 from "../components/comp1/Card3";
 
 const TempScreen1 = () => {
   return (
-    <View className="bg-blue-50">
+    <View className="bg-[#F1F3FE] ">
       <Avatar />
       <Card />
       <Card2 />
