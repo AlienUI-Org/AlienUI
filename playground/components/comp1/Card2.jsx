@@ -4,7 +4,7 @@ import React from "react";
 const Card2 = () => {
   return (
     <View className="mx-4 mb-4">
-      <View className="w-full h-auto p-4 rounded-3xl bg-white">
+      <View className="w-full h-auto p-4 rounded-2xl bg-white">
         <View className="flex-row justify-between items-center mb-4">
           <Text className="text-lg font-semibold">Transactions</Text>
           <Text className="text-blue-700 font-semibold text-xs">See all</Text>
