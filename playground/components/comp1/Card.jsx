@@ -5,7 +5,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 const Card = () => {
   return (
     <View className="px-4 mb-4">
-      <View className="w-full py-4 rounded-3xl border border-black  items-center bg-white">
+      <View className="w-full py-4 rounded-3xl items-center bg-white">
         <View className="flex-row items-center justify-between bg-black py-2 px-4 rounded-full mb-4">
           <Image
             source={require("../../assets/icon/flag.svg")}
