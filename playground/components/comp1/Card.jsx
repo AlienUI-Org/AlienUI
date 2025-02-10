@@ -22,7 +22,7 @@ const Card = () => {
           />
         </View>
         <Text className="text-5xl font-semibold mb-3 text-white">
-          $150,000.<Text className="text-4xl text-gray-300">00</Text>
+          $150,000.<Text className="text-4xl text-[#898B96]">00</Text>
         </Text>
         <View className="flex-row items-center mb-4 space-x-2">
           <Image

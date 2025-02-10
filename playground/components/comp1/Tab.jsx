@@ -11,15 +11,15 @@ const Tab = () => {
         </View>
         <View className="items-center">
           <Image source={require("../../assets/icon/pocket.svg")} />
-          <Text className="text-gray-300 font-bold text-center">Pocket</Text>
+          <Text className="text-[#898B96] font-bold text-center">Pocket</Text>
         </View>{" "}
         <View className="items-center">
           <Image source={require("../../assets/icon/card.svg")} />
-          <Text className="text-gray-300 font-bold text-center">Cards</Text>
+          <Text className="text-[#898B96] font-bold text-center">Cards</Text>
         </View>{" "}
         <View className="items-center">
           <Image source={require("../../assets/icon/profile.svg")} />
-          <Text className="text-gray-300 font-bold text-center">Profile</Text>
+          <Text className="text-[#898B96] font-bold text-center">Profile</Text>
         </View>
       </View>
     </View>

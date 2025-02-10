@@ -11,7 +11,7 @@ const Card2 = () => {
         </View>
         <View className="flex-row items-center justify-between border-b border-gray-100 pb-3">
           <View className="flex-row items-center gap-2">
-            <View className="w-8 h-8 rounded-full bg-[#F1F3FE] flex-row justify-center items-center">
+            <View className="w-8 h-8 rounded-full bg-[#CED3F0] flex-row justify-center items-center">
               <Image
                 source={require("../../assets/icon/savings.svg")}
                 className="w-4 h-4"
@@ -19,7 +19,7 @@ const Card2 = () => {
             </View>
             <View>
               <Text className="text-base font-semibold">Donald Trump</Text>
-              <Text className="text-xs text-gray-500">Received 14 Feb</Text>
+              <Text className="text-xs text-[#898B96]">Received 14 Feb</Text>
             </View>
           </View>
           <View>
@@ -28,7 +28,7 @@ const Card2 = () => {
         </View>
         <View className="flex-row items-center justify-between pt-3">
           <View className="flex-row items-center gap-2">
-            <View className="w-8 h-8 rounded-full bg-[#F1F3FE]  flex-row justify-center items-center">
+            <View className="w-8 h-8 rounded-full  bg-[#CED3F0]  flex-row justify-center items-center">
               <Image
                 source={require("../../assets/icon/dollar.svg")}
                 className="w-4 h-4"
@@ -36,7 +36,7 @@ const Card2 = () => {
             </View>
             <View>
               <Text className="text-base font-semibold">Savings </Text>
-              <Text className="text-xs text-gray-500">Sent 14 Feb</Text>
+              <Text className="text-xs text-[#898B96]">Sent 14 Feb</Text>
             </View>
           </View>
           <View>
