@@ -6,6 +6,7 @@ import GalaxyBadge from "@/components/comp/Badge/GalaxyBadge";
 import GalaxyAlert from "@/components/comp/Alert/GalaxyAlert";
 import KrytharWailAlert from "@/components/comp/Alert/KrytharWailAlert";
 import GalaxyAvatar from "@/components/comp/Avatar/GalaxyAvatar";
+import EarthAvatar from "@/components/comp/Avatar/EarthAvatar";
 import GalaxyCheckbox from "@/components/comp/Checkbox/GalaxyCheckbox";
 import GalaxyBreadcrumb from "@/components/comp/BreadCrumbs/GalaxyBreadcrumb";
 import EarthBreadcrumb from "@/components/comp/BreadCrumbs/EarthBreadcrumb";
@@ -42,6 +43,7 @@ export const Comp = {
   GalaxyAlert,
   KrytharWailAlert,
   GalaxyAvatar,
+  EarthAvatar,
   GalaxyCheckbox,
   GalaxyBreadcrumb,
   EarthBreadcrumb,

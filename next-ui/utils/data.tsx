@@ -238,7 +238,7 @@ const Avatar = () => {
 
 export default Avatar;
 `,
-        render: <Comp.GalaxyAvatar />,
+        render: <Comp.EarthAvatar />,
       },
     ],
   },
