@@ -1,9 +1,10 @@
 import { StyleSheet, ScrollView } from "react-native";
 import "./global.css";
-import TempScreen1 from "./screens/TempScreen1";
 
 export default function App() {
-  return <ScrollView style={styles.container}></ScrollView>;
+  return (
+    <ScrollView style={styles.container} className="font-sans"></ScrollView>
+  );
 }
 
 const styles = StyleSheet.create({

@@ -20,7 +20,7 @@ const Avatar = () => {
             size={16}
             color="black"
           />
-        </Text>{" "}
+        </Text>
       </View>
     </View>
   );
