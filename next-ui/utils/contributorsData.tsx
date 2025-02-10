@@ -17,6 +17,6 @@ export const contributors = [
   {
     name: "Mayowa Adewale",
     role: "UI/UX Designer",
-    avatar: "/images/mayowa.jpg",
+    avatar: "/images/mayowa.jpeg",
   },
 ];
