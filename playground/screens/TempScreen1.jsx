@@ -5,6 +5,7 @@ import Card from "../components/comp1/Card";
 import Card2 from "../components/comp1/Card2";
 import Pocket from "../components/comp1/Pocket";
 import Card3 from "../components/comp1/Card3";
+import Tab from "../components/comp1/Tab";
 
 const TempScreen1 = () => {
   return (
@@ -14,6 +15,7 @@ const TempScreen1 = () => {
       <Card2 />
       <Pocket />
       <Card3 />
+      <Tab />
     </View>
   );
 };
