@@ -41,8 +41,8 @@ AlienUI is an open-source UI component library built on Nativewind for React Nat
 
 - Pre-designed components with multiple variants for buttons, inputs, and more.
 - Examples include:
-  - **Galaxy and Earth Buttons**
-  - **Galaxy and Nebulon Inputs**
+  - **Galaxy and Earth Button**
+  - **Galaxy and Nebulon Input**
 
 ### **8. Developer-Friendly**
 
