@@ -32,9 +32,8 @@ function page() {
               .
             </li>
             <li>
-              Also make sure you project supports{" "}
-              <strong>Typescript or Javascript</strong>, as some component may
-              support <strong>Typescript or Javascript</strong>
+              Some component may
+              support <strong>Javascript or Typescript</strong>
             </li>
           </ul>
         </div>
