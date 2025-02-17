@@ -10,7 +10,8 @@ function Inspiration() {
           Inspiration
         </h1>
         <p className="mt-4 text-lg text-gray-800 mb-8 text-center mx-4">
-          This project wouldn&apos;t have been possible without the great work and inspiration from these libraries.
+          This project wouldn&apos;t have been possible without the great work
+          and inspiration from these libraries.
         </p>
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

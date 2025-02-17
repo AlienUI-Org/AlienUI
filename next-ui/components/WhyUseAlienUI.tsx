@@ -17,7 +17,7 @@ function WhyUseAlienUI() {
         </p>
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="flex flex-col items-center bg-brown-100 rounded-md p-6 shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-ou">
+          <div className="flex flex-col items-center bg-brown-100 rounded-md p-6 shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out">
             <MdInstallDesktop className="w-14 h-14 pb-4" />
             <h3 className="text-lg font-bold text-brown-800">
               No npm Installation
@@ -28,18 +28,19 @@ function WhyUseAlienUI() {
             </p>
           </div>
 
-          <div className="flex flex-col items-center bg-brown-100 rounded-md p-6 shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-ou">
+          <div className="flex flex-col items-center bg-brown-100 rounded-md p-6 shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out">
             <FcDataConfiguration className="w-14 h-14 pb-4" />
             <h3 className="text-lg font-bold text-brown-800">
               No Configuration
             </h3>
             <p className="text-gray-600 mt-2">
-              AlienUI works out of the box with zero configuration as it uses in-built native tags, so you can
-              focus on building your app instantly.{" "}
+              AlienUI works out of the box with zero configuration as it uses
+              in-built native tags, so you can focus on building your app
+              instantly.{" "}
             </p>
           </div>
 
-          <div className="flex flex-col items-center bg-brown-100 rounded-md p-6 shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-ou">
+          <div className="flex flex-col items-center bg-brown-100 rounded-md p-6 shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out">
             <BiCustomize className="w-14 h-14 pb-4" />
             <h3 className="text-lg font-bold text-brown-800">
               Easy Customization
@@ -50,7 +51,7 @@ function WhyUseAlienUI() {
             </p>
           </div>
 
-          <div className="flex flex-col items-center bg-brown-100 rounded-md p-6 shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-ou">
+          <div className="flex flex-col items-center bg-brown-100 rounded-md p-6 shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out">
             <MdJoinInner className="w-14 h-14 pb-4" />
             <h3 className="text-lg font-bold text-brown-800">
               Open-Source Contributions
