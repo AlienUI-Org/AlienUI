@@ -10,7 +10,7 @@ function Products() {
       name: "AlienX",
       description:
         "AlienX is a powerful VS Code snippet extension that generates AlienUI components for both react and react native mobile app in your vscode environment.",
-      link: "/",
+      link: "/alienx",
     },
   ];
   return (
