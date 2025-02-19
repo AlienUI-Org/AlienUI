@@ -4,9 +4,9 @@ import Link from "next/link";
 function BannerAlienX() {
   return (
     <section className="w-full h-14 bg-black text-center flex justify-center items-center">
-      <p className="text-sm font-semibold text-white">
+      <p className="text-xs lg:text-sm font-semibold text-white">
         Introducing <span className="font-bold">AlienX</span> – The next
-        evolution of UI design.
+        evolution of UI development.
         <Link
           href="https://github.com/khaymanii"
           className="underline hover:text-yellow-300 transition ml-1"
