@@ -8,7 +8,7 @@ function BannerAlienX() {
         Introducing <span className="font-bold">AlienX</span> – The next
         evolution of UI development.
         <Link
-          href="https://github.com/khaymanii"
+          href="https://marketplace.visualstudio.com/items?itemName=AlienUI.alienx"
           className="underline hover:text-yellow-300 transition ml-1"
         >
           Check it out on VS Code
