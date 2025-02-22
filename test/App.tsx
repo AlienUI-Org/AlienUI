@@ -1,13 +1,10 @@
 import React from "react";
 import "./global.css";
 import { StyleSheet, ScrollView } from "react-native";
-import Avatar from "./components/Avatar/EarthAvatar";
-
 import SearchBar from "./components/Search Bar/GalaxySearchBar";
 export default function App() {
   return (
     <ScrollView style={styles.container} className="font-sans">
-      <Avatar />
       <SearchBar />
     </ScrollView>
   );
