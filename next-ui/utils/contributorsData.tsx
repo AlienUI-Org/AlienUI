@@ -19,4 +19,9 @@ export const contributors = [
     role: "UI/UX Designer",
     avatar: "/images/mayowa.jpeg",
   },
+  {
+    name: "Francis Offiong",
+    role: "Software Developer",
+    avatar: "/images/francis.jpg",
+  },
 ];
