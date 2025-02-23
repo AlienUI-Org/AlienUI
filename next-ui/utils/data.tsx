@@ -1152,8 +1152,44 @@ export default ProgressBar;
       },
     ],
   },
-  spinner: {
+  searchbar: {
     id: 16,
+    name: "Search",
+    icon: AlienUIIcons.AlienStare,
+    description: "A customizable search bar.",
+    variants: [
+      {
+        name: "Galaxy Search Bar",
+        description: "A default search bar for searching the galaxy.",
+        designer: "",
+        developer: "",
+        code: `import { View, TextInput } from "react-native";
+import React from "react";
+import EvilIcons from "@expo/vector-icons/EvilIcons";
+
+const SearchBar = () => {
+  return (
+    <View className="mx-4 my-3">
+      <View className="flex-row items-center bg-gray-100 rounded-full px-4 py-3">
+        <EvilIcons name="search" size={24} color="gray" />
+        <TextInput
+          placeholder="Search the galaxy..."
+          className="flex-1 ml-2 text-base outline-none"
+          placeholderTextColor="gray"
+        />
+      </View>
+    </View>
+  );
+};
+
+export default SearchBar;
+`,
+        render: <Comp.GalaxySearchBar />,
+      },
+    ],
+  },
+  spinner: {
+    id: 17,
     name: "Spinner",
     icon: AlienUIIcons.AlienLiaRedditAlien,
     description:
@@ -1223,7 +1259,7 @@ export default Spinner;
     ],
   },
   switch: {
-    id: 17,
+    id: 18,
     name: "Switch",
     icon: AlienUIIcons.AlienPiAlienThin,
     description: "A customizable switch for enabling and disabling options.",
@@ -1262,7 +1298,7 @@ export default Switch;
     ],
   },
   tab: {
-    id: 18,
+    id: 19,
     name: "Tab",
     icon: AlienUIIcons.AlienRiAliensLine,
     description: "A customizable tab navigation component with variants.",
@@ -1343,7 +1379,7 @@ export default Tab;
     ],
   },
   table: {
-    id: 19,
+    id: 20,
     name: "Table",
     icon: AlienUIIcons.AlienBug,
     description: "A customizable table component for data storage",
@@ -1419,7 +1455,7 @@ export default Table;
     ],
   },
   toast: {
-    id: 20,
+    id: 21,
     name: "Toast",
     icon: AlienUIIcons.AlienPiAlienLight,
     description:
