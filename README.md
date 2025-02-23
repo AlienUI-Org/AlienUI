@@ -62,6 +62,7 @@ AlienUI is an open-source UI component library built on Nativewind for React Nat
 ## Getting started
 
 There is no installation, if you have a bare React Native project setup with NativeWind, you can copy the code and paste it into your project.
+
 ## Usage
 
 Browse the website for the components you need, copy the code and paste it into your project. Some components will have TypeScript support.
@@ -88,7 +89,8 @@ AlienUI has a wide range of freely available components. These components includ
 - [Modal](https://alienui.vercel.app/compdetails/Modal)
 - [Pagination](https://alienui.vercel.app/compdetails/Pagination)
 - [Popover](https://alienui.vercel.app/compdetails/Popover)
-- [Progress](https://alienui.vercel.app/compdetails/Progress)
+- [Progress Bar](https://alienui.vercel.app/compdetails/Progress)
+- [Search Bar](https://alienui.vercel.app/compdetails/Search)
 - [Spinner](https://alienui.vercel.app/compdetails/Spinner)
 - [Switch](https://alienui.vercel.app/compdetails/Switch)
 - [Tab](https://alienui.vercel.app/compdetails/Tab)
