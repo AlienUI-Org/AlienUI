@@ -24,4 +24,9 @@ export const contributors = [
     role: "Software Developer",
     avatar: "/images/francis.jpg",
   },
+  {
+    name: "Kenneth Owusu",
+    role: "Software Engineer",
+    avatar: "/images/headshot.jpg",
+  },
 ];
