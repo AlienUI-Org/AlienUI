@@ -928,7 +928,7 @@ export default GalaxyModal;
 import { View, Text, TouchableOpacity } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-const NebulaNotification = () => {
+const Notification = () => {
   return (
     <View className="w-80 bg-gradient-to-r from-purple-900 via-indigo-900 to-black p-4 rounded-lg shadow-lg border border-purple-500/20">
       <View className="flex-row items-start space-x-4">
@@ -960,7 +960,7 @@ const NebulaNotification = () => {
   );
 };
 
-export default NebulaNotification;
+export default Notification;
 `,
         render: <Comp.NebulaNotification />,
       },
