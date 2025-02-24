@@ -912,8 +912,62 @@ export default GalaxyModal;
       },
     ],
   },
-  pagination: {
+  notification: {
     id: 13,
+    name: "Notification",
+    icon: AlienUIIcons.AlienStare,
+    description:
+      "A customizable notification component with space-themed variants",
+    variants: [
+      {
+        name: "Nebula Notification",
+        description: "A cosmic notification with ethereal purple gradients",
+        designer: "",
+        developer: "",
+        code: `import React from "react";
+import { View, Text, TouchableOpacity } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+
+const Notification = () => {
+  return (
+    <View className="w-80 bg-gradient-to-r from-purple-900 via-indigo-900 to-black p-4 rounded-lg shadow-lg border border-purple-500/20">
+      <View className="flex-row items-start space-x-4">
+        <View className="bg-purple-500/20 p-2 rounded-full">
+          <MaterialCommunityIcons name="alien" size={24} color="#c084fc" />
+        </View>
+        
+        <View className="flex-1">
+          <View className="flex-row items-center justify-between">
+            <Text className="text-purple-300 font-semibold">Alien Signal Detected</Text>
+            <Text className="text-purple-400/60 text-xs">Now</Text>
+          </View>
+          
+          <Text className="mt-1 text-sm text-purple-200/80">
+            Unknown transmission received from the Andromeda galaxy. Decoding sequence initiated.
+          </Text>
+          
+          <View className="mt-3 flex-row items-center space-x-3">
+            <TouchableOpacity className="px-3 py-1 bg-purple-500/20 rounded-full">
+              <Text className="text-xs font-medium text-purple-200">Decode Now</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text className="text-xs font-medium text-purple-300/70">Dismiss</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </View>
+  );
+};
+
+export default Notification;
+`,
+        render: <Comp.NebulaNotification />,
+      },
+    ],
+  },
+  pagination: {
+    id: 14,
     name: "Pagination",
     icon: AlienUIIcons.AlienCrackedAlienSkull,
     description: "A customizable pagination component.",
@@ -988,7 +1042,7 @@ export default Pagination;
     ],
   },
   popover: {
-    id: 14,
+    id: 15,
     name: "Popover",
     icon: AlienUIIcons.AlienPiAlienBold,
     description: "A customizable popover component.",
@@ -1046,7 +1100,7 @@ export default Popover;
     ],
   },
   progressbar: {
-    id: 15,
+    id: 16,
     name: "Progress",
     icon: AlienUIIcons.AlienTbAlien,
     description:
@@ -1153,7 +1207,7 @@ export default ProgressBar;
     ],
   },
   searchbar: {
-    id: 16,
+    id: 17,
     name: "Search",
     icon: AlienUIIcons.AlienStare,
     description: "A customizable search bar.",
@@ -1189,7 +1243,7 @@ export default SearchBar;
     ],
   },
   spinner: {
-    id: 17,
+    id: 18,
     name: "Spinner",
     icon: AlienUIIcons.AlienLiaRedditAlien,
     description:
@@ -1259,7 +1313,7 @@ export default Spinner;
     ],
   },
   switch: {
-    id: 18,
+    id: 19,
     name: "Switch",
     icon: AlienUIIcons.AlienPiAlienThin,
     description: "A customizable switch for enabling and disabling options.",
@@ -1298,7 +1352,7 @@ export default Switch;
     ],
   },
   tab: {
-    id: 19,
+    id: 20,
     name: "Tab",
     icon: AlienUIIcons.AlienRiAliensLine,
     description: "A customizable tab navigation component with variants.",
@@ -1379,7 +1433,7 @@ export default Tab;
     ],
   },
   table: {
-    id: 20,
+    id: 21,
     name: "Table",
     icon: AlienUIIcons.AlienBug,
     description: "A customizable table component for data storage",
@@ -1455,7 +1509,7 @@ export default Table;
     ],
   },
   toast: {
-    id: 21,
+    id: 22,
     name: "Toast",
     icon: AlienUIIcons.AlienPiAlienLight,
     description:
