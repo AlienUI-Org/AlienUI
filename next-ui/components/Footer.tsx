@@ -8,7 +8,7 @@ import { GoMail } from "react-icons/go";
 
 function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-brown-900 via-brown-400 to-black text-white py-16">
+    <footer className="bg-gradient-to-b from-brown-700 via-brown-500 to-brown-800 text-white py-16">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col sm:flex-row justify-between items-center">
           <div className="text-center sm:text-left mb-6 sm:mb-0">

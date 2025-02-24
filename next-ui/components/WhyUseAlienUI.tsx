@@ -17,7 +17,7 @@ function WhyUseAlienUI() {
         </p>
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="flex flex-col items-center bg-gradient-to-r from-brown-800 via-brown-500 to-brown-800 rounded-md p-6 shadow hover:shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
+          <div className="flex flex-col items-center bg-gradient-to-b from-brown-700 via-brown-500 to-brown-800 rounded-md p-6 shadow hover:shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
             <MdInstallDesktop className="w-14 h-14 pb-4 text-white" />
             <h3 className="text-lg font-bold text-white">
               No npm Installation
@@ -28,7 +28,7 @@ function WhyUseAlienUI() {
             </p>
           </div>
 
-          <div className="flex flex-col items-center bg-gradient-to-r from-brown-800 via-brown-500 to-brown-800 rounded-md p-6 shadow hover:shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
+          <div className="flex flex-col items-center bg-gradient-to-b from-brown-700 via-brown-500 to-brown-800 rounded-md p-6 shadow hover:shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
             <FcDataConfiguration className="w-14 h-14 pb-4 text-white" />
             <h3 className="text-lg font-bold text-white">No Configuration</h3>
             <p className="text-white mt-2">
@@ -38,7 +38,7 @@ function WhyUseAlienUI() {
             </p>
           </div>
 
-          <div className="flex flex-col items-center bg-gradient-to-r from-brown-800 via-brown-500 to-brown-800 rounded-md p-6 shadow- hover:shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
+          <div className="flex flex-col items-center bg-gradient-to-b from-brown-700 via-brown-500 to-brown-800 rounded-md p-6 shadow- hover:shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
             <BiCustomize className="w-14 h-14 pb-4 text-white" />
             <h3 className="text-lg font-bold text-white">Easy Customization</h3>
             <p className="text-white mt-2">
@@ -47,7 +47,7 @@ function WhyUseAlienUI() {
             </p>
           </div>
 
-          <div className="flex flex-col items-center bg-gradient-to-r from-brown-800 via-brown-500 to-brown-800 rounded-md p-6 shadow hover:shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
+          <div className="flex flex-col items-center bg-gradient-to-b from-brown-700 via-brown-500 to-brown-800 rounded-md p-6 shadow hover:shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
             <MdJoinInner className="w-14 h-14 pb-4 text-white" />
             <h3 className="text-lg font-bold text-white">
               Open-Source Contributions
