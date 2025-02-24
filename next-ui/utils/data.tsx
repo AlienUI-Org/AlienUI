@@ -960,7 +960,8 @@ const NebulaNotification = () => {
   );
 };
 
-export default NebulaNotification;`,
+export default NebulaNotification;
+`,
         render: <Comp.NebulaNotification />,
       },
     ],
