@@ -33,12 +33,12 @@ function NewsLetter() {
   };
 
   return (
-    <section className="py-20 text-black bg-brown-100">
+    <section className="py-20 text-black bg-gradient-to-r from-brown-800 via-brown-500 to-brown-800">
       <div className="max-w-4xl mx-auto px-6 text-center">
-        <h1 className="text-3xl font-bold text-brown-800 sm:text-4xl text-center mb-2">
+        <h1 className="text-3xl font-bold text-white sm:text-4xl text-center mb-2">
           Stay Updated with AlienUI
         </h1>
-        <p className="mt-4 text-lg text-gray-600 mb-8 text-center mx-4">
+        <p className="mt-4 text-lg text-white mb-8 text-center mx-4">
           Subscribe to our newsletter and never miss an update! Get the latest
           components and community news delivered straight to your inbox.
         </p>
@@ -57,7 +57,7 @@ function NewsLetter() {
           />
           <button
             type="submit"
-            className="px-6 py-3 bg-brown-600 hover:bg-brown-800 text-white rounded-md shadow-md "
+            className="px-6 py-3 bg-gradient-to-r from-brown-700 via-brown-600 to-black font-medium text-white rounded-lg shadow-md "
           >
             Subscribe
           </button>

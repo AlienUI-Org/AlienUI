@@ -17,46 +17,42 @@ function WhyUseAlienUI() {
         </p>
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="flex flex-col items-center bg-brown-100 rounded-md p-6 shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out">
-            <MdInstallDesktop className="w-14 h-14 pb-4" />
-            <h3 className="text-lg font-bold text-brown-800">
+          <div className="flex flex-col items-center bg-gradient-to-r from-brown-800 via-brown-500 to-brown-800 rounded-md p-6 shadow hover:shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
+            <MdInstallDesktop className="w-14 h-14 pb-4 text-white" />
+            <h3 className="text-lg font-bold text-white">
               No npm Installation
             </h3>
-            <p className="text-gray-600 mt-2">
+            <p className="text-white mt-2">
               AlienUI requires no NPM installations. Simply copy, paste them
               into your React Native project seamlessly.
             </p>
           </div>
 
-          <div className="flex flex-col items-center bg-brown-100 rounded-md p-6 shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out">
-            <FcDataConfiguration className="w-14 h-14 pb-4" />
-            <h3 className="text-lg font-bold text-brown-800">
-              No Configuration
-            </h3>
-            <p className="text-gray-600 mt-2">
+          <div className="flex flex-col items-center bg-gradient-to-r from-brown-800 via-brown-500 to-brown-800 rounded-md p-6 shadow hover:shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
+            <FcDataConfiguration className="w-14 h-14 pb-4 text-white" />
+            <h3 className="text-lg font-bold text-white">No Configuration</h3>
+            <p className="text-white mt-2">
               AlienUI works out of the box with zero configuration as it uses
               in-built native tags, so you can focus on building your app
               instantly.{" "}
             </p>
           </div>
 
-          <div className="flex flex-col items-center bg-brown-100 rounded-md p-6 shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out">
-            <BiCustomize className="w-14 h-14 pb-4" />
-            <h3 className="text-lg font-bold text-brown-800">
-              Easy Customization
-            </h3>
-            <p className="text-gray-600 mt-2">
+          <div className="flex flex-col items-center bg-gradient-to-r from-brown-800 via-brown-500 to-brown-800 rounded-md p-6 shadow- hover:shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
+            <BiCustomize className="w-14 h-14 pb-4 text-white" />
+            <h3 className="text-lg font-bold text-white">Easy Customization</h3>
+            <p className="text-white mt-2">
               Easily customize components with NativeWind&apos;s class utilities
               to match your app&apos;s design.
             </p>
           </div>
 
-          <div className="flex flex-col items-center bg-brown-100 rounded-md p-6 shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out">
-            <MdJoinInner className="w-14 h-14 pb-4" />
-            <h3 className="text-lg font-bold text-brown-800">
+          <div className="flex flex-col items-center bg-gradient-to-r from-brown-800 via-brown-500 to-brown-800 rounded-md p-6 shadow hover:shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
+            <MdJoinInner className="w-14 h-14 pb-4 text-white" />
+            <h3 className="text-lg font-bold text-white">
               Open-Source Contributions
             </h3>
-            <p className="text-gray-600 mt-2">
+            <p className="text-white mt-2">
               AlienUI is open-source, inviting developers and designers to
               collaborate and share UI components.
             </p>
