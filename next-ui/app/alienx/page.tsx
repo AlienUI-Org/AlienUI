@@ -29,7 +29,7 @@ function page() {
             href="https://marketplace.visualstudio.com/items?itemName=AlienUI.alienx"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-brown-600 text-white px-6 py-3 rounded-full shadow hover:bg-brown-800 transition mb-10"
+            className="inline-block bg-gradient-to-r from-brown-700 via-brown-600 to-black text-white px-6 py-3 rounded-full shadow hover:bg-brown-800 transition mb-10"
           >
             Get AlienX on VS Code Marketplace
           </a>
