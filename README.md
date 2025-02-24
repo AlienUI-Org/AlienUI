@@ -87,6 +87,7 @@ AlienUI has a wide range of freely available components. These components includ
 - [Dropdown](https://alienui.vercel.app/compdetails/Dropdown)
 - [Input](https://alienui.vercel.app/compdetails/Input)
 - [Modal](https://alienui.vercel.app/compdetails/Modal)
+- [Notification](https://alienui.vercel.app/compdetails/Notification)
 - [Pagination](https://alienui.vercel.app/compdetails/Pagination)
 - [Popover](https://alienui.vercel.app/compdetails/Popover)
 - [Progress Bar](https://alienui.vercel.app/compdetails/Progress)
@@ -96,7 +97,6 @@ AlienUI has a wide range of freely available components. These components includ
 - [Tab](https://alienui.vercel.app/compdetails/Tab)
 - [Table](https://alienui.vercel.app/compdetails/Table)
 - [Toast](https://alienui.vercel.app/compdetails/Toast)
-- [Notification](https://alienui.vercel.app/compdetails/Notification)
 
 ## Contributing
 
