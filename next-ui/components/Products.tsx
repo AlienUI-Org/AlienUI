@@ -33,9 +33,11 @@ function Products() {
                   height={200}
                   className="py-6"
                 />
-                <div className="bg-brown-100 p-6">
-                  <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
-                  <p className="text-gray-600 text-center">
+                <div className="bg-gradient-to-r from-brown-800 via-brown-500 to-brown-800 p-6 rounded-b-md">
+                  <h3 className="text-xl font-semibold text-white mb-2">
+                    {product.name}
+                  </h3>
+                  <p className="text-white text-center">
                     {product.description}
                   </p>
                 </div>
