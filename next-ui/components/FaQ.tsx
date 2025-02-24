@@ -68,10 +68,10 @@ function FaQ() {
       </h1>{" "}
       <div className="w-full max-w-7xl mx-auto border border-brown-800 rounded-lg bg-white">
         {faqItems.map((item, index) => (
-          <div key={index} className="border-b last:border-b-0 border-gray-300">
+          <div key={index} className="border-b last:border-b-0">
             <button
               onClick={() => toggleAccordion(index)}
-              className="w-full text-left py-4 px-6 flex justify-between items-center hover:bg-brown-100"
+              className="w-full text-left py-4 px-6 flex justify-between items-center"
             >
               <span className="text-lg font-medium">{item.title}</span>
               <span
@@ -83,7 +83,7 @@ function FaQ() {
               </span>
             </button>
             {openIndex === index && (
-              <div className="px-6 py-4 bg-brown-50">
+              <div className="px-6 py-4">
                 <p className="text-gray-700">{item.content}</p>
               </div>
             )}
