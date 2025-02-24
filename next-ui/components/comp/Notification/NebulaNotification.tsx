@@ -33,3 +33,5 @@ return (
 
 );
 }
+
+export default NebulaNotification;
