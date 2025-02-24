@@ -96,6 +96,7 @@ AlienUI has a wide range of freely available components. These components includ
 - [Tab](https://alienui.vercel.app/compdetails/Tab)
 - [Table](https://alienui.vercel.app/compdetails/Table)
 - [Toast](https://alienui.vercel.app/compdetails/Toast)
+- [Notification](https://alienui.vercel.app/compdetails/Notification)
 
 ## Contributing
 
