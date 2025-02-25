@@ -16,8 +16,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Alien UI",
-  description: "Prebuilt Nativewind components",
+  title: "AlienUI",
+  description: "Prebuilt Nativewind UI Components",
   keywords: "UI, Nativewind, components, react native, expo, Alien UI",
   authors: [{ name: "Kenneth Akpo" }],
 };
