@@ -19,6 +19,7 @@ import {
   GiAlienSkull,
   GiAlienStare,
   GiCrackedAlienSkull,
+  GiVortex,
 } from "react-icons/gi";
 
 export const AlienUIIcons = {
@@ -42,4 +43,5 @@ export const AlienUIIcons = {
   AlienPiAlienLight: <PiAlienLight />,
   AlienPiAlienThin: <PiAlienThin />,
   AlienLiaRedditAlien: <LiaRedditAlien />,
+  AlienVortex: <GiVortex className="w-6 h-6" />,
 };
