@@ -35,6 +35,7 @@ import GalaxyPopover from "@/components/comp/Popover/GalaxyPopover";
 import GalaxyTable from "@/components/comp/Table/GalaxyTable";
 import GalaxySearchBar from "@/components/comp/Search Bar/GalaxySearchBar";
 import NebulaNotification from "@/components/comp/Notification/NebulaNotification";
+import VortexInput from "@/components/comp/Input/VortexInput";
 
 export const Comp = {
   EarthButton,
@@ -74,4 +75,5 @@ export const Comp = {
   GalaxyTable,
   GalaxySearchBar,
   NebulaNotification,
+  VortexInput,
 };

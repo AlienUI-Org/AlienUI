@@ -791,55 +791,159 @@ export default Dropdown;
     ],
   },
   input: {
-    id: 11,
+    id: 3,
     name: "Input",
     icon: AlienUIIcons.AlienEgg,
-    description: "A customizable input component for capturing user data.",
+    description: "A collection of cosmic-themed input components",
     variants: [
       {
         name: "Nebulon Input",
-        description: "A simple input box for text entry.",
+        description: "An input field for entering text in the Nebulon system",
         designer: "",
         developer: "",
-        code: `import React from "react";
-import { TextInput } from "react-native";
+        code: `import React, { useState } from "react";
+import { View, TextInput } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-const Input = () => {
+const NebulonInput = () => {
+  const [isFocused, setIsFocused] = useState(false);
+
   return (
-    <TextInput
-      className="border-1 border-black rounded-md p-2.5 w-[80%]"
-      placeholder="Nebulon Input..."
-    />
+    <View className="relative w-72">
+      <View className={\`
+        absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20
+        rounded-lg opacity-20 \${isFocused ? 'scale-105 blur-md' : 'scale-100'}
+      \`} />
+      
+      <View className="relative flex-row items-center">
+        <TextInput
+          placeholder="Enter text in the Nebulon system..."
+          placeholderTextColor="#9ca3af"
+          className={\`
+            flex-1 bg-black/80 text-white px-4 py-3 rounded-lg
+            border border-purple-500/30
+            \${isFocused ? 'border-purple-500/50' : ''}
+          \`}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
+        />
+        <MaterialCommunityIcons
+          name="vortex"
+          size={20}
+          color={isFocused ? "#c084fc" : "#9ca3af"}
+          style={\`
+            absolute right-3
+            \${isFocused ? 'rotate-180' : ''}
+            transition-all duration-300
+          \`}
+        />
+      </View>
+    </View>
   );
 };
 
-export default Input;
-
-`,
+export default NebulonInput;`,
         render: <Comp.NebulonInput />,
       },
       {
         name: "Earth Input",
-        description: "An input box with a bottom border.",
+        description: "An input field for entering text on the earth surface",
         designer: "",
         developer: "",
-        code: `import React from "react";
-import { TextInput } from "react-native";
+        code: `import React, { useState } from "react";
+import { View, TextInput } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-const Input = () => {
+const EarthInput = () => {
+  const [isFocused, setIsFocused] = useState(false);
+
   return (
-    <TextInput
-      className="border-1 border-b border-b-black p-2.5  w-[80%]"
-      placeholder="Earth Input..."
-    />
+    <View className="relative w-72">
+      <View className={\`
+        absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20
+        rounded-lg opacity-20 \${isFocused ? 'scale-105 blur-md' : 'scale-100'}
+      \`} />
+      
+      <View className="relative flex-row items-center">
+        <TextInput
+          placeholder="Enter text on the earth surface..."
+          placeholderTextColor="#9ca3af"
+          className={\`
+            flex-1 bg-black/80 text-white px-4 py-3 rounded-lg
+            border border-purple-500/30
+            \${isFocused ? 'border-purple-500/50' : ''}
+          \`}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
+        />
+        <MaterialCommunityIcons
+          name="vortex"
+          size={20}
+          color={isFocused ? "#c084fc" : "#9ca3af"}
+          style={\`
+            absolute right-3
+            \${isFocused ? 'rotate-180' : ''}
+            transition-all duration-300
+          \`}
+        />
+      </View>
+    </View>
   );
 };
 
-export default Input;
-`,
+export default EarthInput;`,
         render: <Comp.EarthInput />,
       },
-    ],
+      {
+        name: "Vortex Input",
+        description: "A mesmerizing input field with cosmic vortex animation",
+        designer: "",
+        developer: "",
+        code: `import React, { useState } from "react";
+import { View, TextInput } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+
+const VortexInput = () => {
+  const [isFocused, setIsFocused] = useState(false);
+
+  return (
+    <View className="relative w-72">
+      <View className={\`
+        absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20
+        rounded-lg opacity-20 \${isFocused ? 'scale-105 blur-md' : 'scale-100'}
+      \`} />
+      
+      <View className="relative flex-row items-center">
+        <TextInput
+          placeholder="Enter cosmic coordinates..."
+          placeholderTextColor="#9ca3af"
+          className={\`
+            flex-1 bg-black/80 text-white px-4 py-3 rounded-lg
+            border border-purple-500/30
+            \${isFocused ? 'border-purple-500/50' : ''}
+          \`}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
+        />
+        <MaterialCommunityIcons
+          name="vortex"
+          size={20}
+          color={isFocused ? "#c084fc" : "#9ca3af"}
+          style={\`
+            absolute right-3
+            \${isFocused ? 'rotate-180' : ''}
+            transition-all duration-300
+          \`}
+        />
+      </View>
+    </View>
+  );
+};
+
+export default VortexInput;`,
+        render: <Comp.VortexInput />,
+      }
+    ]
   },
   modal: {
     id: 12,
