@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function BannerAlienX() {
   return (
-    <section className="w-full h-14 bg-black text-center flex justify-center items-center">
+    <section className="w-full h-14 bg-black text-center sticky top-0 z-50 flex justify-center items-center">
       <p className="text-xs lg:text-sm font-semibold text-white">
         Introducing <span className="font-bold">AlienX</span> – The next
         evolution of UI development.
