@@ -121,23 +121,45 @@ export default Accordion;
       {
         name: "Galaxy Alert",
         description:
-          "A galactic alert for feedbacks. This variant shows three props: success, failure and warning. Just change the color and icon to suit your use case",
+          "A galactic alert for feedbacks. This variant takes three props: type, title, message.",
         designer: "",
         developer: "",
         code: `import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text } from "react-native";
 import { Feather } from "@expo/vector-icons";
 
-const Alert = () => {
+const Alert = ({ type, title, message }) => {
+  const alertStyles = {
+    success: {
+      bgColor: "bg-green-50",
+      borderColor: "border-green-400",
+      icon: "check-circle",
+      iconColor: "#16a34a",
+    },
+    warning: {
+      bgColor: "bg-yellow-50",
+      borderColor: "border-yellow-400",
+      icon: "alert-triangle",
+      iconColor: "#ca8a04",
+    },
+    failure: {
+      bgColor: "bg-red-50",
+      borderColor: "border-red-400",
+      icon: "x-circle",
+      iconColor: "#dc2626",
+    },
+  };
+
+  const { bgColor, borderColor, icon, iconColor } =
+    alertStyles[type] || alertStyles.success;
+
   return (
-    <View className="rounded-xl border border-gray-300 bg-green-50 p-4 w-64">
+    <View className={\`rounded-xl border \${borderColor} \${bgColor} p-4 w-64\`}>
       <View className="flex flex-row items-start gap-4">
-        <Feather name="check-circle" size={24} color="#16a34a" />
+        <Feather name={icon} size={24} color={iconColor} />
         <View className="flex-1">
-          <Text className="text-lg font-medium text-gray-900">Zeltron Whisper</Text>
-          <Text className="mt-1 text-sm text-gray-700">
-            Everything is on track.
-          </Text>
+          <Text className="text-lg font-medium text-gray-900">{title}</Text>
+          <Text className="mt-1 text-sm text-gray-700">{message}</Text>
         </View>
       </View>
     </View>
@@ -151,19 +173,37 @@ export default Alert;
       {
         name: "Krythar Wail Alert",
         description:
-          "A galactic alert that provides critical feedback in the galaxy. This variant shows three props: success, failure and warning. Just change the color to suit your use case",
+          "A galactic alert that provides critical feedback in the galaxy. This variant takes three props: type, title, message.",
         designer: "",
         developer: "",
         code: `import React from "react";
 import { View, Text } from "react-native";
 
-const Alert = () => {
+const Alert = ({ type, title, message }) => {
+  const alertStyles = {
+    success: {
+      bgColor: "bg-green-50",
+      borderColor: "border-green-400",
+      border: "border-l-4",
+    },
+    warning: {
+      bgColor: "bg-yellow-50",
+      borderColor: "border-yellow-400",
+      border: "border-l-4",
+    },
+    failure: {
+      bgColor: "bg-red-50",
+      borderColor: "border-red-400",
+      border: "border-l-4",
+    },
+  };
+
+  const { bgColor, borderColor, border } =
+    alertStyles[type] || alertStyles.success;
   return (
-    <View className="rounded-xl border-l-4 border-green-500 bg-green-50 p-4 w-64">
-      <Text className="text-lg font-bold">Krythar Wail</Text>
-      <Text className="mt-1 text-sm">
-        Everything is good.
-      </Text>
+    <View className={\`rounded-xl \${bgColor} \${borderColor} \${border} p-4 w-64\`}>
+      <Text className="text-lg font-bold">{title}</Text>
+      <Text className="mt-1 text-sm">{message}</Text>
     </View>
   );
 };
