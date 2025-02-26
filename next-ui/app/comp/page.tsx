@@ -18,24 +18,18 @@ function page() {
           integration into your projects
         </p>
         <div className="lg:mx-10 mx-4 mt-6">
-          ⚠️ Before using these components in your React Native app:
-          <ul className="list-disc ml-6 mt-2 text-sm text-red-500 font-semibold">
-            <li>
-              Ensure your app is properly configured to use nativewind utility
-              classes. Check the{" "}
+          <div className="rounded-xl border-l-4 border-yellow-500 bg-yellow-50 p-4 w-full mt-2">
+            <p className="mt-1 text-base">
+              Ensure your app is properly configured to use nativewind
+              utility classes. Check the{" "}
               <a
                 href="https://www.nativewind.dev"
                 className="text-blue-600 underline"
               >
                 NativeWind configuration guide
               </a>
-              .
-            </li>
-            <li>
-              Some component may
-              support <strong>Javascript or Typescript</strong>
-            </li>
-          </ul>
+            </p>
+          </div>
         </div>
       </div>
       <div className="flex flex-wrap gap-6 mb-16 mx-4">

@@ -8,6 +8,7 @@ type Variant = {
   designer: string;
   developer: string;
   code: string;
+  code1: string;
   render: React.ReactNode;
 };
 
@@ -107,6 +108,7 @@ const Accordion = () => {
 
 export default Accordion;
 `,
+        code1: ``,
         render: <Comp.GalaxyAccordion />,
       },
     ],
@@ -168,6 +170,8 @@ const Alert = ({ type, title, message }) => {
 
 export default Alert;
 `,
+        code1: ``,
+
         render: <Comp.GalaxyAlert />,
       },
       {
@@ -210,6 +214,8 @@ const Alert = ({ type, title, message }) => {
 
 export default Alert;
 `,
+        code1: ``,
+
         render: <Comp.KrytharWailAlert />,
       },
     ],
@@ -241,6 +247,8 @@ const Avatar = () => {
 
 export default Avatar;
 `,
+        code1: ``,
+
         render: <Comp.GalaxyAvatar />,
       },
       {
@@ -278,6 +286,8 @@ const Avatar = () => {
 
 export default Avatar;
 `,
+        code1: ``,
+
         render: <Comp.EarthAvatar />,
       },
     ],
@@ -309,6 +319,8 @@ const Badge = ({ text = "Badge", bgColor = "bg-black", textColor = "text-white",
 
 export default Badge;
 `,
+        code1: ``,
+
         render: <Comp.GalaxyBadge />,
       },
     ],
@@ -359,6 +371,8 @@ const Breadcrumb = () => {
 
 export default Breadcrumb;
 `,
+        code1: ``,
+
         render: <Comp.GalaxyBreadcrumb />,
       },
       {
@@ -400,6 +414,8 @@ const Breadcrumb = () => {
 
 export default Breadcrumb;
 `,
+        code1: ``,
+
         render: <Comp.EarthBreadcrumb />,
       },
     ],
@@ -460,6 +476,8 @@ const Button = ({ variant = "default", label = "Galaxy Button", onPress }) => {
 
 export default Button;
 `,
+        code1: ``,
+
         render: <Comp.GalaxyButton />,
       },
       {
@@ -523,6 +541,8 @@ const Button = ({ label = "Earth Button", variant = "default", icon = "alien-out
 export default Button;
 
 `,
+        code1: ``,
+
         render: <Comp.EarthButton />,
       },
     ],
@@ -569,6 +589,8 @@ const Card = () => {
 
 export default Card;
 `,
+        code1: ``,
+
         render: <Comp.GalaxyCard />,
       },
       {
@@ -611,6 +633,8 @@ const Card = () => {
 
 export default Card;
 `,
+        code1: ``,
+
         render: <Comp.EarthCard />,
       },
       {
@@ -644,6 +668,8 @@ function Card() {
 
 export default Card;
 `,
+        code1: ``,
+
         render: <Comp.JupiterCard />,
       },
       {
@@ -668,6 +694,8 @@ const Card = () => {
 
 export default Card;
 `,
+        code1: ``,
+
         render: <Comp.PlutoCard />,
       },
       {
@@ -714,6 +742,8 @@ const Card = () => {
 
 export default Card;
 `,
+        code1: ``,
+
         render: <Comp.MarsCard />,
       },
     ],
@@ -788,6 +818,8 @@ const Carousel = () => {
 
 export default Carousel;
 `,
+        code1: ``,
+
         render: <Comp.GalaxyCarousel />,
       },
     ],
@@ -832,6 +864,8 @@ const CheckBox = () => {
 
 export default CheckBox;
 `,
+        code1: ``,
+
         render: <Comp.GalaxyCheckbox />,
       },
     ],
@@ -897,6 +931,8 @@ const Dropdown = () => {
 
 export default Dropdown;
 `,
+        code1: ``,
+
         render: <Comp.GalaxyDropdown />,
       },
     ],
@@ -926,6 +962,8 @@ const Input = () => {
 
 export default Input;
 `,
+        code1: ``,
+
         render: <Comp.NebulonInput />,
       },
       {
@@ -947,6 +985,8 @@ const Input = () => {
 
 export default Input;
 `,
+        code1: ``,
+
         render: <Comp.EarthInput />,
       },
       {
@@ -997,6 +1037,8 @@ const Input = () => {
 
 export default Input;
 `,
+        code1: ``,
+
         render: <Comp.VortexInput />,
       },
     ],
@@ -1068,6 +1110,8 @@ const GalaxyModal = () => {
 
 export default GalaxyModal;
 `,
+        code1: ``,
+
         render: <Comp.GalaxyModal />,
       },
     ],
@@ -1122,6 +1166,8 @@ const Notification = () => {
 
 export default Notification;
 `,
+        code1: ``,
+
         render: <Comp.NebulaNotification />,
       },
     ],
@@ -1168,6 +1214,8 @@ const Pagination = () => {
 
 export default Pagination;
 `,
+        code1: ``,
+
         render: <Comp.GalaxyPagination />,
       },
       {
@@ -1197,6 +1245,8 @@ const Pagination = () => {
 
 export default Pagination;
 `,
+        code1: ``,
+
         render: <Comp.MarsPagination />,
       },
     ],
@@ -1255,6 +1305,8 @@ const Popover = () => {
 
 export default Popover;
 `,
+        code1: ``,
+
         render: <Comp.GalaxyPopover />,
       },
     ],
@@ -1298,6 +1350,8 @@ const ProgressBar = () => {
 
 export default ProgressBar;
 `,
+        code1: ``,
+
         render: <Comp.GalaxyProgressBar />,
       },
       {
@@ -1320,6 +1374,8 @@ const ProgressBar = () => {
 
 export default ProgressBar;
 `,
+        code1: ``,
+
         render: <Comp.EarthProgressBar />,
       },
       {
@@ -1362,6 +1418,8 @@ const ProgressBar = () => {
 
 export default ProgressBar;
 `,
+        code1: ``,
+
         render: <Comp.MarsProgressBar />,
       },
     ],
@@ -1398,6 +1456,8 @@ const SearchBar = () => {
 
 export default SearchBar;
 `,
+        code1: ``,
+
         render: <Comp.GalaxySearchBar />,
       },
     ],
@@ -1427,6 +1487,8 @@ const Spinner = () => {
 
 export default Spinner;
 `,
+        code1: ``,
+
         render: <Comp.GalaxySpinner />,
       },
       {
@@ -1468,6 +1530,8 @@ const Spinner = () => {
 
 export default Spinner;
 `,
+        code1: ``,
+
         render: <Comp.EarthSpinner />,
       },
     ],
@@ -1507,6 +1571,8 @@ const Switch = () => {
 
 export default Switch;
 `,
+        code1: ``,
+
         render: <Comp.GalaxySwitch />,
       },
     ],
@@ -1552,6 +1618,8 @@ const Tab = () => {
 
 export default Tab;
 `,
+        code1: ``,
+
         render: <Comp.GalaxyTab />,
       },
       {
@@ -1588,6 +1656,8 @@ const Tab = () => {
 
 export default Tab;
 `,
+        code1: ``,
+
         render: <Comp.EarthTab />,
       },
     ],
@@ -1664,6 +1734,8 @@ const Table = () => {
 
 export default Table;
 `,
+        code1: ``,
+
         render: <Comp.GalaxyTable />,
       },
     ],
@@ -1720,6 +1792,8 @@ const Toast = () => {
 
 export default Toast;
 `,
+        code1: ``,
+
         render: <Comp.GalaxyToast />,
       },
       {
@@ -1769,8 +1843,9 @@ const Toast = () => {
 };
 
 export default Toast;
-
 `,
+        code1: ``,
+
         render: <Comp.EarthToast />,
       },
     ],
