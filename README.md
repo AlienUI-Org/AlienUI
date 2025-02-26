@@ -2,7 +2,8 @@
 
 AlienUI is an open-source UI component library built on Nativewind for React Native apps. It leverages native tags for seamless integration and maintains zero to minimal dependencies, enabling high-performance, and stunning interfaces with ease.
 
-![aui](https://github.com/user-attachments/assets/925df950-86b2-4c0a-9340-da96a755f98e)
+![aui](https://github.com/user-attachments/assets/3c22b577-fd7a-432d-bdf7-811cc61b5ffe)
+
 
 ## Features
 
@@ -62,6 +63,7 @@ AlienUI is an open-source UI component library built on Nativewind for React Nat
 ## Getting started
 
 There is no installation, if you have a bare React Native project setup with NativeWind, you can copy the code and paste it into your project.
+
 ## Usage
 
 Browse the website for the components you need, copy the code and paste it into your project. Some components will have TypeScript support.
@@ -86,9 +88,11 @@ AlienUI has a wide range of freely available components. These components includ
 - [Dropdown](https://alienui.vercel.app/compdetails/Dropdown)
 - [Input](https://alienui.vercel.app/compdetails/Input)
 - [Modal](https://alienui.vercel.app/compdetails/Modal)
+- [Notification](https://alienui.vercel.app/compdetails/Notification)
 - [Pagination](https://alienui.vercel.app/compdetails/Pagination)
 - [Popover](https://alienui.vercel.app/compdetails/Popover)
-- [Progress](https://alienui.vercel.app/compdetails/Progress)
+- [Progress Bar](https://alienui.vercel.app/compdetails/Progress)
+- [Search Bar](https://alienui.vercel.app/compdetails/Search)
 - [Spinner](https://alienui.vercel.app/compdetails/Spinner)
 - [Switch](https://alienui.vercel.app/compdetails/Switch)
 - [Tab](https://alienui.vercel.app/compdetails/Tab)

@@ -1,13 +1,7 @@
 import React from "react";
 import { View, Text } from "react-native";
 
-interface AlertProps {
-  type: "success" | "warning" | "failure";
-  title: string;
-  message: string;
-}
-
-const Alert: React.FC<AlertProps> = ({ type, title, message }) => {
+const Alert = ({ type, title, message }) => {
   const alertStyles = {
     success: {
       bgColor: "bg-green-50",
@@ -26,7 +20,8 @@ const Alert: React.FC<AlertProps> = ({ type, title, message }) => {
     },
   };
 
-  const { bgColor, borderColor, border } = alertStyles[type];
+  const { bgColor, borderColor, border } =
+    alertStyles[type] || alertStyles.success;
   return (
     <View className={`rounded-xl ${bgColor} ${borderColor} ${border} p-4 w-64`}>
       <Text className="text-lg font-bold">{title}</Text>

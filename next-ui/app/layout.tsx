@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Banner from "@/components/Banner";
 import Head from "next/head";
 import { Analytics } from "@vercel/analytics/react";
+import BannerAlienX from "@/components/BannerAlienX";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -15,8 +16,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Alien UI",
-  description: "Prebuilt Nativewind components",
+  title: "AlienUI",
+  description: "Prebuilt Nativewind UI Components",
   keywords: "UI, Nativewind, components, react native, expo, Alien UI",
   authors: [{ name: "Kenneth Akpo" }],
 };
@@ -51,6 +52,7 @@ export default function RootLayout({
         </Head>
       </head>
       <body className={`${montserrat.variable} antialiased`}>
+        <BannerAlienX />
         <Header />
         <Banner />
         {children}

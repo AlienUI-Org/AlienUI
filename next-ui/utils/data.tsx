@@ -121,23 +121,45 @@ export default Accordion;
       {
         name: "Galaxy Alert",
         description:
-          "A galactic alert for feedbacks. This variant shows three props: success, failure and warning. Just change the color and icon to suit your use case",
+          "A galactic alert for feedbacks. This variant takes three props: type, title, message.",
         designer: "",
         developer: "",
         code: `import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text } from "react-native";
 import { Feather } from "@expo/vector-icons";
 
-const Alert = () => {
+const Alert = ({ type, title, message }) => {
+  const alertStyles = {
+    success: {
+      bgColor: "bg-green-50",
+      borderColor: "border-green-400",
+      icon: "check-circle",
+      iconColor: "#16a34a",
+    },
+    warning: {
+      bgColor: "bg-yellow-50",
+      borderColor: "border-yellow-400",
+      icon: "alert-triangle",
+      iconColor: "#ca8a04",
+    },
+    failure: {
+      bgColor: "bg-red-50",
+      borderColor: "border-red-400",
+      icon: "x-circle",
+      iconColor: "#dc2626",
+    },
+  };
+
+  const { bgColor, borderColor, icon, iconColor } =
+    alertStyles[type] || alertStyles.success;
+
   return (
-    <View className="rounded-xl border border-gray-300 bg-green-50 p-4 w-64">
+    <View className={\`rounded-xl border \${borderColor} \${bgColor} p-4 w-64\`}>
       <View className="flex flex-row items-start gap-4">
-        <Feather name="check-circle" size={24} color="#16a34a" />
+        <Feather name={icon} size={24} color={iconColor} />
         <View className="flex-1">
-          <Text className="text-lg font-medium text-gray-900">Zeltron Whisper</Text>
-          <Text className="mt-1 text-sm text-gray-700">
-            Everything is on track.
-          </Text>
+          <Text className="text-lg font-medium text-gray-900">{title}</Text>
+          <Text className="mt-1 text-sm text-gray-700">{message}</Text>
         </View>
       </View>
     </View>
@@ -151,19 +173,37 @@ export default Alert;
       {
         name: "Krythar Wail Alert",
         description:
-          "A galactic alert that provides critical feedback in the galaxy. This variant shows three props: success, failure and warning. Just change the color to suit your use case",
+          "A galactic alert that provides critical feedback in the galaxy. This variant takes three props: type, title, message.",
         designer: "",
         developer: "",
         code: `import React from "react";
 import { View, Text } from "react-native";
 
-const Alert = () => {
+const Alert = ({ type, title, message }) => {
+  const alertStyles = {
+    success: {
+      bgColor: "bg-green-50",
+      borderColor: "border-green-400",
+      border: "border-l-4",
+    },
+    warning: {
+      bgColor: "bg-yellow-50",
+      borderColor: "border-yellow-400",
+      border: "border-l-4",
+    },
+    failure: {
+      bgColor: "bg-red-50",
+      borderColor: "border-red-400",
+      border: "border-l-4",
+    },
+  };
+
+  const { bgColor, borderColor, border } =
+    alertStyles[type] || alertStyles.success;
   return (
-    <View className="rounded-xl border-l-4 border-green-500 bg-green-50 p-4 w-64">
-      <Text className="text-lg font-bold">Krythar Wail</Text>
-      <Text className="mt-1 text-sm">
-        Everything is good.
-      </Text>
+    <View className={\`rounded-xl \${bgColor} \${borderColor} \${border} p-4 w-64\`}>
+      <Text className="text-lg font-bold">{title}</Text>
+      <Text className="mt-1 text-sm">{message}</Text>
     </View>
   );
 };
@@ -794,11 +834,11 @@ export default Dropdown;
     id: 11,
     name: "Input",
     icon: AlienUIIcons.AlienEgg,
-    description: "A customizable input component for capturing user data.",
+    description: "A collection of cosmic-themed input components",
     variants: [
       {
         name: "Nebulon Input",
-        description: "A simple input box for text entry.",
+        description: "An input field for entering text in the Nebulon system",
         designer: "",
         developer: "",
         code: `import React from "react";
@@ -814,13 +854,12 @@ const Input = () => {
 };
 
 export default Input;
-
 `,
         render: <Comp.NebulonInput />,
       },
       {
         name: "Earth Input",
-        description: "An input box with a bottom border.",
+        description: "An input field for entering text on the earth surface",
         designer: "",
         developer: "",
         code: `import React from "react";
@@ -838,6 +877,56 @@ const Input = () => {
 export default Input;
 `,
         render: <Comp.EarthInput />,
+      },
+      {
+        name: "Vortex Input",
+        description: "A mesmerizing input field with cosmic vortex animation",
+        designer: "",
+        developer: "",
+        code: `import React, { useState } from "react";
+import { View, TextInput } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+
+const Input = () => {
+  const [isFocused, setIsFocused] = useState(false);
+
+  return (
+    <View className="relative w-72">
+      <View className={\`
+        absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20
+        rounded-lg opacity-20 \${isFocused ? 'scale-105 blur-md' : 'scale-100'}
+      \`} />
+      
+      <View className="relative flex-row items-center">
+        <TextInput
+          placeholder="Enter cosmic coordinates..."
+          placeholderTextColor="#9ca3af"
+          className={\`
+            flex-1 bg-black/80 text-white px-4 py-3 rounded-lg
+            border border-purple-500/30
+            \${isFocused ? 'border-purple-500/50' : ''}
+          \`}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
+        />
+        <MaterialCommunityIcons
+          name="vortex"
+          size={20}
+          color={isFocused ? "#c084fc" : "#9ca3af"}
+          style={\`
+            absolute right-3
+            \${isFocused ? 'rotate-180' : ''}
+            transition-all duration-300
+          \`}
+        />
+      </View>
+    </View>
+  );
+};
+
+export default Input;
+`,
+        render: <Comp.VortexInput />,
       },
     ],
   },
@@ -912,8 +1001,62 @@ export default GalaxyModal;
       },
     ],
   },
-  pagination: {
+  notification: {
     id: 13,
+    name: "Notification",
+    icon: AlienUIIcons.AlienStare,
+    description:
+      "A customizable notification component with space-themed variants",
+    variants: [
+      {
+        name: "Nebula Notification",
+        description: "A cosmic notification with ethereal purple gradients",
+        designer: "",
+        developer: "",
+        code: `import React from "react";
+import { View, Text, TouchableOpacity } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+
+const Notification = () => {
+  return (
+    <View className="w-80 bg-gradient-to-r from-purple-900 via-indigo-900 to-black p-4 rounded-lg shadow-lg border border-purple-500/20">
+      <View className="flex-row items-start space-x-4">
+        <View className="bg-purple-500/20 p-2 rounded-full">
+          <MaterialCommunityIcons name="alien" size={24} color="#c084fc" />
+        </View>
+        
+        <View className="flex-1">
+          <View className="flex-row items-center justify-between">
+            <Text className="text-purple-300 font-semibold">Alien Signal Detected</Text>
+            <Text className="text-purple-400/60 text-xs">Now</Text>
+          </View>
+          
+          <Text className="mt-1 text-sm text-purple-200/80">
+            Unknown transmission received from the Andromeda galaxy. Decoding sequence initiated.
+          </Text>
+          
+          <View className="mt-3 flex-row items-center space-x-3">
+            <TouchableOpacity className="px-3 py-1 bg-purple-500/20 rounded-full">
+              <Text className="text-xs font-medium text-purple-200">Decode Now</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text className="text-xs font-medium text-purple-300/70">Dismiss</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </View>
+  );
+};
+
+export default Notification;
+`,
+        render: <Comp.NebulaNotification />,
+      },
+    ],
+  },
+  pagination: {
+    id: 14,
     name: "Pagination",
     icon: AlienUIIcons.AlienCrackedAlienSkull,
     description: "A customizable pagination component.",
@@ -988,7 +1131,7 @@ export default Pagination;
     ],
   },
   popover: {
-    id: 14,
+    id: 15,
     name: "Popover",
     icon: AlienUIIcons.AlienPiAlienBold,
     description: "A customizable popover component.",
@@ -1046,7 +1189,7 @@ export default Popover;
     ],
   },
   progressbar: {
-    id: 15,
+    id: 16,
     name: "Progress",
     icon: AlienUIIcons.AlienTbAlien,
     description:
@@ -1152,8 +1295,44 @@ export default ProgressBar;
       },
     ],
   },
+  searchbar: {
+    id: 17,
+    name: "Search",
+    icon: AlienUIIcons.AlienStare,
+    description: "A customizable search bar.",
+    variants: [
+      {
+        name: "Galaxy Search Bar",
+        description: "A default search bar for searching the galaxy.",
+        designer: "",
+        developer: "",
+        code: `import { View, TextInput } from "react-native";
+import React from "react";
+import EvilIcons from "@expo/vector-icons/EvilIcons";
+
+const SearchBar = () => {
+  return (
+    <View className="mx-4 my-3">
+      <View className="flex-row items-center bg-gray-100 rounded-full px-4 py-3">
+        <EvilIcons name="search" size={24} color="gray" />
+        <TextInput
+          placeholder="Search the galaxy..."
+          className="flex-1 ml-2 text-base outline-none"
+          placeholderTextColor="gray"
+        />
+      </View>
+    </View>
+  );
+};
+
+export default SearchBar;
+`,
+        render: <Comp.GalaxySearchBar />,
+      },
+    ],
+  },
   spinner: {
-    id: 16,
+    id: 18,
     name: "Spinner",
     icon: AlienUIIcons.AlienLiaRedditAlien,
     description:
@@ -1223,7 +1402,7 @@ export default Spinner;
     ],
   },
   switch: {
-    id: 17,
+    id: 19,
     name: "Switch",
     icon: AlienUIIcons.AlienPiAlienThin,
     description: "A customizable switch for enabling and disabling options.",
@@ -1262,7 +1441,7 @@ export default Switch;
     ],
   },
   tab: {
-    id: 18,
+    id: 20,
     name: "Tab",
     icon: AlienUIIcons.AlienRiAliensLine,
     description: "A customizable tab navigation component with variants.",
@@ -1343,7 +1522,7 @@ export default Tab;
     ],
   },
   table: {
-    id: 19,
+    id: 21,
     name: "Table",
     icon: AlienUIIcons.AlienBug,
     description: "A customizable table component for data storage",
@@ -1419,7 +1598,7 @@ export default Table;
     ],
   },
   toast: {
-    id: 20,
+    id: 22,
     name: "Toast",
     icon: AlienUIIcons.AlienPiAlienLight,
     description:
