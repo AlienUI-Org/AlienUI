@@ -294,17 +294,19 @@ export default Avatar;
         description: "An alien badge for galactic verification",
         designer: "",
         developer: "",
-        code: `import React from 'react';
-import { View, Text } from 'react-native'
+        code: `import React from "react";
+import { View, Text } from "react-native";
 
-const Badge = () => {
-    return (
-        <View className="bg-black px-2 py-1 rounded-full flex items-center justify-center w-20">
-            <Text className="text-white text-xs">Badge</Text>
-        </View>
-    )
-}
-    
+const Badge = ({ text = "Badge", bgColor = "bg-black", textColor = "text-white", width = "w-20", padding = "px-2 py-1" }) => {
+  return (
+    <View
+      className={\`rounded-full flex items-center justify-center \${bgColor}  \${width} \${padding}\`}
+    >
+      <Text className={\`text-xs \${textColor}\`}>{text}</Text>
+    </View>
+  );
+};
+
 export default Badge;
 `,
         render: <Comp.GalaxyBadge />,
@@ -415,16 +417,45 @@ export default Breadcrumb;
           "A button with a solid background, used for primary actions.",
         designer: "",
         developer: "",
+        code: `import React from "react";
+import { Pressable, Text } from "react-native";
 
-        code: `import React from 'react';
-import { Pressable, Text } from 'react-native';
+const Button = ({ variant = "default", label = "Galaxy Button", onPress }) => {
+  const buttonStyles = {
+    default: {
+      bgColor: "bg-black",
+      textColor: "text-white",
+      border: "",
+    },
+    destructive: {
+      bgColor: "bg-red-600",
+      textColor: "text-white",
+      border: "",
+    },
+    outline: {
+      bgColor: "bg-transparent",
+      textColor: "text-black",
+      border: "border border-black",
+    },
+    disabled: {
+      bgColor: "bg-gray-400",
+      textColor: "text-gray-200",
+      border: "",
+    },
+  };
 
-const Button = () => {
-    return (
-        <Pressable className="bg-black py-2 px-4 rounded-md flex items-center justify-center w-52">
-            <Text className="text-white text-base">Galaxy Button</Text>
-        </Pressable>
-    );
+  const { bgColor, textColor, border } =
+    buttonStyles[variant] || buttonStyles.default;
+
+  return (
+    <Pressable
+      className={\`py-2 px-4 rounded-md flex items-center justify-center w-52 \${bgColor} \${border}\`}
+      onPress={variant !== "disabled" ? onPress : null}
+      disabled={variant === "disabled"}
+    >
+      <Text className={\`text-base \${textColor}\`}>{label}</Text>
+    </Pressable>
+  );
 };
 
 export default Button;
@@ -436,21 +467,61 @@ export default Button;
         description: "A button with an icon, used for secondary actions.",
         designer: "",
         developer: "",
-        code: `import React from 'react';
-import { Pressable, Text } from 'react-native';
-import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+        code: `import React from "react";
+import { Pressable, Text } from "react-native";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
+const Button = ({ label = "Earth Button", variant = "default", icon = "alien-outline", iconColor, onPress }) => {
+  const buttonStyles = {
+    default: {
+      bgColor: "bg-black",
+      textColor: "text-white",
+      border: "border border-black",
+      iconColor: "white",
+    },
+    destructive: {
+      bgColor: "bg-red-600",
+      textColor: "text-white",
+      border: "border border-red-700",
+      iconColor: "white",
+    },
+    outline: {
+      bgColor: "bg-transparent",
+      textColor: "text-black",
+      border: "border border-black",
+      iconColor: "black",
+    },
+    disabled: {
+      bgColor: "bg-gray-400",
+      textColor: "text-gray-200",
+      border: "border border-gray-500",
+      iconColor: "gray",
+    },
+  };
 
-const Button = () => {
-    return (
-        <Pressable className="bg-black border py-2 px-4 rounded-md flex flex-row items-center justify-center w-52">
-            <Text className="text-white text-base mr-1">Earth Button</Text>
-            <MaterialCommunityIcons name="alien-outline" size={20} color="white" />
-        </Pressable>
-    );
+  const { bgColor, textColor, border } =
+    buttonStyles[variant] || buttonStyles.default;
+
+  return (
+    <Pressable
+      className={\`py-2 px-4 rounded-md flex flex-row items-center justify-center w-52 \${bgColor} \${border}\`}
+      onPress={variant !== "disabled" ? onPress : null}
+      disabled={variant === "disabled"}
+    >
+      <Text className={\`text-base mr-1 \${textColor}\`}>{label}</Text>
+      {icon && (
+        <MaterialCommunityIcons
+          name={icon}
+          size={20}
+          color={iconColor || buttonStyles[variant].iconColor}
+        />
+      )}
+    </Pressable>
+  );
 };
 
 export default Button;
+
 `,
         render: <Comp.EarthButton />,
       },
