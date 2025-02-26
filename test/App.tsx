@@ -1,19 +1,19 @@
 import React from "react";
 import "./global.css";
-import { StyleSheet, ScrollView } from "react-native";
-import Alert from "./components/Alert/KrytharWailAlert";
+import { StyleSheet, View } from "react-native";
+import Avatar from "./components/Avatar/EarthAvatar";
+import { default as JupiterTab } from './components/Tab/JupiterTab';
+import Tab from "./components/Tab/EarthTab";
+import { default as GalaxyTab } from './components/Tab/GalaxyTab';
 
 export default function App() {
   return (
-    <ScrollView style={styles.container} className="font-sans">
-      <Alert
-        type="success"
-        title="Success!"
-        message="Everything is on track."
-      />
-      <Alert type="warning" title="Warning!" message="Check your settings." />
-      <Alert type="failure" title="Error!" message="Something went wrong." />
-    </ScrollView>
+    <View style={styles.container} className="font-sans">
+      <Avatar />
+      {/* Other components can be added here */}
+      <View style={styles.flexGrow} />
+      <JupiterTab />
+    </View>
   );
 }
 
