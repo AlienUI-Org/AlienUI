@@ -8,7 +8,7 @@ import { GoMail } from "react-icons/go";
 
 function Footer() {
   return (
-    <footer className="bg-brown-800 text-gray-200 py-16">
+    <footer className="bg-gradient-to-b from-brown-700 via-brown-500 to-brown-800 text-white py-16">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col sm:flex-row justify-between items-center">
           <div className="text-center sm:text-left mb-6 sm:mb-0">
@@ -21,21 +21,21 @@ function Footer() {
 
           <div className="flex items-center gap-4 text-white">
             <Link href="mailto:alienuiteam@gmail.com">
-              <GoMail size={24} />
+              <GoMail size={24} className="text-white" />
             </Link>
             <Link href="https://linkedin.com/company/alien-ui">
-              <FaLinkedin size={24} />
+              <FaLinkedin size={24} className="text-white" />
             </Link>
             <Link href="https://x.com/alienui">
-              <FaXTwitter size={24} />
+              <FaXTwitter size={24} className="text-white" />
             </Link>
             <Link href="https://github.com/khaymanii/alienui">
-              <FaGithub size={24} />
+              <FaGithub size={24} className="text-white" />
             </Link>
-            <span className="font-medium text-md text-white">63⭐</span>
+            <span className="font-medium text-md text-white">103⭐</span>
           </div>
         </div>
-        <div className="my-6 border-t border-brown-700"></div>
+        <div className="my-6 border-t border-brown-900"></div>
 
         <div className="flex flex-col sm:flex-row justify-between items-center text-sm">
           <p className="text-white">
@@ -60,7 +60,7 @@ function Footer() {
             </span>
           </Link>
         </p>
-        <GiAlienStare size={24} className="text-white" />
+        <GiAlienStare size={24} className="text-white animate-bounce" />
       </div>
     </footer>
   );
