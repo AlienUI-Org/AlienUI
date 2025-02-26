@@ -2,13 +2,17 @@ import React from "react";
 import "./global.css";
 import { StyleSheet, ScrollView } from "react-native";
 import Avatar from "./components/Avatar/EarthAvatar";
+import {default as JupiterTab} from './components/Tab/JupiterTab'
+import Tab from "./components/Tab/EarthTab";
+import {default as GalaxyTab} from './components/Tab/GalaxyTab'
 
-import SearchBar from "./components/Search Bar/GalaxySearchBar";
 export default function App() {
   return (
     <ScrollView style={styles.container} className="font-sans">
       <Avatar />
-      <SearchBar />
+      <JupiterTab/>
+      {/* <Tab/>
+      <GalaxyTab/> */}
     </ScrollView>
   );
 }
