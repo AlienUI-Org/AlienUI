@@ -83,7 +83,7 @@ const VariantBlock = ({ variant }: { variant: any }) => {
             style={duotoneLight}
             className="rounded-lg h-[400px]"
           >
-            {variant.code}
+            {variant.code1}
           </SyntaxHighlighter>
         </div>
       </div>
@@ -91,7 +91,7 @@ const VariantBlock = ({ variant }: { variant: any }) => {
         <h1 className="text-xl font-semibold text-brown-800 sm:text-2xl">
           Preview
         </h1>
-        <div className="lg:w-1/2 w-full py-10 px-6 flex flex-col items-center justify-center rounded-md h-auto border border-black mt-2">
+        <div className="w-full py-10 px-6 flex flex-col items-center justify-center rounded-md h-auto border border-black mt-2">
           {variant.render}
         </div>
         <div className="mt-1">

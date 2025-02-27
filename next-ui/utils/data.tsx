@@ -108,7 +108,20 @@ const Accordion = () => {
 
 export default Accordion;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Accordion from "./components/Accordion/GalaxyAccordion";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Accordion />
+    </View>
+  );
+};
+
+export default App;
+`,
         render: <Comp.GalaxyAccordion />,
       },
     ],
@@ -170,7 +183,25 @@ const Alert = ({ type, title, message }) => {
 
 export default Alert;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Alert from "./components/Alert/GalaxyAlert";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Alert />
+      {/* 
+      <Alert type="success" title="Success!" message="Everything is on track." />
+      <Alert type="warning" title="Warning!" message="Check your settings." />
+      <Alert type="failure" title="Error!" message="Something went wrong." /> 
+      */}
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.GalaxyAlert />,
       },
@@ -214,7 +245,25 @@ const Alert = ({ type, title, message }) => {
 
 export default Alert;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Alert from "./components/Alert/KrytharWailAlert";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Alert />
+      {/* 
+      <Alert type="success" title="Success!" message="Everything is on track." />
+      <Alert type="warning" title="Warning!" message="Check your settings." />
+      <Alert type="failure" title="Error!" message="Something went wrong." /> 
+      */}
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.KrytharWailAlert />,
       },
@@ -247,7 +296,20 @@ const Avatar = () => {
 
 export default Avatar;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Avatar from "./components/Avatar/GalaxyAvatar";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Avatar />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.GalaxyAvatar />,
       },
@@ -286,7 +348,20 @@ const Avatar = () => {
 
 export default Avatar;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Avatar from "./components/Avatar/EarthAvatar";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Avatar />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.EarthAvatar />,
       },
@@ -301,7 +376,8 @@ export default Avatar;
     variants: [
       {
         name: "Galaxy Badge",
-        description: "An alien badge for galactic verification",
+        description:
+          "An alien badge for galactic verification. This variant takes four props: text, backgroundColor, textColor, width, padding.",
         designer: "",
         developer: "",
         code: `import React from "react";
@@ -319,7 +395,25 @@ const Badge = ({ text = "Badge", bgColor = "bg-black", textColor = "text-white",
 
 export default Badge;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Badge from "./components/Badge/GalaxyBadge";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Badge />
+      {/*
+      <Badge text="New" bgColor="bg-green-500" />
+      <Badge text="Sale" bgColor="bg-red-500" border="border border-red-700" />
+      <Badge text="Info" bgColor="bg-blue-500" width="w-24" />
+      */}
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.GalaxyBadge />,
       },
@@ -371,7 +465,20 @@ const Breadcrumb = () => {
 
 export default Breadcrumb;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Breadcrumb from "./components/Breadcrumb/GalaxyBreadcrumb";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Breadcrumb />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.GalaxyBreadcrumb />,
       },
@@ -414,7 +521,20 @@ const Breadcrumb = () => {
 
 export default Breadcrumb;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Breadcrumb from "./components/Breadcrumb/EarthBreadcrumb";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Breadcrumb />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.EarthBreadcrumb />,
       },
@@ -430,13 +550,13 @@ export default Breadcrumb;
       {
         name: "Galaxy Button",
         description:
-          "A button with a solid background, used for primary actions.",
+          "A button with a solid background, used for primary actions. This variant takes 3 props: type, label, onPress.",
         designer: "",
         developer: "",
         code: `import React from "react";
 import { Pressable, Text } from "react-native";
 
-const Button = ({ variant = "default", label = "Galaxy Button", onPress }) => {
+const Button = ({ type = "default", label = "Galaxy Button", onPress }) => {
   const buttonStyles = {
     default: {
       bgColor: "bg-black",
@@ -444,7 +564,7 @@ const Button = ({ variant = "default", label = "Galaxy Button", onPress }) => {
       border: "",
     },
     destructive: {
-      bgColor: "bg-red-600",
+      bgColor: "bg-red-500",
       textColor: "text-white",
       border: "",
     },
@@ -461,13 +581,13 @@ const Button = ({ variant = "default", label = "Galaxy Button", onPress }) => {
   };
 
   const { bgColor, textColor, border } =
-    buttonStyles[variant] || buttonStyles.default;
+    buttonStyles[type] || buttonStyles.default;
 
   return (
     <Pressable
       className={\`py-2 px-4 rounded-md flex items-center justify-center w-52 \${bgColor} \${border}\`}
-      onPress={variant !== "disabled" ? onPress : null}
-      disabled={variant === "disabled"}
+      onPress={type !== "disabled" ? onPress : null}
+      disabled={type === "disabled"}
     >
       <Text className={\`text-base \${textColor}\`}>{label}</Text>
     </Pressable>
@@ -476,20 +596,39 @@ const Button = ({ variant = "default", label = "Galaxy Button", onPress }) => {
 
 export default Button;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Button from "./components/Button/GalaxyButton";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Button />
+      {/*
+      <Button type="destructive" label="Delete" />
+      <Button type="outline" label="Outline Button" />
+      <Button type="disabled" label="Disabled" />
+      */}
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.GalaxyButton />,
       },
       {
         name: "Earth Button",
-        description: "A button with an icon, used for secondary actions.",
+        description:
+          "A button with an icon, used for secondary actions. This variant takes 5 props: type, label, icon, iconColor, onPress.",
         designer: "",
         developer: "",
         code: `import React from "react";
 import { Pressable, Text } from "react-native";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
-const Button = ({ label = "Earth Button", variant = "default", icon = "alien-outline", iconColor, onPress }) => {
+const Button = ({ label = "Earth Button", type = "default", icon = "alien-outline", iconColor, onPress }) => {
   const buttonStyles = {
     default: {
       bgColor: "bg-black",
@@ -498,7 +637,7 @@ const Button = ({ label = "Earth Button", variant = "default", icon = "alien-out
       iconColor: "white",
     },
     destructive: {
-      bgColor: "bg-red-600",
+      bgColor: "bg-red-500",
       textColor: "text-white",
       border: "border border-red-700",
       iconColor: "white",
@@ -518,20 +657,20 @@ const Button = ({ label = "Earth Button", variant = "default", icon = "alien-out
   };
 
   const { bgColor, textColor, border } =
-    buttonStyles[variant] || buttonStyles.default;
+    buttonStyles[type] || buttonStyles.default;
 
   return (
     <Pressable
       className={\`py-2 px-4 rounded-md flex flex-row items-center justify-center w-52 \${bgColor} \${border}\`}
-      onPress={variant !== "disabled" ? onPress : null}
-      disabled={variant === "disabled"}
+      onPress={type !== "disabled" ? onPress : null}
+      disabled={type === "disabled"}
     >
       <Text className={\`text-base mr-1 \${textColor}\`}>{label}</Text>
       {icon && (
         <MaterialCommunityIcons
           name={icon}
           size={20}
-          color={iconColor || buttonStyles[variant].iconColor}
+          color={iconColor || buttonStyles[type].iconColor}
         />
       )}
     </Pressable>
@@ -541,7 +680,26 @@ const Button = ({ label = "Earth Button", variant = "default", icon = "alien-out
 export default Button;
 
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Button from "./components/Button/EarthButton";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Button />
+      {/*
+      <Button type="destructive" label="Delete" icon="trash-can-outline" />
+      <Button type="outline" label="Outline Button" icon="pencil-outline" />
+      <Button type="disabled" label="Disabled" />
+      <Button label="Custom Icon" icon="rocket-launch-outline" iconColor="blue" />
+      */}
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.EarthButton />,
       },
@@ -589,7 +747,20 @@ const Card = () => {
 
 export default Card;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Card from "./components/Card/GalaxyCard";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Card />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.GalaxyCard />,
       },
@@ -633,7 +804,20 @@ const Card = () => {
 
 export default Card;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Card from "./components/Card/EarthCard";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Card />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.EarthCard />,
       },
@@ -668,7 +852,20 @@ function Card() {
 
 export default Card;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Card from "./components/Card/JupiterCard";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Card />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.JupiterCard />,
       },
@@ -694,7 +891,20 @@ const Card = () => {
 
 export default Card;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Card from "./components/Card/PlutoCard";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Card />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.PlutoCard />,
       },
@@ -742,7 +952,20 @@ const Card = () => {
 
 export default Card;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Card from "./components/Card/MarsCard";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Card />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.MarsCard />,
       },
@@ -818,7 +1041,20 @@ const Carousel = () => {
 
 export default Carousel;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Carousel from "./components/Carousel/GalaxyCarousel";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Carousel />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.GalaxyCarousel />,
       },
@@ -864,7 +1100,20 @@ const CheckBox = () => {
 
 export default CheckBox;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import CheckBox from "./components/CheckBox/GalaxyCheckBox";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <CheckBox />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.GalaxyCheckbox />,
       },
@@ -931,7 +1180,20 @@ const Dropdown = () => {
 
 export default Dropdown;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Dropdown from "./components/Dropdown/GalaxyDropdown";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Dropdown />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.GalaxyDropdown />,
       },
@@ -962,7 +1224,20 @@ const Input = () => {
 
 export default Input;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Input from "./components/Input/NebulonInput";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Input />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.NebulonInput />,
       },
@@ -985,7 +1260,20 @@ const Input = () => {
 
 export default Input;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Input from "./components/Input/EarthInput";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Input />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.EarthInput />,
       },
@@ -1037,7 +1325,20 @@ const Input = () => {
 
 export default Input;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Input from "./components/Input/VortexInput";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Input />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.VortexInput />,
       },
@@ -1110,8 +1411,20 @@ const GalaxyModal = () => {
 
 export default GalaxyModal;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Modal from "./components/Modal/GalaxyModal";
 
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Modal />
+    </View>
+  );
+};
+
+export default App;
+`,
         render: <Comp.GalaxyModal />,
       },
     ],
@@ -1166,7 +1479,20 @@ const Notification = () => {
 
 export default Notification;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Notification from "./components/Notification/NebulaNotification";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Notification />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.NebulaNotification />,
       },
@@ -1214,7 +1540,20 @@ const Pagination = () => {
 
 export default Pagination;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Pagination from "./components/Pagination/GalaxyPagination";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Pagination />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.GalaxyPagination />,
       },
@@ -1245,7 +1584,20 @@ const Pagination = () => {
 
 export default Pagination;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Pagination from "./components/Pagination/MarsPagination";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Pagination />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.MarsPagination />,
       },
@@ -1305,7 +1657,20 @@ const Popover = () => {
 
 export default Popover;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Popover from "./components/Popover/GalaxyPopover";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Popover />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.GalaxyPopover />,
       },
@@ -1350,7 +1715,20 @@ const ProgressBar = () => {
 
 export default ProgressBar;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import ProgressBar from "./components/ProgressBar/GalaxyProgressBar";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <ProgressBar />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.GalaxyProgressBar />,
       },
@@ -1374,7 +1752,20 @@ const ProgressBar = () => {
 
 export default ProgressBar;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import ProgressBar from "./components/ProgressBar/EarthProgressBar";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <ProgressBar />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.EarthProgressBar />,
       },
@@ -1418,7 +1809,20 @@ const ProgressBar = () => {
 
 export default ProgressBar;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import ProgressBar from "./components/ProgressBar/MarsProgressBar";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <ProgressBar />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.MarsProgressBar />,
       },
@@ -1456,7 +1860,20 @@ const SearchBar = () => {
 
 export default SearchBar;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import SearchBar from "./components/SearchBar/GalaxySearchBar";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <SearchBar />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.GalaxySearchBar />,
       },
@@ -1487,7 +1904,20 @@ const Spinner = () => {
 
 export default Spinner;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Spinner from "./components/Spinner/GalaxySpinner";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Spinner />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.GalaxySpinner />,
       },
@@ -1530,7 +1960,20 @@ const Spinner = () => {
 
 export default Spinner;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Spinner from "./components/Spinner/EarthSpinner";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Spinner />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.EarthSpinner />,
       },
@@ -1571,8 +2014,20 @@ const Switch = () => {
 
 export default Switch;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Switch from "./components/Switch/GalaxySwitch";
 
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Switch />
+    </View>
+  );
+};
+
+export default App;
+`,
         render: <Comp.GalaxySwitch />,
       },
     ],
@@ -1618,7 +2073,20 @@ const Tab = () => {
 
 export default Tab;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Tab from "./components/Tab/GalaxyTab";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Tab />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.GalaxyTab />,
       },
@@ -1656,7 +2124,20 @@ const Tab = () => {
 
 export default Tab;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Tab from "./components/Tab/EarthTab";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Tab />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.EarthTab />,
       },
@@ -1734,7 +2215,20 @@ const Table = () => {
 
 export default Table;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Table from "./components/Table/GalaxyTable";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Table />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.GalaxyTable />,
       },
@@ -1792,7 +2286,20 @@ const Toast = () => {
 
 export default Toast;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Toast from "./components/Toast/GalaxyToast";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Toast />
+    </View>
+  );
+};
+
+export default App;
+`,
 
         render: <Comp.GalaxyToast />,
       },
@@ -1844,7 +2351,19 @@ const Toast = () => {
 
 export default Toast;
 `,
-        code1: ``,
+        code1: `import React from "react";
+import { View } from "react-native";
+import Toast from "./components/Toast/EarthToast";
+
+const App = () => {
+  return (
+    <View className="flex-1">
+      <Toast />
+    </View>
+  );
+};
+
+export default App;`,
 
         render: <Comp.EarthToast />,
       },
