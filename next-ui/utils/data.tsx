@@ -377,7 +377,7 @@ export default App;
       {
         name: "Galaxy Badge",
         description:
-          "An alien badge for galactic verification. This variant takes four props: text, backgroundColor, textColor, width, padding.",
+          "An alien badge for galactic verification. This variant takes five props: text, backgroundColor, textColor, width, padding.",
         designer: "",
         developer: "",
         code: `import React from "react";
