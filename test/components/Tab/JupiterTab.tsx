@@ -18,16 +18,16 @@ const Tab = () => {
         <View className="absolute -top-6 left-1/2 -translate-x-1/2 w-24 h-16 bg-white rounded-b-full mt-6" />
 
         <TouchableOpacity className="flex items-center">
-          <View className="bg-transparent p-3">
+          <View className="bg-transparent p-4 flex-col justify-center items-center">
             <AntDesign name="home" size={24} color="white" />
-            <Text className="text-gray-50 text-xs mt-0.5 text-center">Home</Text>
+            <Text className="text-gray-50 text-xs mt-1 text-center">Home</Text>
           </View>
         </TouchableOpacity>
 
         <TouchableOpacity className="flex items-center">
-          <View className="bg-transparent p-3 flex-col justify-center items-center">
+          <View className="bg-transparent p-4 flex-col justify-center items-center">
             <AntDesign name="contacts" size={24} color="gray" />
-            <Text className="text-gray-400 text-xs mt-0.5 text-center">Contacts</Text>
+            <Text className="text-gray-400 text-xs mt-1 text-center">Contacts</Text>
           </View>
         </TouchableOpacity>
 
@@ -35,16 +35,16 @@ const Tab = () => {
         <View className="w-16" />
 
         <TouchableOpacity className="flex items-center mr-4">
-          <View className="bg-transparent p-3 flex-col justify-center">
+          <View className="bg-transparent p-4 flex-col justify-center items-center">
             <AntDesign name="shoppingcart" size={24} color="gray" />
-            <Text className="text-gray-400 text-xs mt-0.5 text-center">Cart</Text>
+            <Text className="text-gray-400 text-xs mt-1 text-center">Cart</Text>
           </View>
         </TouchableOpacity>
 
         <TouchableOpacity className="flex items-center">
-          <View className="bg-transparent p-3">
+          <View className="bg-transparent p-4 flex-col justify-center items-center">
             <AntDesign name="barschart" size={24} color="gray" />
-            <Text className="text-gray-400 text-xs mt-0.5 text-center">Chart</Text>
+            <Text className="text-gray-400 text-xs mt-1 text-center">Chart</Text>
           </View>
         </TouchableOpacity>
       </View>
