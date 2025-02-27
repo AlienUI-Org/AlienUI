@@ -81,7 +81,7 @@ const VariantBlock = ({ variant }: { variant: any }) => {
           <SyntaxHighlighter
             language="jsx"
             style={duotoneLight}
-            className="rounded-lg h-[400px]"
+            className="rounded-lg h-[300px]"
           >
             {variant.code1}
           </SyntaxHighlighter>
