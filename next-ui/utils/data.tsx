@@ -114,7 +114,7 @@ import Accordion from "./components/Accordion/GalaxyAccordion";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Accordion />
     </View>
   );
@@ -189,7 +189,7 @@ import Alert from "./components/Alert/GalaxyAlert";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Alert />
       {/* 
       <Alert type="success" title="Success!" message="Everything is on track." />
@@ -251,7 +251,7 @@ import Alert from "./components/Alert/KrytharWailAlert";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Alert />
       {/* 
       <Alert type="success" title="Success!" message="Everything is on track." />
@@ -264,7 +264,6 @@ const App = () => {
 
 export default App;
 `,
-
         render: <Comp.KrytharWailAlert />,
       },
     ],
@@ -302,7 +301,7 @@ import Avatar from "./components/Avatar/GalaxyAvatar";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Avatar />
     </View>
   );
@@ -354,7 +353,7 @@ import Avatar from "./components/Avatar/EarthAvatar";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Avatar />
     </View>
   );
@@ -401,7 +400,7 @@ import Badge from "./components/Badge/GalaxyBadge";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Badge />
       {/*
       <Badge text="New" bgColor="bg-green-500" />
@@ -471,7 +470,7 @@ import Breadcrumb from "./components/Breadcrumb/GalaxyBreadcrumb";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Breadcrumb />
     </View>
   );
@@ -527,7 +526,7 @@ import Breadcrumb from "./components/Breadcrumb/EarthBreadcrumb";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Breadcrumb />
     </View>
   );
@@ -602,7 +601,7 @@ import Button from "./components/Button/GalaxyButton";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Button />
       {/*
       <Button type="destructive" label="Delete" />
@@ -686,7 +685,7 @@ import Button from "./components/Button/EarthButton";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Button />
       {/*
       <Button type="destructive" label="Delete" icon="trash-can-outline" />
@@ -753,7 +752,7 @@ import Card from "./components/Card/GalaxyCard";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Card />
     </View>
   );
@@ -810,7 +809,7 @@ import Card from "./components/Card/EarthCard";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Card />
     </View>
   );
@@ -818,7 +817,6 @@ const App = () => {
 
 export default App;
 `,
-
         render: <Comp.EarthCard />,
       },
       {
@@ -858,7 +856,7 @@ import Card from "./components/Card/JupiterCard";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Card />
     </View>
   );
@@ -897,7 +895,7 @@ import Card from "./components/Card/PlutoCard";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Card />
     </View>
   );
@@ -958,7 +956,7 @@ import Card from "./components/Card/MarsCard";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Card />
     </View>
   );
@@ -1047,7 +1045,7 @@ import Carousel from "./components/Carousel/GalaxyCarousel";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Carousel />
     </View>
   );
@@ -1055,7 +1053,6 @@ const App = () => {
 
 export default App;
 `,
-
         render: <Comp.GalaxyCarousel />,
       },
     ],
@@ -1106,7 +1103,7 @@ import CheckBox from "./components/CheckBox/GalaxyCheckBox";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <CheckBox />
     </View>
   );
@@ -1186,7 +1183,7 @@ import Dropdown from "./components/Dropdown/GalaxyDropdown";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Dropdown />
     </View>
   );
@@ -1194,7 +1191,6 @@ const App = () => {
 
 export default App;
 `,
-
         render: <Comp.GalaxyDropdown />,
       },
     ],
@@ -1230,7 +1226,7 @@ import Input from "./components/Input/NebulonInput";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Input />
     </View>
   );
@@ -1266,7 +1262,7 @@ import Input from "./components/Input/EarthInput";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Input />
     </View>
   );
@@ -1274,7 +1270,6 @@ const App = () => {
 
 export default App;
 `,
-
         render: <Comp.EarthInput />,
       },
       {
@@ -1331,7 +1326,7 @@ import Input from "./components/Input/VortexInput";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Input />
     </View>
   );
@@ -1339,7 +1334,6 @@ const App = () => {
 
 export default App;
 `,
-
         render: <Comp.VortexInput />,
       },
     ],
@@ -1417,7 +1411,7 @@ import Modal from "./components/Modal/GalaxyModal";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Modal />
     </View>
   );
@@ -1485,7 +1479,7 @@ import Notification from "./components/Notification/NebulaNotification";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Notification />
     </View>
   );
@@ -1493,7 +1487,6 @@ const App = () => {
 
 export default App;
 `,
-
         render: <Comp.NebulaNotification />,
       },
     ],
@@ -1546,7 +1539,7 @@ import Pagination from "./components/Pagination/GalaxyPagination";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Pagination />
     </View>
   );
@@ -1590,7 +1583,7 @@ import Pagination from "./components/Pagination/MarsPagination";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Pagination />
     </View>
   );
@@ -1598,7 +1591,6 @@ const App = () => {
 
 export default App;
 `,
-
         render: <Comp.MarsPagination />,
       },
     ],
@@ -1663,7 +1655,7 @@ import Popover from "./components/Popover/GalaxyPopover";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Popover />
     </View>
   );
@@ -1721,7 +1713,7 @@ import ProgressBar from "./components/ProgressBar/GalaxyProgressBar";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <ProgressBar />
     </View>
   );
@@ -1758,7 +1750,7 @@ import ProgressBar from "./components/ProgressBar/EarthProgressBar";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <ProgressBar />
     </View>
   );
@@ -1766,7 +1758,6 @@ const App = () => {
 
 export default App;
 `,
-
         render: <Comp.EarthProgressBar />,
       },
       {
@@ -1815,7 +1806,7 @@ import ProgressBar from "./components/ProgressBar/MarsProgressBar";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <ProgressBar />
     </View>
   );
@@ -1823,7 +1814,6 @@ const App = () => {
 
 export default App;
 `,
-
         render: <Comp.MarsProgressBar />,
       },
     ],
@@ -1866,7 +1856,7 @@ import SearchBar from "./components/SearchBar/GalaxySearchBar";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <SearchBar />
     </View>
   );
@@ -1874,7 +1864,6 @@ const App = () => {
 
 export default App;
 `,
-
         render: <Comp.GalaxySearchBar />,
       },
     ],
@@ -1910,7 +1899,7 @@ import Spinner from "./components/Spinner/GalaxySpinner";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Spinner />
     </View>
   );
@@ -1918,7 +1907,6 @@ const App = () => {
 
 export default App;
 `,
-
         render: <Comp.GalaxySpinner />,
       },
       {
@@ -1966,7 +1954,7 @@ import Spinner from "./components/Spinner/EarthSpinner";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Spinner />
     </View>
   );
@@ -1974,7 +1962,6 @@ const App = () => {
 
 export default App;
 `,
-
         render: <Comp.EarthSpinner />,
       },
     ],
@@ -2020,7 +2007,7 @@ import Switch from "./components/Switch/GalaxySwitch";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Switch />
     </View>
   );
@@ -2079,7 +2066,7 @@ import Tab from "./components/Tab/GalaxyTab";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Tab />
     </View>
   );
@@ -2087,7 +2074,6 @@ const App = () => {
 
 export default App;
 `,
-
         render: <Comp.GalaxyTab />,
       },
       {
@@ -2221,7 +2207,7 @@ import Table from "./components/Table/GalaxyTable";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Table />
     </View>
   );
@@ -2229,7 +2215,6 @@ const App = () => {
 
 export default App;
 `,
-
         render: <Comp.GalaxyTable />,
       },
     ],
@@ -2292,7 +2277,7 @@ import Toast from "./components/Toast/GalaxyToast";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Toast />
     </View>
   );
@@ -2357,13 +2342,14 @@ import Toast from "./components/Toast/EarthToast";
 
 const App = () => {
   return (
-    <View className="flex-1">
+    <View>
       <Toast />
     </View>
   );
 };
 
-export default App;`,
+export default App;
+`,
 
         render: <Comp.EarthToast />,
       },
