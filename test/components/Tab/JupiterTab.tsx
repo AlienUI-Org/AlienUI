@@ -5,9 +5,9 @@ import { AntDesign } from "@expo/vector-icons";
 const Tab = () => {
   return (
     <View className="flex items-center relative">
-      <View className="absolute -top-12 z-10">
+      <View className="absolute -top-14 z-10">
         <View className="bg-black rounded-full p-4  mt-14">
-          <AntDesign name="appstore1" size={24} color="white" />
+          <AntDesign name="appstore-o" size={24} color="white" />
         </View>
       </View>
       <View className="flex-row w-full items-center justify-around bg-zinc-900 rounded-t-3xl px-2 mt-8 relative">
