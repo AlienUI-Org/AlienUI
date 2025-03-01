@@ -2185,7 +2185,7 @@ export default Tab;
 `,
         code1: `import React from "react";
 import { View } from "react-native";
-import Tab from "./components/Tab/EarthTab";
+import Tab from "./components/Tab/JupiterTab";
 
 const App = () => {
   return (
