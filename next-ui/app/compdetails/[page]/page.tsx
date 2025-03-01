@@ -73,11 +73,25 @@ const VariantBlock = ({ variant }: { variant: any }) => {
           </span>
         )}
       </div>
-      <div className="">
+      <div>
+        <h1 className="text-xl font-semibold text-brown-800 sm:text-2xl">
+          Usage Example
+        </h1>{" "}
+        <div className="mb-6 mt-2 w-full rounded-lg overflow-auto bg-black p-4">
+          <SyntaxHighlighter
+            language="jsx"
+            style={duotoneLight}
+            className="rounded-lg h-[300px]"
+          >
+            {variant.code1}
+          </SyntaxHighlighter>
+        </div>
+      </div>
+      <div>
         <h1 className="text-xl font-semibold text-brown-800 sm:text-2xl">
           Preview
         </h1>
-        <div className="lg:w-1/2 w-full py-10 px-6 flex flex-col items-center justify-center rounded-md h-auto border border-black mt-2">
+        <div className="w-full py-10 px-6 flex flex-col items-center justify-center rounded-md h-auto border border-black mt-2">
           {variant.render}
         </div>
         <div className="mt-1">
