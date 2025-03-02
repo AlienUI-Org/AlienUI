@@ -32,7 +32,7 @@ function Footer() {
             <Link href="https://github.com/khaymanii/alienui">
               <FaGithub size={24} className="text-white" />
             </Link>
-            <span className="font-medium text-md text-white">112⭐</span>
+            <span className="font-medium text-md text-white">115⭐</span>
           </div>
         </div>
         <div className="my-6 border-t border-brown-900"></div>
