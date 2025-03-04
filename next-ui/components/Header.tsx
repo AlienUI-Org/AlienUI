@@ -27,7 +27,7 @@ function Header() {
             <Link href="https://github.com/khaymanii/alienui">
               <FaGithub size={24} />
             </Link>
-            <span className="font-medium text-md">125⭐</span>
+            <span className="font-medium text-md">127⭐</span>
           </div>
 
           {/* Hamburger Menu (optional, if you want to toggle mobile menu later) */}
