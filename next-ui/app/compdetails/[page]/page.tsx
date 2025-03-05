@@ -6,12 +6,16 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { duotoneLight } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { BsClipboard2Heart } from "react-icons/bs";
 import { components } from "@/utils/data";
+import Navbuttons from "@/components/Navbuttons";
 
 const Page = () => {
   const params = useParams();
   const id = params.page;
 
-  const component = Object.values(components).find((comp) => comp.name === id);
+  const componentIndex = Object.values(components).findIndex(
+    (comp) => comp.name === id
+  );
+  const component = Object.values(components)[componentIndex];
 
   if (!component) {
     return (
@@ -23,6 +27,8 @@ const Page = () => {
 
   return (
     <section className="max-w-7xl mx-auto my-16 px-4 z-1">
+      <Navbuttons currentComponent={component.name} />
+
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-brown-800 sm:text-4xl text-center">
           {component.name}
@@ -31,6 +37,7 @@ const Page = () => {
           {component.description}
         </p>
       </div>
+
       {component.variants.map((variant, index) => (
         <VariantBlock key={index} variant={variant} />
       ))}
@@ -68,15 +75,16 @@ const VariantBlock = ({ variant }: { variant: any }) => {
           className="absolute lg:top-8 lg:right-10 top-8 right-6 text-black text-xl cursor-pointer"
         />
         {copied && (
-          <span className="absolute lg:top-8 lg:right-16 top-8 right-12  text-black text-[10px] font-semibold">
+          <span className="absolute lg:top-8 lg:right-16 top-8 right-12 text-black text-[10px] font-semibold">
             Copied!
           </span>
         )}
       </div>
+
       <div>
         <h1 className="text-xl font-semibold text-brown-800 sm:text-2xl">
           Usage Example
-        </h1>{" "}
+        </h1>
         <div className="mb-6 mt-2 w-full rounded-lg overflow-auto bg-black p-4">
           <SyntaxHighlighter
             language="jsx"
@@ -87,6 +95,7 @@ const VariantBlock = ({ variant }: { variant: any }) => {
           </SyntaxHighlighter>
         </div>
       </div>
+
       <div>
         <h1 className="text-xl font-semibold text-brown-800 sm:text-2xl">
           Preview
