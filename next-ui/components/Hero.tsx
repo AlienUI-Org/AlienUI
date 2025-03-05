@@ -13,7 +13,7 @@ function Hero() {
             Free open-source UI component library for React Native
           </p>
           <p className="mt-4 text-lg text-white text-center font-medium lg:w-[1000px]">
-            AlienUI is a lightweight open-source UI component library built on NativeWind
+            A lightweight open-source UI component library built on NativeWind
             for React Native apps. It leverages native tags for seamless
             integration and maintains zero to minimal dependencies, enabling
             high-performance, and stunning interfaces with ease.
