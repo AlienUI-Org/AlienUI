@@ -29,4 +29,9 @@ export const contributors = [
     role: "Software Engineer",
     avatar: "/images/headshot.jpg",
   },
+  {
+    name: "AbdulAzeez Olanrewaju",
+    role: "Software Engineer",
+    avatar: "/images/azeez.jpg",
+  },
 ];
