@@ -41,6 +41,7 @@ const Page = () => {
       {component.variants.map((variant, index) => (
         <VariantBlock key={index} variant={variant} />
       ))}
+        <Navbuttons currentComponent={component.name} />
     </section>
   );
 };
