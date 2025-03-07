@@ -28,7 +28,7 @@ const NavigationButtons = ({
       {prevComponent ? (
         <button
           onClick={() => router.push(`/compdetails/${prevComponent.name}`)}
-          className="bg-transparent flex items-center gap-2 text-brown-800 font-semibold px-4 py-2 rounded-md border border-gray-300 "
+          className="bg-transparent flex items-center gap-2 text-black font-semibold px-4 py-2 rounded-md border border-black "
         >
           <IoArrowBack size={20} />
           {prevComponent.name}

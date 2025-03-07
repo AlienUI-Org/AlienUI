@@ -14,7 +14,7 @@ function Page() {
     <section className="max-w-7xl mx-auto my-10">
       <div className="mb-16">
         {" "}
-        <h1 className="text-3xl font-bold text-brown-800 sm:text-4xl text-center mb-2">
+        <h1 className="text-3xl font-bold sm:text-4xl text-center mb-2">
           Components
         </h1>{" "}
         <p className="mt-4 text-lg text-gray-800 text-center mx-4 mb-6">

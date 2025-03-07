@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function Hero() {
   return (
-    <section className="bg-gradient-to-b from-brown-800 via-brown-400 to-brown-300">
+    <section className="bg-gradient-to-b from-purple-500 via-black to-black">
       <div className="max-w-7xl mx-auto px-4 py-20 md:py-24 lg:py-28 flex flex-col items-center md:justify-between">
         <div className="text-center">
           <h1 className="text-5xl font-bold text-white sm:text-5xl mb-2">
@@ -34,7 +34,7 @@ function Hero() {
               </button>
             </Link>
             <Link href="https://github.com/khaymanii/AlienUI" prefetch>
-              <button className="px-6 py-3 bg-gradient-to-r from-brown-700 via-brown-600 to-black text-white font-medium rounded-lg shadow-md cursor-pointer">
+              <button className="px-6 py-3 bg-purple-800 text-white font-medium rounded-lg shadow-md cursor-pointer">
                 Start Contributing
               </button>
             </Link>

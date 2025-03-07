@@ -30,7 +30,7 @@ const Page = () => {
       <Navbuttons currentComponent={component.name} />
 
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-brown-800 sm:text-4xl text-center">
+        <h1 className="text-3xl font-bold sm:text-4xl text-center">
           {component.name}
         </h1>
         <p className="mt-4 text-lg text-gray-800 text-center">
@@ -41,7 +41,7 @@ const Page = () => {
       {component.variants.map((variant, index) => (
         <VariantBlock key={index} variant={variant} />
       ))}
-        <Navbuttons currentComponent={component.name} />
+      <Navbuttons currentComponent={component.name} />
     </section>
   );
 };
@@ -57,12 +57,9 @@ const VariantBlock = ({ variant }: { variant: any }) => {
 
   return (
     <div className="mb-6">
-      <h1 className="text-2xl font-semibold text-brown-800 sm:text-3xl">
-        {variant.name}
-      </h1>
+      <h1 className="text-2xl font-semibold sm:text-3xl">{variant.name}</h1>
       <p className="mt-2 text-md text-gray-800">{variant.description}</p>
 
-      {/* Full-screen Code Block */}
       <div className="my-6 w-full relative rounded-lg overflow-auto bg-black p-4">
         <SyntaxHighlighter
           language="jsx"
@@ -83,9 +80,7 @@ const VariantBlock = ({ variant }: { variant: any }) => {
       </div>
 
       <div>
-        <h1 className="text-xl font-semibold text-brown-800 sm:text-2xl">
-          Usage Example
-        </h1>
+        <h1 className="text-xl font-semibold sm:text-2xl">Usage Example</h1>
         <div className="mb-6 mt-2 w-full rounded-lg overflow-auto bg-black p-4">
           <SyntaxHighlighter
             language="jsx"
@@ -98,15 +93,9 @@ const VariantBlock = ({ variant }: { variant: any }) => {
       </div>
 
       <div>
-        <h1 className="text-xl font-semibold text-brown-800 sm:text-2xl">
-          Preview
-        </h1>
+        <h1 className="text-xl font-semibold sm:text-2xl">Preview</h1>
         <div className="w-full py-10 px-6 flex flex-col items-center justify-center rounded-md h-auto border border-black mt-2">
           {variant.render}
-        </div>
-        <div className="mt-1">
-          <p className="text-sm font-semibold">{variant.designer}</p>
-          <p className="text-sm font-semibold">{variant.developer}</p>
         </div>
       </div>
     </div>

@@ -8,7 +8,7 @@ import { GoMail } from "react-icons/go";
 
 function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-brown-700 via-brown-500 to-brown-800 text-white py-16">
+    <footer className="bg-black text-white py-16">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col sm:flex-row justify-between items-center">
           <div className="text-center sm:text-left mb-6 sm:mb-0">
@@ -35,7 +35,7 @@ function Footer() {
             <span className="font-medium text-md text-white">138⭐</span>
           </div>
         </div>
-        <div className="my-6 border-t border-brown-900"></div>
+        <div className="my-6 border-t border-white"></div>
 
         <div className="flex flex-col sm:flex-row justify-between items-center text-sm">
           <p className="text-white">

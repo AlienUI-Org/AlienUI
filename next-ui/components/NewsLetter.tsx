@@ -33,7 +33,7 @@ function NewsLetter() {
   };
 
   return (
-    <section className="py-20 text-black bg-gradient-to-r from-brown-800 via-brown-500 to-brown-800">
+    <section className="py-20 bg-black">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h1 className="text-3xl font-bold text-white sm:text-4xl text-center mb-2">
           Stay Updated with AlienUI
@@ -57,7 +57,7 @@ function NewsLetter() {
           />
           <button
             type="submit"
-            className="px-6 py-3 bg-gradient-to-r from-brown-700 via-brown-600 to-black font-medium text-white rounded-lg shadow-md "
+            className="px-6 py-3 bg-purple-800 font-medium text-white rounded-lg shadow-md "
           >
             Subscribe
           </button>

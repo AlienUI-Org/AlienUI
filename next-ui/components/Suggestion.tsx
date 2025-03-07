@@ -44,8 +44,8 @@ function Suggestion() {
 
   return (
     <section className="mb-16 flex items-center justify-center px-4">
-      <div className="w-full max-w-7xl mx-auto bg-white p-6 py-10 border border-brown-500 rounded-lg">
-        <h2 className="text-3xl sm:text-4xl font-bold text-brown-800 mb-4 text-center">
+      <div className="w-full max-w-7xl mx-auto bg-white p-6 py-10 border border-black rounded-lg">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-center">
           Suggestion & Feedback Box
         </h2>
 
@@ -63,7 +63,7 @@ function Suggestion() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="mt-1 block w-full px-4 py-2 border border-brown-300 rounded-md focus:ring-brown-500 focus:border-brown-500"
+              className="mt-1 block w-full px-4 py-2 border border-black rounded-md "
               placeholder="Your Name"
               required
             />
@@ -82,7 +82,7 @@ function Suggestion() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="mt-1 block w-full px-4 py-2 border border-brown-300 rounded-md  focus:ring-brown-500 focus:border-brown-500"
+              className="mt-1 block w-full px-4 py-2 border border-black rounded-md"
               placeholder="Your Email"
               required
             />
@@ -101,7 +101,7 @@ function Suggestion() {
               value={formData.message}
               onChange={handleChange}
               rows={4}
-              className="mt-1 block w-full px-4 py-2 border border-brown-300 rounded-md focus:ring-brown-500 focus:border-brown-500"
+              className="mt-1 block w-full px-4 py-2 border border-black rounded-md"
               placeholder="Your suggestions or feedback"
               required
             />
@@ -109,7 +109,7 @@ function Suggestion() {
 
           <button
             type="submit"
-            className="w-full bg-brown-600 text-white py-2 px-4 rounded-md hover:bg-brown-800 focus:outline-none focus:ring-2 focus:ring-brown-500"
+            className="w-full bg-purple-800 text-white py-2 px-4 rounded-md"
           >
             Submit
           </button>

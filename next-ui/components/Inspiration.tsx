@@ -6,7 +6,7 @@ function Inspiration() {
     <section className="mb-16">
       {" "}
       <div className="max-w-7xl mx-auto px-6 text-center">
-        <h1 className="text-3xl font-bold text-brown-800 sm:text-4xl text-center mb-2">
+        <h1 className="text-3xl font-bold sm:text-4xl text-center mb-2">
           Inspiration
         </h1>
         <p className="mt-4 text-lg text-gray-800 mb-8 text-center mx-4">
