@@ -24,7 +24,7 @@ function Hero() {
             <p>✅ No setup</p>
           </div>
           <p className="text-white">
-            Say no to dependency issues and complex setup. Just copy and paste
+            Just copy and paste
             components to build your next mobile app.
           </p>
           <div className="mt-6 flex-row flex items-center gap-2 justify-center">
