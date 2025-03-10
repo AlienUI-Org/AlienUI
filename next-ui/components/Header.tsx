@@ -17,17 +17,17 @@ function Header() {
             </Link>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <Link href="https://linkedin.com/company/alien-ui">
-              <FaLinkedin size={24} />
+              <FaLinkedin className="lg:text-2xl text-xl" />
             </Link>
             <Link href="https://x.com/alienui">
-              <FaXTwitter size={24} />
+              <FaXTwitter className="lg:text-2xl text-xl" />
             </Link>
             <Link href="https://github.com/khaymanii/alienui">
-              <FaGithub size={24} />
+              <FaGithub className="lg:text-2xl text-xl" />
             </Link>
-            <span className="font-medium text-md">141⭐</span>
+            <span className="font-medium text-base">142⭐</span>
           </div>
 
           {/* Hamburger Menu (optional, if you want to toggle mobile menu later) */}
