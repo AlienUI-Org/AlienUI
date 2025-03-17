@@ -13,7 +13,7 @@ const InstallVSExtensionModal = () => {
 
       const timer = setTimeout(() => {
         setIsOpen(false);
-      }, 5000);
+      }, 8000);
 
       return () => clearTimeout(timer);
     }
