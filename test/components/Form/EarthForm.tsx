@@ -123,6 +123,9 @@ const EarthForm = () => {
                     ? 'border-red-500 bg-red-50' 
                     : 'border-green-300 bg-green-50'
                 }`}
+                accessibilityLabel="Full Name"
+                accessibilityHint="Enter your complete name"
+                accessibilityRole="text"
               />
               {errors.name && (
                 <Text className="text-red-500 text-xs mt-1">{errors.name}</Text>
@@ -143,6 +146,11 @@ const EarthForm = () => {
                     ? 'border-red-500 bg-red-50' 
                     : 'border-green-300 bg-green-50'
                 }`}
+                accessibilityLabel="Email Address"
+                accessibilityHint="Enter your email address"
+                accessibilityRole="text"
+                autoCapitalize="none"
+                autoCorrect={false}
               />
               {errors.email && (
                 <Text className="text-red-500 text-xs mt-1">{errors.email}</Text>
@@ -163,6 +171,11 @@ const EarthForm = () => {
                     ? 'border-red-500 bg-red-50' 
                     : 'border-green-300 bg-green-50'
                 }`}
+                accessibilityLabel="Password"
+                accessibilityHint="Enter your password (minimum 6 characters)"
+                accessibilityRole="text"
+                autoCapitalize="none"
+                autoCorrect={false}
               />
               {errors.password && (
                 <Text className="text-red-500 text-xs mt-1">{errors.password}</Text>
@@ -183,6 +196,11 @@ const EarthForm = () => {
                     ? 'border-red-500 bg-red-50' 
                     : 'border-green-300 bg-green-50'
                 }`}
+                accessibilityLabel="Confirm Password"
+                accessibilityHint="Re-enter your password to confirm"
+                accessibilityRole="text"
+                autoCapitalize="none"
+                autoCorrect={false}
               />
               {errors.confirmPassword && (
                 <Text className="text-red-500 text-xs mt-1">{errors.confirmPassword}</Text>
@@ -205,6 +223,10 @@ const EarthForm = () => {
                   ? 'bg-gray-400' 
                   : 'bg-green-600 active:bg-green-700'
               }`}
+              accessibilityLabel="Submit Form"
+              accessibilityHint="Submit the form to create your account"
+              accessibilityRole="button"
+              accessibilityState={{ disabled: isSubmitting }}
             >
               <Text className="text-white text-center font-semibold text-lg">
                 {isSubmitting ? 'Submitting...' : 'Submit Form'}
