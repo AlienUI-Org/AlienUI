@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   View,
   Text,
   TextInput,
   TouchableOpacity,
   ScrollView,
+  Animated,
 } from 'react-native';
 
 const EarthForm = () => {
@@ -18,6 +19,46 @@ const EarthForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<{[key: string]: string}>({});
   const [showSuccess, setShowSuccess] = useState(false);
+
+  // Animation values
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+  const slideAnim = useRef(new Animated.Value(50)).current;
+  const scaleAnim = useRef(new Animated.Value(0.9)).current;
+  const successAnim = useRef(new Animated.Value(0)).current;
+
+  React.useEffect(() => {
+    // Initial entrance animation
+    Animated.parallel([
+      Animated.timing(fadeAnim, {
+        toValue: 1,
+        duration: 800,
+        useNativeDriver: true,
+      }),
+      Animated.timing(slideAnim, {
+        toValue: 0,
+        duration: 800,
+        useNativeDriver: true,
+      }),
+      Animated.timing(scaleAnim, {
+        toValue: 1,
+        duration: 800,
+        useNativeDriver: true,
+      }),
+    ]).start();
+  }, []);
+
+  React.useEffect(() => {
+    if (showSuccess) {
+      Animated.spring(successAnim, {
+        toValue: 1,
+        tension: 100,
+        friction: 8,
+        useNativeDriver: true,
+      }).start();
+    } else {
+      successAnim.setValue(0);
+    }
+  }, [showSuccess]);
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({
@@ -96,7 +137,16 @@ const EarthForm = () => {
   return (
     <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
       <View className="flex-1 justify-center items-center py-20 px-4 bg-gradient-to-br from-green-50 to-emerald-100">
-        <View className="w-full max-w-md bg-white p-8 rounded-2xl shadow-2xl border border-green-200">
+        <Animated.View 
+          className="w-full max-w-md bg-white p-8 rounded-2xl shadow-2xl border border-green-200"
+          style={{
+            opacity: fadeAnim,
+            transform: [
+              { translateY: slideAnim },
+              { scale: scaleAnim }
+            ]
+          }}
+        >
           <View className="items-center mb-6">
             <View className="w-16 h-16 bg-green-500 rounded-full items-center justify-center mb-4">
               <Text className="text-white text-2xl font-bold">🌍</Text>
@@ -208,11 +258,25 @@ const EarthForm = () => {
             </View>
 
             {showSuccess && (
-              <View className="bg-green-100 border border-green-400 rounded-lg p-4 mb-4">
+              <Animated.View 
+                className="bg-green-100 border border-green-400 rounded-lg p-4 mb-4"
+                style={{
+                  opacity: successAnim,
+                  transform: [
+                    { scale: successAnim },
+                    { 
+                      translateY: successAnim.interpolate({
+                        inputRange: [0, 1],
+                        outputRange: [-20, 0]
+                      })
+                    }
+                  ]
+                }}
+              >
                 <Text className="text-green-700 text-center font-medium">
                   ✅ Form submitted successfully! Thank you for connecting with nature.
                 </Text>
-              </View>
+              </Animated.View>
             )}
 
             <TouchableOpacity
@@ -233,7 +297,7 @@ const EarthForm = () => {
               </Text>
             </TouchableOpacity>
           </View>
-        </View>
+        </Animated.View>
       </View>
     </ScrollView>
   );
