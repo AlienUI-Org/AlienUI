@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { View, Text, Dimensions } from "react-native";
 import { PanResponder } from "react-native";
@@ -18,7 +19,7 @@ interface GalaxySliderProps {
   thumbSizeClass?: string;
   label?: string;
   showSteps?: boolean;
-  showValue?: boolean; // New prop to toggle value display
+  showValue?: boolean;
 }
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
@@ -31,15 +32,15 @@ const GalaxySlider: React.FC<GalaxySliderProps> = ({
   size = "medium",
   radius = "full",
   onValueChange,
-  trackColor = "bg-gray-600",
-  filledColor = "bg-blue-500",
-  thumbColor = "bg-black",
+  trackColor = "bg-gray-200", // Default to light gray for the unfilled track
+  filledColor = "bg-black", // Default to black for the filled track
+  thumbColor = "bg-white", // Default to white for the thumb
   widthClass = "w-[90%]",
   trackHeightClass,
   thumbSizeClass,
   label = "",
   showSteps = false,
-  showValue = true, // Default to true to maintain current behavior
+  showValue = true,
 }) => {
   const radiusClasses = {
     full: "rounded-full",
@@ -119,7 +120,7 @@ const GalaxySlider: React.FC<GalaxySliderProps> = ({
       steps.push(
         <Text
           key={i}
-          className="text-white text-xs absolute"
+          className="text-black text-xs absolute" // Changed to black for visibility on light background
           style={{
             left: stepPosition,
             top: trackHeight + 8,
@@ -136,7 +137,8 @@ const GalaxySlider: React.FC<GalaxySliderProps> = ({
       {/* Label Above */}
       {label && (
         <View className="mb-2">
-          <Text className="text-white text-base">{label}</Text>
+          <Text className="text-black text-base">{label}</Text>{" "}
+          {/* Changed to black */}
         </View>
       )}
 
@@ -145,7 +147,7 @@ const GalaxySlider: React.FC<GalaxySliderProps> = ({
         {/* Value Displayed at Top-Right of Slider Bar (if showValue is true) */}
         {showValue && (
           <Text
-            className="text-white text-base absolute"
+            className="text-black text-base absolute" // Changed to black
             style={{
               top: -20,
               right: 0,
@@ -170,7 +172,7 @@ const GalaxySlider: React.FC<GalaxySliderProps> = ({
           <View
             className={`${thumbColor} ${
               thumbSizeClass || defaultThumbSizeClass
-            } ${radiusClasses[radius]} absolute border-2 border-blue-500`}
+            } ${radiusClasses[radius]} absolute border-2 border-black`} // Changed border to black
             style={{ left: thumbPosition, top: thumbOffset }}
             {...panResponder.panHandlers}
           />
