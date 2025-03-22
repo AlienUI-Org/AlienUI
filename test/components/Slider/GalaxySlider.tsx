@@ -8,6 +8,7 @@ interface GalaxySliderProps {
   defaultValue?: number;
   step?: number;
   size?: "small" | "medium" | "large";
+  radius?: "full" | "lg" | "md" | "sm" | "none";
   onValueChange?: (value: number) => void;
   trackColor?: string;
   filledColor?: string;
@@ -25,6 +26,7 @@ const GalaxySlider: React.FC<GalaxySliderProps> = ({
   defaultValue = 50,
   step = 1,
   size = "medium",
+  radius = "full",
   onValueChange,
   trackColor = "bg-gray-600",
   filledColor = "bg-purple-500",
@@ -33,7 +35,14 @@ const GalaxySlider: React.FC<GalaxySliderProps> = ({
   trackHeightClass,
   thumbSizeClass,
 }) => {
-  // Size configurations mapped to Tailwind classes
+  const radiusClasses = {
+    full: "rounded-full",
+    lg: "rounded-lg",
+    md: "rounded-md",
+    sm: "rounded-sm",
+    none: "rounded-none",
+  };
+
   const sizeConfig = {
     small: {
       sliderWidth: SCREEN_WIDTH * 0.9,
@@ -111,7 +120,7 @@ const GalaxySlider: React.FC<GalaxySliderProps> = ({
           <View
             className={`${thumbColor} ${
               thumbSizeClass || defaultThumbSizeClass
-            } absolute border-2 border-black rounded-full`}
+            } ${radiusClasses[radius]} absolute border-2 border-black`}
             style={{ left: thumbPosition, top: thumbOffset }}
             {...panResponder.panHandlers}
           />

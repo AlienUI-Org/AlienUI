@@ -17,6 +17,14 @@ export default function App() {
         // thumbColor="bg-yellow-300"
         onValueChange={(value) => console.log(value)}
       />
+      <GalaxySlider
+        size="large"
+        radius="full" // Large radius
+        // trackColor="bg-blue-200"
+        // filledColor="bg-red-500"
+        // thumbColor="bg-yellow-300"
+        onValueChange={(value) => console.log(value)}
+      />
     </View>
     //     <ScrollView style={styles.container} className="font-sans">
     // </ScrollView>
