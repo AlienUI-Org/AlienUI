@@ -1,4 +1,3 @@
-"use client";
 import React, { useState } from "react";
 import { View, Text, Dimensions } from "react-native";
 import { PanResponder } from "react-native";
