@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { View, StyleSheet, PanResponder, Dimensions } from "react-native";
+import { View, Dimensions } from "react-native";
+import { PanResponder } from "react-native";
 
 interface GalaxySliderProps {
   minValue?: number;
@@ -8,6 +9,12 @@ interface GalaxySliderProps {
   step?: number;
   size?: "small" | "medium" | "large";
   onValueChange?: (value: number) => void;
+  trackColor?: string;
+  filledColor?: string;
+  thumbColor?: string;
+  widthClass?: string;
+  trackHeightClass?: string;
+  thumbSizeClass?: string;
 }
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
@@ -19,14 +26,45 @@ const GalaxySlider: React.FC<GalaxySliderProps> = ({
   step = 1,
   size = "medium",
   onValueChange,
+  trackColor = "bg-gray-600",
+  filledColor = "bg-purple-500",
+  thumbColor = "bg-white",
+  widthClass = "w-[90%]",
+  trackHeightClass,
+  thumbSizeClass,
 }) => {
+  // Size configurations mapped to Tailwind classes
   const sizeConfig = {
-    small: { sliderWidth: SCREEN_WIDTH * 0.9, thumbSize: 18, trackHeight: 6 },
-    medium: { sliderWidth: SCREEN_WIDTH * 0.9, thumbSize: 24, trackHeight: 8 },
-    large: { sliderWidth: SCREEN_WIDTH * 0.9, thumbSize: 26, trackHeight: 12 },
+    small: {
+      sliderWidth: SCREEN_WIDTH * 0.9,
+      thumbSize: 18,
+      trackHeight: 6,
+      trackHeightClass: "h-[6px]",
+      thumbSizeClass: "w-[18px] h-[18px]",
+    },
+    medium: {
+      sliderWidth: SCREEN_WIDTH * 0.9,
+      thumbSize: 24,
+      trackHeight: 8,
+      trackHeightClass: "h-[8px]",
+      thumbSizeClass: "w-[24px] h-[24px]",
+    },
+    large: {
+      sliderWidth: SCREEN_WIDTH * 0.9,
+      thumbSize: 26,
+      trackHeight: 12,
+      trackHeightClass: "h-[12px]",
+      thumbSizeClass: "w-[26px] h-[26px]",
+    },
   };
 
-  const { sliderWidth, thumbSize, trackHeight } = sizeConfig[size];
+  const {
+    sliderWidth,
+    thumbSize,
+    trackHeight,
+    trackHeightClass: defaultTrackHeightClass,
+    thumbSizeClass: defaultThumbSizeClass,
+  } = sizeConfig[size];
 
   const [value, setValue] = useState(defaultValue);
   const initialPosition =
@@ -53,43 +91,28 @@ const GalaxySlider: React.FC<GalaxySliderProps> = ({
     onPanResponderRelease: () => {},
   });
 
-  // Ensure filled track width aligns with thumb position
   const filledWidth = thumbPosition + thumbSize / 2;
+  const thumbOffset = -(thumbSize - trackHeight) / 2;
 
   return (
-    <View style={styles.container}>
-      <View style={styles.sliderWrapper}>
+    <View className="items-center py-2">
+      <View className="w-full">
         <View
-          style={[
-            styles.track,
-            {
-              width: sliderWidth,
-              height: trackHeight,
-              borderRadius: trackHeight / 2,
-            },
-          ]}
+          className={`${trackColor} ${widthClass} ${
+            trackHeightClass || defaultTrackHeightClass
+          } relative rounded-full`}
         >
           <View
-            style={[
-              styles.filledTrack,
-              {
-                width: filledWidth,
-                height: trackHeight,
-                borderRadius: trackHeight / 2,
-              },
-            ]}
+            className={`${filledColor} ${
+              trackHeightClass || defaultTrackHeightClass
+            } absolute rounded-full`}
+            style={{ width: filledWidth }}
           />
           <View
-            style={[
-              styles.thumb,
-              {
-                left: thumbPosition,
-                width: thumbSize,
-                height: thumbSize,
-                borderRadius: thumbSize / 2,
-                top: -(thumbSize - trackHeight) / 2,
-              },
-            ]}
+            className={`${thumbColor} ${
+              thumbSizeClass || defaultThumbSizeClass
+            } absolute border-2 border-black rounded-full`}
+            style={{ left: thumbPosition, top: thumbOffset }}
             {...panResponder.panHandlers}
           />
         </View>
@@ -97,29 +120,5 @@ const GalaxySlider: React.FC<GalaxySliderProps> = ({
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: "center",
-    paddingVertical: 8,
-  },
-  sliderWrapper: {
-    width: "100%",
-  },
-  track: {
-    backgroundColor: "#4b4b4b", // Gray for unfilled track
-    position: "relative",
-  },
-  filledTrack: {
-    backgroundColor: "#a17bff", // Galaxy purple
-    position: "absolute",
-  },
-  thumb: {
-    position: "absolute",
-    backgroundColor: "#ffffff",
-    borderWidth: 2,
-    borderColor: "#000000",
-  },
-});
 
 export default GalaxySlider;
