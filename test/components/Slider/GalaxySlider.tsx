@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Dimensions } from "react-native";
+import { View, Text, Dimensions } from "react-native";
 import { PanResponder } from "react-native";
 
 interface GalaxySliderProps {
@@ -16,6 +16,9 @@ interface GalaxySliderProps {
   widthClass?: string;
   trackHeightClass?: string;
   thumbSizeClass?: string;
+  label?: string;
+  showSteps?: boolean;
+  showValue?: boolean; // New prop to toggle value display
 }
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
@@ -29,11 +32,14 @@ const GalaxySlider: React.FC<GalaxySliderProps> = ({
   radius = "full",
   onValueChange,
   trackColor = "bg-gray-600",
-  filledColor = "bg-purple-500",
-  thumbColor = "bg-white",
+  filledColor = "bg-blue-500",
+  thumbColor = "bg-black",
   widthClass = "w-[90%]",
   trackHeightClass,
   thumbSizeClass,
+  label = "",
+  showSteps = false,
+  showValue = true, // Default to true to maintain current behavior
 }) => {
   const radiusClasses = {
     full: "rounded-full",
@@ -103,11 +109,55 @@ const GalaxySlider: React.FC<GalaxySliderProps> = ({
   const filledWidth = thumbPosition + thumbSize / 2;
   const thumbOffset = -(thumbSize - trackHeight) / 2;
 
+  // Calculate step labels if showSteps is true
+  const steps = [];
+  if (showSteps) {
+    const stepCount = Math.floor((maxValue - minValue) / step);
+    for (let i = 0; i <= stepCount; i++) {
+      const stepValue = minValue + i * step;
+      const stepPosition = (i * (sliderWidth - thumbSize)) / stepCount;
+      steps.push(
+        <Text
+          key={i}
+          className="text-white text-xs absolute"
+          style={{
+            left: stepPosition,
+            top: trackHeight + 8,
+          }}
+        >
+          {stepValue.toFixed(1)}
+        </Text>
+      );
+    }
+  }
+
   return (
-    <View className="items-center py-2">
-      <View className="w-full">
+    <View className="w-full">
+      {/* Label Above */}
+      {label && (
+        <View className="mb-2">
+          <Text className="text-white text-base">{label}</Text>
+        </View>
+      )}
+
+      {/* Slider with Optional Value at Top-Right */}
+      <View className={`relative ${widthClass}`}>
+        {/* Value Displayed at Top-Right of Slider Bar (if showValue is true) */}
+        {showValue && (
+          <Text
+            className="text-white text-base absolute"
+            style={{
+              top: -20,
+              right: 0,
+            }}
+          >
+            {value.toFixed(1)}
+          </Text>
+        )}
+
+        {/* Slider Track */}
         <View
-          className={`${trackColor} ${widthClass} ${
+          className={`${trackColor} ${
             trackHeightClass || defaultTrackHeightClass
           } relative rounded-full`}
         >
@@ -120,11 +170,12 @@ const GalaxySlider: React.FC<GalaxySliderProps> = ({
           <View
             className={`${thumbColor} ${
               thumbSizeClass || defaultThumbSizeClass
-            } ${radiusClasses[radius]} absolute border-2 border-black`}
+            } ${radiusClasses[radius]} absolute border-2 border-blue-500`}
             style={{ left: thumbPosition, top: thumbOffset }}
             {...panResponder.panHandlers}
           />
         </View>
+        {showSteps && steps}
       </View>
     </View>
   );
