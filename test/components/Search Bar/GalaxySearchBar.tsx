@@ -9,7 +9,7 @@ const SearchBar = () => {
         <EvilIcons name="search" size={24} color="gray" />
         <TextInput
           placeholder="Search the galaxy..."
-          className="flex-1 ml-2 text-base outline-none"
+          className="flex-1 ml-2 outline-none"
           placeholderTextColor="gray"
         />
       </View>
