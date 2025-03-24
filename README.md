@@ -45,32 +45,10 @@ A lightweight open-source UI component library built on Nativewind for React Nat
   - **Galaxy and Earth Button**
   - **Nebulon and Earth Input**
 
-### **8. Developer-Friendly**
-
-- Fully open-source and free to use.
-- Encourages collaboration and contributions from the community.
-
-### **9. Compatible with Popular Tools**
-
-- Designed to work seamlessly with tools like **Expo**, **NativeWind**, and **React Navigation**.
-- Easy to integrate with animation libraries and other React Native tools.
-
-### **10. Self-Hosted and Independent**
+### **8. Self-Hosted and Independent**
 
 - No reliance on third-party servers or APIs.
 - Gives developers full control over the library and its components.
-
-## Getting started
-
-There is no installation, if you have a bare React Native project setup with NativeWind, you can copy the code and paste it into your project.
-
-## Usage
-
-Browse the website for the components you need, copy the code and paste it into your project. Some components will have TypeScript support.
-
-1. Browse the website for a component you like.
-2. Click on the 'Copy' button to copy the source code.
-3. Paste the copied code into your project.
 
 ## Components
 
