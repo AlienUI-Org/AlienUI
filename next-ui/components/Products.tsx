@@ -6,10 +6,18 @@ function Products() {
   const products = [
     {
       id: 1,
+      logo: "/images/auir.png",
+      name: "AlienUI React",
+      description:
+        "AlienUI React is a lightweight open-source UI component library built on Tailwind CSS for React web apps. It leverages native tags for seamless integration.",
+      link: "https://alienui-react.vercel.app",
+    },
+    {
+      id: 2,
       logo: "/images/alienx.png",
       name: "AlienX",
       description:
-        "AlienX is a powerful VS Code snippet extension that generates UI components for both web and react native mobile apps in your vscode environment.",
+        "AlienX is a powerful VSCode snippet extension that generates UI components for both web and react native mobile apps in your vscode environment.",
       link: "/alienx",
     },
   ];
@@ -22,10 +30,10 @@ function Products() {
         <p className="mt-4 text-lg text-gray-800 mb-8 text-center mx-4">
           Discover our range of subsidiary products that enhance our offerings.
         </p>
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="mt-10  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
             <Link key={product.id} href={product.link}>
-              <div className=" border border-gray-200 rounded-md shadow flex flex-col items-center cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out">
+              <div className="h-[400px] border border-gray-200 rounded-md shadow flex flex-col items-center cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out">
                 <Image
                   src={product.logo}
                   alt={product.name}
@@ -33,7 +41,7 @@ function Products() {
                   height={200}
                   className="py-6"
                 />
-                <div className="bg-black p-6 rounded-b-md">
+                <div className="bg-black p-6 py-10 h-full rounded-b-md">
                   <h3 className="text-xl font-semibold text-white mb-2">
                     {product.name}
                   </h3>
