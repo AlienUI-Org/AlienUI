@@ -45,16 +45,6 @@ function FaQ() {
       content:
         "You can contribute by adding new components, fixing bugs, or improving the documentation. Please create an issue before starting any work.",
     },
-    {
-      title: "How do I get updates?",
-      content:
-        "The best way to get updates is by following the project on GitHub and all social media platforms like Twitter, LinkedIn etc. You can also get latest updates by subscribing to our newsletter.",
-    },
-    {
-      title: "Can I request new features for AlienUI?",
-      content:
-        "Yes, you can create a new issue on GitHub to request new features. While not every request will be implemented, they all will be considered.",
-    },
   ];
 
   const toggleAccordion = (index: number) => {
