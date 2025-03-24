@@ -9,7 +9,7 @@ function Products() {
       logo: "/images/auir.png",
       name: "AlienUI React",
       description:
-        "AlienUI React is a lightweight open-source UI component library built on Tailwind CSS for React web apps. It leverages native tags for seamless integration.",
+        "AlienUI React is a lightweight open-source UI component library built on Tailwind CSS for React web apps.it leverages native tags for seamless integration.",
       link: "https://alienui-react.vercel.app",
     },
     {
@@ -30,7 +30,7 @@ function Products() {
         <p className="mt-4 text-lg text-gray-800 mb-8 text-center mx-4">
           Discover our range of subsidiary products that enhance our offerings.
         </p>
-        <div className="mt-10  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
             <Link key={product.id} href={product.link}>
               <div className="h-[400px] border border-gray-200 rounded-md shadow flex flex-col items-center cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out">
@@ -45,7 +45,7 @@ function Products() {
                   <h3 className="text-xl font-semibold text-white mb-2">
                     {product.name}
                   </h3>
-                  <p className="text-white text-center">
+                  <p className="text-white text-[15px] text-center">
                     {product.description}
                   </p>
                 </div>
