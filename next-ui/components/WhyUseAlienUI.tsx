@@ -11,10 +11,6 @@ function WhyUseAlienUI() {
         <h1 className="text-3xl font-bold sm:text-4xl text-center mb-2">
           Why Use AlienUI?
         </h1>
-        <p className="mt-4 text-lg text-gray-800 mb-8 text-center mx-4">
-          Build stunning mobile apps effortlessly with ready-to-use,
-          customizable components.
-        </p>
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="flex flex-col items-center bg-black rounded-md p-6 shadow hover:shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
@@ -23,8 +19,8 @@ function WhyUseAlienUI() {
               No npm Installation
             </h3>
             <p className="text-white mt-2">
-              AlienUI requires no NPM installations. Simply copy, paste them
-              into your React Native project seamlessly.
+              Requires no NPM installations. Simply copy, paste them into your
+              React Native project seamlessly.
             </p>
           </div>
 
@@ -32,9 +28,8 @@ function WhyUseAlienUI() {
             <FcDataConfiguration className="w-14 h-14 pb-4 text-white" />
             <h3 className="text-lg font-bold text-white">No Configuration</h3>
             <p className="text-white mt-2">
-              AlienUI works out of the box with zero configuration as it uses
-              in-built native tags, so you can focus on building your app
-              instantly.{" "}
+              Works out of the box with zero configuration as it uses in-built
+              native tags, so you can focus on building your app instantly.{" "}
             </p>
           </div>
 
@@ -53,8 +48,8 @@ function WhyUseAlienUI() {
               Open-Source Contributions
             </h3>
             <p className="text-white mt-2">
-              AlienUI is open-source, inviting developers and designers to
-              collaborate and share UI components.
+              Open-source, developers and designers and can collaborate and
+              share UI components.
             </p>
           </div>
         </div>
