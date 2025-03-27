@@ -7,6 +7,7 @@ import Contributors from "@/components/Contributors";
 import Products from "@/components/Products";
 import InstallVSExtensionModal from "@/components/InstallVScodeExtension";
 import LandingPageCompDisplayOne from "@/components/LandingPageCompDisplayOne";
+import LandingPageCompDisplayTwo from "@/components/LandingPageCompDisplayTwo";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <LandingPageCompDisplayOne />
       <WhyUseAlienUI />
       <Inspiration />
+      <LandingPageCompDisplayTwo />
       <Products />
       <NewsLetter />
       <FaQ />
