@@ -52,7 +52,7 @@ function FaQ() {
   };
 
   return (
-    <section className="w-full flex flex-col items-center justify-center px-4 my-16">
+    <section className="w-full flex flex-col items-center justify-center px-4 my-20">
       <h1 className="text-3xl font-bold sm:text-4xl text-center mb-8">FAQ</h1>{" "}
       <div className="w-full max-w-7xl mx-auto border border-black rounded-lg bg-white">
         {faqItems.map((item, index) => (

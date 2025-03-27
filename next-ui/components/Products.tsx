@@ -22,7 +22,7 @@ function Products() {
     },
   ];
   return (
-    <section className="mb-16">
+    <section className="mb-20">
       <div className="max-w-7xl mx-auto px-6 text-center">
         <h1 className="text-3xl font-bold sm:text-4xl text-center mb-2">
           Other Products

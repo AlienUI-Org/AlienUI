@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function Contributors() {
   return (
-    <section className="max-w-7xl mx-auto px-6 text-center mb-16">
+    <section className="max-w-7xl mx-auto px-6 text-center mb-20">
       <h1 className="text-3xl font-bold sm:text-4xl text-center mb-2">
         Contributors
       </h1>
