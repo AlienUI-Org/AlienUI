@@ -39,7 +39,7 @@ function Footer() {
 
         <div className="flex flex-col sm:flex-row justify-between items-center text-sm">
           <p className="text-white">
-            &copy; {new Date().getFullYear()} AlienUI. All rights reserved.
+            &copy; {new Date().getFullYear()} AlienUI team. All rights reserved.
           </p>
           <div className="flex space-x-4 mt-4 sm:mt-0">
             <Link href="#" className="text-white">
