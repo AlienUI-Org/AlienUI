@@ -30,7 +30,7 @@ const Button = ({ type = "default", label = "Galaxy Button", onPress }) => {
 
   return (
     <Pressable
-      className={`py-2 px-4 rounded-md flex items-center justify-center w-52 ${bgColor} ${border}`}
+      className={`py-3 px-4 rounded-md flex items-center justify-center w-[90%] ${bgColor} ${border}`}
       onPress={type !== "disabled" ? onPress : null}
       disabled={type === "disabled"}
     >

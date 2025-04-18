@@ -4,7 +4,10 @@ import TempScreen3 from "./screens/TempScreen3";
 
 export default function App() {
   return (
-    <ScrollView style={styles.container} className="font-sans">
+    <ScrollView
+      style={styles.container}
+      className="font-sans bg-black h-screen"
+    >
       <TempScreen3 />
     </ScrollView>
   );
