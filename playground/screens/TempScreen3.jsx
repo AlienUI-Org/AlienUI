@@ -10,7 +10,7 @@ const TempScreen3 = () => {
         <View className="-mt-8 w-full items-center">
           <Button label="Get Started" />
         </View>
-        <Text className="text-gray-300 mt-24 text-center text-base">
+        <Text className="text-gray-300 mt-20 text-center text-base">
           Already have an account?
           <Text className="text-blue-800 ml-1">Sign In</Text>
         </Text>
