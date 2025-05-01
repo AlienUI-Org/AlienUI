@@ -2,8 +2,7 @@
 
 A lightweight open-source UI component library built on Nativewind for React Native apps. It leverages native tags for seamless integration and maintains zero to minimal dependencies, enabling high-performance, and stunning interfaces with ease.
 
-![aui](https://github.com/user-attachments/assets/3c22b577-fd7a-432d-bdf7-811cc61b5ffe)
-
+![1000751969](https://github.com/user-attachments/assets/80a9ad17-109e-49b8-a006-f45a80dc6c63)
 
 ## Features
 
