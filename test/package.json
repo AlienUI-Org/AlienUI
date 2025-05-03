@@ -7,7 +7,7 @@
     "start": "expo start",
     "android": "DARK_MODE=media expo run:android",
     "ios": "DARK_MODE=media expo run:ios",
-    "web": "DARK_MODE=media expo start --web"
+    "web": "cross-env DARK_MODE=media expo start --web"
   },
   "dependencies": {
     "@expo/metro-runtime": "~4.0.0",
@@ -34,6 +34,7 @@
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@types/react": "~18.3.12",
+    "cross-env": "^7.0.3",
     "jscodeshift": "^0.15.2",
     "typescript": "^5.3.3"
   },

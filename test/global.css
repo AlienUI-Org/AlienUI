@@ -7,17 +7,3 @@
   src: url("../assets/fonts/Montserrat-Regular.ttf") format("truetype");
   font-weight: normal;
 }
-
-@font-face {
-  font-family: "Montserrat";
-  src: url("../assets/fonts/Montserrat-Bold.ttf") format("truetype");
-  font-weight: bold;
-}
-
-/* Set Montserrat as the default font */
-* {
-  font-family: "Montserrat", sans-serif;
-}
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
