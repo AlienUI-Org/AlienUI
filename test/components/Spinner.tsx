@@ -1,12 +1,6 @@
-import { View, Text } from "react-native";
-import React from "react";
+import { Spinner } from "@/components/ui/spinner";
+import colors from "tailwindcss/colors";
 
-const Spinner = () => {
-  return (
-    <View>
-      <Text>Spinner</Text>
-    </View>
-  );
-};
-
-export default Spinner;
+function Example() {
+  return <Spinner size="small" color={colors.gray[500]} />;
+}

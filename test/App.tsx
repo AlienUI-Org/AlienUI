@@ -7,7 +7,10 @@ import Spinner from "./components/Spinner";
 export default function App() {
   return (
     <GluestackUIProvider mode="light">
-      <ScrollView style={styles.container} className="font-sans">
+      <ScrollView
+        style={styles.container}
+        className="font-sans h-screen justify-center items-center"
+      >
         <Spinner />
       </ScrollView>
     </GluestackUIProvider>
