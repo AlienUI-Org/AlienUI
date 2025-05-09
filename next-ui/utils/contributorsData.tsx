@@ -39,4 +39,9 @@ export const contributors = [
     role: "Software Engineer",
     avatar: "/images/shedrach.jpg",
   },
+  {
+    name: "Habeeb Abdulsalam",
+    role: "Software Engineer",
+    avatar: "/images/habeeb.jpg",
+  },
 ];
