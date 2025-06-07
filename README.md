@@ -63,6 +63,7 @@ AlienUI has a wide range of freely available components. These components includ
 - [Carousel](https://alienui.vercel.app/compdetails/Carousel)
 - [Checkbox](https://alienui.vercel.app/compdetails/Checkbox)
 - [Dropdown](https://alienui.vercel.app/compdetails/Dropdown)
+- [Dropdown](https://alienui.vercel.app/compdetails/Form)
 - [Input](https://alienui.vercel.app/compdetails/Input)
 - [Modal](https://alienui.vercel.app/compdetails/Modal)
 - [Notification](https://alienui.vercel.app/compdetails/Notification)
