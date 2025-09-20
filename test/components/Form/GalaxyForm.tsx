@@ -69,7 +69,7 @@ const Signup = () => {
           {/* Footer */}
           <Text className="mt-6 text-center text-sm text-gray-600">
             Already have an account?{" "}
-            <span className="text-teal-500 font-medium">Login</span>
+            <Text className="text-teal-500 font-medium">Login</Text>
           </Text>
 
           <Text className="mt-6 text-center text-xs text-gray-400">

@@ -7,8 +7,12 @@ export default function App() {
   return (
     <GluestackUIProvider mode="light">
       <ScrollView
+        contentContainerStyle={{
+          justifyContent: "center",
+          alignItems: "center",
+        }}
         style={styles.container}
-        className="font-sans h-screen justify-center items-center"
+        className="font-sans h-screen"
       >
         <GalaxyForm />
       </ScrollView>
