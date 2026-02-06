@@ -20,5 +20,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
+          context: ./next-ui
+          file: ./next-ui/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/alienui
