@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { useParams } from "next/navigation";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { duotoneLight } from "react-syntax-highlighter/dist/esm/styles/prism";import { duotoneLight } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { duotoneLight } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { BsClipboard2Heart } from "react-icons/bs";
 import { components } from "@/utils/data";
 import Navbuttons from "@/components/Navbuttons";
