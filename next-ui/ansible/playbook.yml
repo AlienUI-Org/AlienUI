@@ -41,14 +41,14 @@
 
     - name: Pull Docker image
       community.docker.docker_image:
-        name: kenneth4/alienui:latest
+        name: kenneth4/alienui:0.2
         tag: latest
         source: pull
 
     - name: Run container
       community.docker.docker_container:
-        name: buygun
-        image: kenneth4/alienui:latest
+        name: alienui
+        image: kenneth4/alienui:0.2
         state: started
         restart_policy: always
         published_ports:
