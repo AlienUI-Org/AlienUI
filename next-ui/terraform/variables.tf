@@ -3,7 +3,7 @@ variable "region" {
 }
 
 variable "instance_type" {
-  default = "c7i-flex.large"
+  default = "t3.micro"
 }
 
 variable "key_name" {
