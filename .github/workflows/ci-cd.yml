@@ -38,6 +38,7 @@ jobs:
       - name: Build app
         run: npm run build
         working-directory: next-ui
+
   # -------------------
   # CD JOB
   # -------------------
@@ -68,25 +69,25 @@ jobs:
           cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/alienui:latest
           cache-to: type=inline
 
-       - name: Setup SSH Key
-         run: |
-            echo "${{ secrets.EC2_SSH_PRIVATE_KEY }}" > key.pem
-            chmod 600 key.pem
+      - name: Setup SSH Key
+        run: |
+          echo "${{ secrets.EC2_SSH_PRIVATE_KEY }}" > key.pem
+          chmod 600 key.pem
 
-        - name: Deploy to EC2
-          run: |
-            ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@${{ secrets.EC2_HOST }} << "EOF"
-        
-            sudo docker stop alienui || true
-            sudo docker rm alienui || true
-            sudo docker system prune -af || true
-        
-            sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/alienui:${{ github.sha }}
-        
-            sudo docker run -d \
-              --name alienui \
-              -p 80:3000 \
-              --restart unless-stopped \
-              ${{ secrets.DOCKERHUB_USERNAME }}/alienui:${{ github.sha }}
-        
-            EOF
+      - name: Deploy to EC2
+        run: |
+          ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@${{ secrets.EC2_HOST }} << "EOF"
+
+          sudo docker stop alienui || true
+          sudo docker rm alienui || true
+          sudo docker system prune -af || true
+
+          sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/alienui:${{ github.sha }}
+
+          sudo docker run -d \
+            --name alienui \
+            -p 80:3000 \
+            --restart unless-stopped \
+            ${{ secrets.DOCKERHUB_USERNAME }}/alienui:${{ github.sha }}
+
+          EOF
