@@ -64,7 +64,7 @@ jobs:
           file: ./next-ui/Dockerfile
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/alienui:0.2
+            ${{ secrets.DOCKERHUB_USERNAME }}/alienui:0.3
           cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/alienui:0.2
           cache-to: type=inline
 
@@ -81,12 +81,12 @@ jobs:
           sudo docker rm alienui || true
           sudo docker system prune -af || true
 
-          sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/alienui:0.2
+          sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/alienui:0.3
 
           sudo docker run -d \
             --name alienui \
             -p 80:3000 \
             --restart unless-stopped \
-            ${{ secrets.DOCKERHUB_USERNAME }}/alienui:0.2
+            ${{ secrets.DOCKERHUB_USERNAME }}/alienui:0.3
 
           EOF
