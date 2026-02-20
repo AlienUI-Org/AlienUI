@@ -24,3 +24,99 @@ jobs:
           file: ./next-ui/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/alienui
+name: CI/CD Application Deployment
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+
+  # -------------------
+  # CI JOB
+  # -------------------
+  ci:
+    name: Continuous Integration
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: |
+          if npm run | grep -q test; then
+            npm test
+          else
+            echo "No tests found, skipping..."
+          fi
+
+      - name: Build app
+        run: npm run build
+
+  # -------------------
+  # CD JOB
+  # -------------------
+  cd:
+    name: Docker Build, Push & Deploy to EC2
+    runs-on: ubuntu-latest
+    needs: ci
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # -------------------
+      # Docker Login
+      # -------------------
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      # -------------------
+      # Build & Push Image
+      # -------------------
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./next-ui
+          file: ./next-ui/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/alienui:0.1
+
+      # -------------------
+      # Setup SSH Key
+      # -------------------
+      - name: Setup SSH Key
+        run: |
+          echo "${{ secrets.EC2_SSH_PRIVATE_KEY }}" > key.pem
+          chmod 600 key.pem
+
+      # -------------------
+      # Deploy on EC2
+      # -------------------
+      - name: Deploy to EC2
+        run: |
+          ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@${{ secrets.EC2_HOST }} << "EOF"
+          
+          sudo docker stop alienui || true
+          sudo docker rm alienui || true
+          
+          sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/alienui:0.1
+          
+          sudo docker run -d \
+            --name alienui \
+            -p 80:3000 \
+            ${{ secrets.DOCKERHUB_USERNAME }}/alienui:0.1
+          
+          EOF
