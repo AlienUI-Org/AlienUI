@@ -33,6 +33,7 @@ jobs:
           else
             echo "No tests found, skipping..."
           fi
+        working-directory: next-ui
 
       - name: Build app
         run: npm run build
