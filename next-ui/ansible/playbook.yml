@@ -1,0 +1,41 @@
+- hosts: web
+  gather_facts: false
+  become: yes
+
+  tasks:
+    - name: Install prerequisites
+      raw: |
+        apt-get update
+        apt-get install -y ca-certificates curl gnupg lsb-release
+
+    - name: Add Docker GPG key
+      raw: |
+        mkdir -p /etc/apt/keyrings
+        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+    - name: Add Docker repository
+      raw: |
+        echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" \
+        | tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+    - name: Install Docker Engine
+      raw: |
+        apt-get update
+        apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+    - name: Start Docker service
+      raw: |
+        systemctl enable docker
+        systemctl start docker
+
+    - name: Add ubuntu-user to docker group
+      raw: usermod -aG docker ubuntu
+
+    - name: Pull Docker image
+      raw: docker pull kenneth4/buygun:latest
+
+    - name: Stop old container if it exists
+      raw: docker rm -f alienui || true
+
+    - name: Run container
+      raw: docker run -d -p 80:3000 --name alienui kenneth4/alienui:latest

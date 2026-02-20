@@ -1,0 +1,103 @@
+name: Infrastructure Provisioning
+
+on:
+  workflow_dispatch:
+
+jobs:
+  provision:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # ---------------------------
+      # Configure AWS Credentials
+      # ---------------------------
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      # ---------------------------
+      # Setup Terraform
+      # ---------------------------
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Init
+        working-directory: next-ui/terraform
+        run: terraform init
+
+      - name: Terraform Apply
+        working-directory: next-ui/terraform
+        run: |
+          terraform apply -auto-approve \
+            -var="region=${{ secrets.AWS_REGION }}" \
+            -var="key_name=motion-fe-key" \
+            -var="security_group_id=${{ secrets.SECURITY_GROUP_ID }}"
+
+      # ---------------------------
+      # Get EC2 Public IP
+      # ---------------------------
+      - name: Get EC2 IP
+        id: terraform_output
+        working-directory: next-ui/terraform
+        run: echo "EC2_IP=$(terraform output -raw ec2_public_ip)" >> $GITHUB_ENV
+
+      # ---------------------------
+      # Install Ansible
+      # ---------------------------
+      - name: Install Ansible
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-pip
+          pip3 install ansible
+
+      # ---------------------------
+      # Add SSH Key
+      # ---------------------------
+      - name: Add SSH Key
+        run: |
+          echo "${{ secrets.EC2_SSH_PRIVATE_KEY }}" > key.pem
+          chmod 600 key.pem
+
+      # ---------------------------
+      # Create Inventory (Ubuntu user!)
+      # ---------------------------
+      - name: Create Inventory
+        run: |
+          echo "[web]" > inventory.ini
+          echo "$EC2_IP ansible_user=ubuntu ansible_python_interpreter=/usr/bin/python3 ansible_ssh_common_args='-o StrictHostKeyChecking=no'" >> inventory.ini
+
+      # ---------------------------
+      # Wait for EC2 SSH
+      # ---------------------------
+      - name: Wait for EC2 to be ready
+        run: |
+          echo "Waiting for SSH to be available on $EC2_IP..."
+          for i in {1..20}; do
+            if ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 -i key.pem ubuntu@$EC2_IP echo "SSH ready"; then
+              echo "EC2 is ready!"
+              break
+            fi
+            echo "Attempt $i failed, retrying in 10s..."
+            sleep 10
+          done
+
+      # ---------------------------
+      # Debug Remote Host
+      # ---------------------------
+      - name: Debug remote host
+        run: |
+          ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@$EC2_IP "which python3 && python3 --version && uname -a"
+
+      - name: Debug inventory
+        run: cat inventory.ini
+
+      # ---------------------------
+      # Run Ansible
+      # ---------------------------
+      - name: Run Ansible
+        run: ansible-playbook -i inventory.ini next-ui/ansible/playbook.yml --private-key key.pem
