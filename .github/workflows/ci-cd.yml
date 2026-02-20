@@ -50,49 +50,43 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # -------------------
-      # Docker Login
-      # -------------------
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      # -------------------
-      # Build & Push Image
-      # -------------------
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
           context: ./next-ui
           file: ./next-ui/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/alienui:0.1
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/alienui:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/alienui:${{ github.sha }}
+          cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/alienui:latest
+          cache-to: type=inline
 
-      # -------------------
-      # Setup SSH Key
-      # -------------------
-      - name: Setup SSH Key
-        run: |
-          echo "${{ secrets.EC2_SSH_PRIVATE_KEY }}" > key.pem
-          chmod 600 key.pem
+       - name: Setup SSH Key
+         run: |
+            echo "${{ secrets.EC2_SSH_PRIVATE_KEY }}" > key.pem
+            chmod 600 key.pem
 
-      # -------------------
-      # Deploy on EC2
-      # -------------------
-      - name: Deploy to EC2
-        run: |
-          ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@${{ secrets.EC2_HOST }} << "EOF"
-          
-          sudo docker stop alienui || true
-          sudo docker rm alienui || true
-          
-          sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/alienui:0.1
-          
-          sudo docker run -d \
-            --name alienui \
-            -p 80:3000 \
-            ${{ secrets.DOCKERHUB_USERNAME }}/alienui:0.1
-          
-          EOF
+        - name: Deploy to EC2
+          run: |
+            ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@${{ secrets.EC2_HOST }} << "EOF"
+        
+            sudo docker stop alienui || true
+            sudo docker rm alienui || true
+            sudo docker system prune -af || true
+        
+            sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/alienui:${{ github.sha }}
+        
+            sudo docker run -d \
+              --name alienui \
+              -p 80:3000 \
+              --restart unless-stopped \
+              ${{ secrets.DOCKERHUB_USERNAME }}/alienui:${{ github.sha }}
+        
+            EOF
