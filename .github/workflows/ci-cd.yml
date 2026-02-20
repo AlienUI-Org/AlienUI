@@ -24,6 +24,7 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: next-ui
 
       - name: Run tests
         run: |
@@ -35,7 +36,7 @@ jobs:
 
       - name: Build app
         run: npm run build
-
+        working-directory: next-ui
   # -------------------
   # CD JOB
   # -------------------
