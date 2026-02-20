@@ -3,39 +3,54 @@
   become: yes
 
   tasks:
+
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
     - name: Install prerequisites
-      raw: |
-        apt-get update
-        apt-get install -y ca-certificates curl gnupg lsb-release
+      apt:
+        name:
+          - ca-certificates
+          - curl
+          - gnupg
+          - lsb-release
+        state: present
 
     - name: Add Docker GPG key
-      raw: |
-        mkdir -p /etc/apt/keyrings
-        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
 
     - name: Add Docker repository
-      raw: |
-        echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" \
-        | tee /etc/apt/sources.list.d/docker.list > /dev/null
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu jammy stable
+        state: present
 
-    - name: Install Docker Engine
-      raw: |
-        apt-get update
-        apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    - name: Install Docker
+      apt:
+        name: docker-ce
+        state: present
+        update_cache: yes
 
-    - name: Start Docker service
-      raw: |
-        systemctl enable docker
-        systemctl start docker
-
-    - name: Add ubuntu-user to docker group
-      raw: usermod -aG docker ubuntu
+    - name: Start Docker
+      service:
+        name: docker
+        state: started
+        enabled: yes
 
     - name: Pull Docker image
-      raw: docker pull kenneth4/buygun:latest
-
-    - name: Stop old container if it exists
-      raw: docker rm -f alienui || true
+      community.docker.docker_image:
+        name: kenneth4/alienui:latest
+        tag: latest
+        source: pull
 
     - name: Run container
-      raw: docker run -d -p 80:3000 --name alienui kenneth4/alienui:latest
+      community.docker.docker_container:
+        name: buygun
+        image: kenneth4/alienui:latest
+        state: started
+        restart_policy: always
+        published_ports:
+          - "80:3000"
+
