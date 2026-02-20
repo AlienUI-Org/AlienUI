@@ -64,9 +64,8 @@ jobs:
           file: ./next-ui/Dockerfile
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/alienui:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/alienui:${{ github.sha }}
-          cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/alienui:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/alienui:0.2
+          cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/alienui:0.2
           cache-to: type=inline
 
       - name: Setup SSH Key
@@ -82,12 +81,12 @@ jobs:
           sudo docker rm alienui || true
           sudo docker system prune -af || true
 
-          sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/alienui:${{ github.sha }}
+          sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/alienui:0.2
 
           sudo docker run -d \
             --name alienui \
             -p 80:3000 \
             --restart unless-stopped \
-            ${{ secrets.DOCKERHUB_USERNAME }}/alienui:${{ github.sha }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/alienui:0.2
 
           EOF
